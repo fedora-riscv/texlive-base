@@ -1,0 +1,26 @@
+diff -up texlive-core-20170520/source/texk/web2c/luatexdir/luaffi/ctype.c.crashfix texlive-core-20170520/source/texk/web2c/luatexdir/luaffi/ctype.c
+--- texlive-core-20170520/source/texk/web2c/luatexdir/luaffi/ctype.c.crashfix	2017-09-12 14:16:33.675640506 -0400
++++ texlive-core-20170520/source/texk/web2c/luatexdir/luaffi/ctype.c	2017-09-12 14:16:53.953166205 -0400
+@@ -245,6 +245,10 @@ void* to_cdata(lua_State* L, int idx, st
+ 
+     lua_pop(L, 1); /* mt */
+     cd = (struct cdata*) lua_touserdata(L, idx);
++    if (!cd) {
++        lua_pushnil(L);
++        return NULL;
++    }
+     *ct = cd->type;
+     lua_getuservalue(L, idx);
+ 
+diff -up texlive-core-20170520/source/texk/web2c/luatexdir/luaffi/ffi.h.crashfix texlive-core-20170520/source/texk/web2c/luatexdir/luaffi/ffi.h
+--- texlive-core-20170520/source/texk/web2c/luatexdir/luaffi/ffi.h.crashfix	2017-09-12 14:17:26.290409821 -0400
++++ texlive-core-20170520/source/texk/web2c/luatexdir/luaffi/ffi.h	2017-09-12 14:17:43.041018016 -0400
+@@ -370,7 +370,7 @@ __declspec(align(16))
+ #endif
+ struct cdata {
+     const struct ctype type
+-#ifdef __GNUC__
++#if 0 /* def __GNUC__ */
+       __attribute__ ((aligned(16)))
+ #endif
+       ;
