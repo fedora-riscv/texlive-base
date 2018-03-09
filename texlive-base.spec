@@ -16,7 +16,7 @@
 
 Name: %{shortname}-base
 Version: %{source_date}
-Release: 19%{?dist}
+Release: 20%{?dist}
 Epoch: 7
 Summary: TeX formatting system
 # The only files in the base package are directories, cache, and license texts
@@ -411,6 +411,18 @@ BuildRequires: gmp-devel mpfr-devel
 BuildRequires: clisp-devel
 BuildRequires: texlive-cyrillic, texlive-latex
 %endif
+# Cleanup Provides/Obsoletes
+# texlive-cjk-gs-integrate (depackaged 2018-03-09)
+Provides: texlive-cjk-gs-integrate = %{epoch}:%{source_date}-%{release}
+Obsoletes: texlive-cjk-gs-integrate <= 7:20170520
+Provides: tex-cjk-gs-integrate = %{epoch}:%{source_date}-%{release}
+Obsoletes: tex-cjk-gs-integrate <= 7:20170520
+Provides: texlive-cjk-gs-integrate-bin = %{epoch}:%{source_date}-%{release}
+Provides: tex-cjk-gs-integrate-bin = %{epoch}:%{source_date}-%{release}
+Obsoletes: texlive-cjk-gs-integrate-bin <= 7:20170520
+Obsoletes: tex-cjk-gs-integrate-bin <= 7:20170520
+Provides: texlive-cjk-gs-integrate-doc = %{epoch}:%{source_date}-%{release}
+Obsoletes: texlive-cjk-gs-integrate-doc <= 7:20170520
 
 %description
 The TeX Live software distribution offers a complete TeX system for a
@@ -858,6 +870,7 @@ The program reports typographic and other errors in LaTeX
 documents. Filters are also provided for checking the LaTeX
 parts of CWEB documents.
 
+%if 0
 %package -n %{shortname}-cjk-gs-integrate
 Provides: tex-cjk-gs-integrate = %{epoch}:%{source_date}-%{release}
 Provides: texlive-cjk-gs-integrate-bin = %{epoch}:%{source_date}-%{release}
@@ -877,6 +890,7 @@ This script searches a list of directories for CJK fonts, and
 makes them available to an installed GhostScript. In the
 simplest case with sufficient privileges, a run without
 arguments should effect in a complete setup of GhostScript.
+%endif
 
 %package -n %{shortname}-cjkutils
 Provides: tex-cjkutils = %{epoch}:%{source_date}-%{release}
@@ -6268,6 +6282,13 @@ rm -rf %{buildroot}%{_texdir}/texmf-dist/xindy
 rm -rf %{buildroot}%{_texdir}/texmf-dist/doc/xindy
 %endif
 
+# Remove cjk-gs-integrate files
+# Yes, we probably should remove the source, but there is a possibility that we will
+# re-add this subpackage at some point.
+rm -rf %{buildroot}%{_bindir}/cjk-gs-integrate
+rm -rf %{buildroot}%{_texdir}/texmf-dist/scripts/cjk-gs-integrate
+rm -rf %{buildroot}%{_texdir}/texmf-dist/doc/fonts/cjk-gs-integrate
+
 # SCRIPTLETS
 
 %pre
@@ -6897,11 +6918,13 @@ done <<< "$list"
 %{_texdir}/texmf-dist/scripts/chktex/
 %doc %{_texdir}/texmf-dist/doc/chktex/
 
+%if 0
 %files -n %{shortname}-cjk-gs-integrate
 %license gpl3.txt
 %{_bindir}/cjk-gs-integrate
 %{_texdir}/texmf-dist/scripts/cjk-gs-integrate/
 %doc %{_texdir}/texmf-dist/doc/fonts/cjk-gs-integrate/
+%endif
 
 %files -n %{shortname}-cjkutils
 %license lppl1.txt
@@ -8549,6 +8572,9 @@ done <<< "$list"
 %doc %{_texdir}/texmf-dist/doc/latex/yplan/
 
 %changelog
+* Fri Mar  9 2018 Tom Callaway <spot@fedoraproject.org> - 7:20170520-20
+- disable cjk-gs-integrate 
+
 * Fri Mar  9 2018 Tom Callaway <spot@fedoraproject.org> - 7:20170520-19
 - configure TEXMFLOCAL to point to /usr/share/texlive/texmf-local/ (bz1553462)
 
