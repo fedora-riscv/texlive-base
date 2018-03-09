@@ -6162,7 +6162,7 @@ mv %{buildroot}%{_texdir}/texmf-dist/dvips/config/config.ps %{buildroot}%{_sysco
 ln -s %{_sysconfdir}/texlive/dvips/config/config.ps %{buildroot}%{_texdir}/texmf-dist/dvips/config/config.ps
 
 # configure texmf-local - make it visible to kpathsea
-sed -i -e 's|^TEXMFLOCAL.*|TEXMFLOCAL = $TEXMFROOT/texmf-local//|' %{buildroot}/%{_texdir}/texmf-dist/web2c/texmf.cnf
+sed -i -e 's|^TEXMFLOCAL.*|TEXMFLOCAL = $TEXMFROOT/texmf-local//|' %{buildroot}%{_sysconfdir}/texlive/web2c/texmf.cnf
 
 # create macro file for building texlive
 mkdir -p %{buildroot}%{_rpmmacrodir}
