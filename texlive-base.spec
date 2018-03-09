@@ -16,7 +16,7 @@
 
 Name: %{shortname}-base
 Version: %{source_date}
-Release: 18%{?dist}
+Release: 19%{?dist}
 Epoch: 7
 Summary: TeX formatting system
 # The only files in the base package are directories, cache, and license texts
@@ -6161,6 +6161,9 @@ done
 mv %{buildroot}%{_texdir}/texmf-dist/dvips/config/config.ps %{buildroot}%{_sysconfdir}/texlive/dvips/config/
 ln -s %{_sysconfdir}/texlive/dvips/config/config.ps %{buildroot}%{_texdir}/texmf-dist/dvips/config/config.ps
 
+# configure texmf-local - make it visible to kpathsea
+sed -i -e 's|^TEXMFLOCAL.*|TEXMFLOCAL = $TEXMFROOT/texmf-local//|' %{buildroot}/%{_texdir}/texmf-dist/web2c/texmf.cnf
+
 # create macro file for building texlive
 mkdir -p %{buildroot}%{_rpmmacrodir}
 cp -a %{SOURCE1} %{buildroot}%{_rpmmacrodir}/macros.texlive
@@ -8546,6 +8549,9 @@ done <<< "$list"
 %doc %{_texdir}/texmf-dist/doc/latex/yplan/
 
 %changelog
+* Fri Mar  9 2018 Tom Callaway <spot@fedoraproject.org> - 7:20170520-19
+- configure TEXMFLOCAL to point to /usr/share/texlive/texmf-local/ (bz1553462)
+
 * Wed Mar  7 2018 Tom Callaway <spot@fedoraproject.org> - 7:20170520-18
 - switch to shebang mangling that does not change exec perms
   most/all of the mangling is correct, but we do not want to risk breaking
