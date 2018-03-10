@@ -16,7 +16,7 @@
 
 Name: %{shortname}-base
 Version: %{source_date}
-Release: 20%{?dist}
+Release: 21%{?dist}
 Epoch: 7
 Summary: TeX formatting system
 # The only files in the base package are directories, cache, and license texts
@@ -6449,9 +6449,9 @@ if [ "$1" == "0" ]; then
 fi
 
 %post -n %{shortname}-kpathsea
-/sbin/install-info %{_infodir}/kpathsea.info %{_infodir}/dir 2>/dev/null
-/sbin/install-info %{_infodir}/tds.info %{_infodir}/dir 2>/dev/null
-/sbin/install-info %{_infodir}/web2c.info %{_infodir}/dir 2>/dev/null
+/sbin/install-info %{_infodir}/kpathsea.info %{_infodir}/dir 2>/dev/null || :
+/sbin/install-info %{_infodir}/tds.info %{_infodir}/dir 2>/dev/null || :
+/sbin/install-info %{_infodir}/web2c.info %{_infodir}/dir 2>/dev/null || :
 :
 
 %post -n %{shortname}-latex
@@ -6679,15 +6679,15 @@ fi
 :
 
 %transfiletriggerin -n %{shortname}-kpathsea -- %{_texdir}
-%{_bindir}/texhash 2> /dev/null
+%{_bindir}/texhash 2> /dev/null || :
 export TEXMF=/usr/share/texlive/texmf-dist
 export TEXMFCNF=/usr/share/texlive/texmf-dist/web2c
 export TEXMFCACHE=/var/lib/texmf
-%{_bindir}/mtxrun --generate &> /dev/null
-%{_bindir}/fmtutil-sys --all &> /dev/null
+%{_bindir}/mtxrun --generate &> /dev/null || :
+%{_bindir}/fmtutil-sys --all &> /dev/null || :
 
 %transfiletriggerpostun -n %{shortname}-kpathsea -- %{_texdir}
-%{_bindir}/texhash 2> /dev/null
+%{_bindir}/texhash 2> /dev/null || :
 
 %transfiletriggerin -n %{shortname}-kpathsea -- %{_texdir}/texmf-dist/fonts/map/dvips/
 list=`grep "\.map" | sort -n | uniq`
@@ -8572,6 +8572,9 @@ done <<< "$list"
 %doc %{_texdir}/texmf-dist/doc/latex/yplan/
 
 %changelog
+* Sat Mar 10 2018 Kevin Fenzi <kevin@scrye.com> - 7:20170520-21
+- Make kpathsea scriptlets not fail in the installer env.
+
 * Fri Mar  9 2018 Tom Callaway <spot@fedoraproject.org> - 7:20170520-20
 - disable cjk-gs-integrate 
 
