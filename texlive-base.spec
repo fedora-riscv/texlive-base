@@ -16,7 +16,7 @@
 
 Name: %{shortname}-base
 Version: %{source_date}
-Release: 21%{?dist}
+Release: 22%{?dist}
 Epoch: 7
 Summary: TeX formatting system
 # The only files in the base package are directories, cache, and license texts
@@ -388,6 +388,8 @@ Patch9: texlive-base-lcdf-typetools-git4166ff9.patch
 Patch10: texlive-base-xindy-perl-518.patch
 # These tests only fail on 32 bit arches with gcc8
 Patch11: texlive-20180215-disable-more-failing-tests.patch
+# Fix a2ping to work with Ghostscript 9.22+
+Patch12: texlive-base-fix-a2ping-with-gs-9.22.patch
 
 # security fix for bz#979176
 Patch100: texlive-bz979176.patch
@@ -6026,6 +6028,7 @@ xz -dc %{SOURCE0} | tar x
 %patch9 -p1 -b .git4166ff9
 %patch10 -p1 -b .perl518
 %patch11 -p0 -b .dt
+%patch12 -p1 -b .gs922
 %patch100 -p0
 # Setup copies of the licenses
 for l in `unxz -c %{SOURCE3} | tar t`; do
@@ -8572,6 +8575,9 @@ done <<< "$list"
 %doc %{_texdir}/texmf-dist/doc/latex/yplan/
 
 %changelog
+* Sun Mar 11 2018 Tom Callaway <spot@fedoraproject.org> - 7:20170520-22
+- fix a2ping to work with gs 9.22
+
 * Sat Mar 10 2018 Kevin Fenzi <kevin@scrye.com> - 7:20170520-21
 - Make kpathsea scriptlets not fail in the installer env.
 
