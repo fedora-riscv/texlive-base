@@ -16,7 +16,7 @@
 
 Name: %{shortname}-base
 Version: %{source_date}
-Release: 22%{?dist}
+Release: 23%{?dist}
 Epoch: 7
 Summary: TeX formatting system
 # The only files in the base package are directories, cache, and license texts
@@ -4242,6 +4242,7 @@ Requires: texlive-base
 Requires: texlive-collection-latex
 Requires: texlive-kpathsea
 Requires: texlive-latex
+Requires: tex(pdfpages.sty)
 # shell
 BuildArch: noarch
 
@@ -8575,6 +8576,9 @@ done <<< "$list"
 %doc %{_texdir}/texmf-dist/doc/latex/yplan/
 
 %changelog
+* Thu Mar 15 2018 Tom Callaway <spot@fedoraproject.org> - 7:20170520-23
+- add Requires: tex(pdfpages.sty) to texlive-pdfjam (bz1164237)
+
 * Sun Mar 11 2018 Tom Callaway <spot@fedoraproject.org> - 7:20170520-22
 - fix a2ping to work with gs 9.22
 
