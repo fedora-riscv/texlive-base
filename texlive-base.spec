@@ -16,7 +16,7 @@
 
 Name: %{shortname}-base
 Version: %{source_date}
-Release: 23%{?dist}
+Release: 24%{?dist}
 Epoch: 7
 Summary: TeX formatting system
 # The only files in the base package are directories, cache, and license texts
@@ -8576,6 +8576,9 @@ done <<< "$list"
 %doc %{_texdir}/texmf-dist/doc/latex/yplan/
 
 %changelog
+* Fri Mar 23 2018 Kevin Fenzi <kevin@scrye.com> - 7:20170520-24
+- Rebuild for poppler soname bump.
+
 * Thu Mar 15 2018 Tom Callaway <spot@fedoraproject.org> - 7:20170520-23
 - add Requires: tex(pdfpages.sty) to texlive-pdfjam (bz1164237)
 
