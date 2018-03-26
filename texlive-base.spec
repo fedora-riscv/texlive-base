@@ -16,7 +16,7 @@
 
 Name: %{shortname}-base
 Version: %{source_date}
-Release: 24%{?dist}
+Release: 25%{?dist}
 Epoch: 7
 Summary: TeX formatting system
 # The only files in the base package are directories, cache, and license texts
@@ -537,9 +537,9 @@ afm2pl package.
 Provides: tex-aleph = %{epoch}:%{source_date}-%{release}
 Provides: texlive-aleph-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-aleph-bin = %{epoch}:%{source_date}-%{release}
-Obsoletes: texlive-aleph-bin < 2017
+Obsoletes: texlive-aleph-bin < 7:20170520
 Provides: texlive-aleph-doc = %{epoch}:%{source_date}-%{release}
-Obsoletes: texlive-aleph-doc < %{source_date}
+Obsoletes: texlive-aleph-doc < 7:20170520
 Summary: Extended TeX
 Requires: texlive-base
 Requires: texlive-kpathsea
@@ -8576,6 +8576,9 @@ done <<< "$list"
 %doc %{_texdir}/texmf-dist/doc/latex/yplan/
 
 %changelog
+* Sun Mar 25 2018 Tom Callaway <spot@fedoraproject.org> - 7:20170520-25
+- fix aleph obsoletes (bz1560355)
+
 * Fri Mar 23 2018 Kevin Fenzi <kevin@scrye.com> - 7:20170520-24
 - Rebuild for poppler soname bump.
 
