@@ -6,7 +6,7 @@
 
 # don't export private perl modules
 %global __provides_exclude %{?__provides_exclude:%__provides_exclude|}^perl\\(
-%global __requires_exclude %{?__requires_exclude:%__requires_exclude|}^perl\\((PDF::Reuse.*|Pedigree.*|TeXLive.*|Tk::path_tre)\\)
+%global __requires_exclude %{?__requires_exclude:%__requires_exclude|}^perl\\((LatexIndent.*|PDF::Reuse.*|Pedigree.*|TeXLive.*|Tk::path_tre)\\)
 
 # We do not want exec perms changing.
 %global __brp_mangle_shebangs_exclude ^$
@@ -16,7 +16,7 @@
 
 Name: %{shortname}-base
 Version: %{source_date}
-Release: 25%{?dist}
+Release: 26%{?dist}
 Epoch: 7
 Summary: TeX formatting system
 # The only files in the base package are directories, cache, and license texts
@@ -2844,6 +2844,8 @@ The script does not deal with \includeonly commands.
 
 %package -n %{shortname}-lcdftypetools
 Provides: tex-lcdftypetools = %{epoch}:%{source_date}-%{release}
+# This is a mistake in the texlive package. Will be fixed in next major TL update.
+Provides: lcdf-typetools = %{epoch}:%{source_date}-%{release}
 Provides: texlive-lcdftypetools-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-lcdftypetools-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-lcdftypetools-bin < 7:20170520
@@ -8576,6 +8578,10 @@ done <<< "$list"
 %doc %{_texdir}/texmf-dist/doc/latex/yplan/
 
 %changelog
+* Tue Mar 27 2018 Tom Callaway <spot@fedoraproject.org> - 7:20170520-26
+- add lcdf-typetools provide to fix broken collection-fontutils (fixing that in texlive later) (bz1560379)
+- add LatexIndent* to filtered Requires to prevent dep issues there (bz1560381)
+
 * Sun Mar 25 2018 Tom Callaway <spot@fedoraproject.org> - 7:20170520-25
 - fix aleph obsoletes (bz1560355)
 
