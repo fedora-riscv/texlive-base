@@ -16,7 +16,7 @@
 
 Name: %{shortname}-base
 Version: %{source_date}
-Release: 26%{?dist}
+Release: 27%{?dist}
 Epoch: 7
 Summary: TeX formatting system
 # The only files in the base package are directories, cache, and license texts
@@ -6162,6 +6162,9 @@ xz -dc %{SOURCE10} | tar x
 xz -dc %{SOURCE11} | tar x
 popd
 
+# We want the texmf.cnf we patched, not the vanilla one from the kpathsea.tar.xz
+cp -a source/texk/kpathsea/texmf.cnf %{buildroot}%{_texdir}/texmf-dist/web2c/texmf.cnf
+
 # Apply fixes
 # We do it here because this is the first time we have the complete tree.
 # bz1384067
@@ -8578,6 +8581,9 @@ done <<< "$list"
 %doc %{_texdir}/texmf-dist/doc/latex/yplan/
 
 %changelog
+* Fri Mar 30 2018 Tom Callaway <spot@fedoraproject.org> - 7:20170520-27
+- actually use the texmf.cnf we patch (not the vanilla one from the kpathsea.tar.xz)
+
 * Tue Mar 27 2018 Tom Callaway <spot@fedoraproject.org> - 7:20170520-26
 - add lcdf-typetools provide to fix broken collection-fontutils (fixing that in texlive later) (bz1560379)
 - add LatexIndent* to filtered Requires to prevent dep issues there (bz1560381)
