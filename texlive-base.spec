@@ -16,7 +16,7 @@
 
 Name: %{shortname}-base
 Version: %{source_date}
-Release: 27%{?dist}
+Release: 28%{?dist}
 Epoch: 7
 Summary: TeX formatting system
 # The only files in the base package are directories, cache, and license texts
@@ -8581,6 +8581,9 @@ done <<< "$list"
 %doc %{_texdir}/texmf-dist/doc/latex/yplan/
 
 %changelog
+* Mon Apr 30 2018 Pete Walter <pwalter@fedoraproject.org> - 7:20170520-28
+- Rebuild for ICU 61.1
+
 * Fri Mar 30 2018 Tom Callaway <spot@fedoraproject.org> - 7:20170520-27
 - actually use the texmf.cnf we patch (not the vanilla one from the kpathsea.tar.xz)
 
