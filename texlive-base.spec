@@ -8799,6 +8799,9 @@ done <<< "$list"
 - fix synctex.pc (bz1426622)
 - new subpackages: axodraw2, bib2gls, ctan-o-mat, dviinfox, jfmutil, l3build, wordcount
 
+* Mon Apr 30 2018 Pete Walter <pwalter@fedoraproject.org> - 7:20170520-28
+- Rebuild for ICU 61.1
+
 * Fri Mar 30 2018 Tom Callaway <spot@fedoraproject.org> - 7:20170520-27
 - actually use the texmf.cnf we patch (not the vanilla one from the kpathsea.tar.xz)
 
