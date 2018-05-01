@@ -1,5 +1,5 @@
 %global shortname texlive
-%global source_date 20170520
+%global source_date 20180414
 %global source_name texlive-%{source_date}-source
 %{!?_texdir: %global _texdir %{_datadir}/%{shortname}}
 %{!?_texmf_var: %global _texmf_var %{_var}/lib/texmf}
@@ -16,7 +16,7 @@
 
 Name: %{shortname}-base
 Version: %{source_date}
-Release: 27%{?dist}
+Release: 1%{?dist}
 Epoch: 7
 Summary: TeX formatting system
 # The only files in the base package are directories, cache, and license texts
@@ -28,371 +28,374 @@ Source1: macros.texlive
 Source2: texlive.tlpdb
 Source3: texlive-licenses.tar.xz
 # These noarch components are packed wrong upstream (do not unpack into texmf-dist)
-Source4: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/cyrillic.tar.xz
-Source5: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/cyrillic.doc.tar.xz
-Source6: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/glyphlist.tar.xz
-Source7: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/latex.tar.xz
-Source8: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/latex.doc.tar.xz
-Source9: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/oberdiek.tar.xz
-Source10: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/oberdiek.doc.tar.xz
-Source11: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/texlive-en.doc.tar.xz
+Source4: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/axodraw2.doc.tar.xz
+Source5: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/axodraw2.tar.xz
+Source6: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/cyrillic.tar.xz
+Source7: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/cyrillic.doc.tar.xz
+Source8: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/glyphlist.tar.xz
+Source9: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/latex.tar.xz
+Source10: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/latex.doc.tar.xz
+Source11: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/l3build.tar.xz
+Source12: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/l3build.doc.tar.xz
+Source13: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/oberdiek.tar.xz
+Source14: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/oberdiek.doc.tar.xz
+Source15: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/texlive-en.doc.tar.xz
 # These are the noarch components for the built binaries.
-Source12: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/a2ping.tar.xz
-Source13: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/a2ping.doc.tar.xz
-Source14: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/accfonts.tar.xz
-Source15: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/accfonts.doc.tar.xz
-Source16: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/adhocfilelist.tar.xz
-Source17: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/adhocfilelist.doc.tar.xz
-Source18: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/afm2pl.tar.xz
-Source19: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/aleph.tar.xz
-Source20: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/aleph.doc.tar.xz
-Source21: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/amstex.tar.xz
-Source22: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/amstex.doc.tar.xz
-Source23: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/arara.tar.xz
-Source24: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/arara.doc.tar.xz
-Source25: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/authorindex.tar.xz
-Source26: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/authorindex.doc.tar.xz
-Source27: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/autosp.doc.tar.xz
-Source28: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/bibexport.tar.xz
-Source29: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/bibexport.doc.tar.xz
-Source30: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/bibtex.tar.xz
-Source31: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/bibtex.doc.tar.xz
-Source32: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/bibtexu.doc.tar.xz
-Source33: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/bibtex8.tar.xz
-Source34: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/bibtex8.doc.tar.xz
-Source35: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/bundledoc.tar.xz
-Source36: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/bundledoc.doc.tar.xz
-Source37: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/cachepic.tar.xz
-Source38: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/cachepic.doc.tar.xz
-Source39: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/checkcites.tar.xz
-Source40: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/checkcites.doc.tar.xz
-Source41: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/checklistings.tar.xz
-Source42: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/checklistings.doc.tar.xz
-Source43: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/chktex.tar.xz
-Source44: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/chktex.doc.tar.xz
-Source45: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/cjk-gs-integrate.tar.xz
-Source46: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/cjk-gs-integrate.doc.tar.xz
-Source47: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/cjkutils.tar.xz
-Source48: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/context.tar.xz
-Source49: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/context.doc.tar.xz
-Source50: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/convbkmk.tar.xz
-Source51: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/convbkmk.doc.tar.xz
-Source52: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/crossrefware.tar.xz
-Source53: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/crossrefware.doc.tar.xz
-Source54: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/cslatex.tar.xz
-Source55: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/csplain.tar.xz
-Source56: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/ctanify.tar.xz
-Source57: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/ctanify.doc.tar.xz
-Source58: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/ctanupload.tar.xz
-Source59: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/ctanupload.doc.tar.xz
-Source60: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/ctie.doc.tar.xz
-Source61: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/cweb.tar.xz
-Source62: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/cweb.doc.tar.xz
-Source63: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/cyrillic-bin.tar.xz
-Source64: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/cyrillic-bin.doc.tar.xz
-Source65: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/de-macro.tar.xz
-Source66: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/de-macro.doc.tar.xz
-Source67: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/detex.tar.xz
-Source68: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/detex.doc.tar.xz
-Source69: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/diadia.tar.xz
-Source70: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/diadia.doc.tar.xz
-Source71: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/dosepsbin.tar.xz
-Source72: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/dosepsbin.doc.tar.xz
-Source73: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/dtl.tar.xz
-Source74: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/dtl.doc.tar.xz
-Source75: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/dtxgen.tar.xz
-Source76: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/dtxgen.doc.tar.xz
-Source77: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/dvi2tty.tar.xz
-Source78: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/dvi2tty.doc.tar.xz
-Source79: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/dviasm.tar.xz
-Source80: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/dviasm.doc.tar.xz
-Source81: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/dvicopy.tar.xz
-Source82: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/dvicopy.doc.tar.xz
-Source83: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/dvidvi.tar.xz
-Source84: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/dvidvi.doc.tar.xz
-Source85: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/dviljk.tar.xz
-Source86: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/dviljk.doc.tar.xz
-Source87: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/dvipdfmx.tar.xz
-Source88: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/dvipdfmx.doc.tar.xz
-Source89: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/dvipng.tar.xz
-Source90: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/dvipng.doc.tar.xz
-Source91: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/dvipos.tar.xz
-Source92: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/dvipos.doc.tar.xz
-Source93: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/dvips.tar.xz
-Source94: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/dvips.doc.tar.xz
-Source95: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/dvisvgm.tar.xz
-Source96: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/dvisvgm.doc.tar.xz
-Source97: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/ebong.tar.xz
-Source98: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/ebong.doc.tar.xz
-Source99: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/eplain.tar.xz
-Source100: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/eplain.doc.tar.xz
-Source101: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/epspdf.tar.xz
-Source102: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/epspdf.doc.tar.xz
-Source103: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/epstopdf.tar.xz
-Source104: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/epstopdf.doc.tar.xz
-Source105: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/exceltex.tar.xz
-Source106: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/exceltex.doc.tar.xz
-Source107: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/fig4latex.tar.xz
-Source108: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/fig4latex.doc.tar.xz
-Source109: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/findhyph.tar.xz
-Source110: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/findhyph.doc.tar.xz
-Source111: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/fontinst.tar.xz
-Source112: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/fontinst.doc.tar.xz
-Source113: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/fontools.tar.xz
-Source114: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/fontools.doc.tar.xz
-Source115: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/fontware.doc.tar.xz
-Source116: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/fragmaster.tar.xz
-Source117: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/fragmaster.doc.tar.xz
-Source118: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/getmap.tar.xz
-Source119: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/getmap.doc.tar.xz
-Source120: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/glossaries.tar.xz
-Source121: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/glossaries.doc.tar.xz
-Source122: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/gregoriotex.tar.xz
-Source123: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/gregoriotex.doc.tar.xz
-Source124: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/gsftopk.tar.xz
-Source125: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/gsftopk.doc.tar.xz
-Source126: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/installfont.tar.xz
-Source127: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/installfont.doc.tar.xz
-Source128: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/jadetex.tar.xz
-Source129: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/jadetex.doc.tar.xz
-Source130: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/kotex-utils.tar.xz
-Source131: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/kotex-utils.doc.tar.xz
-Source132: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/kpathsea.tar.xz
-Source133: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/kpathsea.doc.tar.xz
-Source134: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/lacheck.doc.tar.xz
-Source135: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/latex-git-log.tar.xz
-Source136: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/latex-git-log.doc.tar.xz
-Source137: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/latex-papersize.tar.xz
-Source138: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/latex-papersize.doc.tar.xz
-Source139: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/latex2man.tar.xz
-Source140: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/latex2man.doc.tar.xz
-Source141: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/latex2nemeth.tar.xz
-Source142: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/latex2nemeth.doc.tar.xz
-Source143: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/latexdiff.tar.xz
-Source144: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/latexdiff.doc.tar.xz
-Source145: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/latexfileversion.tar.xz
-Source146: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/latexfileversion.doc.tar.xz
-Source147: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/latexindent.tar.xz
-Source148: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/latexindent.doc.tar.xz
-Source149: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/latexpand.tar.xz
-Source150: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/latexpand.doc.tar.xz
-Source151: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/lcdftypetools.doc.tar.xz
-Source152: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/lilyglyphs.tar.xz
-Source153: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/lilyglyphs.doc.tar.xz
-Source154: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/listbib.tar.xz
-Source155: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/listbib.doc.tar.xz
-Source156: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/listings-ext.tar.xz
-Source157: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/listings-ext.doc.tar.xz
-Source158: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/lollipop.tar.xz
-Source159: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/lollipop.doc.tar.xz
-Source160: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/ltxfileinfo.tar.xz
-Source161: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/ltxfileinfo.doc.tar.xz
-Source162: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/ltximg.tar.xz
-Source163: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/ltximg.doc.tar.xz
-Source164: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/lua2dox.tar.xz
-Source165: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/lua2dox.doc.tar.xz
-Source166: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/luaotfload.tar.xz
-Source167: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/luaotfload.doc.tar.xz
-Source168: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/luatex.tar.xz
-Source169: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/luatex.doc.tar.xz
-Source170: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/lwarp.tar.xz
-Source171: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/lwarp.doc.tar.xz
-Source172: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/make4ht.tar.xz
-Source173: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/make4ht.doc.tar.xz
-Source174: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/makedtx.tar.xz
-Source175: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/makedtx.doc.tar.xz
-Source176: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/makeindex.tar.xz
-Source177: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/makeindex.doc.tar.xz
-Source178: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/match_parens.tar.xz
-Source179: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/match_parens.doc.tar.xz
-Source180: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/mathspic.tar.xz
-Source181: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/mathspic.doc.tar.xz
-Source182: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/metafont.tar.xz
-Source183: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/metafont.doc.tar.xz
-Source184: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/metapost.tar.xz
-Source185: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/metapost.doc.tar.xz
-Source186: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/mex.tar.xz
-Source187: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/mex.doc.tar.xz
-Source188: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/mflua.tar.xz
-Source189: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/mfware.tar.xz
-Source190: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/mfware.doc.tar.xz
-Source191: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/mf2pt1.tar.xz
-Source192: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/mf2pt1.doc.tar.xz
-Source193: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/mkgrkindex.tar.xz
-Source194: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/mkgrkindex.doc.tar.xz
-Source195: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/mkjobtexmf.tar.xz
-Source196: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/mkjobtexmf.doc.tar.xz
-Source197: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/mkpic.tar.xz
-Source198: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/mkpic.doc.tar.xz
-Source199: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/mltex.tar.xz
-Source200: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/mltex.doc.tar.xz
-Source201: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/mptopdf.tar.xz
-Source202: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/mptopdf.doc.tar.xz
-Source203: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/multibibliography.tar.xz
-Source204: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/multibibliography.doc.tar.xz
-Source205: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/musixtex.tar.xz
-Source206: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/musixtex.doc.tar.xz
-Source207: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/musixtnt.tar.xz
-Source208: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/musixtnt.doc.tar.xz
-Source209: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/m-tx.tar.xz
-Source210: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/m-tx.doc.tar.xz
-Source211: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/omegaware.doc.tar.xz
-Source212: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/patgen.tar.xz
-Source213: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/patgen.doc.tar.xz
-Source214: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/pax.tar.xz
-Source215: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/pax.doc.tar.xz
-Source216: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/pdfbook2.tar.xz
-Source217: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/pdfbook2.doc.tar.xz
-Source218: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/pdfcrop.tar.xz
-Source219: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/pdfcrop.doc.tar.xz
-Source220: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/pdfjam.tar.xz
-Source221: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/pdfjam.doc.tar.xz
-Source222: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/pdflatexpicscale.tar.xz
-Source223: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/pdflatexpicscale.doc.tar.xz
-Source224: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/pdftex.tar.xz
-Source225: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/pdftex.doc.tar.xz
-Source226: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/pdftools.tar.xz
-Source227: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/pdftools.doc.tar.xz
-Source228: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/pdfxup.tar.xz
-Source229: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/pdfxup.doc.tar.xz
-Source230: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/pedigree-perl.tar.xz
-Source231: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/pedigree-perl.doc.tar.xz
-Source232: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/perltex.tar.xz
-Source233: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/perltex.doc.tar.xz
-Source234: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/petri-nets.tar.xz
-Source235: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/petri-nets.doc.tar.xz
-Source236: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/pfarrei.tar.xz
-Source237: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/pfarrei.doc.tar.xz
-Source238: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/pkfix.tar.xz
-Source239: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/pkfix.doc.tar.xz
-Source240: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/pkfix-helper.tar.xz
-Source241: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/pkfix-helper.doc.tar.xz
-Source242: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/pmx.tar.xz
-Source243: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/pmx.doc.tar.xz
-Source244: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/pmxchords.tar.xz
-Source245: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/pmxchords.doc.tar.xz
-Source246: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/pstools.tar.xz
-Source247: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/pst2pdf.tar.xz
-Source248: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/pst2pdf.doc.tar.xz
-Source249: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/pst-pdf.tar.xz
-Source250: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/pst-pdf.doc.tar.xz
-Source251: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/ps2pk.tar.xz
-Source252: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/ps2pk.doc.tar.xz
-Source253: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/ptex.tar.xz
-Source254: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/ptex.doc.tar.xz
-Source255: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/ptex-fontmaps.tar.xz
-Source256: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/ptex-fontmaps.doc.tar.xz
-Source257: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/ptex2pdf.tar.xz
-Source258: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/ptex2pdf.doc.tar.xz
-Source259: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/purifyeps.tar.xz
-Source260: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/purifyeps.doc.tar.xz
-Source261: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/pygmentex.tar.xz
-Source262: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/pygmentex.doc.tar.xz
-Source263: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/pythontex.tar.xz
-Source264: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/pythontex.doc.tar.xz
-Source265: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/rubik.tar.xz
-Source266: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/rubik.doc.tar.xz
-Source267: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/seetexk.tar.xz
-Source268: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/seetexk.doc.tar.xz
-Source269: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/splitindex.tar.xz
-Source270: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/splitindex.doc.tar.xz
-Source271: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/srcredact.tar.xz
-Source272: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/srcredact.doc.tar.xz
-Source273: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/sty2dtx.tar.xz
-Source274: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/sty2dtx.doc.tar.xz
-Source275: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/svn-multi.tar.xz
-Source276: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/svn-multi.doc.tar.xz
-Source277: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/synctex.tar.xz
-Source278: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/synctex.doc.tar.xz
-Source279: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/tetex.tar.xz
-Source280: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/tetex.doc.tar.xz
-Source281: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/tex.tar.xz
-Source282: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/tex.doc.tar.xz
-Source283: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/tex4ebook.tar.xz
-Source284: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/tex4ebook.doc.tar.xz
-Source285: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/tex4ht.tar.xz
-Source286: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/tex4ht.doc.tar.xz
-Source287: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/texconfig.tar.xz
-Source288: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/texconfig.doc.tar.xz
-Source289: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/texcount.tar.xz
-Source290: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/texcount.doc.tar.xz
-Source291: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/texdef.tar.xz
-Source292: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/texdef.doc.tar.xz
-Source293: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/texdiff.tar.xz
-Source294: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/texdiff.doc.tar.xz
-Source295: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/texdirflatten.tar.xz
-Source296: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/texdirflatten.doc.tar.xz
-Source297: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/texdoc.tar.xz
-Source298: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/texdoc.doc.tar.xz
-Source299: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/texfot.tar.xz
-Source300: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/texfot.doc.tar.xz
-Source301: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/texlive.infra.tar.xz
-Source302: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/texlive.infra.doc.tar.xz
-Source303: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/texliveonfly.tar.xz
-Source304: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/texliveonfly.doc.tar.xz
-Source305: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/texlive-scripts.tar.xz
-Source306: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/texlive-scripts.doc.tar.xz
-Source307: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/texloganalyser.tar.xz
-Source308: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/texloganalyser.doc.tar.xz
-Source309: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/texosquery.tar.xz
-Source310: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/texosquery.doc.tar.xz
-Source311: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/texsis.tar.xz
-Source312: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/texsis.doc.tar.xz
-Source313: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/texware.tar.xz
-Source314: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/texware.doc.tar.xz
-Source315: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/thumbpdf.tar.xz
-Source316: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/thumbpdf.doc.tar.xz
-Source317: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/tie.tar.xz
-Source318: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/tie.doc.tar.xz
-Source319: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/tpic2pdftex.tar.xz
-Source320: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/tpic2pdftex.doc.tar.xz
-Source321: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/ttfutils.tar.xz
-Source322: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/ttfutils.doc.tar.xz
-Source323: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/typeoutfileinfo.tar.xz
-Source324: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/typeoutfileinfo.doc.tar.xz
-Source325: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/ulqda.tar.xz
-Source326: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/ulqda.doc.tar.xz
-Source327: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/uplatex.doc.tar.xz
-Source328: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/uptex.doc.tar.xz
-Source329: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/urlbst.tar.xz
-Source330: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/urlbst.doc.tar.xz
-Source331: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/velthuis.tar.xz
-Source332: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/velthuis.doc.tar.xz
-Source333: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/vlna.doc.tar.xz
-Source334: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/vpe.tar.xz
-Source335: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/vpe.doc.tar.xz
-Source336: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/web.tar.xz
-Source337: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/web.doc.tar.xz
-Source338: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/xdvi.tar.xz
-Source339: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/xdvi.doc.tar.xz
-Source340: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/xetex.tar.xz
-Source341: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/xetex.doc.tar.xz
-Source342: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/xindy.tar.xz
-Source343: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/xindy.doc.tar.xz
-Source344: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/xmltex.tar.xz
-Source345: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/xmltex.doc.tar.xz
-Source346: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/yplan.tar.xz
-Source347: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/yplan.doc.tar.xz
+Source16: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/a2ping.doc.tar.xz
+Source17: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/a2ping.tar.xz
+Source18: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/accfonts.doc.tar.xz
+Source19: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/accfonts.tar.xz
+Source20: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/adhocfilelist.doc.tar.xz
+Source21: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/adhocfilelist.tar.xz
+Source22: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/afm2pl.tar.xz
+Source23: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/aleph.doc.tar.xz
+Source24: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/aleph.tar.xz
+Source25: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/amstex.doc.tar.xz
+Source26: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/amstex.tar.xz
+Source27: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/arara.doc.tar.xz
+Source28: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/arara.tar.xz
+Source29: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/authorindex.doc.tar.xz
+Source30: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/authorindex.tar.xz
+Source31: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/autosp.doc.tar.xz
+Source32: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/bib2gls.doc.tar.xz
+Source33: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/bib2gls.tar.xz
+Source34: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/bibexport.doc.tar.xz
+Source35: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/bibexport.tar.xz
+Source36: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/bibtex8.doc.tar.xz
+Source37: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/bibtex8.tar.xz
+Source38: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/bibtex.doc.tar.xz
+Source39: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/bibtex.tar.xz
+Source40: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/bibtexu.doc.tar.xz
+Source41: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/bundledoc.doc.tar.xz
+Source42: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/bundledoc.tar.xz
+Source43: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/cachepic.doc.tar.xz
+Source44: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/cachepic.tar.xz
+Source45: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/checkcites.doc.tar.xz
+Source46: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/checkcites.tar.xz
+Source47: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/checklistings.doc.tar.xz
+Source48: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/checklistings.tar.xz
+Source49: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/chktex.doc.tar.xz
+Source50: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/chktex.tar.xz
+Source51: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/cjk-gs-integrate.doc.tar.xz
+Source52: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/cjk-gs-integrate.tar.xz
+Source53: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/cjkutils.tar.xz
+Source54: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/context.doc.tar.xz
+Source55: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/context.tar.xz
+Source56: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/convbkmk.doc.tar.xz
+Source57: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/convbkmk.tar.xz
+Source58: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/crossrefware.doc.tar.xz
+Source59: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/crossrefware.tar.xz
+Source60: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/cslatex.tar.xz
+Source61: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/csplain.tar.xz
+Source62: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/ctanify.doc.tar.xz
+Source63: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/ctanify.tar.xz
+Source64: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/ctan-o-mat.doc.tar.xz
+Source65: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/ctan-o-mat.tar.xz
+Source66: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/ctanupload.doc.tar.xz
+Source67: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/ctanupload.tar.xz
+Source68: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/ctie.doc.tar.xz
+Source69: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/cweb.doc.tar.xz
+Source70: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/cweb.tar.xz
+Source71: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/cyrillic-bin.doc.tar.xz
+Source72: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/cyrillic-bin.tar.xz
+Source73: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/de-macro.doc.tar.xz
+Source74: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/de-macro.tar.xz
+Source75: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/detex.doc.tar.xz
+Source76: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/detex.tar.xz
+Source77: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/diadia.doc.tar.xz
+Source78: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/diadia.tar.xz
+Source79: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/dosepsbin.doc.tar.xz
+Source80: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/dosepsbin.tar.xz
+Source81: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/dtl.doc.tar.xz
+Source82: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/dtl.tar.xz
+Source83: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/dtxgen.doc.tar.xz
+Source84: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/dtxgen.tar.xz
+Source85: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/dvi2tty.doc.tar.xz
+Source86: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/dvi2tty.tar.xz
+Source87: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/dviasm.doc.tar.xz
+Source88: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/dviasm.tar.xz
+Source89: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/dvicopy.doc.tar.xz
+Source90: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/dvicopy.tar.xz
+Source91: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/dvidvi.doc.tar.xz
+Source92: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/dvidvi.tar.xz
+Source93: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/dviinfox.doc.tar.xz
+Source94: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/dviinfox.tar.xz
+Source95: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/dviljk.doc.tar.xz
+Source96: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/dviljk.tar.xz
+Source97: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/dvipdfmx.doc.tar.xz
+Source98: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/dvipdfmx.tar.xz
+Source99: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/dvipng.doc.tar.xz
+Source100: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/dvipng.tar.xz
+Source101: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/dvipos.doc.tar.xz
+Source102: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/dvipos.tar.xz
+Source103: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/dvips.doc.tar.xz
+Source104: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/dvips.tar.xz
+Source105: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/dvisvgm.doc.tar.xz
+Source106: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/dvisvgm.tar.xz
+Source107: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/ebong.doc.tar.xz
+Source108: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/ebong.tar.xz
+Source109: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/eplain.doc.tar.xz
+Source110: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/eplain.tar.xz
+Source111: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/epspdf.doc.tar.xz
+Source112: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/epspdf.tar.xz
+Source113: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/epstopdf.doc.tar.xz
+Source114: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/epstopdf.tar.xz
+Source115: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/exceltex.doc.tar.xz
+Source116: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/exceltex.tar.xz
+Source117: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/fig4latex.doc.tar.xz
+Source118: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/fig4latex.tar.xz
+Source119: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/findhyph.doc.tar.xz
+Source120: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/findhyph.tar.xz
+Source121: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/fontinst.doc.tar.xz
+Source122: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/fontinst.tar.xz
+Source123: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/fontools.doc.tar.xz
+Source124: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/fontools.tar.xz
+Source125: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/fontware.doc.tar.xz
+Source126: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/fragmaster.doc.tar.xz
+Source127: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/fragmaster.tar.xz
+Source128: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/getmap.doc.tar.xz
+Source129: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/getmap.tar.xz
+Source130: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/glossaries.doc.tar.xz
+Source131: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/glossaries.tar.xz
+Source132: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/gregoriotex.doc.tar.xz
+Source133: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/gregoriotex.tar.xz
+Source134: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/gsftopk.doc.tar.xz
+Source135: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/gsftopk.tar.xz
+Source136: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/installfont.doc.tar.xz
+Source137: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/installfont.tar.xz
+Source138: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/jadetex.doc.tar.xz
+Source139: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/jadetex.tar.xz
+Source140: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/jfmutil.doc.tar.xz
+Source141: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/jfmutil.tar.xz
+Source142: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/kotex-utils.doc.tar.xz
+Source143: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/kotex-utils.tar.xz
+Source144: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/kpathsea.doc.tar.xz
+Source145: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/kpathsea.tar.xz
+Source146: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/lacheck.doc.tar.xz
+Source147: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/latex2man.doc.tar.xz
+Source148: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/latex2man.tar.xz
+Source149: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/latex2nemeth.doc.tar.xz
+Source150: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/latex2nemeth.tar.xz
+Source151: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/latexdiff.doc.tar.xz
+Source152: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/latexdiff.tar.xz
+Source153: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/latexfileversion.doc.tar.xz
+Source154: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/latexfileversion.tar.xz
+Source155: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/latex-git-log.doc.tar.xz
+Source156: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/latex-git-log.tar.xz
+Source157: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/latexindent.doc.tar.xz
+Source158: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/latexindent.tar.xz
+Source159: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/latexpand.doc.tar.xz
+Source160: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/latexpand.tar.xz
+Source161: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/latex-papersize.doc.tar.xz
+Source162: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/latex-papersize.tar.xz
+Source163: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/lcdftypetools.doc.tar.xz
+Source164: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/lilyglyphs.doc.tar.xz
+Source165: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/lilyglyphs.tar.xz
+Source166: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/listbib.doc.tar.xz
+Source167: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/listbib.tar.xz
+Source168: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/listings-ext.doc.tar.xz
+Source169: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/listings-ext.tar.xz
+Source170: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/lollipop.doc.tar.xz
+Source171: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/lollipop.tar.xz
+Source172: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/ltxfileinfo.doc.tar.xz
+Source173: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/ltxfileinfo.tar.xz
+Source174: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/ltximg.doc.tar.xz
+Source175: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/ltximg.tar.xz
+Source176: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/lua2dox.doc.tar.xz
+Source177: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/lua2dox.tar.xz
+Source178: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/luaotfload.doc.tar.xz
+Source179: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/luaotfload.tar.xz
+Source180: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/luatex.doc.tar.xz
+Source181: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/luatex.tar.xz
+Source182: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/lwarp.doc.tar.xz
+Source183: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/lwarp.tar.xz
+Source184: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/make4ht.doc.tar.xz
+Source185: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/make4ht.tar.xz
+Source186: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/makedtx.doc.tar.xz
+Source187: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/makedtx.tar.xz
+Source188: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/makeindex.doc.tar.xz
+Source189: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/makeindex.tar.xz
+Source190: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/match_parens.doc.tar.xz
+Source191: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/match_parens.tar.xz
+Source192: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/mathspic.doc.tar.xz
+Source193: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/mathspic.tar.xz
+Source194: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/metafont.doc.tar.xz
+Source195: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/metafont.tar.xz
+Source196: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/metapost.doc.tar.xz
+Source197: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/metapost.tar.xz
+Source198: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/mex.doc.tar.xz
+Source199: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/mex.tar.xz
+Source200: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/mf2pt1.doc.tar.xz
+Source201: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/mf2pt1.tar.xz
+Source202: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/mflua.tar.xz
+Source203: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/mfware.doc.tar.xz
+Source204: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/mfware.tar.xz
+Source205: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/mkgrkindex.doc.tar.xz
+Source206: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/mkgrkindex.tar.xz
+Source207: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/mkjobtexmf.doc.tar.xz
+Source208: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/mkjobtexmf.tar.xz
+Source209: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/mkpic.doc.tar.xz
+Source210: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/mkpic.tar.xz
+Source211: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/mltex.doc.tar.xz
+Source212: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/mltex.tar.xz
+Source213: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/mptopdf.doc.tar.xz
+Source214: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/mptopdf.tar.xz
+Source215: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/m-tx.doc.tar.xz
+Source216: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/m-tx.tar.xz
+Source217: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/multibibliography.doc.tar.xz
+Source218: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/multibibliography.tar.xz
+Source219: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/musixtex.doc.tar.xz
+Source220: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/musixtex.tar.xz
+Source221: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/musixtnt.doc.tar.xz
+Source222: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/musixtnt.tar.xz
+Source223: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/omegaware.doc.tar.xz
+Source224: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/patgen.doc.tar.xz
+Source225: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/patgen.tar.xz
+Source226: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/pax.doc.tar.xz
+Source227: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/pax.tar.xz
+Source228: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/pdfbook2.doc.tar.xz
+Source229: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/pdfbook2.tar.xz
+Source230: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/pdfcrop.doc.tar.xz
+Source231: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/pdfcrop.tar.xz
+Source232: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/pdfjam.doc.tar.xz
+Source233: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/pdfjam.tar.xz
+Source234: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/pdflatexpicscale.doc.tar.xz
+Source235: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/pdflatexpicscale.tar.xz
+Source236: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/pdftex.doc.tar.xz
+Source237: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/pdftex.tar.xz
+Source238: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/pdftools.doc.tar.xz
+Source239: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/pdftools.tar.xz
+Source240: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/pdfxup.doc.tar.xz
+Source241: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/pdfxup.tar.xz
+Source242: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/pedigree-perl.doc.tar.xz
+Source243: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/pedigree-perl.tar.xz
+Source244: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/perltex.doc.tar.xz
+Source245: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/perltex.tar.xz
+Source246: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/petri-nets.doc.tar.xz
+Source247: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/petri-nets.tar.xz
+Source248: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/pfarrei.doc.tar.xz
+Source249: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/pfarrei.tar.xz
+Source250: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/pkfix.doc.tar.xz
+Source251: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/pkfix-helper.doc.tar.xz
+Source252: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/pkfix-helper.tar.xz
+Source253: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/pkfix.tar.xz
+Source254: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/pmxchords.doc.tar.xz
+Source255: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/pmxchords.tar.xz
+Source256: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/pmx.doc.tar.xz
+Source257: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/pmx.tar.xz
+Source258: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/ps2pk.doc.tar.xz
+Source259: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/ps2pk.tar.xz
+Source260: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/pst2pdf.doc.tar.xz
+Source261: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/pst2pdf.tar.xz
+Source262: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/pstools.tar.xz
+Source263: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/pst-pdf.doc.tar.xz
+Source264: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/pst-pdf.tar.xz
+Source265: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/ptex2pdf.doc.tar.xz
+Source266: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/ptex2pdf.tar.xz
+Source267: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/ptex.doc.tar.xz
+Source268: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/ptex-fontmaps.doc.tar.xz
+Source269: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/ptex-fontmaps.tar.xz
+Source270: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/ptex.tar.xz
+Source271: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/purifyeps.doc.tar.xz
+Source272: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/purifyeps.tar.xz
+Source273: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/pygmentex.doc.tar.xz
+Source274: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/pygmentex.tar.xz
+Source275: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/pythontex.doc.tar.xz
+Source276: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/pythontex.tar.xz
+Source277: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/rubik.doc.tar.xz
+Source278: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/rubik.tar.xz
+Source279: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/seetexk.doc.tar.xz
+Source280: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/seetexk.tar.xz
+Source281: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/splitindex.doc.tar.xz
+Source282: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/splitindex.tar.xz
+Source283: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/srcredact.doc.tar.xz
+Source284: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/srcredact.tar.xz
+Source285: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/sty2dtx.doc.tar.xz
+Source286: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/sty2dtx.tar.xz
+Source287: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/svn-multi.doc.tar.xz
+Source288: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/svn-multi.tar.xz
+Source289: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/synctex.doc.tar.xz
+Source290: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/synctex.tar.xz
+Source291: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/tetex.doc.tar.xz
+Source292: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/tetex.tar.xz
+Source293: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/tex4ebook.doc.tar.xz
+Source294: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/tex4ebook.tar.xz
+Source295: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/tex4ht.doc.tar.xz
+Source296: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/tex4ht.tar.xz
+Source297: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/texcount.doc.tar.xz
+Source298: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/texcount.tar.xz
+Source299: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/texdef.doc.tar.xz
+Source300: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/texdef.tar.xz
+Source301: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/texdiff.doc.tar.xz
+Source302: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/texdiff.tar.xz
+Source303: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/texdirflatten.doc.tar.xz
+Source304: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/texdirflatten.tar.xz
+Source305: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/texdoc.doc.tar.xz
+Source306: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/tex.doc.tar.xz
+Source307: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/texdoc.tar.xz
+Source308: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/texfot.doc.tar.xz
+Source309: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/texfot.tar.xz
+Source310: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/texlive.infra.doc.tar.xz
+Source311: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/texlive.infra.tar.xz
+Source312: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/texliveonfly.doc.tar.xz
+Source313: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/texliveonfly.tar.xz
+Source314: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/texlive-scripts.doc.tar.xz
+Source315: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/texlive-scripts.tar.xz
+Source316: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/texloganalyser.doc.tar.xz
+Source317: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/texloganalyser.tar.xz
+Source318: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/texosquery.doc.tar.xz
+Source319: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/texosquery.tar.xz
+Source320: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/texsis.doc.tar.xz
+Source321: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/texsis.tar.xz
+Source322: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/tex.tar.xz
+Source323: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/texware.doc.tar.xz
+Source324: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/texware.tar.xz
+Source325: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/thumbpdf.doc.tar.xz
+Source326: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/thumbpdf.tar.xz
+Source327: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/tie.doc.tar.xz
+Source328: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/tie.tar.xz
+Source329: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/tpic2pdftex.doc.tar.xz
+Source330: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/tpic2pdftex.tar.xz
+Source331: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/ttfutils.doc.tar.xz
+Source332: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/ttfutils.tar.xz
+Source333: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/typeoutfileinfo.doc.tar.xz
+Source334: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/typeoutfileinfo.tar.xz
+Source335: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/ulqda.doc.tar.xz
+Source336: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/ulqda.tar.xz
+Source337: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/uplatex.doc.tar.xz
+Source338: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/uptex.doc.tar.xz
+Source339: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/urlbst.doc.tar.xz
+Source340: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/urlbst.tar.xz
+Source341: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/velthuis.doc.tar.xz
+Source342: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/velthuis.tar.xz
+Source343: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/vlna.doc.tar.xz
+Source344: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/vpe.doc.tar.xz
+Source345: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/vpe.tar.xz
+Source346: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/web.doc.tar.xz
+Source347: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/web.tar.xz
+Source348: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/wordcount.doc.tar.xz
+Source349: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/wordcount.tar.xz
+Source350: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/xdvi.doc.tar.xz
+Source351: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/xdvi.tar.xz
+Source352: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/xetex.doc.tar.xz
+Source353: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/xetex.tar.xz
+Source354: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/xindy.doc.tar.xz
+Source355: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/xindy.tar.xz
+Source356: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/xmltex.doc.tar.xz
+Source357: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/xmltex.tar.xz
+Source358: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/yplan.doc.tar.xz
+Source359: http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/archive/yplan.tar.xz
 Patch1: tl-kpfix.patch
 Patch2: tl-format.patch
-Patch3: texlive-20160520-selinux-context.patch
+Patch3: texlive-20180414-selinux-context.patch
 Patch5: texlive-2016-kpathsea-texlive-path.patch
-Patch6: texlive-20170520-luatex-crashfix.patch
 # fixes from arch and upstream texlive
-Patch7: texlive-20170520-new-poppler.patch
+Patch7: texlive-20180414-new-poppler.patch
 # fix texmf.cnf so that it finds texinfo bits in Fedora
-Patch8: texlive-20170520-texinfo-path-fix.patch
-# Update lcdf-typetools to latest git (as of Feb 23, 2018)
-Patch9: texlive-base-lcdf-typetools-git4166ff9.patch
-# Fix perl 5.18 issue in xindy
-Patch10: texlive-base-xindy-perl-518.patch
+Patch8: texlive-20180414-texinfo-path-fix.patch
 # These tests only fail on 32 bit arches with gcc8
 Patch11: texlive-20180215-disable-more-failing-tests.patch
-# Fix a2ping to work with Ghostscript 9.22+
-Patch12: texlive-base-fix-a2ping-with-gs-9.22.patch
 
-# security fix for bz#979176
-Patch100: texlive-bz979176.patch
 # Can't do this because it causes everything else to be noarch
 # BuildArch: noarch
 BuildRequires: gcc gcc-c++
@@ -669,6 +672,54 @@ measure can be entered one part at a time, without concern for
 note-spacing changes within the part or spacing requirements of
 other parts. For example, \anotes\qa J\qa K&\ca l\qa m\ca n\en
 generates \Notes\qa J\sk\qa K\sk&\ca l\qa m\sk\ca n\en .
+
+%package -n %{shortname}-axodraw2
+Provides: tex-axodraw2 = %{epoch}:%{source_date}-%{release}
+Provides: texlive-axodraw2-bin = %{epoch}:%{source_date}-%{release}
+License: GPLv3
+Summary: Feynman diagrams in a LaTeX document
+Requires: texlive-base
+Requires: texlive-kpathsea
+Provides: tex(axodraw2.sty) = %{epoch}:%{source_date}-%{release}
+
+%description -n %{shortname}-axodraw2
+This package defines macros for drawing Feynman graphs in LaTeX
+documents. It is an important update of the axodraw package,
+but since it is not completely backwards compatible, we have
+given the style file a changed name. Many new features have
+been added, with new types of line, and much more flexibility
+in their properties. In addition, it is now possible to use
+axodraw2 with pdfLaTeX, as well as with the LaTeX-dvips method.
+However with pdfLaTeX (and also LuaLaTeX and XeLaTeX), an
+external program, axohelp, is used to perform the geometrical
+calculations needed for the pdf code inserted in the output
+file. The processing involves a run of pdfLaTeX, a run of
+axohelp, and then another run of pdfLaTeX.
+
+%package -n %{shortname}-bib2gls
+Provides: tex-bib2gls = %{epoch}:%{source_date}-%{release}
+Provides: texlive-bib2gls-bin = %{epoch}:%{source_date}-%{release}
+License: GPLv3+
+Summary: Convert .bib files to glossaries-extra.sty resource files
+Requires: texlive-base
+# Java and shell
+BuildArch: noarch
+
+%description -n %{shortname}-bib2gls
+This Java command line application may be used to extract
+glossary information stored in a .bib file and convert it into
+glossary entry definition commands. This application should be
+used with glossaries-extra.sty's 'record' package option. It
+performs two functions in one: selects entries according to
+records found in the .aux file (similar to bibtex),
+hierarchically sorts entries and collates location lists
+(similar to makeindex or xindy). The glossary entries can then
+be managed in a system such as JabRef, and only the entries
+that are actually required will be defined, reducing the
+resources required by TeX. The supplementary application
+convertgls2bib can be used to convert existing .tex files
+containing definitions (\newglossaryentry etc.) to the .bib
+format required by bib2gls.
 
 %package -n %{shortname}-bibexport
 Provides: tex-bibexport = %{epoch}:%{source_date}-%{release}
@@ -1321,6 +1372,32 @@ bibliography, index, toc, tables,etc.) by Plain TeX macros. The
 OPmac macros can generate and bibliography without any external
 program.
 
+%package -n %{shortname}-ctan-o-mat
+Provides: tex-ctan-o-mat = %{epoch}:%{source_date}-%{release}
+Provides: texlive-ctan-o-mat-bin = %{epoch}:%{source_date}-%{release}
+License: BSD
+Summary: Upload or validate a package for CTAN
+Requires: texlive-base
+Requires: texlive-kpathsea
+Requires: perl-interpreter
+#perl
+BuildArch: noarch
+
+%description -n %{shortname}-ctan-o-mat
+This program can be used to automate the upload of a package to
+CTAN. The description of the package is contained in a
+configuration file. The provided information is validated in
+any case. If the validation succeeds and not only the
+validation is requested, then the provided archive file will be
+placed in the incoming area of the CTAN for further processing
+by the CTAN team. In any case any finding during the validation
+is reported at the end of the processing. Note that the
+validation is the default and an official submission has to be
+requested by an appropriate command line option. ctan-o-mat
+requires an Internet connection to the CTAN server. Even the
+validation retrieves the known attributes and the basic
+constraints from the server.
+
 %package -n %{shortname}-ctanify
 Provides: tex-ctanify = %{epoch}:%{source_date}-%{release}
 Provides: texlive-ctanify-bin = %{epoch}:%{source_date}-%{release}
@@ -1744,6 +1821,21 @@ Requires: texlive-kpathsea
 The output DVI file's contents are specified by page selection
 commands; series of pages and page number ranges may be
 specified, as well as inclusions and exclusions.
+
+%package -n %{shortname}-dviinfox
+Provides: tex-dviinfox = %{epoch}:%{source_date}-%{release}
+Provides: texlive-dviinfox-bin = %{epoch}:%{source_date}-%{release}
+License: MIT
+Summary: Perl script to print DVI meta information
+# perl
+BuildArch: noarch
+Requires: texlive-base
+Requires: texlive-kpathsea
+Requires: perl-interpreter
+
+%description -n %{shortname}-dviinfox
+The package provides a perl script which prints information
+about a DVI file. It also supports XeTeX XDV format.
 
 %package -n %{shortname}-dviljk
 Provides: tex-dviljk = %{epoch}:%{source_date}-%{release}
@@ -2414,6 +2506,27 @@ BuildArch: noarch
 Macro package on top of LaTeX to typeset TeX output of the Jade
 DSSSL implementation.
 
+%package -n %{shortname}-jfmutil
+Provides: tex-jfmutil = %{epoch}:%{source_date}-%{release}
+Provides: texlive-jfmutil-bin = %{epoch}:%{source_date}-%{release}
+License: MIT
+Summary: Utility to process pTeX-extended TFM and VF
+# perl
+BuildArch: noarch
+Requires: texlive-base
+Requires: texlive-kpathsea
+
+%description -n %{shortname}-jfmutil
+This program provides functionality to process data files (JFM
+and VF) that form logical fonts used in (u)pTeX. The functions
+currently available include: The mutual conversion between
+Japanese virtual fonts (pairs of VF and JFM) and files in the
+"ZVP format", which is an original text format representing
+data in virtual fonts. This function can be seen as a
+counterpart to the vftovp/vptovf programs. The mutual
+conversion between VF files alone and files in the "ZVP0
+format", which is a subset of the ZVP format.
+
 %package -n %{shortname}-kotex-utils
 Provides: tex-kotex-utils = %{epoch}:%{source_date}-%{release}
 Provides: texlive-kotex-utils-bin = %{epoch}:%{source_date}-%{release}
@@ -2457,6 +2570,27 @@ Kpathsea is a library and utility programs which provide path
 searching facilities for TeX file types, including the self-
 locating feature required for movable installations, layered on
 top of a general search mechanism.
+
+%package -n %{shortname}-l3build
+Provides: tex-l3build = %{epoch}:%{source_date}-%{release}
+Provides: texlive-l3build-bin = %{epoch}:%{source_date}-%{release}
+Provides: texlive-l3build-doc = %{epoch}:%{source_date}-%{release}
+Obsoletes: texlive-l3build-doc < 7:20180414
+License: LPPL
+Summary: A testing and building system for (La)TeX
+Provides: tex(regression-test.tex) = %{epoch}:%{source_date}-%{release}
+Requires: texlive-base
+Requires: texlive-kpathsea
+# lua
+BuildArch: noarch
+
+%description -n %{shortname}-l3build
+The build system supports testing and building LaTeX3 code, on
+Linux, Mac OS X and Windows systems. The package offers: A unit
+testing system for (La)TeX code (whether kernel code or
+contributed packages); A system for typesetting package
+documentation; and An automated process for creating CTAN
+releases.
 
 %package -n %{shortname}-lacheck
 Provides: tex-lacheck = %{epoch}:%{source_date}-%{release}
@@ -5885,6 +6019,28 @@ rearrange them to produce compilable code (using the program
 tangle), and secondly to produce a TeX source (using the
 program weave) that may be typeset for comfortable reading.
 
+%package -n %{shortname}-wordcount
+Provides: tex-wordcount = %{epoch}:%{source_date}-%{release}
+Provides: texlive-wordcount-bin = %{epoch}:%{source_date}-%{release}
+Provides: texlive-wordcount-doc = %{epoch}:%{source_date}-%{release}
+Obsoletes: texlive-wordcount-doc < 7:20180414
+Provides: tex(wordcount.tex) = %{epoch}:%{source_date}-%{release}
+License: LPPL
+Summary: Estimate the number of words in a LaTeX document
+Requires: texlive-base
+Requires: texlive-kpathsea
+# shell
+BuildArch: noarch
+
+%description -n %{shortname}-wordcount
+The package provides a relatively easy way of estimating the
+number of words in a LaTeX document that does not require
+dvitty or other DVI converters. It does however require
+something like Unix grep -c that can search a file for a
+particular string and report the number of matching lines. An
+accompanying shell script wordcount.sh contains more
+information in its comments.
+
 %package -n %{shortname}-xdvi
 License: MIT
 Summary: A DVI previewer for the X Window System
@@ -6020,28 +6176,23 @@ LaTeX file remains on the archive.)
 xz -dc %{SOURCE0} | tar x
 [ -e %{source_name} ] && mv %{source_name} source
 %patch1 -p0
-%patch2 -p0
-%patch3 -p0
+%patch2 -p1 -b .format
+%patch3 -p1 -b .selinux
 %patch5 -p0
-%patch6 -p1 -b .crashfix
 %if 0%{?fedora} >= 28
 %patch7 -p1 -b .newpoppler
 %endif
 %patch8 -p1 -b .texinfo-fix
-%patch9 -p1 -b .git4166ff9
-%patch10 -p1 -b .perl518
 %patch11 -p0 -b .dt
-%patch12 -p1 -b .gs922
-%patch100 -p0
 # Setup copies of the licenses
 for l in `unxz -c %{SOURCE3} | tar t`; do
 ln -s %{_texdir}/licenses/$l $l
 done
 
-# Value here is "13" not "12" because we have a source0 at index 1.
-# Source12 at index 13 is our first "normal" noarch source file.
+# Value here is "17" not "16" because we have a source0 at index 1.
+# Source16 at index 17 is our first "normal" noarch source file.
 # Also, this macro has to be here, not at the top, or it will not evaluate properly. :P
-%global mysources %{lua: for index,value in ipairs(sources) do if index >= 13 then print(value.." ") end end}
+%global mysources %{lua: for index,value in ipairs(sources) do if index >= 17 then print(value.." ") end end}
 
 %build
 export CFLAGS="$RPM_OPT_FLAGS -fno-strict-aliasing -Werror=format-security"
@@ -6160,6 +6311,10 @@ xz -dc %{SOURCE8} | tar x
 xz -dc %{SOURCE9} | tar x
 xz -dc %{SOURCE10} | tar x
 xz -dc %{SOURCE11} | tar x
+xz -dc %{SOURCE12} | tar x
+xz -dc %{SOURCE13} | tar x
+xz -dc %{SOURCE14} | tar x
+xz -dc %{SOURCE15} | tar x
 popd
 
 # We want the texmf.cnf we patched, not the vanilla one from the kpathsea.tar.xz
@@ -6209,6 +6364,8 @@ rm -f %{buildroot}%{_texdir}/texmf-dist/doc/man/man1/tlmgr.1
 rm -f %{buildroot}%{_texdir}/texmf-dist/scripts/texlive/tlmgr.pl
 rm -f %{buildroot}%{_texdir}/texmf-dist/scripts/texlive/tlmgrgui.pl
 rm -f %{buildroot}%{_texdir}/texmf-dist/scripts/texlive/uninstall-win32.pl
+rm -f %{buildroot}%{_texdir}/texmf-dist/scripts/tlcockpit/tlcockpit.sh
+rm -f %{buildroot}%{_texdir}/texmf-dist/scripts/tlshell/tlshell.tcl
 rm -f %{buildroot}%{_texdir}/tlpkg/installer/config.guess
 rm -f %{buildroot}%{_texdir}/tlpkg/installer/COPYING.MinGW-runtime.txt
 rm -f %{buildroot}%{_texdir}/tlpkg/installer/ctan-mirrors.pl
@@ -6216,7 +6373,9 @@ rm -f %{buildroot}%{_texdir}/tlpkg/installer/install-menu-perltk.pl
 rm -f %{buildroot}%{_texdir}/tlpkg/installer/install-menu-text.pl
 rm -f %{buildroot}%{_texdir}/tlpkg/installer/install-menu-wizard.pl
 rm -f %{buildroot}%{_texdir}/tlpkg/installer/texlive.png
+rm -f %{buildroot}%{_bindir}/tlcockpit
 rm -f %{buildroot}%{_bindir}/tlmgr
+rm -f %{buildroot}%{_bindir}/tlshell
 rm -rf %{buildroot}%{_datadir}/info/dir
 rm -rf %{buildroot}%{_texdir}/readme-txt.dir/README.*
 rm -rf %{buildroot}%{_texdir}/texmf-dist/doc/man/man*/*.pdf
@@ -6297,6 +6456,11 @@ rm -rf %{buildroot}%{_texdir}/texmf-dist/doc/xindy
 rm -rf %{buildroot}%{_bindir}/cjk-gs-integrate
 rm -rf %{buildroot}%{_texdir}/texmf-dist/scripts/cjk-gs-integrate
 rm -rf %{buildroot}%{_texdir}/texmf-dist/doc/fonts/cjk-gs-integrate
+
+# Fix synctex.pc file
+sed -i 's|%{buildroot}/source/inst|/usr|g' %{buildroot}%{_libdir}/pkgconfig/synctex.pc
+sed -i 's|/usr/lib|%{_libdir}|g' %{buildroot}%{_libdir}/pkgconfig/synctex.pc
+
 
 # SCRIPTLETS
 
@@ -6828,8 +6992,24 @@ done <<< "$list"
 %files -n %{shortname}-autosp
 %license gpl2.txt
 %{_bindir}/autosp
+%{_bindir}/tex2aspc
 %{_mandir}/man1/autosp.1*
+%{_mandir}/man1/tex2aspc.1*
 %doc %{_texdir}/texmf-dist/doc/generic/autosp/
+
+%files -n %{shortname}-axodraw2
+%license gpl3.txt
+%{_bindir}/axohelp
+%{_mandir}/man1/axohelp.1*
+%{_texdir}/texmf-dist/tex/latex/axodraw2/
+%doc %{_texdir}/texmf-dist/doc/latex/axodraw2/
+
+%files -n %{shortname}-bib2gls
+%license gpl3.txt
+%{_bindir}/bib2gls
+%{_bindir}/convertgls2bib
+%{_texdir}/texmf-dist/scripts/bib2gls/
+%doc %{_texdir}/texmf-dist/doc/support/bib2gls/
 
 %files -n %{shortname}-bibexport
 %license lppl1.3.txt
@@ -7049,6 +7229,7 @@ done <<< "$list"
 %{_bindir}/bbl2bib
 %{_bindir}/bibdoiadd
 %{_bindir}/bibmradd
+%{_bindir}/biburl2doi
 %{_bindir}/bibzbladd
 %{_bindir}/ltx2crossrefxml
 %{_mandir}/man1/bbl2bib.1*
@@ -7070,6 +7251,13 @@ done <<< "$list"
 %{_bindir}/csplain
 %{_bindir}/pdfcsplain
 %{_texdir}/texmf-dist/tex/csplain/
+
+%files -n %{shortname}-ctan-o-mat
+%license bsd.txt
+%{_bindir}/ctan-o-mat
+%{_mandir}/man1/ctan-o-mat.1*
+%{_texdir}/texmf-dist/scripts/ctan-o-mat/
+%doc %{_texdir}/texmf-dist/doc/support/ctan-o-mat/
 
 %files -n %{shortname}-ctanify
 %license lppl1.3.txt
@@ -7167,6 +7355,11 @@ done <<< "$list"
 %{_bindir}/dvidvi
 %{_mandir}/man1/dvidvi.1*
 
+%files -n %{shortname}-dviinfox
+%{_bindir}/dviinfox
+%{_texdir}/texmf-dist/scripts/dviinfox/
+%doc %{_texdir}/texmf-dist/doc/latex/dviinfox/
+
 %files -n %{shortname}-dviljk
 %license gpl.txt
 %{_bindir}/dvihp
@@ -7244,7 +7437,6 @@ done <<< "$list"
 %{_texdir}/texmf-dist/dvips/config/config.qms
 %{_texdir}/texmf-dist/dvips/config/config.toshiba
 %{_texdir}/texmf-dist/dvips/config/config.unms
-%{_texdir}/texmf-dist/dvips/config/config.xdvi
 %{_texdir}/texmf-dist/dvips/config/config.xyp
 %{_texdir}/texmf-dist/dvips/config/cx.cfg
 %{_texdir}/texmf-dist/dvips/config/deskjet.cfg
@@ -7364,6 +7556,8 @@ done <<< "$list"
 %license lppl1.3.txt
 %{_bindir}/makeglossaries
 %{_bindir}/makeglossaries-lite
+%{_mandir}/man1/makeglossaries.1*
+%{_mandir}/man1/makeglossaries-lite.1*
 %{_texdir}/texmf-dist/scripts/glossaries/
 %{_texdir}/texmf-dist/tex/latex/glossaries/
 %doc %{_texdir}/texmf-dist/doc/latex/glossaries/
@@ -7400,6 +7594,11 @@ done <<< "$list"
 %{_mandir}/man1/pdfjadetex.1*
 %{_texdir}/texmf-dist/tex/jadetex/
 %doc %{_texdir}/texmf-dist/doc/otherformats/jadetex/
+
+%files -n %{shortname}-jfmutil
+%{_bindir}/jfmutil
+%{_texdir}/texmf-dist/scripts/jfmutil/
+%doc %{_texdir}/texmf-dist/doc/fonts/jfmutil/
 
 %files -n %{shortname}-kotex-utils
 %license lppl1.txt
@@ -7474,6 +7673,13 @@ done <<< "$list"
 %{_texdir}/texmf-dist/web2c/viscii-t5.tcx
 %doc %{_texdir}/texmf-dist/doc/kpathsea/
 %doc %{_texdir}/texmf-dist/doc/web2c/
+
+%files -n %{shortname}-l3build
+%license lppl1.3.txt
+%{_bindir}/l3build
+%{_texdir}/texmf-dist/scripts/l3build/
+%{_texdir}/texmf-dist/tex/latex/l3build/
+%doc %{_texdir}/texmf-dist/doc/latex/l3build/
 
 %files -n %{shortname}-lacheck
 %license gpl.txt
@@ -7586,6 +7792,7 @@ done <<< "$list"
 %{_includedir}/kpathsea/*
 %{_includedir}/synctex/
 %{_includedir}/texlua52/
+%{_includedir}/texlua53/
 %ifnarch aarch64 %{mips} %{power64} s390 s390x
 %{_includedir}/texluajit/
 %endif
@@ -7660,7 +7867,9 @@ done <<< "$list"
 %{_bindir}/texluajitc
 %endif
 %{_bindir}/luatex
+%{_bindir}/luatex53
 %{_bindir}/texlua
+%{_bindir}/texlua53
 %{_bindir}/texluac
 %{_mandir}/man1/luatex.1*
 %{_mandir}/man1/texlua.1*
@@ -8292,12 +8501,8 @@ done <<< "$list"
 %{_mandir}/man1/texconfig-sys.1*
 %{_mandir}/man1/texconfig.1*
 %{_texdir}/texmf-dist/scripts/texlive/texconfig.sh
-%{_texdir}/texmf-dist/texconfig/README
 %{_texdir}/texmf-dist/texconfig/tcfmgr
 %{_texdir}/texmf-dist/texconfig/tcfmgr.map
-%{_texdir}/texmf-dist/texconfig/g/generic
-%{_texdir}/texmf-dist/texconfig/v/vt100
-%{_texdir}/texmf-dist/texconfig/x/xterm
 
 %files -n %{shortname}-texcount
 %license lppl1.txt
@@ -8307,6 +8512,7 @@ done <<< "$list"
 
 %files -n %{shortname}-texdef
 %license gpl3.txt
+%{_bindir}/latexdef
 %{_bindir}/texdef
 %{_texdir}/texmf-dist/scripts/texdef/
 %doc %{_texdir}/texmf-dist/doc/support/texdef/
@@ -8534,6 +8740,13 @@ done <<< "$list"
 %{_mandir}/man1/tangle.1*
 %{_mandir}/man1/weave.1*
 
+%files -n %{shortname}-wordcount
+%license lppl1.txt
+%{_bindir}/wordcount
+%{_texdir}/texmf-dist/scripts/wordcount/
+%{_texdir}/texmf-dist/tex/latex/wordcount/
+%doc %{_texdir}/texmf-dist/doc/latex/wordcount/
+
 %files -n %{shortname}-xdvi
 %{_bindir}/xdvi
 %{_bindir}/xdvi-xaw
@@ -8581,6 +8794,11 @@ done <<< "$list"
 %doc %{_texdir}/texmf-dist/doc/latex/yplan/
 
 %changelog
+* Tue May  1 2018 Tom Callaway <spot@fedoraproject.org> - 7:20180414-1
+- update to 20180414
+- fix synctex.pc (bz1426622)
+- new subpackages: axodraw2, bib2gls, ctan-o-mat, dviinfox, jfmutil, l3build, wordcount
+
 * Fri Mar 30 2018 Tom Callaway <spot@fedoraproject.org> - 7:20170520-27
 - actually use the texmf.cnf we patch (not the vanilla one from the kpathsea.tar.xz)
 
