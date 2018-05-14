@@ -16,7 +16,7 @@
 
 Name: %{shortname}-base
 Version: %{source_date}
-Release: 1%{?dist}
+Release: 2%{?dist}
 Epoch: 7
 Summary: TeX formatting system
 # The only files in the base package are directories, cache, and license texts
@@ -605,7 +605,7 @@ Provides: texlive-arara-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-arara-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-arara-bin < 7:20170520
 Provides: texlive-arara-doc = %{epoch}:%{source_date}-%{release}
-Obsoletes: texlive-dvips-doc < 7:20170520
+Obsoletes: texlive-arara-doc < 7:20170520
 License: BSD
 Summary: Automation of LaTeX compilation
 Requires: texlive-base
@@ -8794,6 +8794,9 @@ done <<< "$list"
 %doc %{_texdir}/texmf-dist/doc/latex/yplan/
 
 %changelog
+* Mon May 14 2018 Tom Callaway <spot@fedoraproject.org> - 7:20180414-2
+- fix arara-doc obsoletes (bz1576693)
+
 * Tue May  1 2018 Tom Callaway <spot@fedoraproject.org> - 7:20180414-1
 - update to 20180414
 - fix synctex.pc (bz1426622)
