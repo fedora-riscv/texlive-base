@@ -6,7 +6,7 @@
 
 # don't export private perl modules
 %global __provides_exclude %{?__provides_exclude:%__provides_exclude|}^perl\\(
-%global __requires_exclude %{?__requires_exclude:%__requires_exclude|}^perl\\((PDF::Reuse.*|Pedigree.*|TeXLive.*|Tk::path_tre)\\)
+%global __requires_exclude %{?__requires_exclude:%__requires_exclude|}^perl\\((LatexIndent.*|PDF::Reuse.*|Pedigree.*|TeXLive.*|Tk::path_tre)\\)
 
 # We do not want exec perms changing.
 %global __brp_mangle_shebangs_exclude ^$
@@ -16,7 +16,7 @@
 
 Name: %{shortname}-base
 Version: %{source_date}
-Release: 23%{?dist}
+Release: 28%{?dist}
 Epoch: 7
 Summary: TeX formatting system
 # The only files in the base package are directories, cache, and license texts
@@ -537,9 +537,9 @@ afm2pl package.
 Provides: tex-aleph = %{epoch}:%{source_date}-%{release}
 Provides: texlive-aleph-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-aleph-bin = %{epoch}:%{source_date}-%{release}
-Obsoletes: texlive-aleph-bin < 2017
+Obsoletes: texlive-aleph-bin < 7:20170520
 Provides: texlive-aleph-doc = %{epoch}:%{source_date}-%{release}
-Obsoletes: texlive-aleph-doc < %{source_date}
+Obsoletes: texlive-aleph-doc < 7:20170520
 Summary: Extended TeX
 Requires: texlive-base
 Requires: texlive-kpathsea
@@ -602,7 +602,7 @@ Provides: texlive-arara-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-arara-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-arara-bin < 7:20170520
 Provides: texlive-arara-doc = %{epoch}:%{source_date}-%{release}
-Obsoletes: texlive-dvips-doc < 7:20170520
+Obsoletes: texlive-arara-doc < 7:20170520
 License: BSD
 Summary: Automation of LaTeX compilation
 Requires: texlive-base
@@ -2844,6 +2844,8 @@ The script does not deal with \includeonly commands.
 
 %package -n %{shortname}-lcdftypetools
 Provides: tex-lcdftypetools = %{epoch}:%{source_date}-%{release}
+# This is a mistake in the texlive package. Will be fixed in next major TL update.
+Provides: lcdf-typetools = %{epoch}:%{source_date}-%{release}
 Provides: texlive-lcdftypetools-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-lcdftypetools-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-lcdftypetools-bin < 7:20170520
@@ -6160,6 +6162,9 @@ xz -dc %{SOURCE10} | tar x
 xz -dc %{SOURCE11} | tar x
 popd
 
+# We want the texmf.cnf we patched, not the vanilla one from the kpathsea.tar.xz
+cp -a source/texk/kpathsea/texmf.cnf %{buildroot}%{_texdir}/texmf-dist/web2c/texmf.cnf
+
 # Apply fixes
 # We do it here because this is the first time we have the complete tree.
 # bz1384067
@@ -8576,6 +8581,22 @@ done <<< "$list"
 %doc %{_texdir}/texmf-dist/doc/latex/yplan/
 
 %changelog
+* Mon May 14 2018 Tom Callaway <spot@fedoraproject.org> - 7:20170520-28
+- fix arara doc provides
+
+* Fri Mar 30 2018 Tom Callaway <spot@fedoraproject.org> - 7:20170520-27
+- actually use the texmf.cnf we patch (not the vanilla one from the kpathsea.tar.xz)
+
+* Tue Mar 27 2018 Tom Callaway <spot@fedoraproject.org> - 7:20170520-26
+- add lcdf-typetools provide to fix broken collection-fontutils (fixing that in texlive later) (bz1560379)
+- add LatexIndent* to filtered Requires to prevent dep issues there (bz1560381)
+
+* Sun Mar 25 2018 Tom Callaway <spot@fedoraproject.org> - 7:20170520-25
+- fix aleph obsoletes (bz1560355)
+
+* Fri Mar 23 2018 Kevin Fenzi <kevin@scrye.com> - 7:20170520-24
+- Rebuild for poppler soname bump.
+
 * Thu Mar 15 2018 Tom Callaway <spot@fedoraproject.org> - 7:20170520-23
 - add Requires: tex(pdfpages.sty) to texlive-pdfjam (bz1164237)
 
