@@ -12,7 +12,8 @@
 %global __brp_mangle_shebangs_exclude ^$
 
 # Not ppc64, not s390x, not aarch64 due to lack of clisp
-%global xindy_arches %{arm} %{ix86} x86_64
+# code SIGSEGV's on armv7hl
+%global xindy_arches %{ix86} x86_64
 
 Name: %{shortname}-base
 Version: %{source_date}
@@ -8952,6 +8953,7 @@ fi
 %changelog
 * Tue May 29 2018 Tom Callaway <spot@fedoraproject.org> - 7:20180414-6
 - add BR: texlive-metafont, texlive-cm-super, texlive-ec for xindy
+- disable xindy for arm
 
 * Tue May 29 2018 Tom Callaway <spot@fedoraproject.org> - 7:20180414-5
 - fix xindy and jfontmaps obsoletes
