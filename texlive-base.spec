@@ -12,7 +12,8 @@
 %global __brp_mangle_shebangs_exclude ^$
 
 # Not ppc64, not s390x, not aarch64 due to lack of clisp
-%global xindy_arches %{arm} %{ix86} x86_64
+# armv7hl segfaults
+%global xindy_arches %{ix86} x86_64
 
 Name: %{shortname}-base
 Version: %{source_date}
@@ -411,7 +412,7 @@ BuildRequires: gmp-devel mpfr-devel
 # This is for xindy
 %ifarch %{xindy_arches}
 BuildRequires: clisp-devel
-BuildRequires: texlive-cyrillic, texlive-latex, texlive-metafont
+BuildRequires: texlive-cyrillic, texlive-latex, texlive-metafont, texlive-cm-super, texlive-ec
 %endif
 # Cleanup Provides/Obsoletes
 # texlive-cjk-gs-integrate (depackaged 2018-03-09)
@@ -8738,7 +8739,8 @@ fi
 
 %changelog
 * Tue May 29 2018 Tom Callaway <spot@fedoraproject.org> - 7:20170520-32
-- add BuildRequires: texlive-metafont for xindy
+- add BuildRequires: texlive-metafont, texlive-cm-super, texlive-ec for xindy
+- disable arm for xindy due to segfault
 
 * Tue May 29 2018 Tom Callaway <spot@fedoraproject.org> - 7:20170520-31
 - add epoch to jfontmaps obsolete, fix xindy subpackage generation
