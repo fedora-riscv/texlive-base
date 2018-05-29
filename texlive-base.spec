@@ -16,7 +16,7 @@
 
 Name: %{shortname}-base
 Version: %{source_date}
-Release: 29%{?dist}
+Release: 30%{?dist}
 Epoch: 7
 Summary: TeX formatting system
 # The only files in the base package are directories, cache, and license texts
@@ -6726,6 +6726,160 @@ while read -r line; do
 done <<< "$list"
 %{_bindir}/updmap-sys --quiet --nomkmap >/dev/null || :
 
+# These cover the cases where old -bin subpackages get obsoleted, and disabled
+# in error. Thanks to Jason Tibbitts for the idea, though, as it is an ugly 
+# hack, he may not wish to claim it.
+
+%posttrans -n texlive-aleph
+if [ -f /usr/bin/aleph ]; then
+	sed -i 's/^\#\!\ aleph.*$/aleph aleph - *aleph.ini/' %{_texdir}/texmf-dist/web2c/fmtutil.cnf
+	sed -i 's/^\#\!\ lamed.*$/lamed aleph language.dat *lambda.ini/' %{_texdir}/texmf-dist/web2c/fmtutil.cnf
+fi
+:
+
+%posttrans -n texlive-amstex
+if [ -f /usr/bin/amstex ]; then
+	sed -i 's/^\#\!\ amstex.*$/amstex pdftex - -translate-file=cp227.tcx *amstex.ini/' %{_texdir}/texmf-dist/web2c/fmtutil.cnf
+fi
+:
+
+%posttrans -n texlive-context
+if [ -f /usr/bin/context ]; then
+	sed -i 's/^\#\!\ cont-en.*$/cont-en pdftex cont-usr.tex -8bit *cont-en.mkii/' %{_texdir}/texmf-dist/web2c/fmtutil.cnf
+	sed -i 's/^\#\!\ cont-en.*$/cont-en xetex cont-usr.tex -8bit *cont-en.mkii/' %{_texdir}/texmf-dist/web2c/fmtutil.cnf
+	sed -i 's/^\#\!\ cont-fr.*$/cont-fr pdftex cont-usr.tex -8bit *cont-fr.mkii/' %{_texdir}/texmf-dist/web2c/fmtutil.cnf
+	sed -i 's/^\#\!\ cont-it.*$/cont-it pdftex cont-usr.tex -8bit *cont-it.mkii/' %{_texdir}/texmf-dist/web2c/fmtutil.cnf
+	sed -i 's/^\#\!\ cont-nl.*$/cont-nl pdftex cont-usr.tex -8bit *cont-nl.mkii/' %{_texdir}/texmf-dist/web2c/fmtutil.cnf
+	sed -i 's/^\#\!\ cont-ro.*$/cont-ro pdftex cont-usr.tex -8bit *cont-ro.mkii/' %{_texdir}/texmf-dist/web2c/fmtutil.cnf
+fi
+:
+
+%posttrans -n texlive-cslatex
+if [ -f /usr/bin/cslatex ]; then
+	sed -i 's/^\#\!\ cslatex.*$/cslatex pdftex - -etex cslatex.ini/' %{_texdir}/texmf-dist/web2c/fmtutil.cnf
+	sed -i 's/^\#\!\ pdfcslatex.*$/pdfcslatex pdftex - -etex cslatex.ini/' %{_texdir}/texmf-dist/web2c/fmtutil.cnf
+fi
+:
+
+%posttrans -n texlive-csplain
+if [ -f /usr/bin/csplain ]; then
+	sed -i 's/^\#\!\ csplain.*$/csplain pdftex - -etex -enc csplain-utf8.ini/' %{_texdir}/texmf-dist/web2c/fmtutil.cnf
+	sed -i 's/^\#\!\ pdfcsplain.*$/pdfcsplain pdftex - -etex -enc csplain-utf8.ini/' %{_texdir}/texmf-dist/web2c/fmtutil.cnf
+	sed -i 's/^\#\!\ pdfcsplain.*$/pdfcsplain xetex - -etex csplain.ini/' %{_texdir}/texmf-dist/web2c/fmtutil.cnf
+	sed -i 's/^\#\!\ pdfcsplain.*$/pdfcsplain luatex - -etex csplain.ini/' %{_texdir}/texmf-dist/web2c/fmtutil.cnf
+fi
+:
+
+%posttrans -n texlive-eplain
+if [ -f /usr/bin/eplain ]; then
+	sed -i 's/^\#\!\ eplain.*$/eplain pdftex language.dat -translate-file=cp227.tcx *eplain.ini/' %{_texdir}/texmf-dist/web2c/fmtutil.cnf
+fi
+:
+
+%posttrans -n texlive-jadetex
+if [ -f /usr/bin/jadetex ]; then
+	sed -i 's/^\#\!\ jadetex.*$/jadetex pdftex language.dat *jadetex.ini/' %{_texdir}/texmf-dist/web2c/fmtutil.cnf
+	sed -i 's/^\#\!\ pdfjadetex.*$/pdfjadetex pdftex language.dat *pdfjadetex.ini/' %{_texdir}/texmf-dist/web2c/fmtutil.cnf
+fi
+:
+
+%posttrans -n texlive-latex
+if [ -f /usr/bin/latex ]; then
+	sed -i 's/^\#\!\ latex.*$/latex pdftex language.dat -translate-file=cp227.tcx *latex.ini/' %{_texdir}/texmf-dist/web2c/fmtutil.cnf
+	sed -i 's/^\#\!\ pdflatex.*$/pdflatex pdftex language.dat -translate-file=cp227.tcx *pdflatex.ini/' %{_texdir}/texmf-dist/web2c/fmtutil.cnf
+	sed -i 's/^\#\!\ dvilualatex.*$/dvilualatex luatex language.dat,language.dat.lua dvilualatex.ini/' %{_texdir}/texmf-dist/web2c/fmtutil.cnf
+	sed -i 's/^\#\!\ lualatex.*$/lualatex luatex language.dat,language.dat.lua lualatex.ini/' %{_texdir}/texmf-dist/web2c/fmtutil.cnf
+	sed -i 's/^\#\!\ luajitlatex.*$/luajitlatex luajittex language.dat,language.dat.lua lualatex.ini/' %{_texdir}/texmf-dist/web2c/fmtutil.cnf
+fi
+:
+
+%posttrans -n texlive-lollipop
+if [ -f /usr/bin/lollipop ]; then
+	sed -i 's/^\#\!\ lollipop.*$/lollipop pdftex - -translate-file=cp227.tcx *lollipop.ini/' %{_texdir}/texmf-dist/web2c/fmtutil.cnf
+	sed -i 's/^\#\!\ lualollipop.*$/lualollipop luatex - lualollipop.ini/' %{_texdir}/texmf-dist/web2c/fmtutil.cnf
+	sed -i 's/^\#\!\ xelollipop.*$/xelollipop xetex - -etex xelollipop.ini/' %{_texdir}/texmf-dist/web2c/fmtutil.cnf
+	sed -i 's/^\#\!\ dvilollipop.*$/dvilollipop pdftex - -translate-file=cp227.tcx *lollipop.ini/' %{_texdir}/texmf-dist/web2c/fmtutil.cnf
+	sed -i 's/^\#\!\ dvilualollipop.*$/dvilualollipop luatex - -translate-file=cp227.tcx lualollipop.ini/' %{_texdir}/texmf-dist/web2c/fmtutil.cnf
+fi
+:
+
+%posttrans -n texlive-luatex
+if [ -f /usr/bin/luatex ]; then
+	sed -i 's/^\#\!\ luatex.*$/luatex luatex language.def,language.dat.lua luatex.ini/' %{_texdir}/texmf-dist/web2c/fmtutil.cnf
+	sed -i 's/^\#\!\ dviluatex.*$/dviluatex luatex language.def,language.dat.lua dviluatex.ini/' %{_texdir}/texmf-dist/web2c/fmtutil.cnf
+	sed -i 's/^\#\!\ luajittex.*$/luajittex luajittex language.def,language.dat.lua luatex.ini/' %{_texdir}/texmf-dist/web2c/fmtutil.cnf
+fi
+:
+
+%posttrans -n texlive-metafont
+if [ -f /usr/bin/mf ]; then
+	sed -i 's/^\#\!\ mf.*$/mf mf-nowin - -translate-file=cp227.tcx mf.ini/' %{_texdir}/texmf-dist/web2c/fmtutil.cnf
+fi
+:
+
+%posttrans -n texlive-mex
+if [ -f /usr/bin/mex ]; then
+	sed -i 's/^\#\!\ mex.*$/mex pdftex mexconf.tex -translate-file=cp227.tcx *mex.ini/' %{_texdir}/texmf-dist/web2c/fmtutil.cnf
+	sed -i 's/^\#\!\ pdfmex.*$/pdfmex pdftex mexconf.tex -translate-file=cp227.tcx *pdfmex.ini/' %{_texdir}/texmf-dist/web2c/fmtutil.cnf
+	sed -i 's/^\#\!\ utf8mex.*$/utf8mex pdftex mexconf.tex -enc *utf8mex.ini/' %{_texdir}/texmf-dist/web2c/fmtutil.cnf
+fi
+:
+
+%posttrans -n texlive-mltex
+if [ -f /usr/bin/mltex ]; then
+	sed -i 's/^\#\!\ mllatex.*$/mllatex pdftex language.dat -translate-file=cp227.tcx -mltex *mllatex.ini/' %{_texdir}/texmf-dist/web2c/fmtutil.cnf
+	sed -i 's/^\#\!\ mltex.*$/mltex pdftex - -translate-file=cp227.tcx -mltex mltex.ini/' %{_texdir}/texmf-dist/web2c/fmtutil.cnf
+fi
+:
+
+%posttrans -n texlive-mptopdf
+if [ -f /usr/bin/mptopdf ]; then
+	sed -i 's/^\#\!\ mptopdf.*$/mptopdf pdftex - -translate-file=cp227.tcx mptopdf.tex/' %{_texdir}/texmf-dist/web2c/fmtutil.cnf
+fi
+:
+
+%posttrans -n texlive-pdftex
+if [ -f /usr/bin/pdftex ]; then
+	sed -i 's/^\#\!\ pdftex.*$/pdftex pdftex language.def -translate-file=cp227.tcx *pdfetex.ini/' %{_texdir}/texmf-dist/web2c/fmtutil.cnf
+	sed -i 's/^\#\!\ etex.*$/etex pdftex language.def -translate-file=cp227.tcx *etex.ini/' %{_texdir}/texmf-dist/web2c/fmtutil.cnf
+	sed -i 's/^\#\!\ pdfetex.*$/pdfetex pdftex language.def -translate-file=cp227.tcx *pdfetex.ini/' %{_texdir}/texmf-dist/web2c/fmtutil.cnf
+fi
+:
+
+%posttrans -n texlive-ptex
+if [ -f /usr/bin/ptex ]; then
+	sed -i 's/^\#\!\ ptex.*$/ptex ptex - ptex.ini/' %{_texdir}/texmf-dist/web2c/fmtutil.cnf
+	sed -i 's/^\#\!\ eptex.*$/eptex eptex language.def *eptex.ini/' %{_texdir}/texmf-dist/web2c/fmtutil.cnf
+	sed -i 's/^\#\!\ platex.*$/platex eptex language.dat *platex.ini/' %{_texdir}/texmf-dist/web2c/fmtutil.cnf
+fi
+:
+
+%posttrans -n texlive-tex
+if [ -f /usr/bin/tex ]; then
+	sed -i 's/^\#\!\ tex.*$/tex tex - tex.ini/' %{_texdir}/texmf-dist/web2c/fmtutil.cnf
+fi
+:
+
+%posttrans -n texlive-texsis
+if [ -f /usr/bin/texsis ]; then
+	sed -i 's/^\#\!\ texsis.*$/texsis pdftex - -translate-file=cp227.tcx texsis.ini/' %{_texdir}/texmf-dist/web2c/fmtutil.cnf
+fi
+:
+
+%posttrans -n texlive-xetex
+if [ -f /usr/bin/xetex ]; then
+	sed -i 's/^\#\!\ xetex.*$/xetex xetex language.def -etex xetex.ini/' %{_texdir}/texmf-dist/web2c/fmtutil.cnf
+	sed -i 's/^\#\!\ xelatex.*$/xelatex xetex language.dat -etex xelatex.ini/' %{_texdir}/texmf-dist/web2c/fmtutil.cnf
+fi
+:
+
+%posttrans -n texlive-xmltex
+if [ -f /usr/bin/xmltex ]; then
+	sed -i 's/^\#\!\ xmltex.*$/xmltex pdftex language.dat *xmltex.ini/' %{_texdir}/texmf-dist/web2c/fmtutil.cnf
+	sed -i 's/^\#\!\ pdfxmltex.*$/pdfxmltex pdftex language.dat *pdfxmltex.ini/' %{_texdir}/texmf-dist/web2c/fmtutil.cnf
+fi
+:
+
 %files
 %{_texdir}/licenses/
 %{_texdir}/texlive.tlpdb
@@ -8583,8 +8737,11 @@ done <<< "$list"
 %doc %{_texdir}/texmf-dist/doc/latex/yplan/
 
 %changelog
-* Tue May 29 2018 Tom Callaway <spot@fedoraproject.org> - 7:20170520-29
+* Tue May 29 2018 Tom Callaway <spot@fedoraproject.org> - 7:20170520-30
 - add Provides: jadetex and Provides: tex-uptex-doc
+
+* Mon May 21 2018 Tom Callaway <spot@fedoraproject.org> - 7:20170520-29
+- add posttrans to force bin scriptlets to work right when being obsoleted
 
 * Mon May 14 2018 Tom Callaway <spot@fedoraproject.org> - 7:20170520-28
 - fix arara doc provides
