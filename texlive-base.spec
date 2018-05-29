@@ -16,7 +16,7 @@
 
 Name: %{shortname}-base
 Version: %{source_date}
-Release: 4%{?dist}
+Release: 5%{?dist}
 Epoch: 7
 Summary: TeX formatting system
 # The only files in the base package are directories, cache, and license texts
@@ -4819,11 +4819,11 @@ Obsoletes: texlive-ptex-fontmaps-bin < 7:20170520
 Provides: texlive-ptex-fontmaps-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-ptex-fontmaps-doc < 7:20170520
 Provides: texlive-jfontmaps = %{epoch}:%{source_date}-%{release}
-Obsoletes: texlive-jfontmaps <= svn40613
+Obsoletes: texlive-jfontmaps <= 6:svn40613
 Provides: texlive-jfontmaps-bin = %{epoch}:%{source_date}-%{release}
-Obsoletes: texlive-jfontmaps-bin <= svn29848.0
+Obsoletes: texlive-jfontmaps-bin <= 6:svn29848.0
 Provides: texlive-jfontmaps-doc = %{epoch}:%{source_date}-%{release}
-Obsoletes: texlive-jfontmaps-doc <= svn40613
+Obsoletes: texlive-jfontmaps-doc <= 6:svn40613
 License: GPLv3
 Summary: Font maps and configuration tools for Japanese/Chinese/Korean fonts with (u)ptex
 Requires: texlive-arphic-ttf
@@ -6097,9 +6097,9 @@ Provides: tex-xindy = %{epoch}:%{source_date}-%{release}
 Provides: tex-xindy-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-xindy-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-xindy-bin = %{epoch}:%{source_date}-%{release}
-Obsoletes: texlive-xindy-bin < 7:20170520
+Obsoletes: texlive-xindy-bin <= 6:svn41316
 Provides: texlive-xindy-doc = %{epoch}:%{source_date}-%{release}
-Obsoletes: texlive-xindy-doc < 7:20170520
+Obsoletes: texlive-xindy-doc <= 6:svn41316
 License: GPLv2+
 Summary: A general-purpose index processor
 # There are some arch specific binaries in here.
@@ -8950,6 +8950,9 @@ fi
 %doc %{_texdir}/texmf-dist/doc/latex/yplan/
 
 %changelog
+* Tue May 29 2018 Tom Callaway <spot@fedoraproject.org> - 7:20180414-5
+- fix xindy and jfontmaps obsoletes
+
 * Tue May 29 2018 Tom Callaway <spot@fedoraproject.org> - 7:20180414-4
 - add Provides: jadetex and Provides: tex-uptex-doc
 
