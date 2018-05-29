@@ -12,11 +12,11 @@
 %global __brp_mangle_shebangs_exclude ^$
 
 # Not ppc64, not s390x, not aarch64 due to lack of clisp
-%global xindyarches %{arm} %{ix86} x86_64
+%global xindy_arches %{arm} %{ix86} x86_64
 
 Name: %{shortname}-base
 Version: %{source_date}
-Release: 30%{?dist}
+Release: 31%{?dist}
 Epoch: 7
 Summary: TeX formatting system
 # The only files in the base package are directories, cache, and license texts
@@ -4685,11 +4685,11 @@ Obsoletes: texlive-ptex-fontmaps-bin < 7:20170520
 Provides: texlive-ptex-fontmaps-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-ptex-fontmaps-doc < 7:20170520
 Provides: texlive-jfontmaps = %{epoch}:%{source_date}-%{release}
-Obsoletes: texlive-jfontmaps <= svn40613
+Obsoletes: texlive-jfontmaps <= 6:svn40613
 Provides: texlive-jfontmaps-bin = %{epoch}:%{source_date}-%{release}
-Obsoletes: texlive-jfontmaps-bin <= svn29848.0
+Obsoletes: texlive-jfontmaps-bin <= 6:svn29848.0
 Provides: texlive-jfontmaps-doc = %{epoch}:%{source_date}-%{release}
-Obsoletes: texlive-jfontmaps-doc <= svn40613
+Obsoletes: texlive-jfontmaps-doc <= 6:svn40613
 License: GPLv3
 Summary: Font maps and configuration tools for Japanese/Chinese/Korean fonts with (u)ptex
 Requires: texlive-arphic-ttf
@@ -8737,6 +8737,9 @@ fi
 %doc %{_texdir}/texmf-dist/doc/latex/yplan/
 
 %changelog
+* Tue May 29 2018 Tom Callaway <spot@fedoraproject.org> - 7:20170520-31
+- add epoch to jfontmaps obsolete, fix xindy subpackage generation
+
 * Tue May 29 2018 Tom Callaway <spot@fedoraproject.org> - 7:20170520-30
 - add Provides: jadetex and Provides: tex-uptex-doc
 
