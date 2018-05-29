@@ -16,7 +16,7 @@
 
 Name: %{shortname}-base
 Version: %{source_date}
-Release: 3%{?dist}
+Release: 4%{?dist}
 Epoch: 7
 Summary: TeX formatting system
 # The only files in the base package are directories, cache, and license texts
@@ -2486,6 +2486,7 @@ Provides: tex-jadetex-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-jadetex-bin < 7:20170520
 Provides: texlive-jadetex-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-jadetex-doc < 7:20170520
+Provides: jadetex = %{epoch}:%{source_date}-%{release}
 License: MIT
 Summary: Macros supporting Jade DSSSL output
 Requires: texlive-base
@@ -5734,6 +5735,7 @@ information -- for example, in-depth interviews.
 %package -n %{shortname}-uptex
 Provides: tex-uptex = %{epoch}:%{source_date}-%{release}
 Provides: tex-uptex-bin = %{epoch}:%{source_date}-%{release}
+Provides: tex-uptex-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-uptex-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-uptex-bin < 7:20170520
 Provides: texlive-uplatex-bin = %{epoch}:%{source_date}-%{release}
@@ -8948,6 +8950,9 @@ fi
 %doc %{_texdir}/texmf-dist/doc/latex/yplan/
 
 %changelog
+* Tue May 29 2018 Tom Callaway <spot@fedoraproject.org> - 7:20180414-4
+- add Provides: jadetex and Provides: tex-uptex-doc
+
 * Mon May 21 2018 Tom Callaway <spot@fedoraproject.org> - 7:20180414-3
 - add posttrans to force latex scriptlets to work right
 
