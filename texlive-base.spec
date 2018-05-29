@@ -414,7 +414,7 @@ BuildRequires: gmp-devel mpfr-devel
 # This is for xindy
 %ifarch %{xindy_arches}
 BuildRequires: clisp-devel
-BuildRequires: texlive-cyrillic, texlive-latex, texlive-metafont
+BuildRequires: texlive-cyrillic, texlive-latex, texlive-metafont, texlive-cm-super, texlive-ec
 %endif
 # Cleanup Provides/Obsoletes
 # texlive-cjk-gs-integrate (depackaged 2018-03-09)
@@ -8951,7 +8951,7 @@ fi
 
 %changelog
 * Tue May 29 2018 Tom Callaway <spot@fedoraproject.org> - 7:20180414-6
-- add BR: texlive-metafont for xindy
+- add BR: texlive-metafont, texlive-cm-super, texlive-ec for xindy
 
 * Tue May 29 2018 Tom Callaway <spot@fedoraproject.org> - 7:20180414-5
 - fix xindy and jfontmaps obsoletes
