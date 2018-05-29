@@ -16,7 +16,7 @@
 
 Name: %{shortname}-base
 Version: %{source_date}
-Release: 5%{?dist}
+Release: 6%{?dist}
 Epoch: 7
 Summary: TeX formatting system
 # The only files in the base package are directories, cache, and license texts
@@ -414,7 +414,7 @@ BuildRequires: gmp-devel mpfr-devel
 # This is for xindy
 %ifarch %{xindy_arches}
 BuildRequires: clisp-devel
-BuildRequires: texlive-cyrillic, texlive-latex
+BuildRequires: texlive-cyrillic, texlive-latex, texlive-metafont
 %endif
 # Cleanup Provides/Obsoletes
 # texlive-cjk-gs-integrate (depackaged 2018-03-09)
@@ -8950,6 +8950,9 @@ fi
 %doc %{_texdir}/texmf-dist/doc/latex/yplan/
 
 %changelog
+* Tue May 29 2018 Tom Callaway <spot@fedoraproject.org> - 7:20180414-6
+- add BR: texlive-metafont for xindy
+
 * Tue May 29 2018 Tom Callaway <spot@fedoraproject.org> - 7:20180414-5
 - fix xindy and jfontmaps obsoletes
 - fix typo preventing xindy subpackage
