@@ -17,7 +17,7 @@
 
 Name: %{shortname}-base
 Version: %{source_date}
-Release: 6%{?dist}
+Release: 7%{?dist}
 Epoch: 7
 Summary: TeX formatting system
 # The only files in the base package are directories, cache, and license texts
@@ -6124,6 +6124,7 @@ Provides: texlive-xmltex-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-xmltex-bin < 7:20170520
 Provides: texlive-xmltex-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-xmltex-doc < 7:20170520
+Provides: xmltex = %{epoch}:%{source_date}-%{release}
 License: LPPL
 Summary: Support for parsing XML documents
 Requires: texlive-base
@@ -8951,6 +8952,9 @@ fi
 %doc %{_texdir}/texmf-dist/doc/latex/yplan/
 
 %changelog
+* Fri Jun  1 2018 Tom Callaway <spot@fedoraproject.org> - 7:20180414-7
+- add Provides: xmltex
+
 * Tue May 29 2018 Tom Callaway <spot@fedoraproject.org> - 7:20180414-6
 - add BR: texlive-metafont, texlive-cm-super, texlive-ec for xindy
 - disable xindy for arm
