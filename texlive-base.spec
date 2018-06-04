@@ -17,7 +17,7 @@
 
 Name: %{shortname}-base
 Version: %{source_date}
-Release: 7%{?dist}
+Release: 8%{?dist}
 Epoch: 7
 Summary: TeX formatting system
 # The only files in the base package are directories, cache, and license texts
@@ -1925,6 +1925,7 @@ Requires: texlive-kpathsea
 dvipos package.
 
 %package -n %{shortname}-dvips
+Provides: tetex-dvips = %{epoch}:%{source_date}-%{release}
 Provides: tex-dvips = %{epoch}:%{source_date}-%{release}
 Provides: texlive-dvips-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-dvips-bin = %{epoch}:%{source_date}-%{release}
@@ -6246,6 +6247,11 @@ pushd %{buildroot}%{_texdir}/texmf-config/web2c
 ln -s ../../texmf-dist/web2c/updmap.cfg updmap.cfg
 popd
 
+# make compatibility symlink
+pushd %{buildroot}%{_datadir}
+ln -s texlive/texmf-local/texmf-compat texmf
+popd
+
 # make opentype fontdir symlinks
 # NOTE: fontawesome, stix, oldstandard are a conflict, so we just add Requires for the 
 # corresponding system font packages for them.
@@ -7087,6 +7093,7 @@ fi
 %dir %{_texdir}/texmf-dist/web2c
 %dir %{_texmf_var}
 %{_texdir}/texmf-var
+%{_datadir}/texmf/
 
 %files -n %{shortname}-a2ping
 %license gpl.txt
@@ -8952,6 +8959,10 @@ fi
 %doc %{_texdir}/texmf-dist/doc/latex/yplan/
 
 %changelog
+* Mon Jun  4 2018 Tom Callaway <spot@fedoraproject.org> - 7:20180414-8
+- add Provides: tetex-dvips
+- add symlink to /usr/share/texmf for legacy packages
+
 * Fri Jun  1 2018 Tom Callaway <spot@fedoraproject.org> - 7:20180414-7
 - add Provides: xmltex
 
