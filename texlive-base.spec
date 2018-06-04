@@ -6931,7 +6931,7 @@ fi
 %dir %{_texmf_var}
 %{_texdir}/texmf-var
 %{_texdir}/texmf-local/
-%{_datadir}/texmf/
+%{_datadir}/texmf
 
 %files -n %{shortname}-a2ping
 %license gpl.txt
