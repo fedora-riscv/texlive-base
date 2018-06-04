@@ -6249,6 +6249,7 @@ popd
 
 # make compatibility symlink
 pushd %{buildroot}%{_datadir}
+mkdir -p texlive/texmf-local/texmf-compat
 ln -s texlive/texmf-local/texmf-compat texmf
 popd
 
@@ -7093,6 +7094,7 @@ fi
 %dir %{_texdir}/texmf-dist/web2c
 %dir %{_texmf_var}
 %{_texdir}/texmf-var
+%{_texdir}/texmf-local/
 %{_datadir}/texmf/
 
 %files -n %{shortname}-a2ping
