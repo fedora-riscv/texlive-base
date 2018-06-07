@@ -17,7 +17,7 @@
 
 Name: %{shortname}-base
 Version: %{source_date}
-Release: 8%{?dist}
+Release: 9%{?dist}
 Epoch: 7
 Summary: TeX formatting system
 # The only files in the base package are directories, cache, and license texts
@@ -6475,6 +6475,21 @@ sed -i 's|/usr/lib|%{_libdir}|g' %{buildroot}%{_libdir}/pkgconfig/synctex.pc
 
 # SCRIPTLETS
 
+%pretrans -p <lua>
+path = "/usr/share/texmf"
+st = posix.stat(path)
+if st and st.type == "directory" then
+  status = os.rename(path, path .. ".rpmmoved")
+  if not status then
+    suffix = 0
+    while not status do
+      suffix = suffix + 1
+      status = os.rename(path .. ".rpmmoved", path .. ".rpmmoved." .. suffix)
+    end
+    os.rename(path, path .. ".rpmmoved")
+  end
+end
+
 %pre
 rm -rf %{_texdir}/texmf-var
 rm -rf %{_texmf_var}/*
@@ -7096,6 +7111,7 @@ fi
 %{_texdir}/texmf-var
 %{_texdir}/texmf-local/
 %{_datadir}/texmf
+%ghost %{_datadir}/texmf.rpmmoved
 
 %files -n %{shortname}-a2ping
 %license gpl.txt
@@ -8961,6 +8977,9 @@ fi
 %doc %{_texdir}/texmf-dist/doc/latex/yplan/
 
 %changelog
+* Thu Jun  7 2018 Tom Callaway <spot@fedoraproject.org> - 7:20180414-9
+- add pretrans to handle /usr/share/texmf
+
 * Mon Jun  4 2018 Tom Callaway <spot@fedoraproject.org> - 7:20180414-8
 - add Provides: tetex-dvips
 - add symlink to /usr/share/texmf for legacy packages
