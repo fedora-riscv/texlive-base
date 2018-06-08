@@ -17,7 +17,7 @@
 
 Name: %{shortname}-base
 Version: %{source_date}
-Release: 9%{?dist}
+Release: 10%{?dist}
 Epoch: 7
 Summary: TeX formatting system
 # The only files in the base package are directories, cache, and license texts
@@ -5738,6 +5738,9 @@ information -- for example, in-depth interviews.
 Provides: tex-uptex = %{epoch}:%{source_date}-%{release}
 Provides: tex-uptex-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-uptex-doc = %{epoch}:%{source_date}-%{release}
+Provides: tex-uplatex = %{epoch}:%{source_date}-%{release}
+Provides: tex-uplatex-bin = %{epoch}:%{source_date}-%{release}
+Provides: tex-uplatex-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-uptex-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-uptex-bin < 7:20170520
 Provides: texlive-uplatex-bin = %{epoch}:%{source_date}-%{release}
@@ -8977,6 +8980,9 @@ fi
 %doc %{_texdir}/texmf-dist/doc/latex/yplan/
 
 %changelog
+* Fri Jun  8 2018 Tom Callaway <spot@fedoraproject.org> - 7:20180414-10
+- add tex-uplatex(bin/doc) provides
+
 * Thu Jun  7 2018 Tom Callaway <spot@fedoraproject.org> - 7:20180414-9
 - add pretrans to handle /usr/share/texmf
 
