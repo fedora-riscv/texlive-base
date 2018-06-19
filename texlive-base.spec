@@ -1893,7 +1893,6 @@ License: LGPLv2+
 Summary: A fast DVI to PNG/GIF converter
 Requires: texlive-base
 Requires: texlive-kpathsea
-Requires(post,postun): /sbin/install-info
 
 %description -n %{shortname}-dvipng
 This program makes PNG and/or GIF graphics from DVI files as
@@ -1936,7 +1935,6 @@ License: GPL+
 Summary: A DVI to PostScript driver
 Requires: texlive-base
 Requires: texlive-kpathsea
-Requires(post,postun): /sbin/install-info
 Provides: tex(canonex.cfg) = %{epoch}:%{source_date}-%{release}
 Provides: tex(cx.cfg) = %{epoch}:%{source_date}-%{release}
 Provides: tex(deskjet.cfg) = %{epoch}:%{source_date}-%{release}
@@ -2050,7 +2048,6 @@ Requires: texlive-kpathsea
 Requires: texlive-pdftex
 Requires: texlive-tetex
 Requires(post,postun): coreutils
-Requires(post,postun): /sbin/install-info
 Provides: tex(arrow.tex) = %{epoch}:%{source_date}-%{release}
 Provides: tex(btxmac.tex) = %{epoch}:%{source_date}-%{release}
 Provides: tex(eplain.tex) = %{epoch}:%{source_date}-%{release}
@@ -2078,7 +2075,6 @@ License: GPL+
 Summary: Converter for PostScript, EPS and PDF
 Requires: texlive-base
 Requires: texlive-kpathsea
-Requires(post,postun): /sbin/install-info
 # tcl and lua
 BuildArch: noarch
 
@@ -2561,7 +2557,6 @@ Provides: tex-kpathsea-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-kpathsea-bin < 7:20170520
 Provides: texlive-kpathsea-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-kpathsea-doc < 7:20170520
-Requires(post,postun): /sbin/install-info
 Requires: coreutils, grep
 Requires: texlive-base
 Provides: tex(fmtutil.cnf) = %{epoch}:%{source_date}-%{release}
@@ -2850,7 +2845,6 @@ License: LPPL
 Summary: Translate LaTeX-based manual pages into Unix man format
 Requires: texlive-base
 Requires: texlive-kpathsea
-Requires(post,postun): /sbin/install-info
 Requires: tex(fancyheadings.sty)
 Requires: tex(fancyhdr.sty)
 Provides: tex(latex2man.cfg) = %{epoch}:%{source_date}-%{release}
@@ -3592,7 +3586,6 @@ License: LPPL
 Summary: Produce PostScript Type 1 fonts from Metafont source
 Requires: texlive-base
 Requires: texlive-kpathsea
-Requires(post,postun): /sbin/install-info
 # perl
 BuildArch: noarch
 
@@ -5437,7 +5430,6 @@ License: LPPL
 Summary: TeX Live manual (English)
 Requires: texlive-base
 Requires: texlive-kpathsea
-Requires(post,postun): /sbin/install-info
 BuildArch: noarch
 
 %description -n %{shortname}-texlive-en
@@ -6588,31 +6580,7 @@ sed -i 's/^pdfcsplain.*$/\#\!\ pdfcsplain luatex - -etex csplain.ini/' %{_texdir
 fi
 :
 
-%preun -n %{shortname}-dvipng
-if [ "$1" == "0" ]; then
-  /sbin/install-info --delete %{_infodir}/dvipng.info %{_infodir}/dir 2>/dev/null || :
-fi
-
-%post -n %{shortname}-dvipng
-/sbin/install-info %{_infodir}/dvipng.info %{_infodir}/dir 2>/dev/null
-:
-
-%preun -n %{shortname}-dvips
-if [ "$1" == "0" ]; then
-  /sbin/install-info --delete %{_infodir}/dvips.info %{_infodir}/dir 2>/dev/null || :
-fi
-
-%post -n %{shortname}-dvips
-/sbin/install-info %{_infodir}/dvips.info %{_infodir}/dir 2>/dev/null
-:
-
-%preun -n %{shortname}-eplain
-if [ "$1" == "0" ]; then
-  /sbin/install-info --delete %{_infodir}/eplain.info %{_infodir}/dir 2>/dev/null || :
-fi
-
 %post -n %{shortname}-eplain
-/sbin/install-info %{_infodir}/eplain.info %{_infodir}/dir 2>/dev/null
 if [ $1 -gt 0 ] ; then
 sed -i 's/^\#\!\ eplain.*$/eplain pdftex language.dat -translate-file=cp227.tcx *eplain.ini/' %{_texdir}/texmf-dist/web2c/fmtutil.cnf
 fi
@@ -6622,15 +6590,6 @@ fi
 if [ $1 == 0 ] ; then
 sed -i 's/^eplain.*$/\#\!\ eplain pdftex language.dat -translate-file=cp227.tcx *eplain.ini/' %{_texdir}/texmf-dist/web2c/fmtutil.cnf > /dev/null 2>&1
 fi
-:
-
-%preun -n %{shortname}-epspdf
-if [ "$1" == "0" ]; then
-  /sbin/install-info --delete %{_infodir}/epspdf.info %{_infodir}/dir 2>/dev/null || :
-fi
-
-%post -n %{shortname}-epspdf
-/sbin/install-info %{_infodir}/epspdf.info %{_infodir}/dir 2>/dev/null
 :
 
 %post -n %{shortname}-jadetex
@@ -6645,19 +6604,6 @@ if [ $1 == 0 ] ; then
 sed -i 's/^jadetex.*$/\#\!\ jadetex pdftex language.dat *jadetex.ini/' %{_texdir}/texmf-dist/web2c/fmtutil.cnf > /dev/null 2>&1
 sed -i 's/^pdfjadetex.*$/\#\!\ pdfjadetex pdftex language.dat *pdfjadetex.ini/' %{_texdir}/texmf-dist/web2c/fmtutil.cnf > /dev/null 2>&1
 fi
-:
-
-%preun -n %{shortname}-kpathsea
-if [ "$1" == "0" ]; then
-  /sbin/install-info --delete %{_infodir}/kpathsea.info %{_infodir}/dir 2>/dev/null || :
-  /sbin/install-info --delete %{_infodir}/tds.info %{_infodir}/dir 2>/dev/null || :
-  /sbin/install-info --delete %{_infodir}/web2c.info %{_infodir}/dir 2>/dev/null || :
-fi
-
-%post -n %{shortname}-kpathsea
-/sbin/install-info %{_infodir}/kpathsea.info %{_infodir}/dir 2>/dev/null || :
-/sbin/install-info %{_infodir}/tds.info %{_infodir}/dir 2>/dev/null || :
-/sbin/install-info %{_infodir}/web2c.info %{_infodir}/dir 2>/dev/null || :
 :
 
 %post -n %{shortname}-latex
@@ -6678,15 +6624,6 @@ sed -i 's/^dvilualatex.*$/\#\!\ dvilualatex luatex language.dat,language.dat.lua
 sed -i 's/^lualatex.*$/\#\!\ lualatex luatex language.dat,language.dat.lua lualatex.ini/' %{_texdir}/texmf-dist/web2c/fmtutil.cnf > /dev/null 2>&1
 sed -i 's/^luajitlatex.*$/\#\!\ luajitlatex luajittex language.dat,language.dat.lua lualatex.ini/' %{_texdir}/texmf-dist/web2c/fmtutil.cnf > /dev/null 2>&1
 fi
-:
-
-%preun -n %{shortname}-latex2man
-if [ "$1" == "0" ]; then
-  /sbin/install-info --delete %{_infodir}/latex2man.info %{_infodir}/dir 2>/dev/null || :
-fi
-
-%post -n %{shortname}-latex2man
-/sbin/install-info %{_infodir}/latex2man.info %{_infodir}/dir 2>/dev/null
 :
 
 %post -n %{shortname}-lib -p /sbin/ldconfig
@@ -6754,15 +6691,6 @@ sed -i 's/^mex.*$/\#\!\ mex pdftex mexconf.tex -translate-file=cp227.tcx *mex.in
 sed -i 's/^pdfmex.*$/\#\!\ pdfmex pdftex mexconf.tex -translate-file=cp227.tcx *pdfmex.ini/' %{_texdir}/texmf-dist/web2c/fmtutil.cnf > /dev/null 2>&1
 sed -i 's/^utf8mex.*$/\#\!\ utf8mex pdftex mexconf.tex -enc *utf8mex.ini/' %{_texdir}/texmf-dist/web2c/fmtutil.cnf > /dev/null 2>&1
 fi
-:
-
-%preun -n %{shortname}-mf2pt1
-if [ "$1" == "0" ]; then
-  /sbin/install-info --delete %{_infodir}/mf2pt1.info %{_infodir}/dir 2>/dev/null || :
-fi
-
-%post -n %{shortname}-mf2pt1
-/sbin/install-info %{_infodir}/mf2pt1.info %{_infodir}/dir 2>/dev/null
 :
 
 %post -n %{shortname}-mltex
@@ -6833,15 +6761,6 @@ fi
 if [ $1 == 0 ] ; then
 sed -i 's/^tex.*$/\#\!\ tex tex - tex.ini/' %{_texdir}/texmf-dist/web2c/fmtutil.cnf > /dev/null 2>&1
 fi
-:
-
-%preun -n %{shortname}-texlive-en
-if [ "$1" == "0" ]; then
-  /sbin/install-info --delete %{_infodir}/tlbuild.info %{_infodir}/dir 2>/dev/null || :
-fi
-
-%post -n %{shortname}-texlive-en
-/sbin/install-info %{_infodir}/tlbuild.info %{_infodir}/dir 2>/dev/null
 :
 
 %post -n %{shortname}-texsis
