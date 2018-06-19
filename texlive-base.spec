@@ -17,7 +17,7 @@
 
 Name: %{shortname}-base
 Version: %{source_date}
-Release: 37%{?dist}
+Release: 38%{?dist}
 Epoch: 7
 Summary: TeX formatting system
 # The only files in the base package are directories, cache, and license texts
@@ -4808,6 +4808,7 @@ Requires: tex(newfloat.sty)
 Requires: tex(currfile.sty)
 Requires: tex(xcolor.sty)
 Requires: tex(upquote.sty)
+Requires: tex(fvextra.sty)
 Provides: tex(pythontex.sty) = %{epoch}:%{source_date}-%{release}
 # python
 BuildArch: noarch
@@ -8772,6 +8773,9 @@ fi
 %doc %{_texdir}/texmf-dist/doc/latex/yplan/
 
 %changelog
+* Tue Jun 19 2018 Tom Callaway <spot@fedoraproject.org> - 7:20170520-38
+- add Requires: tex(fvextra.sty) to pythontex (bz1590621)
+
 * Mon Jun 11 2018 Tom Callaway <spot@fedoraproject.org> - 7:20170520-37
 - add tex-jfontmaps(bin/doc) provides
 
