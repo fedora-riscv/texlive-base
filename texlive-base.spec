@@ -6626,9 +6626,6 @@ sed -i 's/^luajitlatex.*$/\#\!\ luajitlatex luajittex language.dat,language.dat.
 fi
 :
 
-%post -n %{shortname}-lib -p /sbin/ldconfig
-%postun -n %{shortname}-lib -p /sbin/ldconfig
-
 %post -n %{shortname}-lollipop
 if [ $1 -gt 0 ] ; then
 sed -i 's/^\#\!\ lollipop.*$/lollipop pdftex - -translate-file=cp227.tcx *lollipop.ini/' %{_texdir}/texmf-dist/web2c/fmtutil.cnf
