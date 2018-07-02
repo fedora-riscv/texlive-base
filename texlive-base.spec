@@ -474,6 +474,7 @@ Provides: tex-accfonts = %{epoch}:%{source_date}-%{release}
 Provides: texlive-accfonts-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-accfonts-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-accfonts-bin < 7:20170520
+Provides: tex-accfonts-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-accfonts-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-accfonts-doc < 7:20170520
 License: GPL+
@@ -507,6 +508,7 @@ Provides: tex-adhocfilelist = %{epoch}:%{source_date}-%{release}
 Provides: texlive-adhocfilelist-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-adhocfilelist-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-adhocfilelist-bin < 7:20170520
+Provides: tex-adhocfilelist-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-adhocfilelist-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-adhocfilelist-doc < 7:20170520
 License: LPPL
@@ -547,6 +549,7 @@ Provides: tex-aleph = %{epoch}:%{source_date}-%{release}
 Provides: texlive-aleph-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-aleph-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-aleph-bin < 7:20170520
+Provides: tex-aleph-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-aleph-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-aleph-doc < 7:20170520
 Summary: Extended TeX
@@ -573,6 +576,7 @@ Provides: tex-amstex = %{epoch}:%{source_date}-%{release}
 Provides: texlive-amstex-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-amstex-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-amstex-bin < 7:20170520
+Provides: tex-amstex-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-amstex-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-amstex-doc < 7:20170520
 License: LPPL
@@ -610,6 +614,7 @@ Provides: tex-arara = %{epoch}:%{source_date}-%{release}
 Provides: texlive-arara-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-arara-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-arara-bin < 7:20170520
+Provides: tex-arara-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-arara-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-arara-doc < 7:20170520
 License: BSD
@@ -638,6 +643,7 @@ Provides: tex-authorindex = %{epoch}:%{source_date}-%{release}
 Provides: texlive-authorindex-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-authorindex-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-authorindex-bin < 7:20170520
+Provides: tex-authorindex-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-authorindex-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-authorindex-doc < 7:20170520
 License: LPPL
@@ -662,6 +668,7 @@ Provides: tex-autosp = %{epoch}:%{source_date}-%{release}
 Provides: texlive-autosp-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-autosp-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-autosp-bin < 7:20170520
+Provides: tex-autosp-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-autosp-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-autosp-doc < 7:20170520
 License: GPLv2
@@ -732,6 +739,7 @@ Provides: tex-bibexport = %{epoch}:%{source_date}-%{release}
 Provides: texlive-bibexport-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-bibexport-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-bibexport-bin < 7:20170520
+Provides: tex-bibexport-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-bibexport-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-bibexport-doc < 7:20170520
 License: LPPL 1.3
@@ -751,6 +759,7 @@ Provides: tex-bibtex = %{epoch}:%{source_date}-%{release}
 Provides: texlive-bibtex-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-bibtex-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-bibtex-bin < 7:20170520
+Provides: tex-bibtex-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-bibtex-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-bibtex-doc < 7:20170520
 License: Knuth
@@ -780,6 +789,7 @@ Provides: tex-bibtexu = %{epoch}:%{source_date}-%{release}
 Provides: texlive-bibtexu-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-bibtexu-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-bibtexu-bin < 7:20170520
+Provides: tex-bibtexu-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-bibtexu-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-bibtexu-doc < 7:20170520
 License: LPPL
@@ -795,6 +805,7 @@ Provides: tex-bibtex8 = %{epoch}:%{source_date}-%{release}
 Provides: texlive-bibtex8-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-bibtex8-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-bibtex8-bin < 7:20170520
+Provides: tex-bibtex8-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-bibtex8-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-bibtex8-doc < 7:20170520
 License: GPL+
@@ -814,6 +825,7 @@ Provides: tex-bundledoc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-bundledoc-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-bundledoc-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-bundledoc-bin < 7:20170520
+Provides: tex-bundledoc-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-bundledoc-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-bundledoc-doc < 7:20170520
 License: LPPL
@@ -844,6 +856,7 @@ Provides: tex-cachepic = %{epoch}:%{source_date}-%{release}
 Provides: texlive-cachepic-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-cachepic-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-cachepic-bin < 7:20170520
+Provides: tex-cachepic-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-cachepic-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-cachepic-doc < 7:20170520
 License: LPPL 1.3
@@ -869,6 +882,7 @@ Provides: tex-checkcites = %{epoch}:%{source_date}-%{release}
 Provides: texlive-checkcites-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-checkcites-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-checkcites-bin < 7:20170520
+Provides: tex-checkcites-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-checkcites-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-checkcites-doc < 7:20170520
 License: LPPL 1.3
@@ -888,6 +902,7 @@ Provides: tex-checklistings = %{epoch}:%{source_date}-%{release}
 Provides: texlive-checklistings-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-checklistings-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-checklistings-bin < 7:20170520
+Provides: tex-checklistings-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-checklistings-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-checklistings-doc < 7:20170520
 License: LPPL 1.2
@@ -917,6 +932,7 @@ Provides: tex-chktex = %{epoch}:%{source_date}-%{release}
 Provides: texlive-chktex-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-chktex-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-chktex-bin < 7:20170520
+Provides: tex-chktex-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-chktex-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-chktex-doc < 7:20170520
 License: GPL+
@@ -935,6 +951,7 @@ Provides: tex-cjk-gs-integrate = %{epoch}:%{source_date}-%{release}
 Provides: texlive-cjk-gs-integrate-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-cjk-gs-integrate-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-cjk-gs-integrate-bin < 7:20170520
+Provides: tex-cjk-gs-integrate-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-cjk-gs-integrate-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-cjk-gs-integrate-doc < 7:20170520
 License: GPLv3+
@@ -984,6 +1001,7 @@ Provides: tex-context = %{epoch}:%{source_date}-%{release}
 Provides: texlive-context-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-context-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-context-bin < 7:20170520
+Provides: tex-context-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-context-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-context-doc < 7:20170520
 License: GPL+ or LPPL
@@ -1203,6 +1221,7 @@ Provides: tex-convbkmk = %{epoch}:%{source_date}-%{release}
 Provides: texlive-convbkmk-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-convbkmk-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-convbkmk-bin < 7:20170520
+Provides: tex-convbkmk-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-convbkmk-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-convbkmk-doc < 7:20170520
 License: MIT
@@ -1223,6 +1242,7 @@ Provides: tex-crossrefware = %{epoch}:%{source_date}-%{release}
 Provides: texlive-crossrefware-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-crossrefware-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-crossrefware-bin < 7:20170520
+Provides: tex-crossrefware-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-crossrefware-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-crossrefware-doc < 7:20170520
 License: GPL+
@@ -1409,6 +1429,7 @@ Provides: tex-ctanify = %{epoch}:%{source_date}-%{release}
 Provides: texlive-ctanify-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-ctanify-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-ctanify-bin < 7:20170520
+Provides: tex-ctanify-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-ctanify-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-ctanify-doc < 7:20170520
 License: LPPL 1.3
@@ -1433,6 +1454,7 @@ Provides: tex-ctanupload = %{epoch}:%{source_date}-%{release}
 Provides: texlive-ctanupload-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-ctanupload-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-ctanupload-bin < 7:20170520
+Provides: tex-ctanupload-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-ctanupload-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-ctanupload-doc < 7:20170520
 License: GPLv3+
@@ -1465,6 +1487,7 @@ Provides: tex-cweb = %{epoch}:%{source_date}-%{release}
 Provides: texlive-cweb-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-cweb-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-cweb-bin < 7:20170520
+Provides: tex-cweb-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-cweb-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-cweb-doc < 7:20170520
 License: Knuth
@@ -1489,6 +1512,7 @@ Provides: tex-cyrillic = %{epoch}:%{source_date}-%{release}
 Provides: texlive-cyrillic-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-cyrillic-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-cyrillic-bin < 7:20170520
+Provides: tex-cyrillic-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-cyrillic-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-cyrillic-doc < 7:20170520
 Provides: texlive-cyrillic-bin-bin = %{epoch}:%{source_date}-%{release}
@@ -1621,6 +1645,7 @@ Provides: tex-de-macro = %{epoch}:%{source_date}-%{release}
 Provides: texlive-de-macro-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-de-macro-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-de-macro-bin < 7:20170520
+Provides: tex-de-macro-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-de-macro-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-de-macro-doc < 7:20170520
 License: AFL
@@ -1661,6 +1686,7 @@ Provides: tex-diadia = %{epoch}:%{source_date}-%{release}
 Provides: texlive-diadia-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-diadia-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-diadia-bin < 7:20170520
+Provides: tex-diadia-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-diadia-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-diadia-doc < 7:20170520
 License: LPPL
@@ -1704,6 +1730,7 @@ Provides: tex-dosepsbin = %{epoch}:%{source_date}-%{release}
 Provides: texlive-dosepsbin-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-dosepsbin-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-dosepsbin-bin < 7:20170520
+Provides: tex-dosepsbin-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-dosepsbin-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-dosepsbin-doc < 7:20170520
 License: GPLv2 or Artistic
@@ -1748,6 +1775,7 @@ Provides: tex-dtxgen = %{epoch}:%{source_date}-%{release}
 Provides: texlive-dtxgen-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-dtxgen-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-dtxgen-bin < 7:20170520
+Provides: tex-dtxgen-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-dtxgen-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-dtxgen-doc < 7:20170520
 License: GPL+
@@ -1782,6 +1810,7 @@ Provides: tex-dviasm = %{epoch}:%{source_date}-%{release}
 Provides: texlive-dviasm-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-dviasm-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-dviasm-bin < 7:20170520
+Provides: tex-dviasm-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-dviasm-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-dviasm-doc < 7:20170520
 License: GPLv3+
@@ -1862,6 +1891,7 @@ Provides: tex-dvipdfmx = %{epoch}:%{source_date}-%{release}
 Provides: texlive-dvipdfmx-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-dvipdfmx-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-dvipdfmx-bin < 7:20170520
+Provides: tex-dvipdfmx-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-dvipdfmx-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-dvipdfmx-doc < 7:20170520
 Provides: dvipdfmx = %{epoch}:%{source_date}-%{release}
@@ -1891,6 +1921,7 @@ Provides: tex-dvipng = %{epoch}:%{source_date}-%{release}
 Provides: texlive-dvipng-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-dvipng-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-dvipng-bin < 7:20170520
+Provides: tex-dvipng-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-dvipng-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-dvipng-doc < 7:20170520
 Provides: dvipng = %{epoch}:%{source_date}-%{release}
@@ -1934,6 +1965,7 @@ Provides: tex-dvips = %{epoch}:%{source_date}-%{release}
 Provides: texlive-dvips-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-dvips-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-dvips-bin < 7:20170520
+Provides: tex-dvips-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-dvips-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-dvips-doc < 7:20170520
 License: GPL+
@@ -2024,6 +2056,7 @@ Provides: tex-ebong = %{epoch}:%{source_date}-%{release}
 Provides: texlive-ebong-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-ebong-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-ebong-bin < 7:20170520
+Provides: tex-ebong-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-ebong-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-ebong-doc < 7:20170520
 License: Public Domain
@@ -2044,6 +2077,7 @@ Provides: tex-eplain = %{epoch}:%{source_date}-%{release}
 Provides: texlive-eplain-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-eplain-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-eplain-bin < 7:20170520
+Provides: tex-eplain-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-eplain-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-eplain-doc < 7:20170520
 License: GPLv2+
@@ -2074,6 +2108,7 @@ Provides: tex-epspdf = %{epoch}:%{source_date}-%{release}
 Provides: texlive-epspdf-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-epspdf-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-epspdf-bin < 7:20170520
+Provides: tex-epspdf-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-epspdf-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-epspdf-doc < 7:20170520
 License: GPL+
@@ -2095,6 +2130,7 @@ Provides: tex-epstopdf = %{epoch}:%{source_date}-%{release}
 Provides: texlive-epstopdf-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-epstopdf-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-epstopdf-bin < 7:20170520
+Provides: tex-epstopdf-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-epstopdf-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-epstopdf-doc < 7:20170520
 License: BSD
@@ -2123,6 +2159,7 @@ Provides: tex-exceltex = %{epoch}:%{source_date}-%{release}
 Provides: texlive-exceltex-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-exceltex-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-exceltex-bin < 7:20170520
+Provides: tex-exceltex-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-exceltex-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-exceltex-doc < 7:20170520
 License: GPL+
@@ -2153,6 +2190,7 @@ Provides: tex-fig4latex = %{epoch}:%{source_date}-%{release}
 Provides: texlive-fig4latex-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-fig4latex-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-fig4latex-bin < 7:20170520
+Provides: tex-fig4latex-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-fig4latex-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-fig4latex-doc < 7:20170520
 License: GPLv3+
@@ -2174,6 +2212,7 @@ Provides: tex-findhyph = %{epoch}:%{source_date}-%{release}
 Provides: texlive-findhyph-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-findhyph-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-findhyph-bin < 7:20170520
+Provides: tex-findhyph-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-findhyph-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-findhyph-doc < 7:20170520
 License: GPL+
@@ -2194,6 +2233,7 @@ Provides: tex-fontinst = %{epoch}:%{source_date}-%{release}
 Provides: texlive-fontinst-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-fontinst-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-fontinst-bin < 7:20170520
+Provides: tex-fontinst-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-fontinst-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-fontinst-doc < 7:20170520
 License: LPPL
@@ -2236,6 +2276,7 @@ Provides: tex-fontools = %{epoch}:%{source_date}-%{release}
 Provides: texlive-fontools-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-fontools-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-fontools-bin < 7:20170520
+Provides: tex-fontools-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-fontools-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-fontools-doc < 7:20170520
 License: GPLv2+
@@ -2276,6 +2317,7 @@ Provides: tex-fragmaster = %{epoch}:%{source_date}-%{release}
 Provides: texlive-fragmaster-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-fragmaster-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-fragmaster-bin < 7:20170520
+Provides: tex-fragmaster-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-fragmaster-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-fragmaster-doc < 7:20170520
 License: GPL+
@@ -2295,6 +2337,7 @@ Provides: tex-getmap = %{epoch}:%{source_date}-%{release}
 Provides: texlive-getmap-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-getmap-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-getmap-bin < 7:20170520
+Provides: tex-getmap-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-getmap-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-getmap-doc < 7:20170520
 License: LPPL
@@ -2324,6 +2367,7 @@ Provides: tex-glossaries = %{epoch}:%{source_date}-%{release}
 Provides: texlive-glossaries-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-glossaries-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-glossaries-bin < 7:20170520
+Provides: tex-glossaries-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-glossaries-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-glossaries-doc < 7:20170520
 License: LPPL 1.3
@@ -2415,6 +2459,7 @@ Provides: tex-gregoriotex = %{epoch}:%{source_date}-%{release}
 Provides: texlive-gregoriotex-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-gregoriotex-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-gregoriotex-bin < 7:20170520
+Provides: tex-gregoriotex-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-gregoriotex-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-gregoriotex-doc < 7:20170520
 License: GPLv3
@@ -2462,6 +2507,7 @@ Provides: tex-installfont = %{epoch}:%{source_date}-%{release}
 Provides: texlive-installfont-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-installfont-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-installfont-bin < 7:20170520
+Provides: tex-installfont-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-installfont-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-installfont-doc < 7:20170520
 License: LPPL
@@ -2487,6 +2533,7 @@ Provides: tex-jadetex = %{epoch}:%{source_date}-%{release}
 Provides: texlive-jadetex-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-jadetex-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-jadetex-bin < 7:20170520
+Provides: tex-jadetex-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-jadetex-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-jadetex-doc < 7:20170520
 Provides: jadetex = %{epoch}:%{source_date}-%{release}
@@ -2536,6 +2583,7 @@ Provides: tex-kotex-utils = %{epoch}:%{source_date}-%{release}
 Provides: texlive-kotex-utils-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-kotex-utils-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-kotex-utils-bin < 7:20170520
+Provides: tex-kotex-utils-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-kotex-utils-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-kotex-utils-doc < 7:20170520
 License: LPPL
@@ -2560,6 +2608,7 @@ Provides: tex-kpathsea = %{epoch}:%{source_date}-%{release}
 Provides: texlive-kpathsea-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-kpathsea-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-kpathsea-bin < 7:20170520
+Provides: tex-kpathsea-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-kpathsea-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-kpathsea-doc < 7:20170520
 Requires: coreutils, grep
@@ -2577,6 +2626,7 @@ top of a general search mechanism.
 %package -n %{shortname}-l3build
 Provides: tex-l3build = %{epoch}:%{source_date}-%{release}
 Provides: texlive-l3build-bin = %{epoch}:%{source_date}-%{release}
+Provides: tex-l3build-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-l3build-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-l3build-doc < 7:20180414
 License: LPPL
@@ -2619,6 +2669,7 @@ Obsoletes: texlive-latex-bin < 7:20170520
 Provides: texlive-latex-bin-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-latex-bin-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-latex-bin-bin < 7:20170520
+Provides: tex-latex-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-latex-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-latex-doc < 7:20170520
 License: LPPL 1.3
@@ -2802,6 +2853,7 @@ Provides: tex-latex-git-log = %{epoch}:%{source_date}-%{release}
 Provides: texlive-latex-git-log-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-latex-git-log-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-latex-git-log-bin < 7:20170520
+Provides: tex-latex-git-log-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-latex-git-log-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-latex-git-log-doc < 7:20170520
 License: GPLv3+
@@ -2822,6 +2874,7 @@ Provides: tex-latex-papersize = %{epoch}:%{source_date}-%{release}
 Provides: texlive-latex-papersize-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-latex-papersize-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-latex-papersize-bin < 7:20170520
+Provides: tex-latex-papersize-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-latex-papersize-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-latex-papersize-doc < 7:20170520
 License: ASL 2.0
@@ -2844,6 +2897,7 @@ Provides: tex-latex2man = %{epoch}:%{source_date}-%{release}
 Provides: texlive-latex2man-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-latex2man-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-latex2man-bin < 7:20170520
+Provides: tex-latex2man-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-latex2man-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-latex2man-doc < 7:20170520
 License: LPPL
@@ -2869,6 +2923,7 @@ Provides: tex-latex2nemeth = %{epoch}:%{source_date}-%{release}
 Provides: texlive-latex2nemeth-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-latex2nemeth-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-latex2nemeth-bin < 7:20170520
+Provides: tex-latex2nemeth-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-latex2nemeth-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-latex2nemeth-doc < 7:20170520
 License: GPLv3
@@ -2899,6 +2954,7 @@ Provides: tex-latexdiff = %{epoch}:%{source_date}-%{release}
 Provides: texlive-latexdiff-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-latexdiff-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-latexdiff-bin < 7:20170520
+Provides: tex-latexdiff-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-latexdiff-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-latexdiff-doc < 7:20170520
 License: GPLv3+
@@ -2925,6 +2981,7 @@ Provides: tex-latexfileversion = %{epoch}:%{source_date}-%{release}
 Provides: texlive-latexfileversion-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-latexfileversion-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-latexfileversion-bin < 7:20170520
+Provides: tex-latexfileversion-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-latexfileversion-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-latexfileversion-doc < 7:20170520
 License: LPPL
@@ -2946,6 +3003,7 @@ Provides: tex-latexindent = %{epoch}:%{source_date}-%{release}
 Provides: texlive-latexindent-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-latexindent-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-latexindent-bin < 7:20170520
+Provides: tex-latexindent-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-latexindent-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-latexindent-doc < 7:20170520
 License: GPLv3+
@@ -2964,6 +3022,7 @@ Provides: tex-latexpand = %{epoch}:%{source_date}-%{release}
 Provides: texlive-latexpand-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-latexpand-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-latexpand-bin < 7:20170520
+Provides: tex-latexpand-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-latexpand-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-latexpand-doc < 7:20170520
 License: BSD
@@ -3036,6 +3095,7 @@ Provides: tex-lilyglyphs = %{epoch}:%{source_date}-%{release}
 Provides: texlive-lilyglyphs-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-lilyglyphs-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-lilyglyphs-bin < 7:20170520
+Provides: tex-lilyglyphs-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-lilyglyphs-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-lilyglyphs-doc < 7:20170520
 License: LPPL 1.3
@@ -3069,6 +3129,7 @@ Provides: tex-listbib = %{epoch}:%{source_date}-%{release}
 Provides: texlive-listbib-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-listbib-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-listbib-bin < 7:20170520
+Provides: tex-listbib-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-listbib-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-listbib-doc < 7:20170520
 License: GPL+
@@ -3092,6 +3153,7 @@ Provides: tex-listings-ext = %{epoch}:%{source_date}-%{release}
 Provides: texlive-listings-ext-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-listings-ext-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-listings-ext-bin < 7:20170520
+Provides: tex-listings-ext-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-listings-ext-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-listings-ext-doc < 7:20170520
 License: LPPL 1.2
@@ -3118,6 +3180,7 @@ Provides: tex-lollipop = %{epoch}:%{source_date}-%{release}
 Provides: texlive-lollipop-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-lollipop-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-lollipop-bin < 7:20170520
+Provides: tex-lollipop-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-lollipop-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-lollipop-doc < 7:20170520
 License: GPLv3+
@@ -3161,6 +3224,7 @@ Provides: tex-ltxfileinfo = %{epoch}:%{source_date}-%{release}
 Provides: texlive-ltxfileinfo-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-ltxfileinfo-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-ltxfileinfo-bin < 7:20170520
+Provides: tex-ltxfileinfo-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-ltxfileinfo-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-ltxfileinfo-doc < 7:20170520
 License: GPL+
@@ -3183,6 +3247,7 @@ Provides: tex-ltximg = %{epoch}:%{source_date}-%{release}
 Provides: texlive-ltximg-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-ltximg-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-ltximg-bin < 7:20170520
+Provides: tex-ltximg-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-ltximg-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-ltximg-doc < 7:20170520
 License: GPLv2+
@@ -3203,6 +3268,7 @@ Provides: tex-lua2dox = %{epoch}:%{source_date}-%{release}
 Provides: texlive-lua2dox-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-lua2dox-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-lua2dox-bin < 7:20170520
+Provides: tex-lua2dox-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-lua2dox-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-lua2dox-doc < 7:20170520
 License: LPPL 1.3
@@ -3230,6 +3296,7 @@ Provides: tex-luaotfload = %{epoch}:%{source_date}-%{release}
 Provides: texlive-luaotfload-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-luaotfload-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-luaotfload-bin < 7:20170520
+Provides: tex-luaotfload-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-luaotfload-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-luaotfload-doc < 7:20170520
 License: GPLv2+
@@ -3254,6 +3321,7 @@ Provides: tex-luatex = %{epoch}:%{source_date}-%{release}
 Provides: texlive-luatex-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-luatex-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-luatex-bin < 7:20170520
+Provides: tex-luatex-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-luatex-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-luatex-doc < 7:20170520
 License: GPLv2+
@@ -3289,6 +3357,7 @@ Provides: tex-lwarp = %{epoch}:%{source_date}-%{release}
 Provides: texlive-lwarp-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-lwarp-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-lwarp-bin < 7:20170520
+Provides: tex-lwarp-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-lwarp-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-lwarp-doc < 7:20170520
 License: LPPL
@@ -3316,6 +3385,7 @@ Provides: tex-make4ht = %{epoch}:%{source_date}-%{release}
 Provides: texlive-make4ht-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-make4ht-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-make4ht-bin < 7:20170520
+Provides: tex-make4ht-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-make4ht-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-make4ht-doc < 7:20170520
 License: LPPL 1.3
@@ -3335,6 +3405,7 @@ Provides: tex-makedtx = %{epoch}:%{source_date}-%{release}
 Provides: texlive-makedtx-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-makedtx-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-makedtx-bin < 7:20170520
+Provides: tex-makedtx-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-makedtx-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-makedtx-doc < 7:20170520
 License: LPPL
@@ -3357,6 +3428,7 @@ Provides: tex-makeindex = %{epoch}:%{source_date}-%{release}
 Provides: texlive-makeindex-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-makeindex-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-makeindex-bin < 7:20170520
+Provides: tex-makeindex-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-makeindex-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-makeindex-doc < 7:20170520
 License: MakeIndex
@@ -3377,6 +3449,7 @@ Provides: tex-match_parens = %{epoch}:%{source_date}-%{release}
 Provides: texlive-match_parens-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-match_parens-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-match_parens-bin < 7:20170520
+Provides: tex-match_parens-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-match_parens-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-match_parens-doc < 7:20170520
 License: GPL+
@@ -3400,6 +3473,7 @@ Provides: tex-mathspic = %{epoch}:%{source_date}-%{release}
 Provides: texlive-mathspic-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-mathspic-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-mathspic-bin < 7:20170520
+Provides: tex-mathspic-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-mathspic-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-mathspic-doc < 7:20170520
 License: LPPL
@@ -3461,6 +3535,7 @@ Provides: tex-metapost = %{epoch}:%{source_date}-%{release}
 Provides: texlive-metapost-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-metapost-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-metapost-bin < 7:20170520
+Provides: tex-metapost-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-metapost-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-metapost-doc < 7:20170520
 License: LGPLv2+
@@ -3526,6 +3601,7 @@ Provides: tex-mex = %{epoch}:%{source_date}-%{release}
 Provides: texlive-mex-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-mex-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-mex-bin < 7:20170520
+Provides: tex-mex-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-mex-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-mex-doc < 7:20170520
 License: Public Domain
@@ -3585,6 +3661,7 @@ Provides: tex-mf2pt1 = %{epoch}:%{source_date}-%{release}
 Provides: texlive-mf2pt1-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-mf2pt1-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-mf2pt1-bin < 7:20170520
+Provides: tex-mf2pt1-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-mf2pt1-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-mf2pt1-doc < 7:20170520
 License: LPPL
@@ -3609,6 +3686,7 @@ Provides: tex-mkgrkindex = %{epoch}:%{source_date}-%{release}
 Provides: texlive-mkgrkindex-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-mkgrkindex-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-mkgrkindex-bin < 7:20170520
+Provides: tex-mkgrkindex-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-mkgrkindex-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-mkgrkindex-doc < 7:20170520
 License: LPPL
@@ -3630,6 +3708,7 @@ Provides: tex-mkjobtexmf = %{epoch}:%{source_date}-%{release}
 Provides: texlive-mkjobtexmf-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-mkjobtexmf-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-mkjobtexmf-bin < 7:20170520
+Provides: tex-mkjobtexmf-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-mkjobtexmf-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-mkjobtexmf-doc < 7:20170520
 License: GPLv2 or Artistic
@@ -3653,6 +3732,7 @@ Provides: tex-mkpic = %{epoch}:%{source_date}-%{release}
 Provides: texlive-mkpic-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-mkpic-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-mkpic-bin < 7:20170520
+Provides: tex-mkpic-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-mkpic-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-mkpic-doc < 7:20170520
 License: GPL+
@@ -3675,6 +3755,7 @@ Provides: tex-mltex = %{epoch}:%{source_date}-%{release}
 Provides: texlive-mltex-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-mltex-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-mltex-bin < 7:20170520
+Provides: tex-mltex-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-mltex-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-mltex-doc < 7:20170520
 License: Knuth
@@ -3702,6 +3783,7 @@ Provides: tex-mptopdf = %{epoch}:%{source_date}-%{release}
 Provides: texlive-mptopdf-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-mptopdf-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-mptopdf-bin < 7:20170520
+Provides: tex-mptopdf-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-mptopdf-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-mptopdf-doc < 7:20170520
 License: LPPL
@@ -3729,6 +3811,7 @@ Provides: tex-multibibliography = %{epoch}:%{source_date}-%{release}
 Provides: texlive-multibibliography-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-multibibliography-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-multibibliography-bin < 7:20170520
+Provides: tex-multibibliography-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-multibibliography-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-multibibliography-doc < 7:20170520
 License: LPPL 1.3
@@ -3753,6 +3836,7 @@ Provides: tex-musixtex = %{epoch}:%{source_date}-%{release}
 Provides: texlive-musixtex-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-musixtex-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-musixtex-bin < 7:20170520
+Provides: tex-musixtex-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-musixtex-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-musixtex-doc < 7:20170520
 License: GPLv2+
@@ -3829,6 +3913,7 @@ Provides: tex-musixtnt = %{epoch}:%{source_date}-%{release}
 Provides: texlive-musixtnt-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-musixtnt-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-musixtnt-bin < 7:20170520
+Provides: tex-musixtnt-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-musixtnt-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-musixtnt-doc < 7:20170520
 License: GPLv2+
@@ -3857,6 +3942,7 @@ Provides: tex-m-tx = %{epoch}:%{source_date}-%{release}
 Provides: texlive-m-tx-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-m-tx-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-m-tx-bin < 7:20170520
+Provides: tex-m-tx-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-m-tx-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-m-tx-doc < 7:20170520
 License: GPL+
@@ -3874,6 +3960,7 @@ Tx continues in use by those who prefer its language.
 
 %package -n %{shortname}-oberdiek
 Provides: tex-oberdiek = %{epoch}:%{source_date}-%{release}
+Provides: tex-oberdiek-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-oberdiek-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-oberdiek-doc < 7:20170520
 License: LPPL
@@ -4259,6 +4346,7 @@ Provides: tex-omegaware = %{epoch}:%{source_date}-%{release}
 Provides: texlive-omegaware-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-omegaware-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-omegaware-bin < 7:20170520
+Provides: tex-omegaware-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-omegaware-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-omegaware-doc < 7:20170520
 License: LPPL
@@ -4290,6 +4378,7 @@ Provides: tex-pax = %{epoch}:%{source_date}-%{release}
 Provides: texlive-pax-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-pax-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-pax-bin < 7:20170520
+Provides: tex-pax-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-pax-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-pax-doc < 7:20170520
 License: GPLv2+
@@ -4323,6 +4412,7 @@ Provides: tex-pdfbook2 = %{epoch}:%{source_date}-%{release}
 Provides: texlive-pdfbook2-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-pdfbook2-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-pdfbook2-bin < 7:20170520
+Provides: tex-pdfbook2-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-pdfbook2-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-pdfbook2-doc < 7:20170520
 License: GPLv3+
@@ -4353,6 +4443,7 @@ Provides: tex-pdfcrop = %{epoch}:%{source_date}-%{release}
 Provides: texlive-pdfcrop-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-pdfcrop-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-pdfcrop-bin < 7:20170520
+Provides: tex-pdfcrop-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-pdfcrop-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-pdfcrop-doc < 7:20170520
 License: LPPL
@@ -4371,6 +4462,7 @@ Provides: tex-pdfjam = %{epoch}:%{source_date}-%{release}
 Provides: texlive-pdfjam-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-pdfjam-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-pdfjam-bin < 7:20170520
+Provides: tex-pdfjam-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-pdfjam-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-pdfjam-doc < 7:20170520
 License: GPLv2+
@@ -4394,6 +4486,7 @@ Provides: tex-pdflatexpicscale = %{epoch}:%{source_date}-%{release}
 Provides: texlive-pdflatexpicscale-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-pdflatexpicscale-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-pdflatexpicscale-bin < 7:20170520
+Provides: tex-pdflatexpicscale-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-pdflatexpicscale-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-pdflatexpicscale-doc < 7:20170520
 License: LPPL
@@ -4412,6 +4505,7 @@ Provides: tex-pdftex = %{epoch}:%{source_date}-%{release}
 Provides: texlive-pdftex-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-pdftex-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-pdftex-bin < 7:20170520
+Provides: tex-pdftex-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-pdftex-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-pdftex-doc < 7:20170520
 License: GPL+
@@ -4465,6 +4559,7 @@ Provides: tex-pdfxup = %{epoch}:%{source_date}-%{release}
 Provides: texlive-pdfxup-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-pdfxup-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-pdfxup-bin < 7:20170520
+Provides: tex-pdfxup-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-pdfxup-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-pdfxup-doc < 7:20170520
 License: LPPL
@@ -4484,6 +4579,7 @@ Provides: tex-pedigree-perl = %{epoch}:%{source_date}-%{release}
 Provides: texlive-pedigree-perl-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-pedigree-perl-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-pedigree-perl-bin < 7:20170520
+Provides: tex-pedigree-perl-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-pedigree-perl-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-pedigree-perl-doc < 7:20170520
 License: GPLv2+
@@ -4505,6 +4601,7 @@ Provides: tex-perltex = %{epoch}:%{source_date}-%{release}
 Provides: texlive-perltex-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-perltex-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-perltex-bin < 7:20170520
+Provides: tex-perltex-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-perltex-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-perltex-doc < 7:20170520
 License: LPPL
@@ -4533,6 +4630,7 @@ Provides: tex-petri-nets = %{epoch}:%{source_date}-%{release}
 Provides: texlive-petri-nets-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-petri-nets-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-petri-nets-bin < 7:20170520
+Provides: tex-petri-nets-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-petri-nets-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-petri-nets-doc < 7:20170520
 License: GPL+
@@ -4561,6 +4659,7 @@ Provides: tex-pfarrei = %{epoch}:%{source_date}-%{release}
 Provides: texlive-pfarrei-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-pfarrei-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-pfarrei-bin < 7:20170520
+Provides: tex-pfarrei-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-pfarrei-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-pfarrei-doc < 7:20170520
 License: LPPL 1.3
@@ -4589,6 +4688,7 @@ Provides: tex-pkfix = %{epoch}:%{source_date}-%{release}
 Provides: tex-pkfix-bin = %{epoch}:%{source_date}-%{release}
 Provides: texlive-pkfix-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-pkfix-bin < 7:20170520
+Provides: tex-pkfix-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-pkfix-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-pkfix-doc < 7:20170520
 License: LPPL 1.3
@@ -4608,6 +4708,7 @@ Provides: tex-pkfix-helper = %{epoch}:%{source_date}-%{release}
 Provides: tex-pkfix-helper-bin = %{epoch}:%{source_date}-%{release}
 Provides: texlive-pkfix-helper-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-pkfix-helper-bin < 7:20170520
+Provides: tex-pkfix-helper-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-pkfix-helper-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-pkfix-helper-doc < 7:20170520
 License: LPPL
@@ -4636,6 +4737,7 @@ Provides: tex-pmx = %{epoch}:%{source_date}-%{release}
 Provides: tex-pmx-bin = %{epoch}:%{source_date}-%{release}
 Provides: texlive-pmx-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-pmx-bin < 7:20170520
+Provides: tex-pmx-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-pmx-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-pmx-doc < 7:20170520
 License: GPLv2+
@@ -4658,6 +4760,7 @@ Provides: tex-pmxchords = %{epoch}:%{source_date}-%{release}
 Provides: tex-pmxchords-bin = %{epoch}:%{source_date}-%{release}
 Provides: texlive-pmxchords-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-pmxchords-bin < 7:20170520
+Provides: tex-pmxchords-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-pmxchords-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-pmxchords-doc < 7:20170520
 License: GPLv2+
@@ -4681,6 +4784,7 @@ Provides: tex-pstools = %{epoch}:%{source_date}-%{release}
 Provides: tex-pstools-bin = %{epoch}:%{source_date}-%{release}
 Provides: texlive-pstools-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-pstools-bin < 7:20170520
+Provides: tex-pstools-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-pstools-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-pstools-doc < 7:20170520
 License: GPL+
@@ -4710,6 +4814,7 @@ Provides: tex-pst2pdf = %{epoch}:%{source_date}-%{release}
 Provides: tex-pst2pdf-bin = %{epoch}:%{source_date}-%{release}
 Provides: texlive-pst2pdf-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-pst2pdf-bin < 7:20170520
+Provides: tex-pst2pdf-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-pst2pdf-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-pst2pdf-doc < 7:20170520
 License: GPLv2+
@@ -4734,6 +4839,7 @@ Provides: tex-pst-pdf = %{epoch}:%{source_date}-%{release}
 Provides: tex-pst-pdf-bin = %{epoch}:%{source_date}-%{release}
 Provides: texlive-pst-pdf-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-pst-pdf-bin < 7:20170520
+Provides: tex-pst-pdf-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-pst-pdf-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-pst-pdf-doc < 7:20170520
 License: LPPL
@@ -4782,6 +4888,7 @@ Provides: tex-ptex = %{epoch}:%{source_date}-%{release}
 Provides: tex-ptex-bin = %{epoch}:%{source_date}-%{release}
 Provides: texlive-ptex-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-ptex-bin < 7:20170520
+Provides: tex-ptex-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-ptex-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-ptex-doc < 7:20170520
 Provides: texlive-platex-bin = %{epoch}:%{source_date}-%{release}
@@ -4816,6 +4923,7 @@ Provides: tex-ptex-fontmaps = %{epoch}:%{source_date}-%{release}
 Provides: tex-ptex-fontmaps = %{epoch}:%{source_date}-%{release}
 Provides: texlive-ptex-fontmaps-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-ptex-fontmaps-bin < 7:20170520
+Provides: tex-ptex-fontmaps-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-ptex-fontmaps-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-ptex-fontmaps-doc < 7:20170520
 Provides: tex-jfontmaps = %{epoch}:%{source_date}-%{release}
@@ -4850,6 +4958,7 @@ Provides: tex-ptex2pdf = %{epoch}:%{source_date}-%{release}
 Provides: tex-ptex2pdf-bin = %{epoch}:%{source_date}-%{release}
 Provides: texlive-ptex2pdf-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-ptex2pdf-bin < 7:20170520
+Provides: tex-ptex2pdf-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-ptex2pdf-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-ptex2pdf-doc < 7:20170520
 License: GPLv2+
@@ -4871,6 +4980,7 @@ Provides: tex-purifyeps = %{epoch}:%{source_date}-%{release}
 Provides: tex-purifyeps-bin = %{epoch}:%{source_date}-%{release}
 Provides: texlive-purifyeps-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-purifyeps-bin < 7:20170520
+Provides: tex-purifyeps-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-purifyeps-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-purifyeps-doc < 7:20170520
 License: LPPL
@@ -4896,6 +5006,7 @@ Provides: tex-pygmentex = %{epoch}:%{source_date}-%{release}
 Provides: tex-pygmentex-bin = %{epoch}:%{source_date}-%{release}
 Provides: texlive-pygmentex-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-pygmentex-bin < 7:20170520
+Provides: tex-pygmentex-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-pygmentex-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-pythontex-doc < 7:20170520
 License: LPPL 1.3
@@ -4926,6 +5037,7 @@ Provides: tex-pythontex = %{epoch}:%{source_date}-%{release}
 Provides: tex-pythontex-bin = %{epoch}:%{source_date}-%{release}
 Provides: texlive-pythontex-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-pythontex-bin < 7:20170520
+Provides: tex-pythontex-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-pythontex-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-pythontex-doc < 7:20170520
 License: LPPL 1.3
@@ -4967,6 +5079,7 @@ Provides: tex-rubik = %{epoch}:%{source_date}-%{release}
 Provides: tex-rubik-bin = %{epoch}:%{source_date}-%{release}
 Provides: texlive-rubik-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-rubik-bin < 7:20170520
+Provides: tex-rubik-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-rubik-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-rubik-doc < 7:20170520
 License: LPPL 1.3
@@ -5013,6 +5126,7 @@ Provides: tex-splitindex = %{epoch}:%{source_date}-%{release}
 Provides: tex-splitindex-bin = %{epoch}:%{source_date}-%{release}
 Provides: texlive-splitindex-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-splitindex-bin < 7:20170520
+Provides: tex-splitindex-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-splitindex-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-splitindex-doc < 7:20170520
 License: LPPL
@@ -5040,6 +5154,7 @@ Provides: tex-srcredact = %{epoch}:%{source_date}-%{release}
 Provides: tex-srcredact-bin = %{epoch}:%{source_date}-%{release}
 Provides: texlive-srcredact-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-srcredact-bin < 7:20170520
+Provides: tex-srcredact-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-srcredact-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-srcredact-doc < 7:20170520
 License: GPLv2+
@@ -5063,6 +5178,7 @@ Provides: tex-sty2dtx = %{epoch}:%{source_date}-%{release}
 Provides: tex-sty2dtx-bin = %{epoch}:%{source_date}-%{release}
 Provides: texlive-sty2dtx-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-sty2dtx-bin < 7:20170520
+Provides: tex-sty2dtx-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-sty2dtx-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-sty2dtx-doc < 7:20170520
 License: GPLv3+
@@ -5092,6 +5208,7 @@ Provides: tex-svn-multi = %{epoch}:%{source_date}-%{release}
 Provides: tex-svn-multi-bin = %{epoch}:%{source_date}-%{release}
 Provides: texlive-svn-multi-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-svn-multi-bin < 7:20170520
+Provides: tex-svn-multi-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-svn-multi-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-svn-multi-doc < 7:20170520
 License: LPPL
@@ -5137,6 +5254,7 @@ Provides: tex-tetex = %{epoch}:%{source_date}-%{release}
 Provides: tex-tetex-bin = %{epoch}:%{source_date}-%{release}
 Provides: texlive-tetex-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-tetex-bin < 7:20170520
+Provides: tex-tetex-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-tetex-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-tetex-doc < 7:20170520
 Requires: texlive-base
@@ -5208,6 +5326,7 @@ Provides: tex-tex4ebook = %{epoch}:%{source_date}-%{release}
 Provides: tex-tex4ebook-bin = %{epoch}:%{source_date}-%{release}
 Provides: texlive-tex4ebook-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-tex4ebook-bin < 7:20170520
+Provides: tex-tex4ebook-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-tex4ebook-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-tex4ebook-doc < 7:20170520
 License: LPPL 1.3
@@ -5231,6 +5350,7 @@ Provides: tex-tex4ht = %{epoch}:%{source_date}-%{release}
 Provides: tex-tex4ht-bin = %{epoch}:%{source_date}-%{release}
 Provides: texlive-tex4ht-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-tex4ht-bin < 7:20170520
+Provides: tex-tex4ht-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-tex4ht-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-tex4ht-doc < 7:20170520
 License: LPPL
@@ -5276,6 +5396,7 @@ Provides: tex-texcount = %{epoch}:%{source_date}-%{release}
 Provides: tex-texcount-bin = %{epoch}:%{source_date}-%{release}
 Provides: texlive-texcount-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-texcount-bin < 7:20170520
+Provides: tex-texcount-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-texcount-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-texcount-doc < 7:20170520
 License: LPPL
@@ -5297,6 +5418,7 @@ Provides: tex-texdef = %{epoch}:%{source_date}-%{release}
 Provides: tex-texdef-bin = %{epoch}:%{source_date}-%{release}
 Provides: texlive-texdef-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-texdef-bin < 7:20170520
+Provides: tex-texdef-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-texdef-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-texdef-doc < 7:20170520
 License: GPLv3+
@@ -5329,6 +5451,7 @@ Provides: tex-texdiff = %{epoch}:%{source_date}-%{release}
 Provides: tex-texdiff-bin = %{epoch}:%{source_date}-%{release}
 Provides: texlive-texdiff-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-texdiff-bin < 7:20170520
+Provides: tex-texdiff-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-texdiff-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-texdiff-doc < 7:20170520
 License: GPL+ or Artistic
@@ -5366,6 +5489,7 @@ Provides: tex-texdoc = %{epoch}:%{source_date}-%{release}
 Provides: tex-texdoc-bin = %{epoch}:%{source_date}-%{release}
 Provides: texlive-texdoc-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-texdoc-bin < 7:20170520
+Provides: tex-texdoc-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-texdoc-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-texdoc-doc < 7:20170520
 License: GPL+
@@ -5388,6 +5512,7 @@ Provides: tex-texfot = %{epoch}:%{source_date}-%{release}
 Provides: tex-texfot-bin = %{epoch}:%{source_date}-%{release}
 Provides: texlive-texfot-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-texfot-bin < 7:20170520
+Provides: tex-texfot-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-texfot-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-texfot-doc < 7:20170520
 License: Public Domain
@@ -5408,6 +5533,7 @@ Provides: tex-texliveonfly = %{epoch}:%{source_date}-%{release}
 Provides: tex-texliveonfly-bin = %{epoch}:%{source_date}-%{release}
 Provides: texlive-texliveonfly-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-texliveonfly-bin < 7:20170520
+Provides: tex-texliveonfly-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-texliveonfly-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-texliveonfly-doc < 7:20170520
 License: GPLv3+
@@ -5429,6 +5555,7 @@ The script is designed to work on Linux distributions.
 
 %package -n %{shortname}-texlive-en
 Provides: tex-texlive-en = %{epoch}:%{source_date}-%{release}
+Provides: tex-texlive-en-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-texlive-en-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-texlive-en-doc < 7:20170520
 License: LPPL
@@ -5461,6 +5588,7 @@ Provides: tex-texlive.infra = %{epoch}:%{source_date}-%{release}
 Provides: tex-texlive.infra-bin = %{epoch}:%{source_date}-%{release}
 Provides: texlive-texlive.infra-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-texlive.infra-bin < 7:20170520
+Provides: tex-texlive.infra-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-texlive.infra-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-texlive.infra-doc < 7:20170520
 License: LPPL
@@ -5483,6 +5611,7 @@ Provides: tex-texloganalyser = %{epoch}:%{source_date}-%{release}
 Provides: tex-texloganalyser-bin = %{epoch}:%{source_date}-%{release}
 Provides: texlive-texloganalyser-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-texloganalyser-bin < 7:20170520
+Provides: tex-texloganalyser-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-texloganalyser-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-texloganalyser-doc < 7:20170520
 License: BSD
@@ -5501,6 +5630,7 @@ Provides: tex-texosquery = %{epoch}:%{source_date}-%{release}
 Provides: tex-texosquery-bin = %{epoch}:%{source_date}-%{release}
 Provides: texlive-texosquery-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-texosquery-bin < 7:20170520
+Provides: tex-texosquery-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-texosquery-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-texosquery-doc < 7:20170520
 License: LPPL
@@ -5539,6 +5669,7 @@ Provides: tex-texsis = %{epoch}:%{source_date}-%{release}
 Provides: tex-texsis-bin = %{epoch}:%{source_date}-%{release}
 Provides: texlive-texsis-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-texsis-bin < 7:20170520
+Provides: tex-texsis-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-texsis-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-texsis-doc < 7:20170520
 License: LPPL
@@ -5613,6 +5744,7 @@ Provides: tex-thumbpdf = %{epoch}:%{source_date}-%{release}
 Provides: tex-thumbpdf-bin = %{epoch}:%{source_date}-%{release}
 Provides: texlive-thumbpdf-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-thumbpdf-bin < 7:20170520
+Provides: tex-thumbpdf-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-thumbpdf-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-thumbpdf-doc < 7:20170520
 License: LPPL
@@ -5655,6 +5787,7 @@ Provides: tex-tpic2pdftex = %{epoch}:%{source_date}-%{release}
 Provides: tex-tpic2pdftex-bin = %{epoch}:%{source_date}-%{release}
 Provides: texlive-tpic2pdftex-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-tpic2pdftex-bin < 7:20170520
+Provides: tex-tpic2pdftex-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-tpic2pdftex-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-tpic2pdftex-doc < 7:20170520
 License: GPL+
@@ -5673,6 +5806,7 @@ Provides: tex-ttfutils = %{epoch}:%{source_date}-%{release}
 Provides: tex-ttfutils-bin = %{epoch}:%{source_date}-%{release}
 Provides: texlive-ttfutils-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-ttfutils-bin < 7:20170520
+Provides: tex-ttfutils-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-ttfutils-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-ttfutils-doc < 7:20170520
 License: LPPL
@@ -5690,6 +5824,7 @@ Provides: tex-typeoutfileinfo = %{epoch}:%{source_date}-%{release}
 Provides: tex-typeoutfileinfo-bin = %{epoch}:%{source_date}-%{release}
 Provides: texlive-typeoutfileinfo-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-typeoutfileinfo-bin < 7:20170520
+Provides: tex-typeoutfileinfo-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-typeoutfileinfo-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-typeoutfileinfo-doc < 7:20170520
 License: LPPL 1.3
@@ -5712,6 +5847,7 @@ Provides: tex-ulqda = %{epoch}:%{source_date}-%{release}
 Provides: tex-ulqda-bin = %{epoch}:%{source_date}-%{release}
 Provides: texlive-ulqda-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-ulqda-bin < 7:20170520
+Provides: tex-ulqda-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-ulqda-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-ulqda-doc < 7:20170520
 License: LPPL
@@ -5775,6 +5911,7 @@ Provides: tex-urlbst = %{epoch}:%{source_date}-%{release}
 Provides: tex-urlbst-bin = %{epoch}:%{source_date}-%{release}
 Provides: texlive-urlbst-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-urlbst-bin < 7:20170520
+Provides: tex-urlbst-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-urlbst-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-urlbst-doc < 7:20170520
 License: GPL+
@@ -5796,6 +5933,7 @@ Provides: tex-velthuis = %{epoch}:%{source_date}-%{release}
 Provides: tex-velthuis-bin = %{epoch}:%{source_date}-%{release}
 Provides: texlive-velthuis-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-velthuis-bin < 7:20170520
+Provides: tex-velthuis-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-velthuis-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-velthuis-doc < 7:20170520
 Provides: texlive-devnag = %{epoch}:%{source_date}-%{release}
@@ -5964,6 +6102,7 @@ Provides: tex-vlna = %{epoch}:%{source_date}-%{release}
 Provides: tex-vlna-bin = %{epoch}:%{source_date}-%{release}
 Provides: texlive-vlna-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-vlna-bin < 7:20170520
+Provides: tex-vlna-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-vlna-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-vlna-doc < 7:20170520
 License: LPPL
@@ -5988,6 +6127,7 @@ Provides: tex-vpe = %{epoch}:%{source_date}-%{release}
 Provides: tex-vpe-bin = %{epoch}:%{source_date}-%{release}
 Provides: texlive-vpe-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-vpe-bin < 7:20170520
+Provides: tex-vpe-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-vpe-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-vpe-doc < 7:20170520
 License: LPPL
@@ -6030,6 +6170,7 @@ program weave) that may be typeset for comfortable reading.
 %package -n %{shortname}-wordcount
 Provides: tex-wordcount = %{epoch}:%{source_date}-%{release}
 Provides: texlive-wordcount-bin = %{epoch}:%{source_date}-%{release}
+Provides: tex-wordcount-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-wordcount-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-wordcount-doc < 7:20180414
 Provides: tex(wordcount.tex) = %{epoch}:%{source_date}-%{release}
@@ -6070,6 +6211,7 @@ Provides: tex-xetex = %{epoch}:%{source_date}-%{release}
 Provides: tex-xetex-bin = %{epoch}:%{source_date}-%{release}
 Provides: texlive-xetex-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-xetex-bin < 7:20170520
+Provides: tex-xetex-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-xetex-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-xetex-doc < 7:20170520
 License: MIT
@@ -6104,6 +6246,7 @@ Provides: tex-xindy-bin = %{epoch}:%{source_date}-%{release}
 Provides: tex-xindy-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-xindy-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-xindy-bin <= 6:svn41316
+Provides: tex-xindy-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-xindy-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-xindy-doc <= 6:svn41316
 License: GPLv2+
@@ -6127,6 +6270,7 @@ Provides: tex-xmltex = %{epoch}:%{source_date}-%{release}
 Provides: tex-xmltex-bin = %{epoch}:%{source_date}-%{release}
 Provides: texlive-xmltex-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-xmltex-bin < 7:20170520
+Provides: tex-xmltex-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-xmltex-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-xmltex-doc < 7:20170520
 Provides: xmltex = %{epoch}:%{source_date}-%{release}
@@ -6159,6 +6303,7 @@ Provides: tex-yplan = %{epoch}:%{source_date}-%{release}
 Provides: tex-yplan-bin = %{epoch}:%{source_date}-%{release}
 Provides: texlive-yplan-bin = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-yplan-bin < 7:20170520
+Provides: tex-yplan-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-yplan-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-yplan-doc < 7:20170520
 License: LPPL
@@ -8514,6 +8659,7 @@ done <<< "$list"
 %changelog
 * Mon Jul  2 2018 Tom Callaway <spot@fedoraproject.org> - 7:20180414-14
 - fix triggers to force enable of new maps and run syncwithtrees before doing map operations
+- add old "tex-foo-doc" provides for every package with doc provides (bz1593860, 1593863)
 
 * Tue Jun 26 2018 Tom Callaway <spot@fedoraproject.org> - 7:20180414-13
 - apply tibbs's fix (PR#4) for fmtutil cnf handling without tons of ugly scriptlets
