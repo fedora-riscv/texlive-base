@@ -6877,19 +6877,25 @@ export TEXMFCACHE=/var/lib/texmf
 %{_bindir}/texhash 2> /dev/null || :
 
 %transfiletriggerin -n %{shortname}-kpathsea -- %{_texdir}/texmf-dist/fonts/map/dvips/
+# REBUILD ALL THE THINGS
+yes | %{_bindir}/updmap-sys --syncwithtrees >/dev/null 2>&1 || :
 list=`grep "\.map" | sort -n | uniq`
 while read -r line; do
         [ -z "$line" ] && continue
         shortfile=`basename "$line"`
         if `echo $shortfile | grep -Eq 'allrunes.map|arabtex.map|arss.map|artm.map|bbold.map|cbgreek-full.map|ccpl.map|cmextra.map|cmll.map|cm.map|cm-super-t1.map|cm-super-t2a.map|cm-super-t2b.map|cm-super-t2c.map|cm-super-ts1.map|cm-super-x2.map|cmtext-bsr-interpolated.map|cyrillic.map|dvng.map|esint.map|ethiop.map|eurosym.map|hfbright.map|iby.map|latxfont.map|lxfonts.map|manfnt.map|mflogo.map|mongolian.map|musix.map|pigpen.map|plother.map|pltext.map|rsfs.map|semaf.map|stmaryrd.map|symbols.map|tipa.map|trajan.map|vnrother.map|vnrtext.map|wasy.map|xypic.map|yhmath.map'`; then
                 %{_bindir}/updmap-sys --nomkmap --enable MixedMap=$shortfile >/dev/null 2>&1 || :
+                %{_bindir}/updmap-sys --force --enable MixedMap=$shortfile >/dev/null 2>&1 || :
         else
                 %{_bindir}/updmap-sys --nomkmap --enable Map=$shortfile >/dev/null 2>&1 || :
+                %{_bindir}/updmap-sys --force --enable Map=$shortfile >/dev/null 2>&1 || :
         fi
 done <<< "$list"
 %{_bindir}/updmap-sys --quiet --nomkmap >/dev/null || :
 
 %transfiletriggerpostun -n %{shortname}-kpathsea -- %{_texdir}/texmf-dist/fonts/map/dvips/
+# REBUILD ALL THE THINGS
+yes | %{_bindir}/updmap-sys --syncwithtrees >/dev/null 2>&1 || :
 list=`grep "\.map" | sort -n | uniq`
 while read -r line; do
         [ -z "$line" ] && continue
@@ -8917,6 +8923,7 @@ fi
 
 %changelog
 * Mon Jul  2 2018 Tom Callaway <spot@fedoraproject.org> - 7:20170520-39
+- fix triggers to force enable of new maps and run syncwithtrees before doing map operations
 - add old tex-foo-doc provides to all packages with doc
 
 * Tue Jun 19 2018 Tom Callaway <spot@fedoraproject.org> - 7:20170520-38
