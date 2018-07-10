@@ -21,7 +21,7 @@
 
 Name: %{shortname}-base
 Version: %{source_date}
-Release: 15%{?dist}
+Release: 16%{?dist}
 Epoch: 7
 Summary: TeX formatting system
 # The only files in the base package are directories, cache, and license texts
@@ -8651,6 +8651,9 @@ done <<< "$list"
 %doc %{_texdir}/texmf-dist/doc/latex/yplan/
 
 %changelog
+* Tue Jul 10 2018 Pete Walter <pwalter@fedoraproject.org> - 7:20180414-16
+- Rebuild for ICU 62
+
 * Sat Jul  7 2018 Tom Callaway <spot@fedoraproject.org> - 7:20180414-15
 - revert trigger changes from -14
 
