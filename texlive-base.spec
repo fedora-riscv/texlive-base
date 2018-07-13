@@ -17,7 +17,7 @@
 
 Name: %{shortname}-base
 Version: %{source_date}
-Release: 40%{?dist}
+Release: 41%{?dist}
 Epoch: 7
 Summary: TeX formatting system
 # The only files in the base package are directories, cache, and license texts
@@ -8916,6 +8916,9 @@ fi
 %doc %{_texdir}/texmf-dist/doc/latex/yplan/
 
 %changelog
+* Thu Jul 12 2018 Tom Callaway <spot@fedoraproject.org> - 7:20170520-41
+- update latex2man to fix perl issues
+
 * Sat Jul  7 2018 Tom Callaway <spot@fedoraproject.org> - 7:20170520-40
 - revert trigger changes in -39. While mostly correct (the worst sort of correct)
   they resulted in a much longer scriptlet runtime and several hundred
