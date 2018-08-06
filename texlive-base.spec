@@ -21,7 +21,7 @@
 
 Name: %{shortname}-base
 Version: %{source_date}
-Release: 17%{?dist}
+Release: 18%{?dist}
 Epoch: 7
 Summary: TeX formatting system
 # The only files in the base package are directories, cache, and license texts
@@ -6666,9 +6666,11 @@ rm -rf %{buildroot}%{_texdir}/texmf-dist/scripts/cjk-gs-integrate
 rm -rf %{buildroot}%{_texdir}/texmf-dist/doc/fonts/cjk-gs-integrate
 rm -rf %{buildroot}%{_texdir}/texmf-dist/fonts/misc/cjk-gs-integrate
 
-# Fix synctex.pc file
-sed -i 's|%{buildroot}/source/inst|/usr|g' %{buildroot}%{_libdir}/pkgconfig/synctex.pc
-sed -i 's|/usr/lib|%{_libdir}|g' %{buildroot}%{_libdir}/pkgconfig/synctex.pc
+# Fix pkgconfig files
+for file in $(find %{buildroot}%{_libdir}/pkgconfig/ -type f -name '*.pc')
+do sed -i 's|%{_builddir}/%{name}-%{version}/source/inst|/usr|g' $file
+   sed -i 's|/usr/lib|%{_libdir}|g' $file
+done
 
 
 # SCRIPTLETS
@@ -8692,6 +8694,10 @@ done <<< "$list"
 %doc %{_texdir}/texmf-dist/doc/latex/yplan/
 
 %changelog
+* Mon Aug  6 2018 Marek Kasik <mkasik@redhat.com> - 7:20180414-18
+- Fix paths in pkgconfig files
+- Resolves: #1426622
+
 * Wed Jul 11 2018 Tom Callaway <spot@fedoraproject.org> - 7:20180414-17
 - update latex2man to resolve perl issues
 - use different ctan mirror, old one was out of date
