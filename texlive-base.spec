@@ -17,11 +17,11 @@
 
 # Not ppc64, not s390x, not aarch64 due to lack of clisp
 # code SIGSEGV's on armv7hl
-%global xindy_arches %{ix86} x86_64
+%global xindy_arches empty
 
 Name: %{shortname}-base
 Version: %{source_date}
-Release: 18%{?dist}
+Release: 19%{?dist}
 Epoch: 7
 Summary: TeX formatting system
 # The only files in the base package are directories, cache, and license texts
@@ -403,6 +403,7 @@ Patch7: texlive-20180414-new-poppler.patch
 Patch8: texlive-20180414-texinfo-path-fix.patch
 # These tests only fail on 32 bit arches with gcc8
 Patch11: texlive-20180215-disable-more-failing-tests.patch
+Patch12: texlive-20180414-poppler-0.64.patch
 
 # Can't do this because it causes everything else to be noarch
 # BuildArch: noarch
@@ -6366,6 +6367,7 @@ xz -dc %{SOURCE0} | tar x
 %endif
 %patch8 -p1 -b .texinfo-fix
 %patch11 -p0 -b .dt
+%patch12 -p1 -b .poppler-0.64
 # Setup copies of the licenses
 for l in `unxz -c %{SOURCE3} | tar t`; do
 ln -s %{_texdir}/licenses/$l $l
@@ -8694,6 +8696,11 @@ done <<< "$list"
 %doc %{_texdir}/texmf-dist/doc/latex/yplan/
 
 %changelog
+* Tue Aug 14 2018 Marek Kasik <mkasik@redhat.com> - 7:20180414-19
+- Rebuild for poppler-0.67.0
+- Disable xindy temporarily (there is a cyclic dependency which
+- prevents me from building texlive-base with new poppler)
+
 * Mon Aug  6 2018 Marek Kasik <mkasik@redhat.com> - 7:20180414-18
 - Fix paths in pkgconfig files
 - Resolves: #1426622
