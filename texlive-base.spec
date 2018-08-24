@@ -21,7 +21,7 @@
 
 Name: %{shortname}-base
 Version: %{source_date}
-Release: 19%{?dist}
+Release: 20%{?dist}
 Epoch: 7
 Summary: TeX formatting system
 # The only files in the base package are directories, cache, and license texts
@@ -404,6 +404,7 @@ Patch8: texlive-20180414-texinfo-path-fix.patch
 # These tests only fail on 32 bit arches with gcc8
 Patch11: texlive-20180215-disable-more-failing-tests.patch
 Patch12: texlive-20180414-poppler-0.64.patch
+Patch13: texlive-20180414-synctex-version.patch
 
 # Can't do this because it causes everything else to be noarch
 # BuildArch: noarch
@@ -6368,6 +6369,7 @@ xz -dc %{SOURCE0} | tar x
 %patch8 -p1 -b .texinfo-fix
 %patch11 -p0 -b .dt
 %patch12 -p1 -b .poppler-0.64
+%patch13 -p1 -b .synctex-version
 # Setup copies of the licenses
 for l in `unxz -c %{SOURCE3} | tar t`; do
 ln -s %{_texdir}/licenses/$l $l
@@ -8696,6 +8698,9 @@ done <<< "$list"
 %doc %{_texdir}/texmf-dist/doc/latex/yplan/
 
 %changelog
+* Fri Aug 24 2018 Marek Kasik <mkasik@redhat.com> - 7:20180414-20
+- Install synctex_version.h to be able to build evince
+
 * Tue Aug 14 2018 Marek Kasik <mkasik@redhat.com> - 7:20180414-19
 - Rebuild for poppler-0.67.0
 - Disable xindy temporarily (there is a cyclic dependency which
