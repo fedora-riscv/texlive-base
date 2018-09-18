@@ -3386,7 +3386,7 @@ own set of auxiliary files. Support files are self-generated on
 request. Assistance is provided for HTML import into EPUB
 conversion software and word processors.
 
-%package lyluatex
+%package -n %{shortname}-lyluatex
 Summary: Commands to include lilypond scores within a (Lua)LaTeX document
 Version: svn47584
 License: MIT
@@ -3396,7 +3396,7 @@ Provides: tex(lyluatex.sty) = %{tl_version}
 # lua
 BuildArch: noarch
 
-%description lyluatex
+%description -n %{shortname}-lyluatex
 This package provides macros for the inclusion of LilyPond
 scores within LuaLaTeX. It calls LilyPond to compile scores,
 then includes the produced files.
