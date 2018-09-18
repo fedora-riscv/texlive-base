@@ -21,7 +21,7 @@
 
 Name: %{shortname}-base
 Version: %{source_date}
-Release: 20%{?dist}
+Release: 21%{?dist}
 Epoch: 7
 Summary: TeX formatting system
 # The only files in the base package are directories, cache, and license texts
@@ -393,6 +393,8 @@ Source359: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/xmltex.do
 Source360: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/xmltex.tar.xz
 Source361: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/yplan.doc.tar.xz
 Source362: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/yplan.tar.xz
+Source363: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/lyluatex.tar.xz
+Source364: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/lyluatex.doc.tar.xz
 Patch1: tl-kpfix.patch
 Patch2: tl-format.patch
 Patch3: texlive-20180414-selinux-context.patch
@@ -3383,6 +3385,21 @@ and HTML versions of each document may coexist, each with its
 own set of auxiliary files. Support files are self-generated on
 request. Assistance is provided for HTML import into EPUB
 conversion software and word processors.
+
+%package lyluatex
+Summary: Commands to include lilypond scores within a (Lua)LaTeX document
+Version: svn47584
+License: MIT
+Requires: texlive-base texlive-kpathsea
+Provides: tex(lyluatex.lua) = %{tl_version}
+Provides: tex(lyluatex.sty) = %{tl_version}
+# lua
+BuildArch: noarch
+
+%description lyluatex
+This package provides macros for the inclusion of LilyPond
+scores within LuaLaTeX. It calls LilyPond to compile scores,
+then includes the produced files.
 
 %package -n %{shortname}-make4ht
 Provides: tex-make4ht = %{epoch}:%{source_date}-%{release}
@@ -7767,6 +7784,12 @@ done <<< "$list"
 %{_texdir}/texmf-dist/tex/latex/lwarp
 %doc %{_texdir}/texmf-dist/doc/latex/lwarp
 
+%files -n %{shortname}-lyluatex
+%license mit.txt
+%{_texdir}/texmf-dist/scripts/lyluatex/
+%{_texdir}/texmf-dist/tex/luatex/lyluatex/
+%doc %{_texdir}/texmf-dist/doc/support/lyluatex/
+
 %files -n %{shortname}-make4ht
 %license lppl1.3.txt
 %{_bindir}/make4ht
@@ -8698,6 +8721,9 @@ done <<< "$list"
 %doc %{_texdir}/texmf-dist/doc/latex/yplan/
 
 %changelog
+* Tue Sep 18 2018 Tom Callaway <spot@fedoraproject.org> - 7:20180414-21
+- add lyluatex
+
 * Fri Aug 24 2018 Marek Kasik <mkasik@redhat.com> - 7:20180414-20
 - Install synctex_version.h to be able to build evince
 
