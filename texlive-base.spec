@@ -21,7 +21,7 @@
 
 Name: %{shortname}-base
 Version: %{source_date}
-Release: 21%{?dist}
+Release: 22%{?dist}
 Epoch: 7
 Summary: TeX formatting system
 # The only files in the base package are directories, cache, and license texts
@@ -3391,8 +3391,8 @@ Summary: Commands to include lilypond scores within a (Lua)LaTeX document
 Version: svn47584
 License: MIT
 Requires: texlive-base texlive-kpathsea
-Provides: tex(lyluatex.lua) = %{tl_version}
-Provides: tex(lyluatex.sty) = %{tl_version}
+Provides: tex(lyluatex.lua) = %{epoch}:%{source_date}-%{release}
+Provides: tex(lyluatex.sty) = %{epoch}:%{source_date}-%{release}
 # lua
 BuildArch: noarch
 
@@ -8721,6 +8721,9 @@ done <<< "$list"
 %doc %{_texdir}/texmf-dist/doc/latex/yplan/
 
 %changelog
+* Wed Sep 19 2018 Tom Callaway <spot@fedoraproject.org> - 7:20180414-22
+- fix lyluatex provides
+
 * Tue Sep 18 2018 Tom Callaway <spot@fedoraproject.org> - 7:20180414-21
 - add lyluatex
 
