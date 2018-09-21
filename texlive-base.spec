@@ -423,6 +423,8 @@ BuildRequires: ghostscript-devel
 %endif
 BuildRequires: libpaper-devel potrace-devel autoconf automake libtool
 BuildRequires: gmp-devel mpfr-devel
+# This is really for macros.
+BuildRequires: python3-devel
 # This is for xindy
 %ifarch %{xindy_arches}
 BuildRequires: clisp-devel
