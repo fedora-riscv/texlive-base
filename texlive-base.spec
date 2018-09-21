@@ -6703,6 +6703,7 @@ done
 pushd %{buildroot}
 find -type f -exec sed -i '1s|^#!/usr/bin/python$|#!%{__python3}|' {} +
 find -type f -exec sed -i '1s|^#!/usr/bin/env python$|#!%{__python3}|' {} +
+sed -i '1s|^#!/usr/bin/python |#!%{__python3} |' %{_texdir}/texmf-dist/scripts/de-macro/de-macro
 popd
 
 # SCRIPTLETS
