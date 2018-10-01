@@ -21,7 +21,7 @@
 
 Name: %{shortname}-base
 Version: %{source_date}
-Release: 22%{?dist}
+Release: 23%{?dist}
 Epoch: 7
 Summary: TeX formatting system
 # The only files in the base package are directories, cache, and license texts
@@ -407,6 +407,7 @@ Patch8: texlive-20180414-texinfo-path-fix.patch
 Patch11: texlive-20180215-disable-more-failing-tests.patch
 Patch12: texlive-20180414-poppler-0.64.patch
 Patch13: texlive-20180414-synctex-version.patch
+Patch14: texlive-base-CVE-2018-17407.patch
 
 # Can't do this because it causes everything else to be noarch
 # BuildArch: noarch
@@ -6389,6 +6390,7 @@ xz -dc %{SOURCE0} | tar x
 %patch11 -p0 -b .dt
 %patch12 -p1 -b .poppler-0.64
 %patch13 -p1 -b .synctex-version
+%patch14 -p1 -b .CVE-2018-17407
 # Setup copies of the licenses
 for l in `unxz -c %{SOURCE3} | tar t`; do
 ln -s %{_texdir}/licenses/$l $l
@@ -8732,6 +8734,9 @@ done <<< "$list"
 %doc %{_texdir}/texmf-dist/doc/latex/yplan/
 
 %changelog
+* Mon Oct  1 2018 Tom Callaway <spot@fedoraproject.org> - 7:20180414-23
+- apply upstream fix for CVE-2018-17407
+
 * Wed Sep 19 2018 Tom Callaway <spot@fedoraproject.org> - 7:20180414-22
 - fix lyluatex provides
 
