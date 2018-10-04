@@ -21,7 +21,7 @@
 
 Name: %{shortname}-base
 Version: %{source_date}
-Release: 23%{?dist}
+Release: 24%{?dist}
 Epoch: 7
 Summary: TeX formatting system
 # The only files in the base package are directories, cache, and license texts
@@ -408,6 +408,11 @@ Patch11: texlive-20180215-disable-more-failing-tests.patch
 Patch12: texlive-20180414-poppler-0.64.patch
 Patch13: texlive-20180414-synctex-version.patch
 Patch14: texlive-base-CVE-2018-17407.patch
+# Another test which fails on 32 bit arches (in F30+)
+# probably because of stricter malloc checks in glibc.
+# https://bugzilla.redhat.com/show_bug.cgi?id=1631847
+# Filed issue upstream, no resolution yet.
+Patch15: texlive-base-20180414-disable-omegafonts-check-test.patch
 
 # Can't do this because it causes everything else to be noarch
 # BuildArch: noarch
@@ -6391,6 +6396,7 @@ xz -dc %{SOURCE0} | tar x
 %patch12 -p1 -b .poppler-0.64
 %patch13 -p1 -b .synctex-version
 %patch14 -p1 -b .CVE-2018-17407
+%patch15 -p1 -b .disabletest
 # Setup copies of the licenses
 for l in `unxz -c %{SOURCE3} | tar t`; do
 ln -s %{_texdir}/licenses/$l $l
@@ -8734,6 +8740,9 @@ done <<< "$list"
 %doc %{_texdir}/texmf-dist/doc/latex/yplan/
 
 %changelog
+* Thu Oct  4 2018 Tom Callaway <spot@fedoraproject.org> - 7:20180414-24
+- disable test that fails on 32 bit arches in rawhide
+
 * Mon Oct  1 2018 Tom Callaway <spot@fedoraproject.org> - 7:20180414-23
 - apply upstream fix for CVE-2018-17407
 
