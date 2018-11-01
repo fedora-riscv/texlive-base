@@ -21,7 +21,7 @@
 
 Name: %{shortname}-base
 Version: %{source_date}
-Release: 24%{?dist}
+Release: 25%{?dist}
 Epoch: 7
 Summary: TeX formatting system
 # The only files in the base package are directories, cache, and license texts
@@ -5289,6 +5289,8 @@ Obsoletes: texlive-tetex-doc < 7:20170520
 Requires: texlive-base
 Requires: texlive-kpathsea-bin
 Requires: texlive-texlive.infra
+# This package contains /usr/bin/texconfig-sys, which needs /usr/bin/texconfig
+Requires: texlive-texconfig
 Provides: tex(09fbbfac.enc) = %{epoch}:%{source_date}-%{release}
 Provides: tex(0ef0afca.enc) = %{epoch}:%{source_date}-%{release}
 Provides: tex(10037936.enc) = %{epoch}:%{source_date}-%{release}
@@ -8740,6 +8742,9 @@ done <<< "$list"
 %doc %{_texdir}/texmf-dist/doc/latex/yplan/
 
 %changelog
+* Thu Nov  1 2018 Adam Williamson <awilliam@redhat.com> - 7:20180414-25
+- Add missing dep from -tetex to -texconfig (bz1555931)
+
 * Thu Oct  4 2018 Tom Callaway <spot@fedoraproject.org> - 7:20180414-24
 - disable test that fails on 32 bit arches in rawhide
 
