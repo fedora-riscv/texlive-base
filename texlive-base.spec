@@ -21,7 +21,7 @@
 
 Name: %{shortname}-base
 Version: %{source_date}
-Release: 25%{?dist}
+Release: 26%{?dist}
 Epoch: 7
 Summary: TeX formatting system
 # The only files in the base package are directories, cache, and license texts
@@ -30,7 +30,7 @@ License: ASL 2.0 and Artistic 2.0 and BSD and GFDL and GPL+ and GPLv2 and GPLv3 
 URL: http://tug.org/texlive/
 Source0: http://ctan.math.illinois.edu/systems/texlive/Source/%{source_name}.tar.xz
 Source1: macros.texlive
-Source2: texlive.tlpdb
+Source2: http://tug.ctan.org/systems/texlive/tlnet/tlpkg/texlive.tlpdb
 Source3: texlive-licenses.tar.xz
 Source4: generate-fmtutilcnf
 # These noarch components are packed wrong upstream (do not unpack into texmf-dist)
@@ -6593,6 +6593,10 @@ cp -a %{SOURCE1} %{buildroot}%{_rpmmacrodir}/macros.texlive
 
 # install texlive.tlpdb
 cp %{SOURCE2} %{buildroot}%{_texdir}
+# make a symlink so texdoc is happy
+pushd %{buildroot}%{_texdir}/tlpkg
+ln -s ../texlive.tlpdb .
+popd
 
 # install licenses
 mkdir -p %{buildroot}%{_texdir}/licenses
@@ -6790,6 +6794,7 @@ done <<< "$list"
 %files
 %{_texdir}/licenses/
 %{_texdir}/texlive.tlpdb
+%{_texdir}/tlpkg/texlive.tlpdb
 %{_rpmmacrodir}/macros.texlive
 # Mostly we own directories.
 %dir %{_sysconfdir}/%{shortname}
@@ -8742,6 +8747,9 @@ done <<< "$list"
 %doc %{_texdir}/texmf-dist/doc/latex/yplan/
 
 %changelog
+* Thu Nov  8 2018 Tom Callaway <spot@fedoraproject.org> - 7:20180414-26
+- make a symlink so texdoc can find texlive.tlpdb
+
 * Thu Nov  1 2018 Adam Williamson <awilliam@redhat.com> - 7:20180414-25
 - Add missing dep from -tetex to -texconfig (bz1555931)
 
