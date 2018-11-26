@@ -21,7 +21,7 @@
 
 Name: %{shortname}-base
 Version: %{source_date}
-Release: 27%{?dist}
+Release: 28%{?dist}
 Epoch: 7
 Summary: TeX formatting system
 # The only files in the base package are directories, cache, and license texts
@@ -6707,7 +6707,7 @@ rm -rf %{buildroot}%{_texdir}/texmf-dist/fonts/misc/cjk-gs-integrate
 
 # Fix pkgconfig files
 for file in $(find %{buildroot}%{_libdir}/pkgconfig/ -type f -name '*.pc')
-do sed -i 's|%{_builddir}/%{name}-%{version}/source/inst|/usr|g' $file
+do sed -i 's|%{_builddir}/%{name}-%{source_date}/source/inst|/usr|g' $file
    sed -i 's|/usr/lib|%{_libdir}|g' $file
 done
 
@@ -8747,6 +8747,13 @@ done <<< "$list"
 %doc %{_texdir}/texmf-dist/doc/latex/yplan/
 
 %changelog
+* Mon Nov 26 2018 Tom Callaway <spot@fedoraproject.org> - 7:20180414-28
+- do not try to ls /usr/share/texlive/fmtutil.cnf.d, it can be empty, 
+  and that makes for noisy errors in scripts (bz1650935)
+  Thanks to Villy Kruse.
+- fix pkgconfig cleanup sed to use %%{source_date} instead of %%{version}
+  which is overridden with subpackage specific data at that point. (bz1426622)
+
 * Mon Nov 12 2018 Tom Callaway <spot@fedoraproject.org> - 7:20180414-27
 - make texlive-kpathsea Requires: texlive-tetex so scriptlets don't fail noisily
 
