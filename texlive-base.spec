@@ -21,7 +21,7 @@
 
 Name: %{shortname}-base
 Version: %{source_date}
-Release: 28%{?dist}
+Release: 29%{?dist}
 Epoch: 7
 Summary: TeX formatting system
 # The only files in the base package are directories, cache, and license texts
@@ -413,6 +413,8 @@ Patch14: texlive-base-CVE-2018-17407.patch
 # https://bugzilla.redhat.com/show_bug.cgi?id=1631847
 # Filed issue upstream, no resolution yet.
 Patch15: texlive-base-20180414-disable-omegafonts-check-test.patch
+# Use python3 on pdfbook2
+Patch16: texlive-base-pdfbook2-py3.patch
 
 # Can't do this because it causes everything else to be noarch
 # BuildArch: noarch
@@ -6545,6 +6547,11 @@ cp -a source/texk/kpathsea/texmf.cnf %{buildroot}%{_texdir}/texmf-dist/web2c/tex
 sed -i 's|\\sc |\\scshape |g' %{buildroot}%{_texdir}/texmf-dist/bibtex/bst/base/acm.bst
 sed -i 's|\\sc |\\scshape |g' %{buildroot}%{_texdir}/texmf-dist/bibtex/bst/base/siam.bst
 
+# fix pdfbook2 for py3
+pushd %{buildroot}%{_texdir}/texmf-dist
+patch -p1 < %{_sourcedir}/texlive-base-pdfbook2-py3.patch
+popd
+
 # config files in /etc symlinked
 mkdir -p %{buildroot}%{_sysconfdir}/texlive/web2c
 mkdir -p %{buildroot}%{_sysconfdir}/texlive/dvips/config
@@ -8747,6 +8754,9 @@ done <<< "$list"
 %doc %{_texdir}/texmf-dist/doc/latex/yplan/
 
 %changelog
+* Fri Dec  7 2018 Tom Callaway <spot@fedoraproject.org> - 7:20180414-29
+- use python3 properly in pdfbook2
+
 * Mon Nov 26 2018 Tom Callaway <spot@fedoraproject.org> - 7:20180414-28
 - do not try to ls /usr/share/texlive/fmtutil.cnf.d, it can be empty, 
   and that makes for noisy errors in scripts (bz1650935)
