@@ -21,7 +21,7 @@
 
 Name: %{shortname}-base
 Version: %{source_date}
-Release: 29%{?dist}
+Release: 30%{?dist}
 Epoch: 7
 Summary: TeX formatting system
 # The only files in the base package are directories, cache, and license texts
@@ -1917,6 +1917,7 @@ Summary: An extended version of dvipdfm
 Requires: texlive-base
 Requires: texlive-glyphlist
 Requires: texlive-kpathsea
+Requires: texlive-xetex
 Provides: tex(dvipdfmx.cfg) = %{epoch}:%{source_date}-%{release}
 Provides: tex(cid-x.map) = %{epoch}:%{source_date}-%{release}
 Provides: tex(ckx.map) = %{epoch}:%{source_date}-%{release}
@@ -8754,6 +8755,9 @@ done <<< "$list"
 %doc %{_texdir}/texmf-dist/doc/latex/yplan/
 
 %changelog
+* Wed Dec 12 2018 Tom Callaway <spot@fedoraproject.org> - 7:20180414-30
+- add explicit Requires: texlive-xetex to texlive-dvipdfmx (bz1657755)
+
 * Fri Dec  7 2018 Tom Callaway <spot@fedoraproject.org> - 7:20180414-29
 - use python3 properly in pdfbook2
 
