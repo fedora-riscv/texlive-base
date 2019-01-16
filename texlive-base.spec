@@ -21,7 +21,7 @@
 
 Name: %{shortname}-base
 Version: %{source_date}
-Release: 30%{?dist}
+Release: 31%{?dist}
 Epoch: 7
 Summary: TeX formatting system
 # The only files in the base package are directories, cache, and license texts
@@ -415,6 +415,8 @@ Patch14: texlive-base-CVE-2018-17407.patch
 Patch15: texlive-base-20180414-disable-omegafonts-check-test.patch
 # Use python3 on pdfbook2
 Patch16: texlive-base-pdfbook2-py3.patch
+# fix annocheck issue detected by rpmdiff
+Patch17: texlive-20180414-annocheck.patch
 
 # Can't do this because it causes everything else to be noarch
 # BuildArch: noarch
@@ -6402,6 +6404,8 @@ xz -dc %{SOURCE0} | tar x
 %patch13 -p1 -b .synctex-version
 %patch14 -p1 -b .CVE-2018-17407
 %patch15 -p1 -b .disabletest
+%patch17 -p1 -b .annocheck
+
 # Setup copies of the licenses
 for l in `unxz -c %{SOURCE3} | tar t`; do
 ln -s %{_texdir}/licenses/$l $l
@@ -8755,6 +8759,9 @@ done <<< "$list"
 %doc %{_texdir}/texmf-dist/doc/latex/yplan/
 
 %changelog
+* Wed Jan 16 2019 Than Ngo <than@redhat.com> - 7:20180414-31
+- fixed annocheck distro flag failure detected by rpmdiff
+
 * Wed Dec 12 2018 Tom Callaway <spot@fedoraproject.org> - 7:20180414-30
 - add explicit Requires: texlive-xetex to texlive-dvipdfmx (bz1657755)
 
