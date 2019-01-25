@@ -21,7 +21,7 @@
 
 Name: %{shortname}-base
 Version: %{source_date}
-Release: 32%{?dist}
+Release: 33%{?dist}
 Epoch: 7
 Summary: TeX formatting system
 # The only files in the base package are directories, cache, and license texts
@@ -417,6 +417,7 @@ Patch15: texlive-base-20180414-disable-omegafonts-check-test.patch
 Patch16: texlive-base-pdfbook2-py3.patch
 # fix annocheck issue detected by rpmdiff
 Patch17: texlive-20180414-annocheck.patch
+Patch18: texlive-20180414-poppler-0.73.patch
 
 # Can't do this because it causes everything else to be noarch
 # BuildArch: noarch
@@ -6405,6 +6406,7 @@ xz -dc %{SOURCE0} | tar x
 %patch14 -p1 -b .CVE-2018-17407
 %patch15 -p1 -b .disabletest
 %patch17 -p1 -b .annocheck
+%patch18 -p1 -b .poppler-0.73
 
 # Setup copies of the licenses
 for l in `unxz -c %{SOURCE3} | tar t`; do
@@ -8759,6 +8761,9 @@ done <<< "$list"
 %doc %{_texdir}/texmf-dist/doc/latex/yplan/
 
 %changelog
+* Fri Jan 25 2019 Marek Kasik <mkasik@redhat.com> - 7:20180414-33
+- Rebuild for poppler-0.73.0
+
 * Wed Jan 23 2019 Pete Walter <pwalter@fedoraproject.org> - 7:20180414-32
 - Rebuild for ICU 63
 
