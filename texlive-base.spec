@@ -21,7 +21,7 @@
 
 Name: %{shortname}-base
 Version: %{source_date}
-Release: 34%{?dist}
+Release: 35%{?dist}
 Epoch: 7
 Summary: TeX formatting system
 # The only files in the base package are directories, cache, and license texts
@@ -418,6 +418,9 @@ Patch16: texlive-base-pdfbook2-py3.patch
 # fix annocheck issue detected by rpmdiff
 Patch17: texlive-20180414-annocheck.patch
 Patch18: texlive-20180414-poppler-0.73.patch
+# Do not throw no file error in synctex
+Patch19: texlive-base-20180414-synctex-do-not-throw-no-file-error.patch
+
 
 # Can't do this because it causes everything else to be noarch
 # BuildArch: noarch
@@ -6407,6 +6410,7 @@ xz -dc %{SOURCE0} | tar x
 %patch15 -p1 -b .disabletest
 %patch17 -p1 -b .annocheck
 %patch18 -p1 -b .poppler-0.73
+%patch19 -p1 -b .shh
 
 # Setup copies of the licenses
 for l in `unxz -c %{SOURCE3} | tar t`; do
@@ -8761,6 +8765,9 @@ done <<< "$list"
 %doc %{_texdir}/texmf-dist/doc/latex/yplan/
 
 %changelog
+* Tue Mar 19 2019 Tom Callaway <spot@fedoraproject.org> - 7:20180414-35
+- do not throw no file error in synctex
+
 * Sun Feb 03 2019 Fedora Release Engineering <releng@fedoraproject.org> - 7:20180414-34
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_30_Mass_Rebuild
 
