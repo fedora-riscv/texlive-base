@@ -6409,7 +6409,9 @@ xz -dc %{SOURCE0} | tar x
 %patch14 -p1 -b .CVE-2018-17407
 %patch15 -p1 -b .disabletest
 %patch17 -p1 -b .annocheck
+%if 0%{?fedora} >= 30
 %patch18 -p1 -b .poppler-0.73
+%endif
 %patch19 -p1 -b .shh
 
 # Setup copies of the licenses
