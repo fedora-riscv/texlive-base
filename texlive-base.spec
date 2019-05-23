@@ -6314,6 +6314,7 @@ Summary: A general-purpose index processor
 # BuildArch: noarch
 Requires: texlive-base
 Requires: texlive-kpathsea
+Requires: clisp
 
 %description -n %{shortname}-xindy
 Xindy was deceloped after an impasse had been encountered in
