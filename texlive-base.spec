@@ -7957,8 +7957,8 @@ done <<< "$list"
 %files -n %{shortname}-luatex
 %license gpl2.txt
 %{_bindir}/dviluatex
-%ifnarch aarch64 %{mips} %{power64} s390 s390x
 %{_bindir}/luacsplain
+%ifnarch aarch64 %{mips} %{power64} s390 s390x
 %{_bindir}/luajittex
 %{_bindir}/texluajit
 %{_bindir}/texluajitc
