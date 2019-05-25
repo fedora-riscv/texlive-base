@@ -8723,7 +8723,7 @@ done <<< "$list"
 %{_texdir}/readme-html.dir/readme.vi.html
 %{_texdir}/readme-html.dir/readme.zh-cn.html
 %{_texdir}/release-texlive.txt
-%{_texdir}/scripts/texlive/tlmgr.pl
+%{_texdir}/texmf-dist/scripts/texlive/tlmgr.pl
 %{_texdir}/tlpkg/installer/config.guess
 %{_texdir}/tlpkg/TeXLive/TLConfFile.pm
 %{_texdir}/tlpkg/TeXLive/TLConfig.pm
