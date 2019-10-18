@@ -17,7 +17,7 @@
 
 Name: %{shortname}-base
 Version: %{source_date}
-Release: 3%{?dist}
+Release: 4%{?dist}
 Epoch: 7
 Summary: TeX formatting system
 # The only files in the base package are directories, cache, and license texts
@@ -6864,6 +6864,9 @@ find -type f -exec sed -i '1s|^#!/usr/bin/env python$|#!%{__python3}|' {} +
 sed -i '1s|^#!/usr/bin/python |#!%{__python3} |' ./%{_texdir}/texmf-dist/scripts/de-macro/de-macro
 popd
 
+# One dir to own
+mkdir -p %{buildroot}%{_texdir}/texmf-dist/tex/generic/context/third
+
 # SCRIPTLETS
 
 %pretrans -p <lua>
@@ -6974,6 +6977,14 @@ done <<< "$list"
 %dir %{_texdir}/texmf-dist/source/fonts
 %dir %{_texdir}/texmf-dist/source/fonts/zhmetrics
 %dir %{_texdir}/texmf-dist/texconfig
+%dir %{_texdir}/texmf-dist/tex
+%dir %{_texdir}/texmf-dist/tex/generic
+%dir %{_texdir}/texmf-dist/tex/generic/bibtex
+%dir %{_texdir}/texmf-dist/tex/generic/config
+%dir %{_texdir}/texmf-dist/tex/latex
+%dir %{_texdir}/texmf-dist/tex/lualatex
+%dir %{_texdir}/texmf-dist/tex/luatex
+%dir %{_texdir}/texmf-dist/tex/xelatex
 %dir %{_texdir}/texmf-dist/web2c
 %dir %{_texmf_var}
 %{_texdir}/texmf-var
@@ -7282,6 +7293,7 @@ done <<< "$list"
 %{_texdir}/texmf-dist/scripts/context/
 %{_texdir}/texmf-dist/tex/context/
 %{_texdir}/texmf-dist/tex/generic/context/
+%dir %{_texdir}/texmf-dist/tex/generic/context/third
 %{_texdir}/texmf-dist/tex/latex/context/
 %{fmtutil_cnf_d}/context
 %doc %{_texdir}/texmf-dist/doc/context/
@@ -7882,6 +7894,8 @@ done <<< "$list"
 %dir %{_texdir}/texmf-config/web2c
 %{_texdir}/texmf-config/web2c/updmap.cfg
 %attr(0644, root, root) %verify(not md5 size mtime) %ghost %{_texdir}/texmf-config/ls-R
+%attr(0644, root, root) %verify(not md5 size mtime) %ghost %{_texdir}/texmf-dist/ls-R
+%attr(0644, root, root) %verify(not md5 size mtime) %ghost %{_texdir}/texmf-local/ls-R
 
 %files -n %{shortname}-lib-devel
 %dir %{_includedir}/kpathsea
@@ -8954,6 +8968,9 @@ done <<< "$list"
 %doc %{_texdir}/texmf-dist/doc/latex/yplan/
 
 %changelog
+* Fri Oct 18 2019 Tom Callaway <spot@fedoraproject.org> - 7:20190410-4
+- fix dir ownership
+
 * Wed Oct  9 2019 Jerry James <loganjerry@gmail.com> - 7:20190410-3
 - Rebuild for mpfr 4
 
