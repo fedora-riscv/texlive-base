@@ -17,7 +17,7 @@
 
 Name: %{shortname}-base
 Version: %{source_date}
-Release: 4%{?dist}
+Release: 5%{?dist}
 Epoch: 7
 Summary: TeX formatting system
 # The only files in the base package are directories, cache, and license texts
@@ -8968,6 +8968,9 @@ done <<< "$list"
 %doc %{_texdir}/texmf-dist/doc/latex/yplan/
 
 %changelog
+* Fri Nov 01 2019 Pete Walter <pwalter@fedoraproject.org> - 7:20190410-5
+- Rebuild for ICU 65
+
 * Fri Oct 18 2019 Tom Callaway <spot@fedoraproject.org> - 7:20190410-4
 - fix dir ownership
 
