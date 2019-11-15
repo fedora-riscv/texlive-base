@@ -17,7 +17,7 @@
 
 Name: %{shortname}-base
 Version: %{source_date}
-Release: 5%{?dist}
+Release: 6%{?dist}
 Epoch: 7
 Summary: TeX formatting system
 # The only files in the base package are directories, cache, and license texts
@@ -4922,6 +4922,23 @@ dpi to get the correct bounding box. Included in the
 distribution is the bbox program, an application to produce
 Bounding Box values for rawppm or rawpbm format files.
 
+%package -n %{shortname}-psutils
+Provides: tex-psutils = %{epoch}:%{source_date}-%{release}
+Provides: tex-psutils-bin = %{epoch}:%{source_date}-%{release}
+Provides: texlive-psutils-bin = %{epoch}:%{source_date}-%{release}
+License: psutils
+Summary: The TeXLive fork of the PS Utilities
+Requires: texlive-base
+Requires: texlive-kpathsea
+
+%description -n %{shortname}-psutils
+Utilities for manipulating PostScript documents.
+Page selection and rearrangement are supported, including arrangement into
+signatures for booklet printing, and page merging for n-up printing.
+
+This package contains a fork of the psutils binaries adjusted for TexLive.
+All of the standard binaries have been namespaced with a "tl-" prefix.
+
 %package -n %{shortname}-pst2pdf
 Provides: tex-pst2pdf = %{epoch}:%{source_date}-%{release}
 Provides: tex-pst2pdf-bin = %{epoch}:%{source_date}-%{release}
@@ -6570,7 +6587,7 @@ cd work
 --with-system-cairo --with-system-icu --with-system-harfbuzz --with-system-graphite2 --with-system-libgs --with-system-pixman \
 --with-system-libpaper --with-system-potrace --with-pic --with-xdvi-x-toolkit=xaw --with-system-mpfr --with-system-gmp \
 --enable-shared --enable-compiler-warnings=max --without-cxx-runtime-hack \
---disable-native-texlive-build --disable-t1utils --disable-psutils --disable-biber --disable-ptexenc --disable-largefile \
+--disable-native-texlive-build --disable-t1utils --enable-psutils --disable-biber --disable-ptexenc --disable-largefile \
 %ifarch aarch64 %{mips} %{power64} s390 s390x
 --disable-luajittex --disable-mfluajit \
 %endif
@@ -6866,6 +6883,24 @@ popd
 
 # One dir to own
 mkdir -p %{buildroot}%{_texdir}/texmf-dist/tex/generic/context/third
+
+# TeXLive has a fork of psutils
+# we namespace those binaries to avoid conflicts with the upstream psutils
+pushd %{buildroot}%{_bindir}
+for i in epsffit extractres includeres psbook psjoin psnup psresize psselect pstops
+do mv $i tl-$i
+done
+popd
+# we also rename the manpages
+pushd %{buildroot}%{_mandir}/man1/
+for i in epsffit extractres includeres psbook psjoin psnup psresize psselect pstops psutils
+do mv $i.1 tl-$i.1
+done
+popd
+# and move the config file
+mkdir -p %{buildroot}%{_sysconfdir}/texlive/psutils
+mv %{buildroot}%{_texdir}/texmf-dist/psutils/paper.cfg %{buildroot}%{_sysconfdir}/texlive/psutils/paper.cfg
+ln -s %{_sysconfdir}/texlive/psutils/paper.cfg %{buildroot}%{_texdir}/texmf-dist/psutils/paper.cfg
 
 # SCRIPTLETS
 
@@ -8410,6 +8445,31 @@ done <<< "$list"
 %{_texdir}/texmf-dist/tex/latex/pst-pdf/
 %doc %{_texdir}/texmf-dist/doc/latex/pst-pdf/
 
+%files -n %{shortname}-psutils
+%{_bindir}/tl-epsffit
+%{_bindir}/tl-extractres
+%{_bindir}/tl-includeres
+%{_bindir}/tl-psbook
+%{_bindir}/tl-psjoin
+%{_bindir}/tl-psnup
+%{_bindir}/tl-psresize
+%{_bindir}/tl-psselect
+%{_bindir}/tl-pstops
+%{_mandir}/man1/tl-epsffit.1*
+%{_mandir}/man1/tl-extractres.1*
+%{_mandir}/man1/tl-includeres.1*
+%{_mandir}/man1/tl-psbook.1*
+%{_mandir}/man1/tl-psjoin.1*
+%{_mandir}/man1/tl-psnup.1*
+%{_mandir}/man1/tl-psresize.1*
+%{_mandir}/man1/tl-psselect.1*
+%{_mandir}/man1/tl-pstops.1*
+%{_mandir}/man1/tl-psutils.1*
+%{_texdir}/texmf-dist/psutils/
+%dir %{_sysconfdir}/texlive/psutils
+%config(noreplace) %{_sysconfdir}/texlive/psutils/paper.cfg
+%{_texdir}/texmf-dist/scripts/psutils
+
 %files -n %{shortname}-ps2pk
 %license other-free.txt
 %{_bindir}/mag
@@ -8968,6 +9028,9 @@ done <<< "$list"
 %doc %{_texdir}/texmf-dist/doc/latex/yplan/
 
 %changelog
+* Fri Nov 15 2019 Tom Callaway <spot@fedoraproject.org> - 7:20190410-6
+- package up the TL fork of psutils to help tlmgr find all the configs it expects
+
 * Fri Nov 01 2019 Pete Walter <pwalter@fedoraproject.org> - 7:20190410-5
 - Rebuild for ICU 65
 
