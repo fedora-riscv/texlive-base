@@ -21,7 +21,7 @@
 
 Name: %{shortname}-base
 Version: %{source_date}
-Release: 35%{?dist}
+Release: 36%{?dist}
 Epoch: 7
 Summary: TeX formatting system
 # The only files in the base package are directories, cache, and license texts
@@ -420,6 +420,9 @@ Patch17: texlive-20180414-annocheck.patch
 Patch18: texlive-20180414-poppler-0.73.patch
 # Do not throw no file error in synctex
 Patch19: texlive-base-20180414-synctex-do-not-throw-no-file-error.patch
+# Fix latex-papersize for python3 (thanks to upstream)
+Patch20: texlive-base-latex-papersize-py3.patch
+
 
 
 # Can't do this because it causes everything else to be noarch
@@ -6561,6 +6564,8 @@ sed -i 's|\\sc |\\scshape |g' %{buildroot}%{_texdir}/texmf-dist/bibtex/bst/base/
 # fix pdfbook2 for py3
 pushd %{buildroot}%{_texdir}/texmf-dist
 patch -p1 < %{_sourcedir}/texlive-base-pdfbook2-py3.patch
+# fix latex-papersize for py3
+patch -p1 < %{_sourcedir}/texlive-base-latex-papersize-py3.patch
 popd
 
 # config files in /etc symlinked
@@ -8765,6 +8770,9 @@ done <<< "$list"
 %doc %{_texdir}/texmf-dist/doc/latex/yplan/
 
 %changelog
+* Thu Jan 10 2020 Tom Callaway <spot@fedoraproject.org> - 7:20180414-36
+- fix python3 issues with pdfbook2 and latex-papersize
+
 * Tue Mar 19 2019 Tom Callaway <spot@fedoraproject.org> - 7:20180414-35
 - do not throw no file error in synctex
 
