@@ -17,7 +17,7 @@
 
 Name: %{shortname}-base
 Version: %{source_date}
-Release: 6%{?dist}
+Release: 7%{?dist}
 Epoch: 7
 Summary: TeX formatting system
 # The only files in the base package are directories, cache, and license texts
@@ -429,6 +429,8 @@ Patch20: texlive-20190410-dvisvgm-fix-libgs-detection.patch
 # Since we need to include tlmgr.pl for texconfig
 # lets try to keep people from shooting themselves with it
 Patch21: texlive-20190410-tlmgr-ignore-warning.patch
+# Fix latex-papersize for python3 (thanks to upstream)
+Patch22: texlive-base-latex-papersize-py3.patch
 
 
 # Can't do this because it causes everything else to be noarch
@@ -6704,6 +6706,9 @@ sed -i 's|\\sc |\\scshape |g' %{buildroot}%{_texdir}/texmf-dist/bibtex/bst/base/
 pushd %{buildroot}%{_texdir}/texmf-dist
 # fix pdfbook2 for py3
 patch -p1 < %{_sourcedir}/texlive-base-pdfbook2-py3.patch
+# fix latex-papersize for py3
+patch -p1 < %{_sourcedir}/texlive-base-latex-papersize-py3.patch
+
 # neuter tlmgr a bit
 patch -p1 < %{_sourcedir}/texlive-20190410-tlmgr-ignore-warning.patch
 popd
@@ -9028,6 +9033,10 @@ done <<< "$list"
 %doc %{_texdir}/texmf-dist/doc/latex/yplan/
 
 %changelog
+* Fri Jan 10 2020 Tom Callaway <spot@fedoraproject.org> - 7:20190410-7
+- fix python3 issue with pdfbook2 (thanks to "Mildred", bz1733794)
+- fix python3 issue with latex-papersize (thanks to Silas S. Brown, bz1783964)
+
 * Fri Nov 15 2019 Tom Callaway <spot@fedoraproject.org> - 7:20190410-6
 - package up the TL fork of psutils to help tlmgr find all the configs it expects
 
