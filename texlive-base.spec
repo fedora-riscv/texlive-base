@@ -17,7 +17,7 @@
 
 Name: %{shortname}-base
 Version: %{source_date}
-Release: 7%{?dist}
+Release: 8%{?dist}
 Epoch: 7
 Summary: TeX formatting system
 # The only files in the base package are directories, cache, and license texts
@@ -431,6 +431,7 @@ Patch20: texlive-20190410-dvisvgm-fix-libgs-detection.patch
 Patch21: texlive-20190410-tlmgr-ignore-warning.patch
 # Fix latex-papersize for python3 (thanks to upstream)
 Patch22: texlive-base-latex-papersize-py3.patch
+Patch23: texlive-base-20190410-poppler-0.84.patch
 
 
 # Can't do this because it causes everything else to be noarch
@@ -451,8 +452,10 @@ BuildRequires: gmp-devel mpfr-devel
 # This is really for macros.
 BuildRequires: python3-devel
 # This is for xindy
+%if 0
 BuildRequires: clisp-devel
 BuildRequires: texlive-cyrillic, texlive-latex, texlive-metafont, texlive-cm-super, texlive-ec
+%endif
 # Cleanup Provides/Obsoletes
 # texlive-cjk-gs-integrate (depackaged 2018-03-09)
 Provides: texlive-cjk-gs-integrate = %{epoch}:%{source_date}-%{release}
@@ -6443,6 +6446,7 @@ BuildArch: noarch
 %description -n %{shortname}-xindex
 Unicode compatible index program for LaTeX.
 
+%if 0
 %package -n %{shortname}-xindy
 Provides: tex-xindy = %{epoch}:%{source_date}-%{release}
 Provides: tex-xindy-bin = %{epoch}:%{source_date}-%{release}
@@ -6467,6 +6471,7 @@ Xindy can be used to process indexes for documents marked up
 using (La)TeX, Nroff family and SGML-based languages. Xindy is
 highly configurable, both in markup terms and in terms of the
 collating order of the text being processed.
+%endif
 
 %package -n %{shortname}-xmltex
 Provides: tex-xmltex = %{epoch}:%{source_date}-%{release}
@@ -6548,6 +6553,7 @@ xz -dc %{SOURCE0} | tar x
 %endif
 %patch19 -p1 -b .shh
 %patch20 -p1 -b .fix-libgs-detection
+%patch23 -p1 -b .poppler-0.84
 
 # Setup copies of the licenses
 for l in `unxz -c %{SOURCE3} | tar t`; do
@@ -6560,6 +6566,7 @@ done
 %global mysources %{lua: for index,value in ipairs(sources) do if index >= 16 then print(value.." ") end end}
 
 %build
+%if 0
 # Make texlive generate latex.fmt, so that multiple threads do not race to
 # make it during the xindy build.
 cat > dummy.tex << EOF
@@ -6570,6 +6577,7 @@ This is a document.
 EOF
 latex dummy.tex
 rm -f dummy.*
+%endif
 
 export CFLAGS="$RPM_OPT_FLAGS -fno-strict-aliasing -Werror=format-security"
 export CXXFLAGS="$RPM_OPT_FLAGS -std=c++11 -fno-strict-aliasing -Werror=format-security"
@@ -6593,7 +6601,7 @@ cd work
 %ifarch aarch64 %{mips} %{power64} s390 s390x
 --disable-luajittex --disable-mfluajit \
 %endif
---enable-xindy --disable-xindy-docs --disable-xindy-make-rules \
+--disable-xindy --disable-xindy-docs --disable-xindy-make-rules \
 --disable-rpath
 
 # disable rpath
@@ -6862,6 +6870,13 @@ mkdir -p %{buildroot}%{_infodir}/
 cp -R %{buildroot}%{_texdir}/texmf-dist/doc/man %{buildroot}%{_datadir}/
 find %{buildroot}%{_texdir}/texmf-dist/doc/man -type f | xargs rm -f
 mv %{buildroot}%{_texdir}/texmf-dist/doc/info/* %{buildroot}%{_infodir}/
+
+rm -rf %{buildroot}%{_mandir}/man1/xindy.1*
+rm -rf %{buildroot}%{_mandir}/man1/texindy.1*
+rm -rf %{buildroot}%{_mandir}/man1/tex2xindy.1*
+rm -rf %{buildroot}%{_texdir}/texmf-dist/scripts/xindy
+rm -rf %{buildroot}%{_texdir}/texmf-dist/xindy
+rm -rf %{buildroot}%{_texdir}/texmf-dist/doc/xindy
 
 # Remove cjk-gs-integrate files
 # Yes, we probably should remove the source, but there is a possibility that we will
@@ -9004,6 +9019,7 @@ done <<< "$list"
 %{_texdir}/texmf-dist/tex/lualatex/xindex/
 %doc %{_texdir}/texmf-dist/doc/lualatex/xindex/
 
+%if 0
 %files -n %{shortname}-xindy
 %license gpl.txt
 %{_bindir}/tex2xindy
@@ -9016,6 +9032,7 @@ done <<< "$list"
 %{_texdir}/texmf-dist/scripts/xindy/
 %{_texdir}/texmf-dist/xindy/
 %doc %{_texdir}/texmf-dist/doc/xindy/
+%endif
 
 %files -n %{shortname}-xmltex
 %license lppl1.txt
@@ -9033,6 +9050,11 @@ done <<< "$list"
 %doc %{_texdir}/texmf-dist/doc/latex/yplan/
 
 %changelog
+* Fri Jan 17 2020 Marek Kasik <mkasik@redhat.com> - 7:20190410-8
+- Rebuild for poppler-0.84.0
+- Don't include C++ headers in C sources
+- Temporarily break circular dependency on texlive-latex (will be reverted)
+
 * Fri Jan 10 2020 Tom Callaway <spot@fedoraproject.org> - 7:20190410-7
 - fix python3 issue with pdfbook2 (thanks to "Mildred", bz1733794)
 - fix python3 issue with latex-papersize (thanks to Silas S. Brown, bz1783964)
