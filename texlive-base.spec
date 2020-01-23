@@ -17,7 +17,7 @@
 
 Name: %{shortname}-base
 Version: %{source_date}
-Release: 9%{?dist}
+Release: 10%{?dist}
 Epoch: 7
 Summary: TeX formatting system
 # The only files in the base package are directories, cache, and license texts
@@ -432,6 +432,14 @@ Patch21: texlive-20190410-tlmgr-ignore-warning.patch
 # Fix latex-papersize for python3 (thanks to upstream)
 Patch22: texlive-base-latex-papersize-py3.patch
 Patch23: texlive-base-20190410-poppler-0.84.patch
+# GCC10: Fix global vars in autosp
+Patch24: texlive-base-20190410-gcc10-autosp-fix-global-vars.patch
+# GCC10: Fix global vars in mplib
+Patch25: texlive-base-20190410-gcc10-mp-fix-global-var.patch
+# GCC10: Fix global vars in luatex
+Patch26: texlive-base-20190410-gcc10-luatex-fix-global-vars.patch
+# GCC10: Fix global vars in ttf2pk2
+Patch27: texlive-base-20190410-gcc10-ttf2pk2-fix-global-var.patch
 
 
 # Can't do this because it causes everything else to be noarch
@@ -6550,6 +6558,10 @@ xz -dc %{SOURCE0} | tar x
 %patch19 -p1 -b .shh
 %patch20 -p1 -b .fix-libgs-detection
 %patch23 -p1 -b .poppler-0.84
+%patch24 -p1 -b .gcc10-autosp
+%patch25 -p1 -b .gcc10-mplib
+%patch26 -p1 -b .gcc10-luatex
+%patch27 -p1 -b .gcc10-ttf2pk2
 
 # Setup copies of the licenses
 for l in `unxz -c %{SOURCE3} | tar t`; do
@@ -9035,6 +9047,9 @@ done <<< "$list"
 %doc %{_texdir}/texmf-dist/doc/latex/yplan/
 
 %changelog
+* Thu Jan 23 2020 Tom Callaway <spot@fedoraproject.org> - 7:20190410-10
+- fix gcc10 issues
+
 * Fri Jan 17 2020 Marek Kasik <mkasik@redhat.com> - 7:20190410-9
 - Bring back xindy and the circular dependency on texlive-latex
 
