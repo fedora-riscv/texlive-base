@@ -17,7 +17,7 @@
 
 Name: %{shortname}-base
 Version: %{source_date}
-Release: 7%{?dist}
+Release: 8%{?dist}
 Epoch: 7
 Summary: TeX formatting system
 # The only files in the base package are directories, cache, and license texts
@@ -431,7 +431,8 @@ Patch20: texlive-20190410-dvisvgm-fix-libgs-detection.patch
 Patch21: texlive-20190410-tlmgr-ignore-warning.patch
 # Fix latex-papersize for python3 (thanks to upstream)
 Patch22: texlive-base-latex-papersize-py3.patch
-
+# bz#1798119, buffer overflow, CVE-2019-19601
+Patch23: texlive-base-20190410-CVE-2019-19601.patch
 
 # Can't do this because it causes everything else to be noarch
 # BuildArch: noarch
@@ -6548,6 +6549,7 @@ xz -dc %{SOURCE0} | tar x
 %endif
 %patch19 -p1 -b .shh
 %patch20 -p1 -b .fix-libgs-detection
+%patch23 -p1 -b .CVE-2019-19601
 
 # Setup copies of the licenses
 for l in `unxz -c %{SOURCE3} | tar t`; do
@@ -9033,6 +9035,9 @@ done <<< "$list"
 %doc %{_texdir}/texmf-dist/doc/latex/yplan/
 
 %changelog
+* Wed Feb 05 2020 Than Ngo <than@redhat.com> - 7:20190410-8
+- fix bz#1798119 - buffer overflow in TexOpen() function, CVE-2019-19601
+
 * Fri Jan 10 2020 Tom Callaway <spot@fedoraproject.org> - 7:20190410-7
 - fix python3 issue with pdfbook2 (thanks to "Mildred", bz1733794)
 - fix python3 issue with latex-papersize (thanks to Silas S. Brown, bz1783964)
