@@ -21,7 +21,7 @@
 
 Name: %{shortname}-base
 Version: %{source_date}
-Release: 36%{?dist}
+Release: 37%{?dist}
 Epoch: 7
 Summary: TeX formatting system
 # The only files in the base package are directories, cache, and license texts
@@ -422,6 +422,8 @@ Patch18: texlive-20180414-poppler-0.73.patch
 Patch19: texlive-base-20180414-synctex-do-not-throw-no-file-error.patch
 # Fix latex-papersize for python3 (thanks to upstream)
 Patch20: texlive-base-latex-papersize-py3.patch
+# bz#1798119, buffer overflow, CVE-2019-19601
+Patch21: texlive-base-20180414-CVE-2019-19601.patch
 
 
 
@@ -6414,6 +6416,7 @@ xz -dc %{SOURCE0} | tar x
 %patch17 -p1 -b .annocheck
 %patch18 -p1 -b .poppler-0.73
 %patch19 -p1 -b .shh
+%patch20 -p1 -b .CVE-2019-19601
 
 # Setup copies of the licenses
 for l in `unxz -c %{SOURCE3} | tar t`; do
@@ -8770,6 +8773,9 @@ done <<< "$list"
 %doc %{_texdir}/texmf-dist/doc/latex/yplan/
 
 %changelog
+* Wed Feb  5 2020 Tom Callaway <spot@fedoraproject.org> - 7:20180414-37
+- fix bz#1798119 - buffer overflow in TexOpen() function, CVE-2019-19601
+
 * Thu Jan 10 2020 Tom Callaway <spot@fedoraproject.org> - 7:20180414-36
 - fix python3 issues with pdfbook2 and latex-papersize
 
