@@ -17,7 +17,7 @@
 
 Name: %{shortname}-base
 Version: %{source_date}
-Release: 11%{?dist}
+Release: 12%{?dist}
 Epoch: 7
 Summary: TeX formatting system
 # The only files in the base package are directories, cache, and license texts
@@ -440,7 +440,8 @@ Patch25: texlive-base-20190410-gcc10-mp-fix-global-var.patch
 Patch26: texlive-base-20190410-gcc10-luatex-fix-global-vars.patch
 # GCC10: Fix global vars in ttf2pk2
 Patch27: texlive-base-20190410-gcc10-ttf2pk2-fix-global-var.patch
-
+# bz#1798119, buffer overflow, CVE-2019-19601
+Patch28: texlive-base-20190410-CVE-2019-19601.patch
 
 # Can't do this because it causes everything else to be noarch
 # BuildArch: noarch
@@ -6562,6 +6563,7 @@ xz -dc %{SOURCE0} | tar x
 %patch25 -p1 -b .gcc10-mplib
 %patch26 -p1 -b .gcc10-luatex
 %patch27 -p1 -b .gcc10-ttf2pk2
+%patch28 -p1 -b .CVE-2019-19601
 
 # Setup copies of the licenses
 for l in `unxz -c %{SOURCE3} | tar t`; do
@@ -9047,6 +9049,9 @@ done <<< "$list"
 %doc %{_texdir}/texmf-dist/doc/latex/yplan/
 
 %changelog
+* Wed Feb 05 2020 Than Ngo <than@redhat.com> - 7:20190410-12
+- fix bz#1798119 - buffer overflow in TexOpen() function, CVE-2019-19601
+
 * Fri Jan 31 2020 Fedora Release Engineering <releng@fedoraproject.org> - 7:20190410-11
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_32_Mass_Rebuild
 
