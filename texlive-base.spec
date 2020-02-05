@@ -6416,7 +6416,7 @@ xz -dc %{SOURCE0} | tar x
 %patch17 -p1 -b .annocheck
 %patch18 -p1 -b .poppler-0.73
 %patch19 -p1 -b .shh
-%patch20 -p1 -b .CVE-2019-19601
+%patch21 -p1 -b .CVE-2019-19601
 
 # Setup copies of the licenses
 for l in `unxz -c %{SOURCE3} | tar t`; do
