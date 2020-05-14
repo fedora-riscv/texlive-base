@@ -1,5 +1,5 @@
 %global shortname texlive
-%global source_date 20190410
+%global source_date 20200327
 %global source_name texlive-%{source_date}-source
 %{!?_texdir: %global _texdir %{_datadir}/%{shortname}}
 %{!?_texmf_var: %global _texmf_var %{_var}/lib/texmf}
@@ -17,7 +17,7 @@
 
 Name: %{shortname}-base
 Version: %{source_date}
-Release: 12%{?dist}
+Release: 2%{?dist}
 Epoch: 7
 Summary: TeX formatting system
 # The only files in the base package are directories, cache, and license texts
@@ -54,371 +54,380 @@ Source24: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/amstex.doc
 Source25: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/amstex.tar.xz
 Source26: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/arara.doc.tar.xz
 Source27: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/arara.tar.xz
-Source28: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/authorindex.doc.tar.xz
-Source29: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/authorindex.tar.xz
-Source30: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/autosp.doc.tar.xz
-Source31: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/axodraw2.doc.tar.xz
-Source32: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/axodraw2.tar.xz
-Source33: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/bib2gls.doc.tar.xz
-Source34: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/bib2gls.tar.xz
-Source35: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/bibexport.doc.tar.xz
-Source36: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/bibexport.tar.xz
-Source37: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/bibtex8.doc.tar.xz
-Source38: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/bibtex8.tar.xz
-Source39: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/bibtex.doc.tar.xz
-Source40: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/bibtex.tar.xz
-Source41: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/bibtexu.doc.tar.xz
-Source42: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/bundledoc.doc.tar.xz
-Source43: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/bundledoc.tar.xz
-Source44: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/cachepic.doc.tar.xz
-Source45: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/cachepic.tar.xz
-Source46: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/checkcites.doc.tar.xz
-Source47: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/checkcites.tar.xz
-Source48: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/checklistings.doc.tar.xz
-Source49: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/checklistings.tar.xz
-Source50: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/chktex.doc.tar.xz
-Source51: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/chktex.tar.xz
-Source52: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/cjk-gs-integrate.doc.tar.xz
-Source53: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/cjk-gs-integrate.tar.xz
-Source54: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/cjkutils.tar.xz
-Source55: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/cluttex.doc.tar.xz
-Source56: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/cluttex.tar.xz
-Source57: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/context.doc.tar.xz
-Source58: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/context.tar.xz
-Source59: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/convbkmk.doc.tar.xz
-Source60: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/convbkmk.tar.xz
-Source61: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/crossrefware.doc.tar.xz
-Source62: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/crossrefware.tar.xz
-Source63: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/cslatex.tar.xz
-Source64: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/csplain.tar.xz
-Source65: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/ctanbib.doc.tar.xz
-Source66: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/ctanbib.tar.xz
-Source67: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/ctanify.doc.tar.xz
-Source68: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/ctanify.tar.xz
-Source69: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/ctan-o-mat.doc.tar.xz
-Source70: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/ctan-o-mat.tar.xz
-Source71: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/ctanupload.doc.tar.xz
-Source72: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/ctanupload.tar.xz
-Source73: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/ctie.doc.tar.xz
-Source74: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/cweb.doc.tar.xz
-Source75: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/cweb.tar.xz
-Source76: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/cyrillic-bin.doc.tar.xz
-Source77: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/cyrillic-bin.tar.xz
-Source78: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/de-macro.doc.tar.xz
-Source79: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/de-macro.tar.xz
-Source80: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/detex.doc.tar.xz
-Source81: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/detex.tar.xz
-Source82: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/diadia.doc.tar.xz
-Source83: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/diadia.tar.xz
-Source84: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/dosepsbin.doc.tar.xz
-Source85: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/dosepsbin.tar.xz
-Source86: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/dtl.doc.tar.xz
-Source87: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/dtl.tar.xz
-Source88: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/dtxgen.doc.tar.xz
-Source89: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/dtxgen.tar.xz
-Source90: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/dvi2tty.doc.tar.xz
-Source91: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/dvi2tty.tar.xz
-Source92: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/dviasm.doc.tar.xz
-Source93: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/dviasm.tar.xz
-Source94: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/dvicopy.doc.tar.xz
-Source95: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/dvicopy.tar.xz
-Source96: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/dvidvi.doc.tar.xz
-Source97: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/dvidvi.tar.xz
-Source98: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/dviinfox.doc.tar.xz
-Source99: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/dviinfox.tar.xz
-Source100: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/dviljk.doc.tar.xz
-Source101: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/dviljk.tar.xz
-Source102: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/dviout-util.doc.tar.xz
-Source103: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/dvipdfmx.doc.tar.xz
-Source104: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/dvipdfmx.tar.xz
-Source105: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/dvipng.doc.tar.xz
-Source106: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/dvipng.tar.xz
-Source107: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/dvipos.doc.tar.xz
-Source108: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/dvipos.tar.xz
-Source109: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/dvips.doc.tar.xz
-Source110: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/dvips.tar.xz
-Source111: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/dvisvgm.doc.tar.xz
-Source112: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/dvisvgm.tar.xz
-Source113: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/ebong.doc.tar.xz
-Source114: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/ebong.tar.xz
-Source115: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/eplain.doc.tar.xz
-Source116: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/eplain.tar.xz
-Source117: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/epspdf.doc.tar.xz
-Source118: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/epspdf.tar.xz
-Source119: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/epstopdf.doc.tar.xz
-Source120: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/epstopdf.tar.xz
-Source121: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/exceltex.doc.tar.xz
-Source122: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/exceltex.tar.xz
-Source123: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/fig4latex.doc.tar.xz
-Source124: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/fig4latex.tar.xz
-Source125: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/findhyph.doc.tar.xz
-Source126: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/findhyph.tar.xz
-Source127: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/fontinst.doc.tar.xz
-Source128: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/fontinst.tar.xz
-Source129: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/fontools.doc.tar.xz
-Source130: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/fontools.tar.xz
-Source131: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/fontware.doc.tar.xz
-Source132: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/fragmaster.doc.tar.xz
-Source133: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/fragmaster.tar.xz
-Source134: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/getmap.doc.tar.xz
-Source135: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/getmap.tar.xz
-Source136: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/glossaries.doc.tar.xz
-Source137: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/glossaries.tar.xz
-Source138: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/gregoriotex.doc.tar.xz
-Source139: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/gregoriotex.tar.xz
-Source140: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/gsftopk.doc.tar.xz
-Source141: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/gsftopk.tar.xz
-Source142: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/installfont.doc.tar.xz
-Source143: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/installfont.tar.xz
-Source144: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/jadetex.doc.tar.xz
-Source145: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/jadetex.tar.xz
-Source146: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/jfmutil.doc.tar.xz
-Source147: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/jfmutil.tar.xz
-Source148: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/kotex-utils.doc.tar.xz
-Source149: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/kotex-utils.tar.xz
-Source150: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/kpathsea.doc.tar.xz
-Source151: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/kpathsea.tar.xz
-Source152: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/l3build.tar.xz
-Source153: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/l3build.doc.tar.xz
-Source154: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/lacheck.doc.tar.xz
-Source155: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/latex2man.doc.tar.xz
-Source156: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/latex2man.tar.xz
-Source157: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/latex2nemeth.doc.tar.xz
-Source158: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/latex2nemeth.tar.xz
-Source159: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/latexdiff.doc.tar.xz
-Source160: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/latexdiff.tar.xz
-Source161: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/latexfileversion.doc.tar.xz
-Source162: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/latexfileversion.tar.xz
-Source163: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/latex-git-log.doc.tar.xz
-Source164: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/latex-git-log.tar.xz
-Source165: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/latexindent.doc.tar.xz
-Source166: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/latexindent.tar.xz
-Source167: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/latexpand.doc.tar.xz
-Source168: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/latexpand.tar.xz
-Source169: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/latex-papersize.doc.tar.xz
-Source170: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/latex-papersize.tar.xz
-Source171: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/lcdftypetools.doc.tar.xz
-Source172: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/lilyglyphs.doc.tar.xz
-Source173: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/lilyglyphs.tar.xz
-Source174: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/listbib.doc.tar.xz
-Source175: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/listbib.tar.xz
-Source176: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/listings-ext.doc.tar.xz
-Source177: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/listings-ext.tar.xz
-Source178: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/lollipop.doc.tar.xz
-Source179: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/lollipop.tar.xz
-Source180: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/ltxfileinfo.doc.tar.xz
-Source181: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/ltxfileinfo.tar.xz
-Source182: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/ltximg.doc.tar.xz
-Source183: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/ltximg.tar.xz
-Source184: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/lua2dox.doc.tar.xz
-Source185: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/lua2dox.tar.xz
-Source186: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/luaotfload.doc.tar.xz
-Source187: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/luaotfload.tar.xz
-Source188: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/luatex.doc.tar.xz
-Source189: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/luatex.tar.xz
-Source190: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/lwarp.doc.tar.xz
-Source191: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/lwarp.tar.xz
-Source192: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/make4ht.doc.tar.xz
-Source193: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/make4ht.tar.xz
-Source194: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/makedtx.doc.tar.xz
-Source195: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/makedtx.tar.xz
-Source196: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/makeindex.doc.tar.xz
-Source197: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/makeindex.tar.xz
-Source198: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/match_parens.doc.tar.xz
-Source199: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/match_parens.tar.xz
-Source200: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/mathspic.doc.tar.xz
-Source201: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/mathspic.tar.xz
-Source202: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/metafont.doc.tar.xz
-Source203: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/metafont.tar.xz
-Source204: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/metapost.doc.tar.xz
-Source205: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/metapost.tar.xz
-Source206: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/mex.doc.tar.xz
-Source207: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/mex.tar.xz
-Source208: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/mf2pt1.doc.tar.xz
-Source209: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/mf2pt1.tar.xz
-Source210: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/mflua.tar.xz
-Source211: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/mfware.doc.tar.xz
-Source212: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/mfware.tar.xz
-Source213: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/mkgrkindex.doc.tar.xz
-Source214: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/mkgrkindex.tar.xz
-Source215: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/mkjobtexmf.doc.tar.xz
-Source216: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/mkjobtexmf.tar.xz
-Source217: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/mkpic.doc.tar.xz
-Source218: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/mkpic.tar.xz
-Source219: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/mltex.doc.tar.xz
-Source220: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/mltex.tar.xz
-Source221: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/mptopdf.doc.tar.xz
-Source222: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/mptopdf.tar.xz
-Source223: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/m-tx.doc.tar.xz
-Source224: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/m-tx.tar.xz
-Source225: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/multibibliography.doc.tar.xz
-Source226: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/multibibliography.tar.xz
-Source227: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/musixtex.doc.tar.xz
-Source228: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/musixtex.tar.xz
-Source229: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/musixtnt.doc.tar.xz
-Source230: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/musixtnt.tar.xz
-Source231: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/omegaware.doc.tar.xz
-Source232: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/patgen.doc.tar.xz
-Source233: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/patgen.tar.xz
-Source234: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/pax.doc.tar.xz
-Source235: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/pax.tar.xz
-Source236: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/pdfbook2.doc.tar.xz
-Source237: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/pdfbook2.tar.xz
-Source238: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/pdfcrop.doc.tar.xz
-Source239: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/pdfcrop.tar.xz
-Source240: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/pdfjam.doc.tar.xz
-Source241: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/pdfjam.tar.xz
-Source242: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/pdflatexpicscale.doc.tar.xz
-Source243: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/pdflatexpicscale.tar.xz
-Source244: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/pdftex.doc.tar.xz
-Source245: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/pdftex.tar.xz
-Source246: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/pdftex-quiet.doc.tar.xz
-Source247: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/pdftex-quiet.tar.xz
-Source248: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/pdftools.doc.tar.xz
-Source249: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/pdftools.tar.xz
-Source250: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/pdfxup.doc.tar.xz
-Source251: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/pdfxup.tar.xz
-Source252: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/pedigree-perl.doc.tar.xz
-Source253: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/pedigree-perl.tar.xz
-Source254: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/perltex.doc.tar.xz
-Source255: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/perltex.tar.xz
-Source256: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/petri-nets.doc.tar.xz
-Source257: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/petri-nets.tar.xz
-Source258: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/pfarrei.doc.tar.xz
-Source259: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/pfarrei.tar.xz
-Source260: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/pkfix.doc.tar.xz
-Source261: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/pkfix-helper.doc.tar.xz
-Source262: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/pkfix-helper.tar.xz
-Source263: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/pkfix.tar.xz
-Source264: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/pmxchords.doc.tar.xz
-Source265: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/pmxchords.tar.xz
-Source266: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/pmx.doc.tar.xz
-Source267: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/pmx.tar.xz
-Source268: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/ps2pk.doc.tar.xz
-Source269: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/ps2pk.tar.xz
-Source270: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/pst2pdf.doc.tar.xz
-Source271: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/pst2pdf.tar.xz
-Source272: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/pstools.tar.xz
-Source273: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/pst-pdf.doc.tar.xz
-Source274: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/pst-pdf.tar.xz
-Source275: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/ptex2pdf.doc.tar.xz
-Source276: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/ptex2pdf.tar.xz
-Source277: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/ptex.doc.tar.xz
-Source278: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/ptex-fontmaps.doc.tar.xz
-Source279: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/ptex-fontmaps.tar.xz
-Source280: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/ptex.tar.xz
-Source281: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/purifyeps.doc.tar.xz
-Source282: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/purifyeps.tar.xz
-Source283: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/pygmentex.doc.tar.xz
-Source284: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/pygmentex.tar.xz
-Source285: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/pythontex.doc.tar.xz
-Source286: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/pythontex.tar.xz
-Source287: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/rubik.doc.tar.xz
-Source288: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/rubik.tar.xz
-Source289: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/seetexk.doc.tar.xz
-Source290: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/seetexk.tar.xz
-Source291: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/splitindex.doc.tar.xz
-Source292: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/splitindex.tar.xz
-Source293: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/srcredact.doc.tar.xz
-Source294: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/srcredact.tar.xz
-Source295: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/sty2dtx.doc.tar.xz
-Source296: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/sty2dtx.tar.xz
-Source297: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/svn-multi.doc.tar.xz
-Source298: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/svn-multi.tar.xz
-Source299: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/synctex.doc.tar.xz
-Source300: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/synctex.tar.xz
-Source301: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/tetex.doc.tar.xz
-Source302: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/tetex.tar.xz
-Source303: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/tex4ebook.doc.tar.xz
-Source304: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/tex4ebook.tar.xz
-Source305: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/tex4ht.doc.tar.xz
-Source306: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/tex4ht.tar.xz
-Source307: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/texcount.doc.tar.xz
-Source308: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/texcount.tar.xz
-Source309: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/texdef.doc.tar.xz
-Source310: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/texdef.tar.xz
-Source311: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/texdiff.doc.tar.xz
-Source312: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/texdiff.tar.xz
-Source313: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/texdirflatten.doc.tar.xz
-Source314: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/texdirflatten.tar.xz
-Source315: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/texdoc.doc.tar.xz
-Source316: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/tex.doc.tar.xz
-Source317: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/texdoc.tar.xz
-Source318: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/texdoctk.tar.xz
-Source319: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/texdoctk.doc.tar.xz
-Source320: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/texfot.doc.tar.xz
-Source321: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/texfot.tar.xz
-Source322: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/texlive.infra.doc.tar.xz
-Source323: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/texlive.infra.tar.xz
-Source324: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/texliveonfly.doc.tar.xz
-Source325: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/texliveonfly.tar.xz
-Source326: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/texlive-scripts.doc.tar.xz
-Source327: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/texlive-scripts.tar.xz
-Source328: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/texloganalyser.doc.tar.xz
-Source329: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/texloganalyser.tar.xz
-Source330: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/texosquery.doc.tar.xz
-Source331: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/texosquery.tar.xz
-Source332: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/texsis.doc.tar.xz
-Source333: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/texsis.tar.xz
-Source334: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/tex.tar.xz
-Source335: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/texware.doc.tar.xz
-Source336: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/texware.tar.xz
-Source337: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/thumbpdf.doc.tar.xz
-Source338: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/thumbpdf.tar.xz
-Source339: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/tie.doc.tar.xz
-Source340: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/tie.tar.xz
-Source341: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/tpic2pdftex.doc.tar.xz
-Source342: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/tpic2pdftex.tar.xz
-Source343: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/ttfutils.doc.tar.xz
-Source344: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/ttfutils.tar.xz
-Source345: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/typeoutfileinfo.doc.tar.xz
-Source346: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/typeoutfileinfo.tar.xz
-Source347: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/ulqda.doc.tar.xz
-Source348: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/ulqda.tar.xz
-Source349: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/uplatex.doc.tar.xz
-Source350: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/uptex.doc.tar.xz
-Source351: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/urlbst.doc.tar.xz
-Source352: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/urlbst.tar.xz
-Source353: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/velthuis.doc.tar.xz
-Source354: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/velthuis.tar.xz
-Source355: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/vlna.doc.tar.xz
-Source356: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/vpe.doc.tar.xz
-Source357: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/vpe.tar.xz
-Source358: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/web.doc.tar.xz
-Source359: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/web.tar.xz
-Source360: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/webquiz.doc.tar.xz
-Source361: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/webquiz.tar.xz
-Source362: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/wordcount.doc.tar.xz
-Source363: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/wordcount.tar.xz
-Source364: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/xdvi.doc.tar.xz
-Source365: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/xdvi.tar.xz
-Source366: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/xetex.doc.tar.xz
-Source367: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/xetex.tar.xz
-Source368: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/xindex.doc.tar.xz
-Source369: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/xindex.tar.xz
-Source370: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/xindy.doc.tar.xz
-Source371: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/xindy.tar.xz
-Source372: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/xmltex.doc.tar.xz
-Source373: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/xmltex.tar.xz
-Source374: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/yplan.doc.tar.xz
-Source375: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/yplan.tar.xz
+Source28: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/attachfile2.doc.tar.xz
+Source29: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/attachfile2.tar.xz
+Source30: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/authorindex.doc.tar.xz
+Source31: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/authorindex.tar.xz
+Source32: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/autosp.doc.tar.xz
+Source33: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/axodraw2.doc.tar.xz
+Source34: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/axodraw2.tar.xz
+Source35: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/bib2gls.doc.tar.xz
+Source36: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/bib2gls.tar.xz
+Source37: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/bibexport.doc.tar.xz
+Source38: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/bibexport.tar.xz
+Source39: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/bibtex8.doc.tar.xz
+Source40: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/bibtex8.tar.xz
+Source41: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/bibtex.doc.tar.xz
+Source42: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/bibtex.tar.xz
+Source43: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/bibtexu.doc.tar.xz
+Source44: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/bundledoc.doc.tar.xz
+Source45: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/bundledoc.tar.xz
+Source46: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/cachepic.doc.tar.xz
+Source47: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/cachepic.tar.xz
+Source48: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/checkcites.doc.tar.xz
+Source49: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/checkcites.tar.xz
+Source50: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/checklistings.doc.tar.xz
+Source51: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/checklistings.tar.xz
+Source52: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/chklref.doc.tar.xz
+Source53: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/chklref.tar.xz
+Source54: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/chktex.doc.tar.xz
+Source55: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/chktex.tar.xz
+Source56: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/cjk-gs-integrate.doc.tar.xz
+Source57: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/cjk-gs-integrate.tar.xz
+Source58: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/cjkutils.tar.xz
+Source59: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/clojure-pamphlet.doc.tar.xz
+Source60: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/clojure-pamphlet.tar.xz
+Source61: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/cluttex.doc.tar.xz
+Source62: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/cluttex.tar.xz
+Source63: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/context.doc.tar.xz
+Source64: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/context.tar.xz
+Source65: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/convbkmk.doc.tar.xz
+Source66: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/convbkmk.tar.xz
+Source67: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/crossrefware.doc.tar.xz
+Source68: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/crossrefware.tar.xz
+Source69: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/cslatex.tar.xz
+Source70: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/csplain.tar.xz
+Source71: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/ctanbib.doc.tar.xz
+Source72: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/ctanbib.tar.xz
+Source73: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/ctanify.doc.tar.xz
+Source74: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/ctanify.tar.xz
+Source75: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/ctan-o-mat.doc.tar.xz
+Source76: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/ctan-o-mat.tar.xz
+Source77: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/ctanupload.doc.tar.xz
+Source78: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/ctanupload.tar.xz
+Source79: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/ctie.doc.tar.xz
+Source80: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/cweb.doc.tar.xz
+Source81: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/cweb.tar.xz
+Source82: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/cyrillic-bin.doc.tar.xz
+Source83: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/cyrillic-bin.tar.xz
+Source84: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/de-macro.doc.tar.xz
+Source85: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/de-macro.tar.xz
+Source86: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/detex.doc.tar.xz
+Source87: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/detex.tar.xz
+Source88: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/diadia.doc.tar.xz
+Source89: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/diadia.tar.xz
+Source90: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/dosepsbin.doc.tar.xz
+Source91: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/dosepsbin.tar.xz
+Source92: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/dtl.doc.tar.xz
+Source93: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/dtl.tar.xz
+Source94: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/dtxgen.doc.tar.xz
+Source95: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/dtxgen.tar.xz
+Source96: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/dvi2tty.doc.tar.xz
+Source97: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/dvi2tty.tar.xz
+Source98: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/dviasm.doc.tar.xz
+Source99: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/dviasm.tar.xz
+Source100: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/dvicopy.doc.tar.xz
+Source101: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/dvicopy.tar.xz
+Source102: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/dvidvi.doc.tar.xz
+Source103: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/dvidvi.tar.xz
+Source104: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/dviinfox.doc.tar.xz
+Source105: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/dviinfox.tar.xz
+Source106: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/dviljk.doc.tar.xz
+Source107: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/dviljk.tar.xz
+Source108: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/dviout-util.doc.tar.xz
+Source109: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/dvipdfmx.doc.tar.xz
+Source110: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/dvipdfmx.tar.xz
+Source111: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/dvipng.doc.tar.xz
+Source112: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/dvipng.tar.xz
+Source113: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/dvipos.doc.tar.xz
+Source114: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/dvipos.tar.xz
+Source115: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/dvips.doc.tar.xz
+Source116: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/dvips.tar.xz
+Source117: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/dvisvgm.doc.tar.xz
+Source118: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/dvisvgm.tar.xz
+Source119: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/ebong.doc.tar.xz
+Source120: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/ebong.tar.xz
+Source121: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/eplain.doc.tar.xz
+Source122: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/eplain.tar.xz
+Source123: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/epspdf.doc.tar.xz
+Source124: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/epspdf.tar.xz
+Source125: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/epstopdf.doc.tar.xz
+Source126: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/epstopdf.tar.xz
+Source127: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/exceltex.doc.tar.xz
+Source128: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/exceltex.tar.xz
+Source129: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/fig4latex.doc.tar.xz
+Source130: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/fig4latex.tar.xz
+Source131: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/findhyph.doc.tar.xz
+Source132: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/findhyph.tar.xz
+Source133: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/fontinst.doc.tar.xz
+Source134: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/fontinst.tar.xz
+Source135: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/fontools.doc.tar.xz
+Source136: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/fontools.tar.xz
+Source137: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/fontware.doc.tar.xz
+Source138: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/fragmaster.doc.tar.xz
+Source139: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/fragmaster.tar.xz
+Source140: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/getmap.doc.tar.xz
+Source141: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/getmap.tar.xz
+Source142: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/glossaries.doc.tar.xz
+Source143: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/glossaries.tar.xz
+Source144: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/gregoriotex.doc.tar.xz
+Source145: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/gregoriotex.tar.xz
+Source146: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/gsftopk.doc.tar.xz
+Source147: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/gsftopk.tar.xz
+Source148: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/installfont.doc.tar.xz
+Source149: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/installfont.tar.xz
+Source150: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/jadetex.doc.tar.xz
+Source151: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/jadetex.tar.xz
+Source152: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/jfmutil.doc.tar.xz
+Source153: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/jfmutil.tar.xz
+Source154: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/ketcindy.doc.tar.xz
+Source155: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/ketcindy.tar.xz
+Source156: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/kotex-utils.doc.tar.xz
+Source157: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/kotex-utils.tar.xz
+Source158: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/kpathsea.doc.tar.xz
+Source159: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/kpathsea.tar.xz
+Source160: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/l3build.tar.xz
+Source161: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/l3build.doc.tar.xz
+Source162: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/lacheck.doc.tar.xz
+Source163: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/latex2man.doc.tar.xz
+Source164: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/latex2man.tar.xz
+Source165: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/latex2nemeth.doc.tar.xz
+Source166: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/latex2nemeth.tar.xz
+Source167: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/latexdiff.doc.tar.xz
+Source168: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/latexdiff.tar.xz
+Source169: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/latexfileversion.doc.tar.xz
+Source170: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/latexfileversion.tar.xz
+Source171: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/latex-git-log.doc.tar.xz
+Source172: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/latex-git-log.tar.xz
+Source173: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/latexindent.doc.tar.xz
+Source174: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/latexindent.tar.xz
+Source175: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/latexpand.doc.tar.xz
+Source176: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/latexpand.tar.xz
+Source177: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/latex-papersize.doc.tar.xz
+Source178: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/latex-papersize.tar.xz
+Source179: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/lcdftypetools.doc.tar.xz
+Source180: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/lilyglyphs.doc.tar.xz
+Source181: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/lilyglyphs.tar.xz
+Source182: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/listbib.doc.tar.xz
+Source183: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/listbib.tar.xz
+Source184: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/listings-ext.doc.tar.xz
+Source185: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/listings-ext.tar.xz
+Source186: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/lollipop.doc.tar.xz
+Source187: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/lollipop.tar.xz
+Source188: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/ltxfileinfo.doc.tar.xz
+Source189: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/ltxfileinfo.tar.xz
+Source190: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/ltximg.doc.tar.xz
+Source191: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/ltximg.tar.xz
+Source192: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/luaotfload.doc.tar.xz
+Source193: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/luaotfload.tar.xz
+Source194: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/luahbtex.doc.tar.xz
+Source195: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/luahbtex.tar.xz
+Source196: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/luatex.doc.tar.xz
+Source197: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/luatex.tar.xz
+Source198: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/lwarp.doc.tar.xz
+Source199: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/lwarp.tar.xz
+Source200: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/make4ht.doc.tar.xz
+Source201: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/make4ht.tar.xz
+Source202: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/makedtx.doc.tar.xz
+Source203: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/makedtx.tar.xz
+Source204: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/makeindex.doc.tar.xz
+Source205: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/makeindex.tar.xz
+Source206: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/match_parens.doc.tar.xz
+Source207: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/match_parens.tar.xz
+Source208: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/mathspic.doc.tar.xz
+Source209: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/mathspic.tar.xz
+Source210: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/metafont.doc.tar.xz
+Source211: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/metafont.tar.xz
+Source212: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/metapost.doc.tar.xz
+Source213: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/metapost.tar.xz
+Source214: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/mex.doc.tar.xz
+Source215: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/mex.tar.xz
+Source216: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/mf2pt1.doc.tar.xz
+Source217: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/mf2pt1.tar.xz
+Source218: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/mflua.tar.xz
+Source219: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/mfware.doc.tar.xz
+Source220: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/mfware.tar.xz
+Source221: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/mkgrkindex.doc.tar.xz
+Source222: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/mkgrkindex.tar.xz
+Source223: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/mkjobtexmf.doc.tar.xz
+Source224: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/mkjobtexmf.tar.xz
+Source225: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/mkpic.doc.tar.xz
+Source226: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/mkpic.tar.xz
+Source227: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/mltex.doc.tar.xz
+Source228: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/mltex.tar.xz
+Source229: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/mptopdf.doc.tar.xz
+Source230: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/mptopdf.tar.xz
+Source231: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/m-tx.doc.tar.xz
+Source232: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/m-tx.tar.xz
+Source233: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/multibibliography.doc.tar.xz
+Source234: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/multibibliography.tar.xz
+Source235: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/musixtex.doc.tar.xz
+Source236: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/musixtex.tar.xz
+Source237: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/musixtnt.doc.tar.xz
+Source238: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/musixtnt.tar.xz
+Source239: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/omegaware.doc.tar.xz
+Source240: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/patgen.doc.tar.xz
+Source241: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/patgen.tar.xz
+Source242: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/pax.doc.tar.xz
+Source243: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/pax.tar.xz
+Source244: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/pdfbook2.doc.tar.xz
+Source245: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/pdfbook2.tar.xz
+Source246: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/pdfcrop.doc.tar.xz
+Source247: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/pdfcrop.tar.xz
+Source248: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/pdfjam.doc.tar.xz
+Source249: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/pdfjam.tar.xz
+Source250: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/pdflatexpicscale.doc.tar.xz
+Source251: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/pdflatexpicscale.tar.xz
+Source252: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/pdftex.doc.tar.xz
+Source253: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/pdftex.tar.xz
+Source254: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/pdftex-quiet.doc.tar.xz
+Source255: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/pdftex-quiet.tar.xz
+Source256: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/pdfxup.doc.tar.xz
+Source257: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/pdfxup.tar.xz
+Source258: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/pedigree-perl.doc.tar.xz
+Source259: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/pedigree-perl.tar.xz
+Source260: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/perltex.doc.tar.xz
+Source261: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/perltex.tar.xz
+Source262: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/petri-nets.doc.tar.xz
+Source263: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/petri-nets.tar.xz
+Source264: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/pfarrei.doc.tar.xz
+Source265: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/pfarrei.tar.xz
+Source266: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/pkfix.doc.tar.xz
+Source267: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/pkfix-helper.doc.tar.xz
+Source268: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/pkfix-helper.tar.xz
+Source269: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/pkfix.tar.xz
+Source270: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/pmxchords.doc.tar.xz
+Source271: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/pmxchords.tar.xz
+Source272: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/pmx.doc.tar.xz
+Source273: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/pmx.tar.xz
+Source274: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/ps2eps.doc.tar.xz
+Source275: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/ps2eps.tar.xz
+Source276: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/ps2pk.doc.tar.xz
+Source277: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/ps2pk.tar.xz
+Source278: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/pst2pdf.doc.tar.xz
+Source279: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/pst2pdf.tar.xz
+Source280: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/pst-pdf.doc.tar.xz
+Source281: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/pst-pdf.tar.xz
+Source282: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/psutils.doc.tar.xz
+Source283: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/psutils.tar.xz
+Source284: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/ptex2pdf.doc.tar.xz
+Source285: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/ptex2pdf.tar.xz
+Source286: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/ptex.doc.tar.xz
+Source287: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/ptex-fontmaps.doc.tar.xz
+Source288: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/ptex-fontmaps.tar.xz
+Source289: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/ptex.tar.xz
+Source290: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/purifyeps.doc.tar.xz
+Source291: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/purifyeps.tar.xz
+Source292: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/pygmentex.doc.tar.xz
+Source293: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/pygmentex.tar.xz
+Source294: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/pythontex.doc.tar.xz
+Source295: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/pythontex.tar.xz
+Source296: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/rubik.doc.tar.xz
+Source297: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/rubik.tar.xz
+Source298: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/seetexk.doc.tar.xz
+Source299: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/seetexk.tar.xz
+Source300: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/splitindex.doc.tar.xz
+Source301: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/splitindex.tar.xz
+Source302: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/srcredact.doc.tar.xz
+Source303: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/srcredact.tar.xz
+Source304: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/sty2dtx.doc.tar.xz
+Source305: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/sty2dtx.tar.xz
+Source306: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/svn-multi.doc.tar.xz
+Source307: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/svn-multi.tar.xz
+Source308: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/synctex.doc.tar.xz
+Source309: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/synctex.tar.xz
+Source310: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/tex4ebook.doc.tar.xz
+Source311: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/tex4ebook.tar.xz
+Source312: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/tex4ht.doc.tar.xz
+Source313: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/tex4ht.tar.xz
+Source314: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/texcount.doc.tar.xz
+Source315: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/texcount.tar.xz
+Source316: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/texdef.doc.tar.xz
+Source317: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/texdef.tar.xz
+Source318: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/texdiff.doc.tar.xz
+Source319: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/texdiff.tar.xz
+Source320: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/texdirflatten.doc.tar.xz
+Source321: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/texdirflatten.tar.xz
+Source322: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/texdoc.doc.tar.xz
+Source323: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/tex.doc.tar.xz
+Source324: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/texdoc.tar.xz
+Source325: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/texdoctk.tar.xz
+Source326: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/texdoctk.doc.tar.xz
+Source327: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/texfot.doc.tar.xz
+Source328: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/texfot.tar.xz
+Source329: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/texlive.infra.doc.tar.xz
+Source330: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/texlive.infra.tar.xz
+Source331: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/texliveonfly.doc.tar.xz
+Source332: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/texliveonfly.tar.xz
+Source333: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/texlive-scripts.doc.tar.xz
+Source334: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/texlive-scripts.tar.xz
+Source335: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/texlive-scripts-extra.doc.tar.xz
+Source336: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/texlive-scripts-extra.tar.xz
+Source337: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/texloganalyser.doc.tar.xz
+Source338: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/texloganalyser.tar.xz
+Source339: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/texosquery.doc.tar.xz
+Source340: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/texosquery.tar.xz
+Source341: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/texplate.doc.tar.xz
+Source342: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/texplate.tar.xz
+Source343: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/texsis.doc.tar.xz
+Source344: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/texsis.tar.xz
+Source345: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/tex.tar.xz
+Source346: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/texware.doc.tar.xz
+Source347: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/texware.tar.xz
+Source348: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/thumbpdf.doc.tar.xz
+Source349: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/thumbpdf.tar.xz
+Source350: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/tie.doc.tar.xz
+Source351: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/tie.tar.xz
+Source352: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/tpic2pdftex.doc.tar.xz
+Source353: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/tpic2pdftex.tar.xz
+Source354: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/ttfutils.doc.tar.xz
+Source355: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/ttfutils.tar.xz
+Source356: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/typeoutfileinfo.doc.tar.xz
+Source357: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/typeoutfileinfo.tar.xz
+Source358: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/ulqda.doc.tar.xz
+Source359: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/ulqda.tar.xz
+Source360: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/uplatex.doc.tar.xz
+Source361: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/uptex.doc.tar.xz
+Source362: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/urlbst.doc.tar.xz
+Source363: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/urlbst.tar.xz
+Source364: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/velthuis.doc.tar.xz
+Source365: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/velthuis.tar.xz
+Source366: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/vlna.doc.tar.xz
+Source367: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/vpe.doc.tar.xz
+Source368: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/vpe.tar.xz
+Source369: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/web.doc.tar.xz
+Source370: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/web.tar.xz
+Source371: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/webquiz.doc.tar.xz
+Source372: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/webquiz.tar.xz
+Source373: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/wordcount.doc.tar.xz
+Source374: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/wordcount.tar.xz
+Source375: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/xdvi.doc.tar.xz
+Source376: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/xdvi.tar.xz
+Source377: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/xetex.doc.tar.xz
+Source378: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/xetex.tar.xz
+Source379: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/xindex.doc.tar.xz
+Source380: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/xindex.tar.xz
+Source381: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/xindy.doc.tar.xz
+Source382: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/xindy.tar.xz
+Source383: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/xmltex.doc.tar.xz
+Source384: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/xmltex.tar.xz
+Source385: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/xpdfopen.doc.tar.xz
+Source386: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/yplan.doc.tar.xz
+Source387: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/yplan.tar.xz
 Patch1: tl-kpfix.patch
 Patch2: tl-format.patch
-Patch3: texlive-20190410-selinux-context.patch
 Patch5: texlive-2016-kpathsea-texlive-path.patch
 # fixes from arch and upstream texlive
-Patch7: texlive-20180414-new-poppler.patch
+Patch7: texlive-20200327-new-poppler.patch
 # fix texmf.cnf so that it finds texinfo bits in Fedora
-Patch8: texlive-20190410-texinfo-path-fix.patch
+Patch8: texlive-20200327-texinfo-path-fix.patch
 # These tests only fail on 32 bit arches with gcc8
-Patch11: texlive-20190410-disable-more-failing-tests.patch
+Patch11: texlive-20200327-disable-more-failing-tests.patch
 # Another test which fails on 32 bit arches (in F30+)
 # probably because of stricter malloc checks in glibc.
 # https://bugzilla.redhat.com/show_bug.cgi?id=1631847
 # Filed issue upstream, no resolution yet.
 Patch15: texlive-base-20180414-disable-omegafonts-check-test.patch
-# Use python3 on pdfbook2
-Patch16: texlive-base-pdfbook2-py3.patch
 # fix annocheck issue detected by rpmdiff
 Patch17: texlive-20180414-annocheck.patch
 Patch18: texlive-20190410-poppler-0.73.patch
@@ -429,17 +438,7 @@ Patch20: texlive-20190410-dvisvgm-fix-libgs-detection.patch
 # Since we need to include tlmgr.pl for texconfig
 # lets try to keep people from shooting themselves with it
 Patch21: texlive-20190410-tlmgr-ignore-warning.patch
-# Fix latex-papersize for python3 (thanks to upstream)
-Patch22: texlive-base-latex-papersize-py3.patch
-Patch23: texlive-base-20190410-poppler-0.84.patch
-# GCC10: Fix global vars in autosp
-Patch24: texlive-base-20190410-gcc10-autosp-fix-global-vars.patch
-# GCC10: Fix global vars in mplib
-Patch25: texlive-base-20190410-gcc10-mp-fix-global-var.patch
-# GCC10: Fix global vars in luatex
-Patch26: texlive-base-20190410-gcc10-luatex-fix-global-vars.patch
-# GCC10: Fix global vars in ttf2pk2
-Patch27: texlive-base-20190410-gcc10-ttf2pk2-fix-global-var.patch
+Patch23: texlive-20200327-poppler-0.84.patch
 # bz#1798119, buffer overflow, CVE-2019-19601
 Patch28: texlive-base-20190410-CVE-2019-19601.patch
 
@@ -596,7 +595,6 @@ Obsoletes: texlive-aleph-doc < 7:20170520
 Summary: Extended TeX
 Requires: texlive-base
 Requires: texlive-kpathsea
-Requires: texlive-tetex
 Requires(post,postun): coreutils
 Requires: texlive-latex
 Requires: texlive-plain
@@ -607,6 +605,7 @@ Requires: texlive-knuth-lib
 Requires: texlive-antomega
 Requires: texlive-latex-fonts
 Requires: texlive-omega
+Requires: texlive-l3kernel
 
 %description -n %{shortname}-aleph
 An development of omega, using most of the extensions of TeX
@@ -624,14 +623,12 @@ License: LPPL
 Summary: American Mathematical Society plain TeX macros
 Requires: texlive-base
 Requires: texlive-kpathsea
-Requires: texlive-tetex
 Requires(post,postun): coreutils
 Requires: texlive-tex
 Requires: texlive-amsfonts
 Requires: texlive-cm
 Requires: texlive-hyphen-base
 Requires: texlive-knuth-lib
-Requires: texlive-pdftex
 Requires: texlive-plain
 Provides: tex(amsppt.sty) = %{epoch}:%{source_date}-%{release}
 Provides: tex(amsppt1.tex) = %{epoch}:%{source_date}-%{release}
@@ -669,7 +666,7 @@ Provides: bundled(apache-commons-lang3) = 3.1
 Provides: bundled(apache-commons-cli) = 1.2
 Provides: bundled(mvel2) = 2.0.19
 Provides: bundled(snakeyaml) = 1.11
-Provides: bunbled(logback) = 1.0.1
+Provides: bundled(logback) = 1.0.1
 # shell
 BuildArch: noarch
 
@@ -678,6 +675,25 @@ Arara is comparable with other well-known compilation tools
 like latexmk and rubber. The key difference is that that arara
 determines its actions from metadata in the source code, rather
 than relying on indirect resources, such as log file analysis.
+
+%package -n %{shortname}-attachfile2
+Provides: tex-attachfile2 = %{epoch}:%{source_date}-%{release}
+Provides: tex-attachfile2-bin = %{epoch}:%{source_date}-%{release}
+Provides: texlive-attachfile2-bin = %{epoch}:%{source_date}-%{release}
+License: LPPL
+Summary: Attach files into PDF
+Requires: texlive-base
+Requires: texlive-kpathsea
+Provides: tex(attachfile2.sty) = %{epoch}:%{source_date}-%{release}
+# perl
+BuildArch: noarch
+
+%description -n %{shortname}-attachfile2
+This package can be used to attach files to a PDF document. It
+is a further development of Scott Pakin's package attachfile
+for pdfTeX. Apart from bug fixes, this package adds support for
+dvips, some new options, and gets and writes meta information
+data about the attached files.
 
 %package -n %{shortname}-authorindex
 Provides: tex-authorindex = %{epoch}:%{source_date}-%{release}
@@ -968,6 +984,23 @@ package does not focus on a specific programming language, but
 it is designed to work well with languages and compilers in the
 ML family.
 
+%package -n %{shortname}-chklref
+Provides: tex-chklref = %{epoch}:%{source_date}-%{release}
+License: GPLv3
+Summary: Check for problems with labels in LaTeX
+Requires: texlive-base
+Requires: texlive-kpathsea
+Provides: tex(chklref.sty) = %{epoch}:%{source_date}-%{release}
+# perl
+BuildArch: noarch
+
+%description -n %{shortname}-chklref
+It is quite common that after modifying a TeX file, many unused
+labels remain in it. The purpose of chklref is to automatically
+find these useless labels. It also looks for "non starred"
+mathematical environments with no labels and advises the user
+to use a starred version instead.
+
 %package -n %{shortname}-chktex
 Provides: tex-chktex = %{epoch}:%{source_date}-%{release}
 Provides: texlive-chktex-bin = %{epoch}:%{source_date}-%{release}
@@ -1037,6 +1070,30 @@ Provides: tex(ksso17.cfg) = %{epoch}:%{source_date}-%{release}
 %description -n %{shortname}-cjkutils
 cjkutils package.
 
+%package -n %{shortname}-clojure-pamphlet
+Provides: tex-clojure-pamphlet = %{epoch}:%{source_date}-%{release}
+Provides: texlive-clojure-pamphlet-bin = %{epoch}:%{source_date}-%{release}
+Provides: tex-clojure-pamphlet-bin = %{epoch}:%{source_date}-%{release}
+License: GPLv3+
+Summary: A simple literate programming tool based on clojure's pamphlet system
+Requires: texlive-base
+Requires: texlive-kpathsea
+Provides: tex(clojure-pamphlet.sty) = %{epoch}:%{source_date}-%{release}
+# perl
+BuildArch: noarch
+
+%description -n %{shortname}-clojure-pamphlet
+The Clojure pamphlet system is a system based on the Clojure
+literate system. In the Clojure's pamphlet system you have your
+main LaTeX file, which can be compiled regularly. This file
+contains documentation and source code (just like in other
+forms of literate programming). These code snippets are wrapped
+in the chunk environment, hence they can be recognized by the
+tangler in order to extract them. Chunks can be included inside
+each other by the getchunk command (which will be typesetted
+accordingly). Finally, the LaTeX file will be run through the
+tangler to get the desired chunk of code.
+
 %package -n %{shortname}-cluttex
 Provides: tex-cluttex = %{epoch}:%{source_date}-%{release}
 Provides: texlive-cluttex-bin = %{epoch}:%{source_date}-%{release}
@@ -1071,7 +1128,6 @@ License: GPL+ or LPPL
 Summary: The ConTeXt macro package
 Requires: texlive-base
 Requires: texlive-kpathsea
-Requires: texlive-tetex
 Requires(post,postun): coreutils
 Requires: texlive-metapost
 Requires: texlive-pdftex
@@ -1330,8 +1386,11 @@ Summary: LaTeX support for Czech/Slovak typesetting
 Requires: texlive-base
 Requires: texlive-kpathsea
 Requires: texlive-latex
-Requires: texlive-pdftex
-Requires: texlive-tetex
+Requires: texlive-cm
+Requires: texlive-csplain
+Requires: texlive-hyphen-base
+Requires: texlive-latex-fonts
+Requires: texlive-tex-ini-files
 Requires(post,postun): coreutils
 Requires: tex(czech.ldf)
 Requires: tex(slovak.ldf)
@@ -1385,10 +1444,16 @@ License: GPLv2+
 Summary: Plain TeX multilanguage support
 Requires: texlive-base
 Requires: texlive-kpathsea
-Requires: texlive-pdftex
-Requires: texlive-tetex
-Requires(post,postun): coreutils
 Requires: texlive-tex
+Requires: texlive-cm
+Requires(post,postun): coreutils
+Requires: texlive-cs
+Requires: texlive-hyphen-base
+Requires: texlive-plain
+Requires: texlive-enctex
+Requires: texlive-tex-ini-files
+Requires: texlive-luatex
+Requires: texlive-luatex85
 Provides: tex(csenc-k.tex) = %{epoch}:%{source_date}-%{release}
 Provides: tex(csenc-p.tex) = %{epoch}:%{source_date}-%{release}
 Provides: tex(csenc-u.tex) = %{epoch}:%{source_date}-%{release}
@@ -2178,7 +2243,18 @@ Summary: Extended plain TeX macros
 Requires: texlive-base
 Requires: texlive-kpathsea
 Requires: texlive-pdftex
-Requires: texlive-tetex
+Requires: texlive-babel
+Requires: texlive-cm
+Requires: texlive-hyphen-base
+Requires: texlive-latex-fonts
+Requires: texlive-l3backend
+Requires: texlive-l3kernel
+Requires: texlive-l3packages
+Requires: texlive-tex-ini-files
+Requires: texlive-unicode-data
+Requires: texlive-dehyph
+Requires: texlive-hyph-utf8
+Requires: texlive-knuth-lib
 Requires(post,postun): coreutils
 Provides: tex(arrow.tex) = %{epoch}:%{source_date}-%{release}
 Provides: tex(btxmac.tex) = %{epoch}:%{source_date}-%{release}
@@ -2637,8 +2713,54 @@ Requires: texlive-kpathsea
 Requires: texlive-latex
 Requires: texlive-passivetex
 Requires: texlive-pdftex
-Requires: texlive-tetex
 Requires: texlive-tex
+Requires: texlive-amsfonts
+Requires: texlive-atbegshi
+Requires: texlive-atveryend
+Requires: texlive-auxhook
+Requires: texlive-babel
+Requires: texlive-bigintcalc
+Requires: texlive-bitset
+Requires: texlive-cm
+Requires: texlive-colortbl
+Requires: texlive-cyrillic
+Requires: texlive-dehyph
+Requires: texlive-ec
+Requires: texlive-etexcmds
+Requires: texlive-fancyhdr
+Requires: texlive-graphics
+Requires: texlive-graphics-cfg
+Requires: texlive-graphics-def
+Requires: texlive-hycolor
+Requires: texlive-hyperref
+Requires: texlive-hyph-utf8
+Requires: texlive-iftex
+Requires: texlive-infwarerr
+Requires: texlive-intcalc
+Requires: texlive-kvdefinekeys
+Requires: texlive-kvoptions
+Requires: texlive-kvsetkeys
+Requires: texlive-l3kernel
+Requires: texlive-latex-fonts
+Requires: texlive-latexconfig
+Requires: texlive-letltxmacro
+Requires: texlive-ltxcmds
+Requires: texlive-marvosym
+Requires: texlive-pdfescape
+Requires: texlive-pdftexcmds
+Requires: texlive-psnfss
+Requires: texlive-rerunfilecheck
+Requires: texlive-stmaryrd
+Requires: texlive-symbol
+Requires: texlive-tex-ini-files
+Requires: texlive-tipa
+Requires: texlive-tools
+Requires: texlive-ulem
+Requires: texlive-uniquecounter
+Requires: texlive-unicode-data
+Requires: texlive-url
+Requires: texlive-wasysym
+Requires: texlive-zapfding
 Requires(post,postun): coreutils
 Provides: tex(dsssl.def) = %{epoch}:%{source_date}-%{release}
 Provides: tex(uentities.sty) = %{epoch}:%{source_date}-%{release}
@@ -2670,6 +2792,30 @@ data in virtual fonts. This function can be seen as a
 counterpart to the vftovp/vptovf programs. The mutual
 conversion between VF files alone and files in the "ZVP0
 format", which is a subset of the ZVP format.
+
+%package -n %{shortname}-ketcindy
+Provides: tex-ketcindy = %{epoch}:%{source_date}-%{release}
+Provides: tex-ketcindy-bin = %{epoch}:%{source_date}-%{release}
+License: GPLv3+
+Summary: Macros for graphic generation and Cinderella plugin
+Requires: texlive-base
+Requires: texlive-kpathsea
+Provides: tex(ketlayer.sty) = %{epoch}:%{source_date}-%{release}
+Provides: tex(ketlayer2e.sty) = %{epoch}:%{source_date}-%{release}
+Provides: tex(ketmedia.sty) = %{epoch}:%{source_date}-%{release}
+Provides: tex(ketpic.sty) = %{epoch}:%{source_date}-%{release}
+Provides: tex(ketpic2e.sty) = %{epoch}:%{source_date}-%{release}
+Provides: tex(ketslide.sty) = %{epoch}:%{source_date}-%{release}
+Provides: tex(ketslide2.sty) = %{epoch}:%{source_date}-%{release}
+# perl
+BuildArch: noarch
+
+%description -n %{shortname}-ketcindy
+KETpic is a macro package designed for computer algebra systems
+(CAS) to generate LaTeX source codes for high-quality
+mathematical artwork. KETcindy is a plugin for Cinderella that
+allows to generate graphics using KETpic. The generated code
+can be included in any LaTeX document.
 
 %package -n %{shortname}-kotex-utils
 Provides: tex-kotex-utils = %{epoch}:%{source_date}-%{release}
@@ -2705,7 +2851,7 @@ Provides: tex-kpathsea-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-kpathsea-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-kpathsea-doc < 7:20170520
 Requires: coreutils, grep
-Requires: texlive-base, texlive-tetex
+Requires: texlive-base
 Provides: tex(fmtutil.cnf) = %{epoch}:%{source_date}-%{release}
 Provides: tex(mktex.cnf) = %{epoch}:%{source_date}-%{release}
 Provides: tex(texmf.cnf) = %{epoch}:%{source_date}-%{release}
@@ -2773,7 +2919,6 @@ Requires: texlive-luatex
 Requires: texlive-pdftex
 Requires: texlive-latexconfig
 Requires: texlive-latex-fonts
-Requires: texlive-tetex
 Requires(post,postun): coreutils
 Requires: tex(multicol.sty)
 Requires: tex(url.sty)
@@ -3280,7 +3425,8 @@ License: GPLv3+
 Summary: TeX made easy
 Requires: texlive-base
 Requires: texlive-kpathsea
-Requires: texlive-tetex
+Requires: texlive-cm
+Requires: texlive-hyphen-base
 Requires: texlive-tex
 Requires(post,postun): coreutils
 Provides: tex(lollipop-define.tex) = %{epoch}:%{source_date}-%{release}
@@ -3356,34 +3502,6 @@ PStricks environments for separate processing to produce images
 (in eps, pdf, png or jpg format) for use by a converter or the
 preview bundle.
 
-%package -n %{shortname}-lua2dox
-Provides: tex-lua2dox = %{epoch}:%{source_date}-%{release}
-Provides: texlive-lua2dox-bin = %{epoch}:%{source_date}-%{release}
-Provides: tex-lua2dox-bin = %{epoch}:%{source_date}-%{release}
-Obsoletes: texlive-lua2dox-bin < 7:20170520
-Provides: tex-lua2dox-doc = %{epoch}:%{source_date}-%{release}
-Provides: texlive-lua2dox-doc = %{epoch}:%{source_date}-%{release}
-Obsoletes: texlive-lua2dox-doc < 7:20170520
-License: LPPL 1.3
-Summary: Auto-documentation of lua code
-Requires: texlive-base
-Requires: texlive-kpathsea
-Provides: tex(lua.def) = %{epoch}:%{source_date}-%{release}
-# shell
-BuildArch: noarch
-
-%description -n %{shortname}-lua2dox
-The package extends the well-known C-like language autodoc
-tool, doxygen, to read and document lua code. In use, you edit
-and test your code and periodically run the autodoc tool to
-update the documentation, which may be viewed via an html
-browser. Autodoc tools can read the code well enough to find
-function/... declarations and document them. If the code also
-contains appropriatly formatted "magic comments", the tool can
-use them to supplement the documentation. The package is a
-first prototype of a planned TeX2DoX tool (in development),
-which will process joint (La)TeX/lua documents.
-
 %package -n %{shortname}-luaotfload
 Provides: tex-luaotfload = %{epoch}:%{source_date}-%{release}
 Provides: texlive-luaotfload-bin = %{epoch}:%{source_date}-%{release}
@@ -3409,6 +3527,48 @@ The package adopts the TrueType/OpenType Font loader code
 provided in ConTeXt, and adapts it to use in Plain TeX and
 LaTeX. It works under LuaLaTeX only.
 
+%package -n %{shortname}-luahbtex
+Provides: tex-luahbtex = %{epoch}:%{source_date}-%{release}
+Provides: texlive-luahbtex-bin = %{epoch}:%{source_date}-%{release}
+Provides: tex-luahbtex-bin = %{epoch}:%{source_date}-%{release}
+License: GPLv2+
+Summary: LuaTeX with HarfBuzz library for glyph shaping
+Requires: texlive-base
+Requires: texlive-kpathsea
+Requires: texlive-luatex
+Requires: texlive-cm
+Requires: texlive-etex
+Requires: texlive-hyphen-base
+Requires: texlive-knuth-lib
+Requires: texlive-plain
+Requires: texlive-tex-ini-files
+Requires: texlive-unicode-data
+Requires: texlive-hyph-utf8
+
+%description -n %{shortname}-luahbtex
+LuaTeX with HarfBuzz library for glyph shaping.
+
+%package -n %{shortname}-luajittex
+Provides: tex-luajittex = %{epoch}:%{source_date}-%{release}
+Provides: tex-luajittex-bin = %{epoch}:%{source_date}-%{release}
+Provides: texlive-luajittex-bin = %{epoch}:%{source_date}-%{release}
+License: GPLv2+
+Summary: LuaTeX with just-in-time (jit) compiler, with and without HarfBuzz
+Requires: texlive-base
+Requires: texlive-kpathsea
+Requires: texlive-luatex
+Requires: texlive-cm
+Requires: texlive-etex
+Requires: texlive-hyphen-base
+Requires: texlive-knuth-lib
+Requires: texlive-plain
+Requires: texlive-tex-ini-files
+Requires: texlive-unicode-data
+Requires: texlive-hyph-utf8
+
+%description -n %{shortname}-luajittex
+LuaTeX with just-in-time (jit) compiler, with and without HarfBuzz.
+
 %package -n %{shortname}-luatex
 Provides: tex-luatex = %{epoch}:%{source_date}-%{release}
 Provides: texlive-luatex-bin = %{epoch}:%{source_date}-%{release}
@@ -3421,7 +3581,6 @@ License: GPLv2+
 Summary: The LuaTeX engine
 Requires: texlive-base
 Requires: texlive-kpathsea
-Requires: texlive-tetex
 Requires(post,postun): coreutils
 Requires: texlive-cm
 Requires: texlive-etex
@@ -3430,6 +3589,7 @@ Requires: texlive-knuth-lib
 Requires: texlive-plain
 Requires: texlive-tex-ini-files
 Requires: texlive-unicode-data
+Requires: texlive-hyph-utf8
 Requires: tex(luatex.def)
 Provides: tex(luatex-unicode-letters.tex) = %{epoch}:%{source_date}-%{release}
 Provides: tex(luatexiniconfig.tex) = %{epoch}:%{source_date}-%{release}
@@ -3475,13 +3635,22 @@ conversion software and word processors.
 
 %package -n %{shortname}-lyluatex
 Summary: Commands to include lilypond scores within a (Lua)LaTeX document
-Version: svn47584
+Version: svn51252
 License: MIT
 Requires: texlive-base texlive-kpathsea
 Provides: tex(lyluatex.lua) = %{epoch}:%{source_date}-%{release}
 Provides: tex(lyluatex.sty) = %{epoch}:%{source_date}-%{release}
 # lua
 BuildArch: noarch
+Requires: tex(currfile.sty)
+Requires: tex(environ.sty)
+Requires: tex(graphicx.sty)
+Requires: tex(luaotfload.sty)
+Requires: tex(luatexbase.sty)
+Requires: tex(metalogo.sty)
+Requires: tex(minibox.sty)
+Requires: tex(pdfpages.sty)
+Requires: tex(xkeyval.sty)
 
 %description -n %{shortname}-lyluatex
 This package provides macros for the inclusion of LilyPond
@@ -3618,7 +3787,7 @@ License: Knuth
 Summary: A system for specifying fonts
 Requires: texlive-base
 Requires: texlive-kpathsea
-Requires: texlive-tetex
+Requires: texlive-modes
 Requires(post,postun): coreutils
 Provides: tex(mf.mf) = %{epoch}:%{source_date}-%{release}
 Provides: tex(plain.mf) = %{epoch}:%{source_date}-%{release}
@@ -3650,7 +3819,6 @@ License: LGPLv2+
 Summary: A development of Metafont for creating graphics
 Requires: texlive-base
 Requires: texlive-kpathsea
-Requires: texlive-tetex
 Provides: tex(freeeuro.afm) = %{epoch}:%{source_date}-%{release}
 Provides: tex(psyrgo.afm) = %{epoch}:%{source_date}-%{release}
 Provides: tex(zpzdr-reversed.afm) = %{epoch}:%{source_date}-%{release}
@@ -3715,12 +3883,18 @@ Obsoletes: texlive-mex-doc < 7:20170520
 License: Public Domain
 Summary: Polish formats for TeX
 Requires: texlive-base
+Requires: texlive-enctex
+Requires: texlive-hyph-utf8
+Requires: texlive-hyphen-base
 Requires: texlive-hyphen-polish
+Requires: texlive-knuth-lib
 Requires: texlive-kpathsea
 Requires: texlive-pdftex
 Requires: texlive-pl
-Requires: texlive-tetex
+Requires: texlive-plain
 Requires: texlive-tex
+Requires: texlive-tex-ini-files
+Requires: texlive-utf8mex
 Requires(post,postun): coreutils
 Provides: tex(lamex.tex) = %{epoch}:%{source_date}-%{release}
 Provides: tex(mex.tex) = %{epoch}:%{source_date}-%{release}
@@ -3872,7 +4046,17 @@ Requires: texlive-base
 Requires: texlive-kpathsea
 Requires: texlive-latex
 Requires: texlive-pdftex
-Requires: texlive-tetex
+Requires: texlive-cm
+Requires: texlive-hyphen-base
+Requires: texlive-babel
+Requires: texlive-dehyph
+Requires: texlive-hyph-utf8
+Requires: texlive-l3kernel
+Requires: texlive-latexconfig
+Requires: texlive-latex-fonts
+Requires: texlive-unicode-data
+Requires: texlive-knuth-lib
+Requires: texlive-plain
 Requires(post,postun): coreutils
 Provides: tex(lo1enc.def) = %{epoch}:%{source_date}-%{release}
 Provides: tex(mlltxchg.def) = %{epoch}:%{source_date}-%{release}
@@ -3898,7 +4082,7 @@ License: LPPL
 Summary: mpost to PDF, native MetaPost graphics inclusion
 Requires: texlive-base
 Requires: texlive-kpathsea
-Requires: texlive-tetex
+Requires: texlive-plain
 Requires(post,postun): coreutils
 Provides: tex(mptopdf.tex) = %{epoch}:%{source_date}-%{release}
 # perl
@@ -4076,6 +4260,13 @@ License: LPPL
 Summary: A bundle of packages submitted by Heiko Oberdiek
 Requires: texlive-base
 Requires: texlive-kpathsea
+Requires: texlive-auxhook
+Requires: texlive-grfext
+Requires: texlive-grffile
+Requires: texlive-iftex
+Requires: texlive-kvoptions
+Requires: texlive-infwarerr
+Requires: texlive-pdftexcmds
 # To complete the bundle
 Requires: tex(ifluatex.sty)
 Requires: tex(intcalc.sty)
@@ -4112,343 +4303,99 @@ Requires: tex(parcolumns.sty)
 Requires: tex(lscape.sty)
 Requires: tex(index.sty)
 Requires: tex(zref-pagelayout.sty)
-Provides: tex(alphalph.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(atbegshi.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(bigintcalc.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(bitset.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(catchfile.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(embedfile.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(engord.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(eolgrab.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(etexcmds.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(fibnum.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(gettitlestring.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(hobsub-generic.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(hobsub-hyperref.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(hobsub.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(hologo.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(hyphsubst.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(iflang.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(ifpdf.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(ifvtex.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(infwarerr.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(intcalc.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(kvdefinekeys.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(kvsetkeys.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(ltxcmds.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(luatex-loader.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(pdftexcmds.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(pdfescape.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(uniquecounter.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(hobsub-hyperref.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(letltxmacro.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(hopatch.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(xcolor-patch.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(atveryend.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(refcount.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(hycolor.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(hobsub.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(hologo.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(hyphsubst.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(iflang.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(ifpdf.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(ifvtex.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(infwarerr.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(intcalc.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(kvdefinekeys.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(kvsetkeys.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(ltxcmds.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(luatex-loader.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(luatex.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(magicnum.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(mleftright.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(pdfcol.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(pdfcrypt.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(pdfescape.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(pdfrender.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(pdftexcmds.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(protecteddef.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(rotchiffre.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(se-ascii-print.def) = %{epoch}:%{source_date}-%{release}
-Provides: tex(se-ascii.def) = %{epoch}:%{source_date}-%{release}
-Provides: tex(se-clean7bit.def) = %{epoch}:%{source_date}-%{release}
-Provides: tex(se-cp1250.def) = %{epoch}:%{source_date}-%{release}
-Provides: tex(se-cp1251.def) = %{epoch}:%{source_date}-%{release}
-Provides: tex(se-cp1252.def) = %{epoch}:%{source_date}-%{release}
-Provides: tex(se-cp1257.def) = %{epoch}:%{source_date}-%{release}
-Provides: tex(se-cp437.def) = %{epoch}:%{source_date}-%{release}
-Provides: tex(se-cp850.def) = %{epoch}:%{source_date}-%{release}
-Provides: tex(se-cp852.def) = %{epoch}:%{source_date}-%{release}
-Provides: tex(se-cp855.def) = %{epoch}:%{source_date}-%{release}
-Provides: tex(se-cp858.def) = %{epoch}:%{source_date}-%{release}
-Provides: tex(se-cp865.def) = %{epoch}:%{source_date}-%{release}
-Provides: tex(se-cp866.def) = %{epoch}:%{source_date}-%{release}
-Provides: tex(se-dec-mcs.def) = %{epoch}:%{source_date}-%{release}
-Provides: tex(se-iso-8859-1.def) = %{epoch}:%{source_date}-%{release}
-Provides: tex(se-iso-8859-10.def) = %{epoch}:%{source_date}-%{release}
-Provides: tex(se-iso-8859-11.def) = %{epoch}:%{source_date}-%{release}
-Provides: tex(se-iso-8859-13.def) = %{epoch}:%{source_date}-%{release}
-Provides: tex(se-iso-8859-14.def) = %{epoch}:%{source_date}-%{release}
-Provides: tex(se-iso-8859-15.def) = %{epoch}:%{source_date}-%{release}
-Provides: tex(se-iso-8859-16.def) = %{epoch}:%{source_date}-%{release}
-Provides: tex(se-iso-8859-2.def) = %{epoch}:%{source_date}-%{release}
-Provides: tex(se-iso-8859-3.def) = %{epoch}:%{source_date}-%{release}
-Provides: tex(se-iso-8859-4.def) = %{epoch}:%{source_date}-%{release}
-Provides: tex(se-iso-8859-5.def) = %{epoch}:%{source_date}-%{release}
-Provides: tex(se-iso-8859-6.def) = %{epoch}:%{source_date}-%{release}
-Provides: tex(se-iso-8859-7.def) = %{epoch}:%{source_date}-%{release}
-Provides: tex(se-iso-8859-8.def) = %{epoch}:%{source_date}-%{release}
-Provides: tex(se-iso-8859-9.def) = %{epoch}:%{source_date}-%{release}
-Provides: tex(se-koi8-r.def) = %{epoch}:%{source_date}-%{release}
-Provides: tex(se-mac-centeuro.def) = %{epoch}:%{source_date}-%{release}
-Provides: tex(se-mac-cyrillic.def) = %{epoch}:%{source_date}-%{release}
-Provides: tex(se-mac-roman.def) = %{epoch}:%{source_date}-%{release}
-Provides: tex(se-nextstep.def) = %{epoch}:%{source_date}-%{release}
-Provides: tex(se-pdfdoc.def) = %{epoch}:%{source_date}-%{release}
-Provides: tex(se-utf16le.def) = %{epoch}:%{source_date}-%{release}
-Provides: tex(se-utf32be.def) = %{epoch}:%{source_date}-%{release}
-Provides: tex(se-utf32le.def) = %{epoch}:%{source_date}-%{release}
-Provides: tex(se-utf8.def) = %{epoch}:%{source_date}-%{release}
-Provides: tex(setouterhbox.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(soulutf8.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(stringenc.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(telprint.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(thepdfnumber.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(uniquecounter.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(accsupp-dvipdfm.def) = %{epoch}:%{source_date}-%{release}
-Provides: tex(accsupp-dvips.def) = %{epoch}:%{source_date}-%{release}
-Provides: tex(accsupp-pdftex.def) = %{epoch}:%{source_date}-%{release}
-Provides: tex(accsupp.sty) = %{epoch}:%{source_date}-%{release}
 Provides: tex(aliascnt.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(askinclude.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(atenddvi.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(atfi-dvipdfmx.def) = %{epoch}:%{source_date}-%{release}
-Provides: tex(atfi-dvips.def) = %{epoch}:%{source_date}-%{release}
-Provides: tex(atfi-pdftex.def) = %{epoch}:%{source_date}-%{release}
-Provides: tex(attachfile2.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(atveryend.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(auxhook.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(bkm-dvipdfm.def) = %{epoch}:%{source_date}-%{release}
-Provides: tex(bkm-dvips.def) = %{epoch}:%{source_date}-%{release}
-Provides: tex(bkm-dvipsone.def) = %{epoch}:%{source_date}-%{release}
-Provides: tex(bkm-pdftex.def) = %{epoch}:%{source_date}-%{release}
-Provides: tex(bkm-textures.def) = %{epoch}:%{source_date}-%{release}
-Provides: tex(bkm-vtex.def) = %{epoch}:%{source_date}-%{release}
 Provides: tex(bmpsize-base.sty) = %{epoch}:%{source_date}-%{release}
 Provides: tex(bmpsize-dvipdfm.def) = %{epoch}:%{source_date}-%{release}
 Provides: tex(bmpsize-dvipdfmx.def) = %{epoch}:%{source_date}-%{release}
 Provides: tex(bmpsize-dvips.def) = %{epoch}:%{source_date}-%{release}
-Provides: tex(bmpsize-test.tex) = %{epoch}:%{source_date}-%{release}
 Provides: tex(bmpsize.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(bookmark.sty) = %{epoch}:%{source_date}-%{release}
+Provides: tex(bmpsize-test.tex) = %{epoch}:%{source_date}-%{release}
 Provides: tex(centernot.sty) = %{epoch}:%{source_date}-%{release}
 Provides: tex(chemarr.sty) = %{epoch}:%{source_date}-%{release}
 Provides: tex(classlist.sty) = %{epoch}:%{source_date}-%{release}
 Provides: tex(colonequals.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(dtx-attach.sty) = %{epoch}:%{source_date}-%{release}
 Provides: tex(dvipscol.sty) = %{epoch}:%{source_date}-%{release}
+Provides: tex(engord.sty) = %{epoch}:%{source_date}-%{release}
 Provides: tex(enparen.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(epstopdf-base.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(epstopdf.sty) = %{epoch}:%{source_date}-%{release}
+Provides: tex(eolgrab.sty) = %{epoch}:%{source_date}-%{release}
+Provides: tex(fibnum.sty) = %{epoch}:%{source_date}-%{release}
 Provides: tex(flags.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(grfext.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(grffile.sty) = %{epoch}:%{source_date}-%{release}
 Provides: tex(holtxdoc.sty) = %{epoch}:%{source_date}-%{release}
 Provides: tex(hopatch.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(hycolor.sty) = %{epoch}:%{source_date}-%{release}
 Provides: tex(hypbmsec.sty) = %{epoch}:%{source_date}-%{release}
 Provides: tex(hypcap.sty) = %{epoch}:%{source_date}-%{release}
 Provides: tex(hypdestopt.sty) = %{epoch}:%{source_date}-%{release}
 Provides: tex(hypdoc.sty) = %{epoch}:%{source_date}-%{release}
 Provides: tex(hypgotoe.sty) = %{epoch}:%{source_date}-%{release}
+Provides: tex(hyphsubst.sty) = %{epoch}:%{source_date}-%{release}
 Provides: tex(ifdraft.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(inputenx.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(ix-alias.def) = %{epoch}:%{source_date}-%{release}
-Provides: tex(ix-math.def) = %{epoch}:%{source_date}-%{release}
-Provides: tex(ix-name.def) = %{epoch}:%{source_date}-%{release}
-Provides: tex(ix-slot.def) = %{epoch}:%{source_date}-%{release}
-Provides: tex(ix-uc.def) = %{epoch}:%{source_date}-%{release}
-Provides: tex(kvoptions-patch.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(kvoptions.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(letltxmacro.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(listingsutf8.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(luacolor.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(makerobust.sty) = %{epoch}:%{source_date}-%{release}
+Provides: tex(iflang.sty) = %{epoch}:%{source_date}-%{release}
 Provides: tex(pagegrid.sty) = %{epoch}:%{source_date}-%{release}
 Provides: tex(pagesel.sty) = %{epoch}:%{source_date}-%{release}
 Provides: tex(pdfcolfoot.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(pdfcolmk.sty) = %{epoch}:%{source_date}-%{release}
 Provides: tex(pdfcolparallel.sty) = %{epoch}:%{source_date}-%{release}
 Provides: tex(pdfcolparcolumns.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(pdflscape.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(picture.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(pmboxdraw.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(refcount.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(rerunfilecheck.sty) = %{epoch}:%{source_date}-%{release}
+Provides: tex(pdfcol.sty) = %{epoch}:%{source_date}-%{release}
+Provides: tex(pdfcrypt.sty) = %{epoch}:%{source_date}-%{release}
+Provides: tex(pdfrender.sty) = %{epoch}:%{source_date}-%{release}
+Provides: tex(protecteddef.sty) = %{epoch}:%{source_date}-%{release}
 Provides: tex(resizegather.sty) = %{epoch}:%{source_date}-%{release}
+Provides: tex(rotchiffre.sty) = %{epoch}:%{source_date}-%{release}
 Provides: tex(scrindex.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(selinput.sty) = %{epoch}:%{source_date}-%{release}
+Provides: tex(setouterhbox.sty) = %{epoch}:%{source_date}-%{release}
 Provides: tex(settobox.sty) = %{epoch}:%{source_date}-%{release}
 Provides: tex(stackrel.sty) = %{epoch}:%{source_date}-%{release}
 Provides: tex(stampinclude.sty) = %{epoch}:%{source_date}-%{release}
 Provides: tex(tabularht.sty) = %{epoch}:%{source_date}-%{release}
 Provides: tex(tabularkv.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(transparent.sty) = %{epoch}:%{source_date}-%{release}
+Provides: tex(telprint.sty) = %{epoch}:%{source_date}-%{release}
+Provides: tex(thepdfnumber.sty) = %{epoch}:%{source_date}-%{release}
 Provides: tex(twoopt.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(x-ascii.def) = %{epoch}:%{source_date}-%{release}
-Provides: tex(x-atarist.def) = %{epoch}:%{source_date}-%{release}
-Provides: tex(x-cp1250.def) = %{epoch}:%{source_date}-%{release}
-Provides: tex(x-cp1251.def) = %{epoch}:%{source_date}-%{release}
-Provides: tex(x-cp1252.def) = %{epoch}:%{source_date}-%{release}
-Provides: tex(x-cp1255.def) = %{epoch}:%{source_date}-%{release}
-Provides: tex(x-cp1257.def) = %{epoch}:%{source_date}-%{release}
-Provides: tex(x-cp437.def) = %{epoch}:%{source_date}-%{release}
-Provides: tex(x-cp850.def) = %{epoch}:%{source_date}-%{release}
-Provides: tex(x-cp852.def) = %{epoch}:%{source_date}-%{release}
-Provides: tex(x-cp855.def) = %{epoch}:%{source_date}-%{release}
-Provides: tex(x-cp858.def) = %{epoch}:%{source_date}-%{release}
-Provides: tex(x-cp865.def) = %{epoch}:%{source_date}-%{release}
-Provides: tex(x-cp866.def) = %{epoch}:%{source_date}-%{release}
-Provides: tex(x-dec-mcs.def) = %{epoch}:%{source_date}-%{release}
-Provides: tex(x-iso-8859-1.def) = %{epoch}:%{source_date}-%{release}
-Provides: tex(x-iso-8859-10.def) = %{epoch}:%{source_date}-%{release}
-Provides: tex(x-iso-8859-13.def) = %{epoch}:%{source_date}-%{release}
-Provides: tex(x-iso-8859-14.def) = %{epoch}:%{source_date}-%{release}
-Provides: tex(x-iso-8859-15.def) = %{epoch}:%{source_date}-%{release}
-Provides: tex(x-iso-8859-16.def) = %{epoch}:%{source_date}-%{release}
-Provides: tex(x-iso-8859-2.def) = %{epoch}:%{source_date}-%{release}
-Provides: tex(x-iso-8859-3.def) = %{epoch}:%{source_date}-%{release}
-Provides: tex(x-iso-8859-4.def) = %{epoch}:%{source_date}-%{release}
-Provides: tex(x-iso-8859-5.def) = %{epoch}:%{source_date}-%{release}
-Provides: tex(x-iso-8859-8.def) = %{epoch}:%{source_date}-%{release}
-Provides: tex(x-iso-8859-9.def) = %{epoch}:%{source_date}-%{release}
-Provides: tex(x-koi8-r.def) = %{epoch}:%{source_date}-%{release}
-Provides: tex(x-mac-centeuro.def) = %{epoch}:%{source_date}-%{release}
-Provides: tex(x-mac-cyrillic.def) = %{epoch}:%{source_date}-%{release}
-Provides: tex(x-mac-roman.def) = %{epoch}:%{source_date}-%{release}
-Provides: tex(x-nextstep.def) = %{epoch}:%{source_date}-%{release}
-Provides: tex(x-verbatim.def) = %{epoch}:%{source_date}-%{release}
-Provides: tex(xcolor-patch.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(zref-abspage.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(zref-abspos.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(zref-base.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(zref-counter.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(zref-dotfill.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(zref-env.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(zref-hyperref.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(zref-lastpage.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(zref-marks.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(zref-nextpage.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(zref-pageattr.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(zref-pagelayout.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(zref-perpage.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(zref-runs.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(zref-savepos.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(zref-thepage.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(zref-titleref.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(zref-totpages.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(zref-user.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(zref-xr.sty) = %{epoch}:%{source_date}-%{release}
-Provides: tex(zref.sty) = %{epoch}:%{source_date}-%{release}
 BuildArch: noarch
 
 %description -n %{shortname}-oberdiek
-The bundle comprises packages to provide: accsupp: better
-accessibility support for PDF files; aliascnt: 'alias
-counters'; alphalph: multiple-alphabetic counting
-(a...z,aa...zz,... -- up to the full extent of a TeX counter);
-askinclude: replaces \includeonly by an interactive user
-interface; atbegshi: a modern reimplementation of package
-everyshi; atenddvi: provides \AtEndDvi command; attachfile2:
-attach files to PDF files; atveryend: hooks the very end of a
-document; auxhook: stick stuff at the start of the .aux file;
-bigintcalc: expandable arithmetic operations with big integers
-that can exceed TeX's number limits; bitset: defines and
-implements the data type bit set, a vector of bits; bmpsize:
-get bitmap size and resolution data; bookmark: alternative
-bookmark (outline) organization for package hyperref;
-catchfile: collects the contents of a file and puts it in a
-macro; centernot: a horizontally-centred \not symbol; chemarr:
+The bundle comprises packages to provide: aliascnt: 'alias
+counters'; bmpsize: get bitmap size and resolution data;
+centernot: a horizontally-centred \not symbol; chemarr:
 extensible chemists' reaction arrows; classlist: record
 information about document class(es) used; colonequals: poor
 man's mathematical relation symbols; dvipscol: dvips colour
-stack management; embedfile: embed files in PDF documents;
-engord: define counter-printing operations producing English
-ordinals; eolgrab: collect arguments delimited by end of line;
-epstopdf: conversion to epstopdf on the fly; etexcmds: adds a
-prefix to eTeX's commands, to avoid conflicts with existing
-macros; flags: setting and clearing flags in bit fields and
-converting the bit field into a decimal number; gettitlestring:
-clean up the string containing the title of a section, etc.;
-grfext: macros for adding and reordering the list of graphics
-file extensions recognised by the graphics package; grffile:
-extend file name processing in the graphics bundle; hosub:
-build collections of packages; holtxdoc: extra documentation
-macros; hologo: bookmark-enabled logos; hopatch: safely apply
-package patches; hycolor: implements the color option stuff
-that is used by packages hyperref and bookmark; hypbmsec:
-bookmarks in sectioning commands; hypcap: anjusting anchors of
-captions; hypdestopt: optimising hyperref's pdftex driver
-destinations; hypdoc: hyper-references in the LaTeX standard
-doc package; hypgotoe: experimental package for links to
-embedded files; hyphsubst: substitute hyphenation patterns;
-ifdraft: switch for option draft; iflang: provides expandable
-checks for the current language; ifluatex: looks for LuaTeX
-regardless of its mode and provides the switch \ifluatex;
-ifpdf: provides the \ifpdf switch; ifvtex: provides the \ifvtex
-switch; infwarerr: provides a complete set of macros for
-informations, warnings and error messages with support for
-plain TeX; inputenx: enhanced handling of input encoding;
-intcalc: provides expandable arithmetic operations with
-integers; kvdefinekeys: define key-value keys in the same
-manner as keyval; kvoptions: use package options in key value
-format ; kvsetkeys: a variant of the \setkeys command;
-letltxmacro: Let assignment for LaTeX macros; listingsutf8:
-(partially) extends the listings package to UTF-8 encoding;
-ltxcmds: exports some utility macros from the LaTeX kernel into
-a separate namespace and also provides them for other formats
-such as plain-TeX; luacolor: implements colour support based on
-LuaTeX's node attributes; luatex: utilises new and extended
-features and resources that LuaTeX provides; magicnum: allows
-to access magic numbers by a hierarchical name system;
-makerobust: make a command robust; pagegrid: prints a page grid
-in the background; pagesel: select pages of a document for
-output; pdfcolfoot: using pdftex's color stack for footnotes;
-pdfcol: macros for setting and maintaining new color stacks;
-pdfcolmk: PDFTeX COLour MarK -- fake a PDFTeX colour stack
-using marks (not needed for PDFTeX 1.40.0 and later);
-pdfcolparallel: fixes colour problems in package parallel;
-pdfcolparcolumns: fixes colour problems in package parcolumns;
-pdfcrypt: setting PDF encryption; pdfescape: pdfTeX's escape
-features using TeX or e-TeX; pdflscape: landscape pages in PDF;
-pdfrender: control PDF rendering modes; pdftexcmds: provide
-PDFTeX primitives missing in LuaTeX; picture: dimens for
-picture macros; pmboxdraw: poor man's box drawing characters;
-protecteddef: define a command that protected against
-expansion; refcount: using the numeric values of references;
-rerunfilecheck: checksum based rerun checks on auxiliary files;
-resizegather: automatically resize overly large equations;
-rotchiffre: performs simple rotation cyphers; scrindex:
-redefines environment 'theindex' of package 'index', if a class
-from KOMA-Script is loaded; selinput: select the input encoding
-by specifying pairs of input characters and their glyph names;
+stack management; engord: define counter-printing operations
+producing English ordinals; eolgrab: collect arguments
+delimited by end of line; flags: setting and clearing flags in
+bit fields and converting the bit field into a decimal number;
+holtxdoc: extra documentation macros; hopatch: safely apply
+package patches; hypbmsec: bookmarks in sectioning commands;
+hypcap: anjusting anchors of captions; hypdestopt: optimising
+hyperref's pdfTeX driver destinations; hypdoc: hyper-references
+in the LaTeX standard doc package; hypgotoe: experimental
+package for links to embedded files; hyphsubst: substitute
+hyphenation patterns; ifdraft: switch for option draft; iflang:
+provides expandable checks for the current language; pagegrid:
+prints a page grid in the background; pagesel: select pages of
+a document for output; pdfcolfoot: using pdfTeX's color stack
+for footnotes; pdfcol: macros for setting and maintaining new
+color stacks; pdfcolparallel: fixes colour problems in package
+parallel; pdfcolparcolumns: fixes colour problems in package
+parcolumns; pdfcrypt: setting PDF encryption; pdfrender:
+control PDF rendering modes; protecteddef: define a command
+that protected against expansion; resizegather: automatically
+resize overly large equations; rotchiffre: performs simple
+rotation cyphers; scrindex: redefines environment 'theindex' of
+package 'index', if a class from KOMA-Script is loaded;
 setouterhbox: set \hbox in outer horizontal mode; settobox:
-getting box sizes; soulutf8: extends package soul and adds some
-support for UTF-8; stackrel: extensions of the \stackrel
-command; stampinclude: selects the files for \include by
-inspecting the timestamp of the .aux file(s); stringenc:
-provides \StringEncodingConvert for converting a string between
-different encodings; tabularht: tabulars with height
+getting box sizes; soul and adds some support for UTF-8;
+stackrel: extensions of the \stackrel command; stampinclude:
+selects the files for \include by inspecting the timestamp of
+the .aux file(s); tabularht: tabulars with height
 specification; tabularkv: key value interface for tabular
 parameters; telprint: print German telephone numbers;
 thepdfnumber: canonical numbers for use in PDF files and
-elsewhere; transparent: using a color stack for transparency
-with pdftex; twoopt: commands with two optional arguments;
-uniquecounter: provides unlimited unique counter; zref: a
-proposed new reference system. Each of the packages is
-represented by two files, a .dtx (documented source) and a PDF
-file; the .ins file necessary for installation is extracted by
-running the .dtx file with Plain TeX.
+elsewhere; twoopt: commands with two optional arguments; Each
+of the packages is represented by two files, a .dtx (documented
+source) and a PDF file; the .ins file necessary for
+installation is extracted by running the .dtx file with Plain
+TeX.
 
 %package -n %{shortname}-omegaware
 Provides: tex-omegaware = %{epoch}:%{source_date}-%{release}
@@ -4621,11 +4568,12 @@ License: GPL+
 Summary: A TeX extension for direct creation of PDF
 Requires: texlive-base
 Requires: texlive-kpathsea
-Requires: texlive-tetex
 Requires(post,postun): coreutils
 Requires: tex-graphics-def
 Requires: texlive-cm
+Requires: texlive-dehyph
 Requires: texlive-etex
+Requires: texlive-hyph-utf8
 Requires: texlive-hyphen-base
 Requires: texlive-knuth-lib
 Requires: texlive-plain
@@ -4661,23 +4609,19 @@ BuildArch: noarch
 This is a tool in BASH serving to reduce the output of `pdftex` command and see
 only relevant errors in red bold font to fight them ASAP.
 
-%package -n %{shortname}-pdftools
-Provides: tex-pdftools = %{epoch}:%{source_date}-%{release}
-Provides: texlive-pdftools = %{epoch}:%{source_date}-%{release}
-Provides: tex-pdftools-bin = %{epoch}:%{source_date}-%{release}
-Obsoletes: texlive-pdftools-bin < 7:20170520
-License: Public Domain
-Summary: PDF-related utilities, including PostScript-to-PDF conversion
+%package -n %{shortname}-pdftosrc
+Provides: tex-pdftosrc = %{epoch}:%{source_date}-%{release}
+Provides: tex-pdftosrc-bin = %{epoch}:%{source_date}-%{release}
+Provides: texlive-pdftosrc-bin = %{epoch}:%{source_date}-%{release}
+License: GPLv2+
+Summary: Extract source file or stream from PDF file
 Requires: texlive-base
 Requires: texlive-kpathsea
 
-%description -n %{shortname}-pdftools
-The command-line programs pdfopen and pdfclose allow you to
-control the X Window System version of Adobe's Acrobat Reader
-from the command line or from within a (shell) script. The
-programs work with Acrobat Reader 5, 7, 8 and 9 for Linux, xpdf
-and evince. This version derives from one written by Fabrice
-Popineau for Microsoft operating systems.
+%description -n %{shortname}-pdftosrc
+Extracts an embedded source file, or extracts and uncompresses
+a PDF stream given by object number. Developed as part of the
+pdfTeX source tree.
 
 %package -n %{shortname}-pdfxup
 Provides: tex-pdfxup = %{epoch}:%{source_date}-%{release}
@@ -4904,36 +4848,6 @@ for typing the chords; a Lua script to transpose chord macros
 to the required key signature; and support scripts for common
 requirements.
 
-%package -n %{shortname}-pstools
-Provides: tex-pstools = %{epoch}:%{source_date}-%{release}
-Provides: tex-pstools-bin = %{epoch}:%{source_date}-%{release}
-Provides: texlive-pstools-bin = %{epoch}:%{source_date}-%{release}
-Obsoletes: texlive-pstools-bin < 7:20170520
-Provides: tex-pstools-doc = %{epoch}:%{source_date}-%{release}
-Provides: texlive-pstools-doc = %{epoch}:%{source_date}-%{release}
-Obsoletes: texlive-pstools-doc < 7:20170520
-License: GPL+
-Summary: Produce Encapsulated PostScript from PostScript
-Requires: texlive-base
-Requires: texlive-kpathsea
-
-%description -n %{shortname}-pstools
-Produce Encapsulated PostScript Files (EPS/EPSF) from a one-
-page PostScript document, or any PostScript document. A correct
-Bounding Box is calculated for the EPS files and some
-PostScript command sequences that can produce errorneous
-results on printers are filtered. The input is cropped to
-include just the image contained in the PostScript file. The
-EPS files can then be included into TeX documents. Other
-programs like ps2epsi (a script distributed with ghostscript)
-don't always calculate the correct bounding box (because the
-values are put on the PostScript stack which may get corrupted
-by bad PostScript code) or they round it off, resulting in
-clipping the image. Therefore ps2eps uses a resolution of 144
-dpi to get the correct bounding box. Included in the
-distribution is the bbox program, an application to produce
-Bounding Box values for rawppm or rawpbm format files.
-
 %package -n %{shortname}-psutils
 Provides: tex-psutils = %{epoch}:%{source_date}-%{release}
 Provides: tex-psutils-bin = %{epoch}:%{source_date}-%{release}
@@ -5005,6 +4919,30 @@ material. In the final document these contents will be inserted
 instead of the original PostScript code. The package works with
 pstricks and requires a recent version of the preview package.
 
+%package -n %{shortname}-ps2eps
+Provides: tex-ps2eps = %{epoch}:%{source_date}-%{release}
+License: GPL+
+Summary: Produce Encapsulated PostScript from PostScript
+Requires: texlive-base
+Requires: texlive-kpathsea
+
+%description -n %{shortname}-ps2eps
+Produce Encapsulated PostScript Files (EPS/EPSF) from a
+one-page PostScript document, or any PostScript document. A
+correct Bounding Box is calculated for the EPS files and some
+PostScript command sequences that can produce erroneous
+results on printers are filtered. The input is cropped to
+include just the image contained in the PostScript file. The
+EPS files can then be included into TeX documents. Other
+programs like ps2epsi (a script distributed with ghostscript)
+don't always calculate the correct bounding box (because the
+values are put on the PostScript stack which may get corrupted
+by bad PostScript code) or they round it off, resulting in
+clipping the image. Therefore ps2eps uses a resolution of 144
+dpi to get the correct bounding box. Included in the distribution
+is the bbox program, an application to produce Bounding Box values
+for rawppm or rawpbm format files.
+
 %package -n %{shortname}-ps2pk
 Provides: tex-ps2pk = %{epoch}:%{source_date}-%{release}
 Provides: tex-ps2pk-bin = %{epoch}:%{source_date}-%{release}
@@ -5039,15 +4977,19 @@ License: BSD
 Summary: A TeX system for publishing in Japanese
 Requires: texlive-adobemapping
 Requires: texlive-base
+Requires: texlive-cm
+Requires: texlive-etex
+Requires: texlive-hyphen-base
 Requires: texlive-hyph-utf8
 Requires: texlive-ipaex
 Requires: texlive-japanese
 Requires: texlive-japanese-otf
+Requires: texlive-knuth-lib
 Requires: texlive-kpathsea
 Requires: texlive-latex
+Requires: texlive-plain
 Requires: texlive-ptex-base
 Requires: texlive-ptex-fonts
-Requires: texlive-tetex
 Requires: texlive-tex
 Requires: tex(oldlfont.sty)
 Requires: tex(shortvrb.sty)
@@ -5389,55 +5331,6 @@ Requires: texlive-kpathsea
 %description -n %{shortname}-synctex
 synctex package.
 
-%package -n %{shortname}-tetex
-License: GPL+ and GPLv2+ and LPPL
-Summary: scripts and files originally written for or included in teTeX
-Provides: tex-tetex = %{epoch}:%{source_date}-%{release}
-Provides: tex-tetex-bin = %{epoch}:%{source_date}-%{release}
-Provides: texlive-tetex-bin = %{epoch}:%{source_date}-%{release}
-Obsoletes: texlive-tetex-bin < 7:20170520
-Provides: tex-tetex-doc = %{epoch}:%{source_date}-%{release}
-Provides: texlive-tetex-doc = %{epoch}:%{source_date}-%{release}
-Obsoletes: texlive-tetex-doc < 7:20170520
-Requires: texlive-base
-Requires: texlive-kpathsea-bin
-Requires: texlive-texlive.infra
-# This package contains /usr/bin/texconfig-sys, which needs /usr/bin/texconfig
-Requires: texlive-texconfig
-Provides: tex(09fbbfac.enc) = %{epoch}:%{source_date}-%{release}
-Provides: tex(0ef0afca.enc) = %{epoch}:%{source_date}-%{release}
-Provides: tex(10037936.enc) = %{epoch}:%{source_date}-%{release}
-Provides: tex(1b6d048e.enc) = %{epoch}:%{source_date}-%{release}
-Provides: tex(71414f53.enc) = %{epoch}:%{source_date}-%{release}
-Provides: tex(74afc74c.enc) = %{epoch}:%{source_date}-%{release}
-Provides: tex(aae443f0.enc) = %{epoch}:%{source_date}-%{release}
-Provides: tex(b6a4d7c7.enc) = %{epoch}:%{source_date}-%{release}
-Provides: tex(bbad153f.enc) = %{epoch}:%{source_date}-%{release}
-Provides: tex(d9b29452.enc) = %{epoch}:%{source_date}-%{release}
-Provides: tex(f7b6d320.enc) = %{epoch}:%{source_date}-%{release}
-Provides: tex(mtex.enc) = %{epoch}:%{source_date}-%{release}
-Provides: tex(base14flags.tex) = %{epoch}:%{source_date}-%{release}
-Provides: tex(dvipdfm35.map) = %{epoch}:%{source_date}-%{release}
-Provides: tex(dvips35.map) = %{epoch}:%{source_date}-%{release}
-Provides: tex(mathpple.map) = %{epoch}:%{source_date}-%{release}
-Provides: tex(pdftex35.map) = %{epoch}:%{source_date}-%{release}
-Provides: tex(ps2pk35.map) = %{epoch}:%{source_date}-%{release}
-Provides: tex(updmap.cfg) = %{epoch}:%{source_date}-%{release}
-# shell and perl
-BuildArch: noarch
-
-%description -n %{shortname}-tetex
-teTeX was a comprehensive distribution of TeX, LaTeX and
-family, designed for ease of compilation, installation and
-customisation. In 2006, Thomas Esser announced he would no
-longer be able to support, or to produce new versions of,
-teTeX. With the appearance of TeX live 2007 (whose Unix-system
-TeX support originally derived from teTeX), no-one should be
-using teTeX at all, in new applications. One of the "schemes"
-available when installing TeX live provides a configuration
-very close to that of the old teTeX, but using modern versions
-of programs and packages.
-
 %package -n %{shortname}-tex
 Provides: tex-tex = %{epoch}:%{source_date}-%{release}
 Provides: tex-tex-bin = %{epoch}:%{source_date}-%{release}
@@ -5451,7 +5344,6 @@ Requires: texlive-hyphen-base
 Requires: texlive-knuth-lib
 Requires: texlive-kpathsea
 Requires: texlive-plain
-Requires: texlive-tetex
 Requires(post,postun): coreutils
 
 %description -n %{shortname}-tex
@@ -5515,26 +5407,6 @@ the irregularity of (La)TeX syntax). Instead, Tex4ht uses
 standard DVI file that it can then process. This technique
 allows TeX4ht to approach the robustness characteristic of
 restricted-syntax systems such as hyperlatex and gellmu.
-
-%package -n %{shortname}-texconfig
-Provides: tex-texconfig = %{epoch}:%{source_date}-%{release}
-Provides: tex-texconfig-bin = %{epoch}:%{source_date}-%{release}
-Provides: texlive-texconfig-bin = %{epoch}:%{source_date}-%{release}
-Obsoletes: texlive-texconfig-bin < 7:20170520
-License: LPPL
-Summary: Tool to configure teTeX or TeX Live
-Requires: texlive-base
-Requires: texlive-kpathsea
-Requires: texlive-texlive.infra
-Provides: tex(tcfmgr.map) = %{epoch}:%{source_date}-%{release}
-# shell and perl
-BuildArch: noarch
-
-%description -n %{shortname}-texconfig
-texconfig allows one to configure and maintain TeX in an easy
-and convenient manner, offering a series of dialog boxes to
-the user. The directory in which texconfig is found is also
-preferentially used to find subprograms.
 
 %package -n %{shortname}-texcount
 Provides: tex-texcount = %{epoch}:%{source_date}-%{release}
@@ -5754,6 +5626,22 @@ BuildArch: noarch
 Includes install-tl, tl-portable, rungs, etc.; not needed for
 tlmgr to run but still ours.  Not included in tlcritical.
 
+%package -n %{shortname}-texlive-scripts-extra
+Provides: tex-texlive-scripts-extra = %{epoch}:%{source_date}-%{release}
+Provides: texlive-texlive-scripts-extra-bin = %{epoch}:%{source_date}-%{release}
+License: GPL+ and LPPL and Public Domain
+Summary: TeX Live scripts
+Requires: texlive-base
+Requires: texlive-kpathsea
+Requires: texlive-texlive.infra
+# perl and shell
+BuildArch: noarch
+
+%description -n %{shortname}-texlive-scripts-extra
+Miscellaneous scripts maintained as part of TeX Live, but not important for
+the infrastructure. Thus, this is not part of scheme-infraonly or tlcritical,
+just a normal package.
+
 %package -n %{shortname}-texlive.infra
 Provides: tex-texlive.infra = %{epoch}:%{source_date}-%{release}
 Provides: tex-texlive.infra-bin = %{epoch}:%{source_date}-%{release}
@@ -5835,6 +5723,28 @@ TeX's default special characters (and some other potentially
 problematic characters) is temporarily changed to 12 while
 reading the result.
 
+%package -n %{shortname}-texplate
+Provides: tex-texplate = %{epoch}:%{source_date}-%{release}
+Provides: tex-texplate-bin = %{epoch}:%{source_date}-%{release}
+Provides: texlive-texplate-bin = %{epoch}:%{source_date}-%{release}
+License: BSD
+Summary: A tool for creating document structures based on templates
+Requires: texlive-base
+Requires: texlive-kpathsea
+# So much java
+BuildArch: noarch
+
+%description -n %{shortname}-texplate
+TeXplate is a tool for creating document structures based on
+templates. The application name is a word play on TeX and
+template, so the purpose seems quite obvious: we want to
+provide an easy and straightforward framework for reducing the
+typical code boilerplate when writing TeX documents. Also note
+that one can easily extrapolate the use beyond articles and
+theses: the application is powerful enough to generate any
+text-based structure, given that a corresponding template
+exists.
+
 %package -n %{shortname}-texsis
 Provides: tex-texsis = %{epoch}:%{source_date}-%{release}
 Provides: tex-texsis-bin = %{epoch}:%{source_date}-%{release}
@@ -5844,11 +5754,15 @@ Provides: tex-texsis-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-texsis-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-texsis-doc < 7:20170520
 License: LPPL
-Summary: Plain TeX macros for PhysicistsRequires: texlive-base
+Summary: Plain TeX macros for Physicists
+Requires: texlive-base
 Requires: texlive-kpathsea
 Requires: texlive-pdftex
-Requires: texlive-tetex
 Requires: texlive-tex
+Requires: texlive-cm
+Requires: texlive-hyphen-base
+Requires: texlive-knuth-lib
+Requires: texlive-plain
 Requires(post,postun): coreutils
 Provides: tex(TXSconts.tex) = %{epoch}:%{source_date}-%{release}
 Provides: tex(TXSdcol.tex) = %{epoch}:%{source_date}-%{release}
@@ -6115,7 +6029,6 @@ License: GPL+
 Summary: Typeset Devanagari
 Requires: texlive-base
 Requires: texlive-kpathsea
-Requires: texlive-tetex
 Requires: tex-xetex-devanagari
 Requires: tex(hindicaptions.sty)
 Requires: tex(cite.sty)
@@ -6414,8 +6327,19 @@ License: MIT
 Summary: Unicode and OpenType-enabled TeX engine
 Requires: texlive-base
 Requires: texlive-kpathsea
-Requires: texlive-tetex
 Requires: texlive-xetexconfig
+Requires: texlive-latex
+Requires: texlive-dvipdfmx
+Requires: texlive-cm
+Requires: texlive-hyphen-base
+Requires: texlive-tex-ini-files
+Requires: texlive-unicode-data
+Requires: texlive-etex
+Requires: texlive-plain
+Requires: texlive-babel
+Requires: texlive-l3kernel
+Requires: texlive-latex-fonts
+Requires: texlive-lm
 Requires: teckit
 Requires(post,postun): coreutils
 Requires: tex(xetex.def)
@@ -6493,9 +6417,20 @@ Requires: texlive-base
 Requires: texlive-kpathsea-bin, tex-kpathsea
 Requires: texlive-latex
 Requires: texlive-pdftex
-Requires: texlive-tetex
 Requires: texlive-tex
 Requires: texlive-xmltexconfig
+Requires: texlive-babel
+Requires: texlive-cm
+Requires: texlive-hyphen-base
+Requires: texlive-latex-fonts
+Requires: texlive-l3backend
+Requires: texlive-l3kernel
+Requires: texlive-l3packages
+Requires: texlive-tex-ini-files
+Requires: texlive-unicode-data
+Requires: texlive-dehyph
+Requires: texlive-hyph-utf8
+Requires: texlive-latexconfig
 Provides: tex(xmltex.cfg) = %{epoch}:%{source_date}-%{release}
 Provides: tex(xmltex.tex) = %{epoch}:%{source_date}-%{release}
 # symlinks
@@ -6510,6 +6445,23 @@ elemenets as they are encounted. Sample files for typesetting a
 subset of TEI, MathML, are included. Element and Attribute
 names, as well as character data, may use any characters
 allowed in XML, using UTF-8 or a suitable 8-bit encoding.
+
+%package -n %{shortname}-xpdfopen
+Provides: tex-xpdfopen = %{epoch}:%{source_date}-%{release}
+Provides: tex-xpdfopen-bin = %{epoch}:%{source_date}-%{release}
+Provides: texlive-xpdfopen-bin = %{epoch}:%{source_date}-%{release}
+License: Public Domain
+Summary: Commands to control PDF readers, under X11
+Requires: texlive-base
+Requires: texlive-kpathsea
+
+%description -n %{shortname}-xpdfopen
+The command-line programs pdfopen and pdfclose allow you to
+control the X Window System version of Adobe's Acrobat Reader
+from the command line or from within a (shell) script. The
+programs work with Acrobat Reader 5, 7, 8 and 9 for Linux, xpdf
+and evince. This version derives from one written by Fabrice
+Popineau for Microsoft operating systems.
 
 %package -n %{shortname}-yplan
 Provides: tex-yplan = %{epoch}:%{source_date}-%{release}
@@ -6544,7 +6496,6 @@ xz -dc %{SOURCE0} | tar x
 [ -e %{source_name} ] && mv %{source_name} source
 %patch1 -p0
 %patch2 -p1 -b .format
-%patch3 -p1 -b .selinux
 %patch5 -p0
 %if 0%{?fedora} >= 28
 %patch7 -p1 -b .newpoppler
@@ -6559,10 +6510,6 @@ xz -dc %{SOURCE0} | tar x
 %patch19 -p1 -b .shh
 %patch20 -p1 -b .fix-libgs-detection
 %patch23 -p1 -b .poppler-0.84
-%patch24 -p1 -b .gcc10-autosp
-%patch25 -p1 -b .gcc10-mplib
-%patch26 -p1 -b .gcc10-luatex
-%patch27 -p1 -b .gcc10-ttf2pk2
 %patch28 -p1 -b .CVE-2019-19601
 
 # Setup copies of the licenses
@@ -6720,10 +6667,6 @@ sed -i 's|\\sc |\\scshape |g' %{buildroot}%{_texdir}/texmf-dist/bibtex/bst/base/
 
 # Patches to component tarballs
 pushd %{buildroot}%{_texdir}/texmf-dist
-# fix pdfbook2 for py3
-patch -p1 < %{_sourcedir}/texlive-base-pdfbook2-py3.patch
-# fix latex-papersize for py3
-patch -p1 < %{_sourcedir}/texlive-base-latex-papersize-py3.patch
 
 # neuter tlmgr a bit
 patch -p1 < %{_sourcedir}/texlive-20190410-tlmgr-ignore-warning.patch
@@ -6800,6 +6743,8 @@ rm -rf %{buildroot}%{_texdir}/texmf-dist/tlpkg/tlpobj/
 # rm -f %{buildroot}%{_texdir}/texmf-dist/scripts/texlive/tlmgr.pl
 # rm -f %{buildroot}%{_bindir}/tlmgr
 # rm -f %{buildroot}%{_texdir}/tlpkg/installer/config.guess
+rm -f %{buildroot}%{_texdir}/texmf-dist/scripts/texlive/tlmgr.pl.orig
+rm -f %{buildroot}%{_texdir}/texmf-dist/scripts/texlive/tl-errmess.vbs
 rm -f %{buildroot}%{_texdir}/texmf-dist/scripts/texlive/tlmgrgui.pl
 rm -f %{buildroot}%{_texdir}/texmf-dist/scripts/texlive/uninstall-win32.pl
 rm -f %{buildroot}%{_texdir}/texmf-dist/scripts/texlive/uninstq.vbs
@@ -6860,6 +6805,11 @@ rm -f bibexport.sh
 ln -s /usr/share/texlive/texmf-dist/scripts/bibexport/bibexport.sh bibexport.sh
 rm -f texmfstart
 ln -s /usr/share/texlive/texmf-dist/scripts/context/ruby/texmfstart.rb texmfstart
+rm -rf mktexmf
+ln -s /usr/share/texlive/texmf-dist/scripts/texlive/mktexmf mktexmf
+rm -rf mkjobtexmf
+ln -s /usr/share/texlive/texmf-dist/scripts/mkjobtexmf/mkjobtexmf.pl mkjobtexmf
+
 # fix context
 rm -f context
 cat > context << EOF
@@ -7032,7 +6982,6 @@ done <<< "$list"
 %dir %{_texdir}/texmf-dist/source
 %dir %{_texdir}/texmf-dist/source/fonts
 %dir %{_texdir}/texmf-dist/source/fonts/zhmetrics
-%dir %{_texdir}/texmf-dist/texconfig
 %dir %{_texdir}/texmf-dist/tex
 %dir %{_texdir}/texmf-dist/tex/generic
 %dir %{_texdir}/texmf-dist/tex/generic/bibtex
@@ -7102,6 +7051,14 @@ done <<< "$list"
 %{_bindir}/arara
 %{_texdir}/texmf-dist/scripts/arara/
 %doc %{_texdir}/texmf-dist/doc/support/arara/
+
+%files -n %{shortname}-attachfile2
+%license lppl1.3.txt
+%{_bindir}/pdfatfi
+%{_mandir}/man1/pdfatfi.1*
+%{_texdir}/texmf-dist/scripts/attachfile2/
+%{_texdir}/texmf-dist/tex/latex/attachfile2/
+%doc %{_texdir}/texmf-dist/doc/latex/attachfile2/
 
 %files -n %{shortname}-authorindex
 %license lppl1.txt
@@ -7218,6 +7175,14 @@ done <<< "$list"
 %{_texdir}/texmf-dist/tex/latex/checklistings/
 %doc %{_texdir}/texmf-dist/doc/latex/checklistings/
 
+%files -n %{shortname}-chklref
+%license gpl3.txt
+%{_bindir}/chklref
+%{_mandir}/man1/chklref.1*
+%{_texdir}/texmf-dist/scripts/chklref/
+%{_texdir}/texmf-dist/tex/latex/chklref/
+%doc %{_texdir}/texmf-dist/doc/support/chklref/
+
 %files -n %{shortname}-chktex
 %license gpl.txt
 %{_bindir}/chktex
@@ -7270,6 +7235,13 @@ done <<< "$list"
 %{_mandir}/man1/hbf2gf.1*
 %{_mandir}/man1/sjisconv.1*
 %{_texdir}/texmf-dist/hbf2gf/
+
+%files -n %{shortname}-clojure-pamphlet
+%license gpl3.txt
+%{_bindir}/pamphletangler
+%{_texdir}/texmf-dist/scripts/clojure-pamphlet/
+%{_texdir}/texmf-dist/tex/latex/clojure-pamphlet/
+%doc %{_texdir}/texmf-dist/doc/support/clojure-pamphlet/
 
 %files -n %{shortname}-cluttex
 %license gpl3.txt
@@ -7349,7 +7321,6 @@ done <<< "$list"
 %{_texdir}/texmf-dist/scripts/context/
 %{_texdir}/texmf-dist/tex/context/
 %{_texdir}/texmf-dist/tex/generic/context/
-%dir %{_texdir}/texmf-dist/tex/generic/context/third
 %{_texdir}/texmf-dist/tex/latex/context/
 %{fmtutil_cnf_d}/context
 %doc %{_texdir}/texmf-dist/doc/context/
@@ -7670,7 +7641,7 @@ done <<< "$list"
 %license lppl1.txt
 %{_bindir}/fontinst
 %{_mandir}/man1/fontinst.1*
-%{_texdir}/texmf-dist/scripts/texlive/fontinst.sh
+%{_texdir}/texmf-dist/scripts/texlive-extra/fontinst.sh
 %{_texdir}/texmf-dist/tex/fontinst/
 %{_texdir}/texmf-dist/tex/latex/fontinst/
 %doc %{_texdir}/texmf-dist/doc/fonts/fontinst/
@@ -7760,6 +7731,13 @@ done <<< "$list"
 %{_texdir}/texmf-dist/scripts/jfmutil/
 %doc %{_texdir}/texmf-dist/doc/fonts/jfmutil/
 
+%files -n %{shortname}-ketcindy
+%license gpl3.txt
+%{_bindir}/ketcindy
+%{_texdir}/texmf-dist/scripts/ketcindy/
+%{_texdir}/texmf-dist/tex/latex/ketcindy/
+%doc %{_texdir}/texmf-dist/doc/support/ketcindy/
+
 %files -n %{shortname}-kotex-utils
 %license lppl1.txt
 %{_bindir}/jamo-normalize
@@ -7778,10 +7756,6 @@ done <<< "$list"
 %{_bindir}/mkocp
 %{_bindir}/mkofm
 %{_bindir}/mktexfmt
-%{_bindir}/mktexlsr
-%{_bindir}/mktexmf
-%{_bindir}/mktexpk
-%{_bindir}/mktextfm
 %{_bindir}/texhash
 %{_sbindir}/generate-fmtutilcnf
 %{_mandir}/man1/kpseaccess.1*
@@ -7791,11 +7765,8 @@ done <<< "$list"
 %{_mandir}/man1/mkocp.1*
 %{_mandir}/man1/mkofm.1*
 %{_mandir}/man1/mktexfmt.1*
-%{_mandir}/man1/mktexlsr.1*
-%{_mandir}/man1/mktexmf.1*
-%{_mandir}/man1/mktexpk.1*
-%{_mandir}/man1/mktextfm.1*
 %{_mandir}/man1/texhash.1*
+%{_mandir}/man5/fmtutil.cnf.5*
 %{_infodir}/kpathsea.info*
 %{_infodir}/tds.info*
 %{_infodir}/web2c.info*
@@ -7948,7 +7919,6 @@ done <<< "$list"
 %{_libdir}/*.so.*
 %dir %{_texdir}/texmf-config
 %dir %{_texdir}/texmf-config/web2c
-%{_texdir}/texmf-config/web2c/updmap.cfg
 %attr(0644, root, root) %verify(not md5 size mtime) %ghost %{_texdir}/texmf-config/ls-R
 %attr(0644, root, root) %verify(not md5 size mtime) %ghost %{_texdir}/texmf-dist/ls-R
 %attr(0644, root, root) %verify(not md5 size mtime) %ghost %{_texdir}/texmf-local/ls-R
@@ -8009,12 +7979,6 @@ done <<< "$list"
 %{_texdir}/texmf-dist/scripts/ltximg/
 %doc %{_texdir}/texmf-dist/doc/support/ltximg/
 
-%files -n %{shortname}-lua2dox
-%license lppl1.3.txt
-%{_bindir}/lua2dox_filter
-%{_texdir}/texmf-dist/scripts/lua2dox/
-%doc %{_texdir}/texmf-dist/doc/support/lua2dox/
-
 %files -n %{shortname}-luaotfload
 %license gpl2.txt
 %{_bindir}/luaotfload-tool
@@ -8024,18 +7988,36 @@ done <<< "$list"
 %{_texdir}/texmf-dist/tex/luatex/luaotfload/
 %doc %{_texdir}/texmf-dist/doc/luatex/luaotfload/
 
+%files -n %{shortname}-luahbtex
+%license gpl2.txt
+%{_bindir}/luahbtex
+%{_bindir}/lualatex-dev
+%{_mandir}/man1/luahbtex.1*
+%{_mandir}/man1/lualatex-dev.1*
+%{fmtutil_cnf_d}/luahbtex
+
+%files -n %{shortname}-luajittex
+%license gpl2.txt
+%ifnarch aarch64 %{mips} %{power64} s390 s390x
+%{_bindir}/luajittex
+%{_bindir}/luajithbtex
+%{_bindir}/texluajit
+%{_bindir}/texluajitc
+%{_mandir}/man1/luajittex.1*
+%{fmtutil_cnf_d}/luajittex
+%endif
+
 %files -n %{shortname}-luatex
 %license gpl2.txt
 %{_bindir}/dviluatex
+%{_bindir}/dvilualatex-dev
 %{_bindir}/luacsplain
-%ifnarch aarch64 %{mips} %{power64} s390 s390x
-%{_bindir}/luajittex
-%{_bindir}/texluajit
-%{_bindir}/texluajitc
-%endif
 %{_bindir}/luatex
+%{_bindir}/optex
 %{_bindir}/texlua
 %{_bindir}/texluac
+%{_mandir}/man1/dvilualatex-dev.1*
+%{_mandir}/man1/dviluatex.1*
 %{_mandir}/man1/luatex.1*
 %{_mandir}/man1/texlua.1*
 %{_mandir}/man1/texluac.1*
@@ -8043,6 +8025,7 @@ done <<< "$list"
 %{_texdir}/texmf-dist/tex/generic/config/luatexiniconfig.tex
 %{_texdir}/texmf-dist/web2c/texmfcnf.lua
 %{fmtutil_cnf_d}/luatex
+%{fmtutil_cnf_d}/optex
 %doc %{_texdir}/texmf-dist/doc/luatex/base/
 
 %files -n %{shortname}-lwarp
@@ -8245,7 +8228,6 @@ done <<< "$list"
 %files -n %{shortname}-oberdiek
 %license lppl1.txt
 %{_texdir}/texmf-dist/bibtex/bib/oberdiek/
-%{_texdir}/texmf-dist/scripts/oberdiek/
 %{_texdir}/texmf-dist/tex/generic/oberdiek/
 %{_texdir}/texmf-dist/tex/latex/oberdiek/
 %doc %{_texdir}/texmf-dist/doc/latex/oberdiek/
@@ -8302,30 +8284,8 @@ done <<< "$list"
 
 %files -n %{shortname}-pdfjam
 %license gpl2.txt
-%{_bindir}/pdf180
-%{_bindir}/pdf270
-%{_bindir}/pdf90
-%{_bindir}/pdfbook
-%{_bindir}/pdfflip
 %{_bindir}/pdfjam
-%{_bindir}/pdfjam-pocketmod
-%{_bindir}/pdfjam-slides3up
-%{_bindir}/pdfjam-slides6up
-%{_bindir}/pdfjoin
-%{_bindir}/pdfnup
-%{_bindir}/pdfpun
-%{_mandir}/man1/pdf180.1*
-%{_mandir}/man1/pdf270.1*
-%{_mandir}/man1/pdf90.1*
-%{_mandir}/man1/pdfbook.1*
-%{_mandir}/man1/pdfflip.1*
-%{_mandir}/man1/pdfjam-pocketmod.1*
-%{_mandir}/man1/pdfjam-slides3up.1*
-%{_mandir}/man1/pdfjam-slides6up.1*
 %{_mandir}/man1/pdfjam.1*
-%{_mandir}/man1/pdfjoin.1*
-%{_mandir}/man1/pdfnup.1*
-%{_mandir}/man1/pdfpun.1*
 %{_texdir}/texmf-dist/scripts/pdfjam/
 %doc %{_texdir}/texmf-dist/doc/support/pdfjam/
 
@@ -8338,10 +8298,14 @@ done <<< "$list"
 %files -n %{shortname}-pdftex
 %license gpl.txt
 %{_bindir}/etex
+%{_bindir}/latex-dev
 %{_bindir}/pdfetex
+%{_bindir}/pdflatex-dev
 %{_bindir}/pdftex
 %{_bindir}/simpdftex
+%{_mandir}/man1/latex-dev.1*
 %{_mandir}/man1/pdfetex.1*
+%{_mandir}/man1/pdflatex-dev.1*
 %{_mandir}/man1/pdftex.1*
 %{_texdir}/texmf-dist/fonts/map/dvips/dummy-space/dummy-space.map
 %{_texdir}/texmf-dist/fonts/tfm/public/pdftex/
@@ -8349,6 +8313,7 @@ done <<< "$list"
 %{_texdir}/texmf-dist/scripts/simpdftex/simpdftex
 %{_texdir}/texmf-dist/tex/generic/config/pdftex-dvi.tex
 %{_texdir}/texmf-dist/tex/generic/pdftex/
+%{fmtutil_cnf_d}/latex-bin-dev
 %{fmtutil_cnf_d}/pdftex
 %doc %{_texdir}/texmf-dist/doc/pdftex/
 
@@ -8358,18 +8323,10 @@ done <<< "$list"
 %{_texdir}/texmf-dist/scripts/pdftex-quiet/
 %doc %{_texdir}/texmf-dist/doc/support/pdftex-quiet/
 
-%files -n %{shortname}-pdftools
-%license pd.txt
-%{_bindir}/e2pall
-%{_bindir}/pdfatfi
-%{_bindir}/pdfclose
-%{_bindir}/pdfopen
+%files -n %{shortname}-pdftosrc
+%license gpl2.txt
 %{_bindir}/pdftosrc
-%{_mandir}/man1/e2pall.1*
-%{_mandir}/man1/pdfclose.1*
-%{_mandir}/man1/pdfopen.1*
 %{_mandir}/man1/pdftosrc.1*
-%{_texdir}/texmf-dist/scripts/texlive/e2pall.pl
 
 %files -n %{shortname}-pdfxup
 %license lppl1.3.txt
@@ -8428,7 +8385,6 @@ done <<< "$list"
 %{_mandir}/man1/pmxab.1*
 %{_mandir}/man1/scor2prt.1*
 %{_texdir}/texmf-dist/tex/generic/pmx/
-%{_texdir}/texmf-dist/scripts/pmx/
 %doc %{_texdir}/texmf-dist/doc/generic/pmx/
 
 %files -n %{shortname}-pmxchords
@@ -8438,20 +8394,6 @@ done <<< "$list"
 %{_texdir}/texmf-dist/scripts/pmxchords/
 %{_texdir}/texmf-dist/tex/generic/pmxchords/
 %doc %{_texdir}/texmf-dist/doc/pmxchords/
-
-%files -n %{shortname}-pstools
-%license gpl.txt
-%{_bindir}/bbox
-%{_bindir}/ps2eps
-%{_bindir}/ps2frag
-%{_bindir}/pslatex
-%{_mandir}/man1/bbox.1*
-%{_mandir}/man1/ps2eps.1*
-%{_mandir}/man1/ps2frag.1*
-%{_mandir}/man1/pslatex.1*
-%{_texdir}/texmf-dist/scripts/texlive/ps2frag.sh
-%{_texdir}/texmf-dist/scripts/texlive/pslatex.sh
-%{_texdir}/texmf-dist/scripts/ps2eps/
 
 %files -n %{shortname}-pst2pdf
 %license gpl2.txt
@@ -8486,10 +8428,19 @@ done <<< "$list"
 %{_mandir}/man1/tl-psselect.1*
 %{_mandir}/man1/tl-pstops.1*
 %{_mandir}/man1/tl-psutils.1*
+%{_texdir}/texmf-dist/dvips/getafm/
 %{_texdir}/texmf-dist/psutils/
 %dir %{_sysconfdir}/texlive/psutils
 %config(noreplace) %{_sysconfdir}/texlive/psutils/paper.cfg
 %{_texdir}/texmf-dist/scripts/psutils
+
+%files -n %{shortname}-ps2eps
+%license gpl.txt
+%{_bindir}/bbox
+%{_bindir}/ps2eps
+%{_mandir}/man1/bbox.1*
+%{_mandir}/man1/ps2eps.1*
+%{_texdir}/texmf-dist/scripts/ps2eps/
 
 %files -n %{shortname}-ps2pk
 %license other-free.txt
@@ -8510,6 +8461,7 @@ done <<< "$list"
 %{_bindir}/pdvitomp
 %{_bindir}/pdvitype
 %{_bindir}/platex
+%{_bindir}/platex-dev
 %{_bindir}/pmpost
 %{_bindir}/ppltotf
 %{_bindir}/ptex
@@ -8518,6 +8470,7 @@ done <<< "$list"
 %{_mandir}/man1/eptex.1*
 %{_mandir}/man1/makejvf.1*
 %{_mandir}/man1/mendex.1*
+%{_mandir}/man1/platex-dev.1*
 %{_mandir}/man1/ppltotf.1*
 %{_mandir}/man1/ptex.1*
 %{_mandir}/man1/ptftopl.1*
@@ -8621,66 +8574,6 @@ done <<< "$list"
 %{_mandir}/man1/synctex.1*
 %{_mandir}/man5/synctex.5*
 
-%files -n %{shortname}-tetex
-%{_bindir}/allcm
-%{_bindir}/allec
-%{_bindir}/allneeded
-%{_bindir}/dvi2fax
-%{_bindir}/dvired
-%{_bindir}/fmtutil
-%{_bindir}/fmtutil-sys
-%{_bindir}/fmtutil-user
-%{_bindir}/kpsepath
-%{_bindir}/kpsetool
-%{_bindir}/kpsewhere
-%{_bindir}/kpsexpand
-%{_bindir}/texconfig-dialog
-%{_bindir}/texconfig-sys
-%{_bindir}/texlinks
-%{_bindir}/updmap
-%{_bindir}/updmap-sys
-%{_bindir}/updmap-user
-%{_mandir}/man1/allcm.1*
-%{_mandir}/man1/allec.1*
-%{_mandir}/man1/allneeded.1*
-%{_mandir}/man1/dvi2fax.1*
-%{_mandir}/man1/dvired.1*
-%{_mandir}/man1/fmtutil-sys.1*
-%{_mandir}/man1/fmtutil-user.1*
-%{_mandir}/man1/fmtutil.1*
-%{_mandir}/man1/kpsepath.1*
-%{_mandir}/man1/kpsetool.1*
-%{_mandir}/man1/kpsewhere.1*
-%{_mandir}/man1/kpsexpand.1*
-%{_mandir}/man1/texlinks.1*
-%{_mandir}/man1/updmap-sys.1*
-%{_mandir}/man1/updmap-user.1*
-%{_mandir}/man1/updmap.1*
-%{_texdir}/texmf-dist/scripts/texlive/allcm.sh
-%{_texdir}/texmf-dist/scripts/texlive/allneeded.sh
-%{_texdir}/texmf-dist/scripts/texlive/dvi2fax.sh
-%{_texdir}/texmf-dist/scripts/texlive/dvired.sh
-%{_texdir}/texmf-dist/scripts/texlive/fmtutil-sys.sh
-%{_texdir}/texmf-dist/scripts/texlive/fmtutil-user.sh
-%{_texdir}/texmf-dist/scripts/texlive/fmtutil.pl
-%{_texdir}/texmf-dist/scripts/texlive/kpsetool.sh
-%{_texdir}/texmf-dist/scripts/texlive/kpsewhere.sh
-%{_texdir}/texmf-dist/scripts/texlive/mktexlsr.pl
-%{_texdir}/texmf-dist/scripts/texlive/texconfig-dialog.sh
-%{_texdir}/texmf-dist/scripts/texlive/texconfig-sys.sh
-%{_texdir}/texmf-dist/scripts/texlive/texlinks.sh
-%{_texdir}/texmf-dist/scripts/texlive/updmap-sys.sh
-%{_texdir}/texmf-dist/scripts/texlive/updmap-user.sh
-%{_texdir}/texmf-dist/scripts/texlive/updmap.pl
-%config(noreplace) %{_sysconfdir}/texlive/web2c/updmap.cfg
-%{_texdir}/texmf-dist/web2c/updmap.cfg
-%{_mandir}/man5/fmtutil.cnf.5*
-%{_mandir}/man5/updmap.cfg.5*
-%{_texdir}/texmf-dist/dvips/tetex/
-%{_texdir}/texmf-dist/fonts/enc/dvips/tetex/
-%{_texdir}/texmf-dist/fonts/map/dvips/tetex/
-%doc %{_texdir}/texmf-dist/doc/tetex/
-
 %files -n %{shortname}-tex
 %license knuth.txt
 %{_bindir}/initex
@@ -8714,14 +8607,6 @@ done <<< "$list"
 %{_texdir}/texmf-dist/tex/generic/tex4ht/
 %{_texdir}/texmf-dist/tex4ht/
 %doc %{_texdir}/texmf-dist/doc/generic/tex4ht/
-
-%files -n %{shortname}-texconfig
-%license lppl1.txt
-%{_bindir}/texconfig
-%{_mandir}/man1/texconfig-sys.1*
-%{_mandir}/man1/texconfig.1*
-%{_texdir}/texmf-dist/scripts/texlive/texconfig.sh
-%{_texdir}/texmf-dist/texconfig/
 
 %files -n %{shortname}-texcount
 %license lppl1.txt
@@ -8785,14 +8670,84 @@ done <<< "$list"
 
 %files -n %{shortname}-texlive-scripts
 %license lppl1.txt
+%{_bindir}/fmtutil
+%{_bindir}/fmtutil-sys
+%{_bindir}/fmtutil-user
+%{_bindir}/mktexlsr
+%{_bindir}/mktexmf
+%{_bindir}/mktexpk
+%{_bindir}/mktextfm
+%{_bindir}/updmap
+%{_bindir}/updmap-sys
+%{_bindir}/updmap-user
 %{_bindir}/rungs
+%{_mandir}/man1/fmtutil.1*
+%{_mandir}/man1/fmtutil-sys.1*
+%{_mandir}/man1/fmtutil-user.1*
 %{_mandir}/man1/install-tl.1*
+%{_mandir}/man1/mktexlsr.1*
+%{_mandir}/man1/mktexmf.1*
+%{_mandir}/man1/mktexpk.1*
+%{_mandir}/man1/mktextfm.1*
+%{_mandir}/man1/updmap.1*
+%{_mandir}/man1/updmap-sys.1*
+%{_mandir}/man1/updmap-user.1*
+%{_mandir}/man5/updmap.cfg.5*
+%{_texdir}/texmf-config/web2c/updmap.cfg
+%config(noreplace) %{_sysconfdir}/texlive/web2c/updmap.cfg
+%{_texdir}/texmf-dist/dvips/tetex/
+%{_texdir}/texmf-dist/fonts/enc/dvips/tetex/
+%{_texdir}/texmf-dist/fonts/map/dvips/tetex/
+%{_texdir}/texmf-dist/scripts/texlive/fmtutil-sys.sh
+%{_texdir}/texmf-dist/scripts/texlive/fmtutil-user.sh
+%{_texdir}/texmf-dist/scripts/texlive/fmtutil.pl
+%{_texdir}/texmf-dist/scripts/texlive/mktexlsr*
+%{_texdir}/texmf-dist/scripts/texlive/mktexmf
+%{_texdir}/texmf-dist/scripts/texlive/mktexpk
+%{_texdir}/texmf-dist/scripts/texlive/mktextfm
 %{_texdir}/texmf-dist/scripts/texlive/rungs.tlu
-%{_texdir}/texmf-dist/scripts/texlive/test-tlpdb.tlu
-%{_texdir}/texmf-dist/scripts/texlive/texconf.tlu
-%{_texdir}/texmf-dist/scripts/texlive/lua/texlive/getopt.tlu
-%{_texdir}/texmf-dist/scripts/texlive/lua/texlive/tlpdb.tlu
-%{_texdir}/texmf-dist/scripts/texlive/lua/texlive/utils.tlu
+%{_texdir}/texmf-dist/scripts/texlive/updmap-sys.sh
+%{_texdir}/texmf-dist/scripts/texlive/updmap-user.sh
+%{_texdir}/texmf-dist/scripts/texlive/updmap.pl
+%{_texdir}/texmf-dist/web2c/updmap.cfg
+
+%files -n %{shortname}-texlive-scripts-extra
+%license gpl.txt
+%license lppl1.txt
+%{_bindir}/allcm
+%{_bindir}/allec
+%{_bindir}/allneeded
+%{_bindir}/dvi2fax
+%{_bindir}/dvired
+%{_bindir}/e2pall
+%{_bindir}/kpsepath
+%{_bindir}/kpsetool
+%{_bindir}/kpsewhere
+%{_bindir}/kpsexpand
+%{_bindir}/ps2frag
+%{_bindir}/pslatex
+%{_bindir}/texconfig-dialog
+%{_bindir}/texconfig-sys
+%{_bindir}/texconfig
+%{_bindir}/texlinks
+%{_mandir}/man1/allcm.1*
+%{_mandir}/man1/allec.1*
+%{_mandir}/man1/allneeded.1*
+%{_mandir}/man1/dvi2fax.1*
+%{_mandir}/man1/dvired.1*
+%{_mandir}/man1/e2pall.1*
+%{_mandir}/man1/kpsepath.1*
+%{_mandir}/man1/kpsetool.1*
+%{_mandir}/man1/kpsewhere.1*
+%{_mandir}/man1/kpsexpand.1*
+%{_mandir}/man1/ps2frag.1*
+%{_mandir}/man1/pslatex.1*
+%{_mandir}/man1/texconfig-sys.1*
+%{_mandir}/man1/texconfig.1*
+%{_mandir}/man1/texlinks.1*
+%{_texdir}/texmf-dist/texconfig/
+%{_texdir}/texmf-dist/scripts/texlive-extra/
+
 
 %files -n %{shortname}-texlive.infra
 %license lppl1.txt
@@ -8814,6 +8769,7 @@ done <<< "$list"
 %{_texdir}/readme-html.dir/readme.pl.html
 %{_texdir}/readme-html.dir/readme.pt-br.html
 %{_texdir}/readme-html.dir/readme.ru.html
+%{_texdir}/readme-html.dir/readme.sk.html
 %{_texdir}/readme-html.dir/readme.sr.html
 %{_texdir}/readme-html.dir/readme.vi.html
 %{_texdir}/readme-html.dir/readme.zh-cn.html
@@ -8849,6 +8805,12 @@ done <<< "$list"
 %{_texdir}/texmf-dist/scripts/texosquery
 %{_texdir}/texmf-dist/tex/latex/texosquery
 %doc %{_texdir}/texmf-dist/doc/support/texosquery
+
+%files -n %{shortname}-texplate
+%license bsd.txt
+%{_bindir}/texplate
+%{_texdir}/texmf-dist/scripts/texplate
+%doc %{_texdir}/texmf-dist/doc/support/texplate
 
 %files -n %{shortname}-texsis
 %license lppl1.txt
@@ -8919,6 +8881,7 @@ done <<< "$list"
 %{_bindir}/updvitomp
 %{_bindir}/updvitype
 %{_bindir}/uplatex
+%{_bindir}/uplatex-dev
 %{_bindir}/upmendex
 %{_bindir}/upmpost
 %{_bindir}/uppltotf
@@ -8927,6 +8890,7 @@ done <<< "$list"
 %{_bindir}/wovp2ovf
 %{_mandir}/man1/euptex.1*
 %{_mandir}/man1/uplatex.1*
+%{_mandir}/man1/uplatex-dev.1*
 %{_mandir}/man1/upmendex.1*
 %{_mandir}/man1/uppltotf.1*
 %{_mandir}/man1/uptex.1*
@@ -9004,11 +8968,14 @@ done <<< "$list"
 %license other-free.txt
 %{_bindir}/xdvipdfmx
 %{_bindir}/xelatex
+%{_bindir}/xelatex-dev
 %{_bindir}/xetex
 %{_mandir}/man1/xelatex.1*
+%{_mandir}/man1/xelatex-dev.1*
 %{_mandir}/man1/xetex.1*
 %{_texdir}/tlpkg/tlpostcode/xetex.pl
 %{_texdir}/texmf-dist/fonts/misc/xetex/
+%{fmtutil_cnf_d}/xelatex-dev
 %{fmtutil_cnf_d}/xetex
 %doc %{_texdir}/texmf-dist/doc/xetex/
 
@@ -9041,6 +9008,12 @@ done <<< "$list"
 %{fmtutil_cnf_d}/xmltex
 %doc %{_texdir}/texmf-dist/doc/otherformats/xmltex/
 
+%files -n %{shortname}-xpdfopen
+%{_bindir}/pdfclose
+%{_bindir}/pdfopen
+%{_mandir}/man1/pdfclose.1*
+%{_mandir}/man1/pdfopen.1*
+
 %files -n %{shortname}-yplan
 %license lppl1.txt
 %{_bindir}/yplan
@@ -9049,6 +9022,12 @@ done <<< "$list"
 %doc %{_texdir}/texmf-dist/doc/latex/yplan/
 
 %changelog
+* Wed May 13 2020 Tom Callaway <spot@fedoraproject.org> - 7:20200327-2
+- fix symlink issues
+
+* Mon Apr 20 2020 Tom Callaway <spot@fedoraproject.org> - 7:20200327-1
+- update to 20200327
+
 * Wed Feb 05 2020 Than Ngo <than@redhat.com> - 7:20190410-12
 - fix bz#1798119 - buffer overflow in TexOpen() function, CVE-2019-19601
 
