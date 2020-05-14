@@ -6553,7 +6553,7 @@ cd work
 --with-system-libpaper --with-system-potrace --with-pic --with-xdvi-x-toolkit=xaw --with-system-mpfr --with-system-gmp \
 --enable-shared --enable-compiler-warnings=max --without-cxx-runtime-hack \
 --disable-native-texlive-build --disable-t1utils --enable-psutils --disable-biber --disable-ptexenc --disable-largefile \
-%ifarch power64 s390 s390x
+%ifarch %{power64} s390 s390x
 --disable-luajittex --disable-mfluajit --disable-luajithbtex --disable-mfluajit-nowin \
 %endif
 --enable-xindy --disable-xindy-docs --disable-xindy-make-rules \
@@ -7928,7 +7928,7 @@ done <<< "$list"
 %{_includedir}/kpathsea/*
 %{_includedir}/synctex/
 %{_includedir}/texlua53/
-%ifnarch power64 s390 s390x
+%ifnarch %{power64} s390 s390x
 %{_includedir}/texluajit/
 %endif
 %{_libdir}/*.so
@@ -7998,14 +7998,14 @@ done <<< "$list"
 
 %files -n %{shortname}-luajittex
 %license gpl2.txt
-%ifnarch power64 s390 s390x
+%ifnarch %{power64} s390 s390x
 %{_bindir}/luajittex
 %{_bindir}/luajithbtex
 %{_bindir}/texluajit
 %{_bindir}/texluajitc
+%endif
 %{_mandir}/man1/luajittex.1*
 %{fmtutil_cnf_d}/luajittex
-%endif
 
 %files -n %{shortname}-luatex
 %license gpl2.txt
@@ -8117,7 +8117,7 @@ done <<< "$list"
 %license gpl2.txt
 %{_bindir}/mflua
 %{_bindir}/mflua-nowin
-%ifnarch power64 s390 s390x
+%ifnarch %{power64} s390 s390x
 %{_bindir}/mfluajit
 %{_bindir}/mfluajit-nowin
 %endif
