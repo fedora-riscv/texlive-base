@@ -17,7 +17,7 @@
 
 Name: %{shortname}-base
 Version: %{source_date}
-Release: 2%{?dist}
+Release: 3%{?dist}
 Epoch: 7
 Summary: TeX formatting system
 # The only files in the base package are directories, cache, and license texts
@@ -2852,6 +2852,7 @@ Provides: texlive-kpathsea-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-kpathsea-doc < 7:20170520
 Requires: coreutils, grep
 Requires: texlive-base
+Requires: texlive-texlive-scripts
 Provides: tex(fmtutil.cnf) = %{epoch}:%{source_date}-%{release}
 Provides: tex(mktex.cnf) = %{epoch}:%{source_date}-%{release}
 Provides: tex(texmf.cnf) = %{epoch}:%{source_date}-%{release}
@@ -9022,6 +9023,9 @@ done <<< "$list"
 %doc %{_texdir}/texmf-dist/doc/latex/yplan/
 
 %changelog
+* Sat May 16 2020 Orion Poplawski <orion@nwra.com> - 7:20200327-3
+- Make texlive-kpathsea require texlive-texlive-scripts (bz#1836464)
+
 * Wed May 13 2020 Tom Callaway <spot@fedoraproject.org> - 7:20200327-2
 - fix symlink issues
 
