@@ -462,8 +462,8 @@ BuildRequires: python3-devel
 # This is for xindy
 BuildRequires: clisp-devel
 BuildRequires: texlive-cyrillic, texlive-latex, texlive-metafont, texlive-cm-super, texlive-ec
-# This is to be able to latex dummy.tex in %%build
-BuildRequires: texlive-kpathsea
+# This is temporary to fix build while missing kpathsea dep is active
+BuildRequires: texlive-texlive-scripts
 # Cleanup Provides/Obsoletes
 # texlive-cjk-gs-integrate (depackaged 2018-03-09)
 Provides: texlive-cjk-gs-integrate = %{epoch}:%{source_date}-%{release}
@@ -9026,7 +9026,7 @@ done <<< "$list"
 * Sat May 16 2020 Orion Poplawski <orion@nwra.com> - 7:20200327-3
 - Make texlive-kpathsea require texlive-texlive-scripts (bz#1836464)
 - Update fedora/rhel conditionals
-- Add BR on texlive-kpathsea to fix latex dummy.tex
+- Add (temporary) BR on texlive-texlive-scripts to fix latex dummy.tex
 
 * Wed May 13 2020 Tom Callaway <spot@fedoraproject.org> - 7:20200327-2
 - fix symlink issues
