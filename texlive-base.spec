@@ -450,7 +450,7 @@ BuildRequires: gd-devel
 BuildRequires: teckit-devel >= 2.5.7
 BuildRequires: freetype-devel libpng-devel t1lib-devel zlib-devel poppler-devel t1utils
 BuildRequires: zziplib-devel libicu-devel cairo-devel harfbuzz-devel perl-generators pixman-devel graphite2-devel
-%if 0%{?fedora} >= 28 || 0%{?rhel} >= 8
+%if 0%{?fedora} || 0%{?rhel} >= 8
 BuildRequires: libgs-devel
 %else
 BuildRequires: ghostscript-devel
@@ -6498,19 +6498,21 @@ xz -dc %{SOURCE0} | tar x
 %patch1 -p0
 %patch2 -p1 -b .format
 %patch5 -p0
-%if 0%{?fedora} >= 28
+%if 0%{?fedora} || 0%{?rhel} >= 8
 %patch7 -p1 -b .newpoppler
 %endif
 %patch8 -p1 -b .texinfo-fix
 %patch11 -p1 -b .dt
 %patch15 -p1 -b .disabletest
 %patch17 -p1 -b .annocheck
-%if 0%{?fedora} >= 30
+%if 0%{?fedora} || 0%{?rhel} >= 8
 %patch18 -p1 -b .poppler-0.73
 %endif
 %patch19 -p1 -b .shh
 %patch20 -p1 -b .fix-libgs-detection
+%if 0%{?fedora} || 0%{?rhel} >= 8
 %patch23 -p1 -b .poppler-0.84
+%endif
 %patch28 -p1 -b .CVE-2019-19601
 
 # Setup copies of the licenses
@@ -6537,10 +6539,6 @@ rm -f dummy.*
 
 export CFLAGS="$RPM_OPT_FLAGS -fno-strict-aliasing -Werror=format-security"
 export CXXFLAGS="$RPM_OPT_FLAGS -std=c++11 -fno-strict-aliasing -Werror=format-security"
-# When redhat-rpm-config is updated in all stable targets, this conditional can go away
-%if 0%{?fedora} >= 28
-export LDFLAGS="%{build_ldflags}"
-%endif
 cd source
 PREF=`pwd`/inst
 mkdir -p work
@@ -9025,6 +9023,7 @@ done <<< "$list"
 %changelog
 * Sat May 16 2020 Orion Poplawski <orion@nwra.com> - 7:20200327-3
 - Make texlive-kpathsea require texlive-texlive-scripts (bz#1836464)
+- Update fedora/rhel conditionals
 
 * Wed May 13 2020 Tom Callaway <spot@fedoraproject.org> - 7:20200327-2
 - fix symlink issues
