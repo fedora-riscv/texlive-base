@@ -15,9 +15,12 @@
 # We do not want exec perms changing.
 %global __brp_mangle_shebangs_exclude ^$
 
+# We have a circular dep on latex due to xindy
+%bcond_without bootstrap
+
 Name: %{shortname}-base
 Version: %{source_date}
-Release: 3%{?dist}
+Release: 4%{?dist}
 Epoch: 7
 Summary: TeX formatting system
 # The only files in the base package are directories, cache, and license texts
@@ -459,9 +462,11 @@ BuildRequires: libpaper-devel potrace-devel autoconf automake libtool
 BuildRequires: gmp-devel mpfr-devel
 # This is really for macros.
 BuildRequires: python3-devel
+%if %{without bootstrap}
 # This is for xindy
 BuildRequires: clisp-devel
 BuildRequires: texlive-cyrillic, texlive-latex, texlive-metafont, texlive-cm-super, texlive-ec
+%endif
 # This is temporary to fix build while missing kpathsea dep is active
 BuildRequires: texlive-texlive-scripts
 # Cleanup Provides/Obsoletes
@@ -6382,9 +6387,11 @@ Unicode compatible index program for LaTeX.
 
 %package -n %{shortname}-xindy
 Provides: tex-xindy = %{epoch}:%{source_date}-%{release}
+%if %{without bootstrap}
 Provides: tex-xindy-bin = %{epoch}:%{source_date}-%{release}
-Provides: tex-xindy-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-xindy-bin = %{epoch}:%{source_date}-%{release}
+%endif
+Provides: tex-xindy-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-xindy-bin <= 6:svn41316
 Provides: tex-xindy-doc = %{epoch}:%{source_date}-%{release}
 Provides: texlive-xindy-doc = %{epoch}:%{source_date}-%{release}
@@ -6528,6 +6535,7 @@ done
 %global mysources %{lua: for index,value in ipairs(sources) do if index >= 16 then print(value.." ") end end}
 
 %build
+%if %{without bootstrap}
 # Make texlive generate latex.fmt, so that multiple threads do not race to
 # make it during the xindy build.
 cat > dummy.tex << EOF
@@ -6538,6 +6546,7 @@ This is a document.
 EOF
 latex dummy.tex
 rm -f dummy.*
+%endif
 
 export CFLAGS="$RPM_OPT_FLAGS -fno-strict-aliasing -Werror=format-security"
 export CXXFLAGS="$RPM_OPT_FLAGS -std=c++11 -fno-strict-aliasing -Werror=format-security"
@@ -6557,7 +6566,12 @@ cd work
 %ifarch %{power64} s390 s390x
 --disable-luajittex --disable-mfluajit --disable-luajithbtex --disable-mfluajit-nowin \
 %endif
---enable-xindy --disable-xindy-docs --disable-xindy-make-rules \
+%if %{without bootstrap}
+--enable-xindy \
+%else
+--disable-xindy \
+%endif
+--disable-xindy-docs --disable-xindy-rules \
 --disable-rpath
 
 # disable rpath
@@ -8990,10 +9004,12 @@ done <<< "$list"
 
 %files -n %{shortname}-xindy
 %license gpl.txt
+%if %{without bootstrap}
 %{_bindir}/tex2xindy
 %{_bindir}/texindy
 %{_bindir}/xindy
 %{_bindir}/xindy.mem
+%endif
 %{_mandir}/man1/xindy.1*
 %{_mandir}/man1/texindy.1*
 %{_mandir}/man1/tex2xindy.1*
@@ -9023,6 +9039,10 @@ done <<< "$list"
 %doc %{_texdir}/texmf-dist/doc/latex/yplan/
 
 %changelog
+* Sun May 17 2020 Orion Poplawski <orion@nwra.com> - 7:20200327-4
+- Add bootstrap flag to disable circular dep on latex due to xindy
+- Fix --disable-xindy-rules configure parameter
+
 * Sat May 16 2020 Orion Poplawski <orion@nwra.com> - 7:20200327-3
 - Make texlive-kpathsea require texlive-texlive-scripts (bz#1836464)
 - Update fedora/rhel conditionals
