@@ -6536,6 +6536,14 @@ done
 
 %build
 %if %{without bootstrap}
+# DEBUG
+# Okay. Lets look at things.
+# 1. /usr/share/texlive/texmf-dist/web2c/fmtutil.cnf should exist and be valid.
+ls -l /usr/share/texlive/texmf-dist/web2c/fmtutil.cnf
+cat /usr/share/texlive/texmf-dist/web2c/fmtutil.cnf
+# 2. mktexfmt latex should succeed
+mktexfmt latex
+
 # Make texlive generate latex.fmt, so that multiple threads do not race to
 # make it during the xindy build.
 cat > dummy.tex << EOF
