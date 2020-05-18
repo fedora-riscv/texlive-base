@@ -16,11 +16,11 @@
 %global __brp_mangle_shebangs_exclude ^$
 
 # We have a circular dep on latex due to xindy
-%bcond_with bootstrap
+%bcond_without bootstrap
 
 Name: %{shortname}-base
 Version: %{source_date}
-Release: 4%{?dist}
+Release: 4%{?dist}.1
 Epoch: 7
 Summary: TeX formatting system
 # The only files in the base package are directories, cache, and license texts
@@ -2859,7 +2859,8 @@ Provides: texlive-kpathsea-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-kpathsea-doc < 7:20170520
 Requires: coreutils, grep
 Requires: texlive-base
-Requires: texlive-texlive-scripts
+# We absolutely need this to go in first
+Requires(post): texlive-texlive-scripts
 Provides: tex(fmtutil.cnf) = %{epoch}:%{source_date}-%{release}
 Provides: tex(mktex.cnf) = %{epoch}:%{source_date}-%{release}
 Provides: tex(texmf.cnf) = %{epoch}:%{source_date}-%{release}
@@ -6942,7 +6943,9 @@ fi
 :
 
 %transfiletriggerin -n %{shortname}-kpathsea -- %{_texdir}
-%{_bindir}/texhash 2> /dev/null || :
+# %{_bindir}/texhash 2> /dev/null || :
+# DEBUG, lets see what it does
+%{_bindir}/texhash || :
 export TEXMF=/usr/share/texlive/texmf-dist
 export TEXMFCNF=/usr/share/texlive/texmf-dist/web2c
 export TEXMFCACHE=/var/lib/texmf
