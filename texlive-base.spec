@@ -16,11 +16,11 @@
 %global __brp_mangle_shebangs_exclude ^$
 
 # We have a circular dep on latex due to xindy
-%bcond_without bootstrap
+%bcond_with bootstrap
 
 Name: %{shortname}-base
 Version: %{source_date}
-Release: 4%{?dist}.1
+Release: 5%{?dist}
 Epoch: 7
 Summary: TeX formatting system
 # The only files in the base package are directories, cache, and license texts
