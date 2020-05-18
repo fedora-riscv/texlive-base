@@ -6540,10 +6540,19 @@ done
 # Okay. Lets look at things.
 # 1. /usr/share/texlive/texmf-dist/web2c/fmtutil.cnf should exist and be valid.
 ls -l /usr/share/texlive/texmf-dist/web2c/fmtutil.cnf
-cat /usr/share/texlive/texmf-dist/web2c/fmtutil.cnf
+# cat /usr/share/texlive/texmf-dist/web2c/fmtutil.cnf
+
+# Check for ls-R files
+ls -l /usr/share/texlive/texmf-config/ls-R
+ls -l /usr/share/texlive/texmf-dist/ls-R
+ls -l /usr/share/texlive/texmf-local/ls-R
+ls -l /usr/share/texlive/texmf-var/ls-R
+
 # 2. kpsewhich -all fmtutil.cnf
 # We should see /usr/share/texlive/texmf-dist/web2c/fmtutil.cnf
-kpsewhich -all fmtutil.cnf
+kpsewhich -version
+
+kpsewhich --debug -1 -all fmtutil.cnf
 
 # 3. fmtutil-sys --all
 # This should recreate all format files, may not be able to do that here (non-root)
