@@ -16,11 +16,11 @@
 %global __brp_mangle_shebangs_exclude ^$
 
 # We have a circular dep on latex due to xindy
-%bcond_with bootstrap
+%bcond_without bootstrap
 
 Name: %{shortname}-base
 Version: %{source_date}
-Release: 5%{?dist}
+Release: 4%{?dist}.2
 Epoch: 7
 Summary: TeX formatting system
 # The only files in the base package are directories, cache, and license texts
@@ -6537,30 +6537,31 @@ done
 
 %build
 %if %{without bootstrap}
+cat /tmp/kpathsea.log || :
 # DEBUG
 # Okay. Lets look at things.
 # 1. /usr/share/texlive/texmf-dist/web2c/fmtutil.cnf should exist and be valid.
-ls -l /usr/share/texlive/texmf-dist/web2c/fmtutil.cnf
+ls -l /usr/share/texlive/texmf-dist/web2c/fmtutil.cnf || :
 # cat /usr/share/texlive/texmf-dist/web2c/fmtutil.cnf
 
 # Check for ls-R files
-ls -l /usr/share/texlive/texmf-config/ls-R
-ls -l /usr/share/texlive/texmf-dist/ls-R
-ls -l /usr/share/texlive/texmf-local/ls-R
-ls -l /usr/share/texlive/texmf-var/ls-R
+ls -l /usr/share/texlive/texmf-config/ls-R || :
+ls -l /usr/share/texlive/texmf-dist/ls-R || :
+ls -l /usr/share/texlive/texmf-local/ls-R || :
+ls -l /usr/share/texlive/texmf-var/ls-R || :
 
 # 2. kpsewhich -all fmtutil.cnf
 # We should see /usr/share/texlive/texmf-dist/web2c/fmtutil.cnf
-kpsewhich -version
+kpsewhich -version || :
 
-kpsewhich --debug -1 -all fmtutil.cnf
+kpsewhich --debug -1 -all fmtutil.cnf || :
 
 # 3. fmtutil-sys --all
 # This should recreate all format files, may not be able to do that here (non-root)
-fmtutil-sys --all
+fmtutil-sys --all || :
 
 # 4. mktexfmt latex should succeed
-mktexfmt latex
+mktexfmt latex || :
 
 # Make texlive generate latex.fmt, so that multiple threads do not race to
 # make it during the xindy build.
@@ -6945,12 +6946,15 @@ fi
 %transfiletriggerin -n %{shortname}-kpathsea -- %{_texdir}
 # %{_bindir}/texhash 2> /dev/null || :
 # DEBUG, lets see what it does
-%{_bindir}/texhash || :
+/usr/bin/sh -x %{_bindir}/texhash 2>&- | tee -a /tmp/kpathsea.log || :
 export TEXMF=/usr/share/texlive/texmf-dist
 export TEXMFCNF=/usr/share/texlive/texmf-dist/web2c
 export TEXMFCACHE=/var/lib/texmf
-%{_bindir}/mtxrun --generate &> /dev/null || :
-%{_bindir}/fmtutil-sys --all &> /dev/null || :
+# %{_bindir}/mtxrun --generate &> /dev/null || :
+# %{_bindir}/fmtutil-sys --all &> /dev/null || :
+# DEBUG, lets see what it does
+%{_bindir}/mtxrun --generate 2>&- | tee -a /tmp/kpathsea.log || :
+%{_bindir}/fmtutil-sys --all 2>&- | tee -a /tmp/kpathsea.log || :
 
 %transfiletriggerpostun -n %{shortname}-kpathsea -- %{_texdir}
 %{_bindir}/texhash 2> /dev/null || :
