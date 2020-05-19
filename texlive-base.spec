@@ -20,7 +20,7 @@
 
 Name: %{shortname}-base
 Version: %{source_date}
-Release: 4%{?dist}.3
+Release: 4%{?dist}.4
 Epoch: 7
 Summary: TeX formatting system
 # The only files in the base package are directories, cache, and license texts
@@ -6947,6 +6947,8 @@ fi
 # %{_bindir}/texhash 2> /dev/null || :
 # DEBUG, lets see what it does
 touch /usr/share/texlive/kpathsea.log
+/usr/share/texlive/texmf-dist/scripts/texlive/mktexlsr --version 2>&- | tee -a /usr/share/texlive/kpathsea.log || :
+/usr/share/texlive/texmf-dist/scripts/texlive/mktexlsr --verbose 2>&- | tee -a /usr/share/texlive/kpathsea.log || :
 /usr/bin/sh -x %{_bindir}/texhash 2>&- | tee -a /usr/share/texlive/kpathsea.log || :
 export TEXMF=/usr/share/texlive/texmf-dist
 export TEXMFCNF=/usr/share/texlive/texmf-dist/web2c
