@@ -16,11 +16,11 @@
 %global __brp_mangle_shebangs_exclude ^$
 
 # We have a circular dep on latex due to xindy
-%bcond_without bootstrap
+%bcond_with bootstrap
 
 Name: %{shortname}-base
 Version: %{source_date}
-Release: 4%{?dist}.5
+Release: 5%{?dist}
 Epoch: 7
 Summary: TeX formatting system
 # The only files in the base package are directories, cache, and license texts
@@ -2859,8 +2859,9 @@ Provides: texlive-kpathsea-doc = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-kpathsea-doc < 7:20170520
 Requires: coreutils, grep
 Requires: texlive-base
-# We absolutely need this to go in first
+# We absolutely need this to go in first, since the trigger needs it
 Requires(post): texlive-texlive-scripts
+Requires(post): texlive-context
 Provides: tex(fmtutil.cnf) = %{epoch}:%{source_date}-%{release}
 Provides: tex(mktex.cnf) = %{epoch}:%{source_date}-%{release}
 Provides: tex(texmf.cnf) = %{epoch}:%{source_date}-%{release}
@@ -6944,23 +6945,22 @@ fi
 :
 
 %transfiletriggerin -n %{shortname}-kpathsea -- %{_texdir}
-# %{_bindir}/texhash 2> /dev/null || :
-# DEBUG, lets see what it does
-touch /usr/share/texlive/kpathsea.log
-/usr/share/texlive/texmf-dist/scripts/texlive/mktexlsr --version 2>&1 | tee -a /usr/share/texlive/kpathsea.log || :
-/usr/share/texlive/texmf-dist/scripts/texlive/mktexlsr --verbose 2>&1 | tee -a /usr/share/texlive/kpathsea.log || :
-/usr/bin/sh -x %{_bindir}/texhash 2>&1 | tee -a /usr/share/texlive/kpathsea.log || :
+# Commented lines are DEBUG mode
+# touch /usr/share/texlive/kpathsea.log
+# /usr/share/texlive/texmf-dist/scripts/texlive/mktexlsr --version 2>&1 | tee -a /usr/share/texlive/kpathsea.log || :
+# /usr/share/texlive/texmf-dist/scripts/texlive/mktexlsr --verbose 2>&1 | tee -a /usr/share/texlive/kpathsea.log || :
+# /usr/bin/sh -x %{_bindir}/texhash 2>&1 | tee -a /usr/share/texlive/kpathsea.log || :
+/usr/share/texlive/texmf-dist/scripts/texlive/mktexlsr 2> /dev/null || :
 export TEXMF=/usr/share/texlive/texmf-dist
 export TEXMFCNF=/usr/share/texlive/texmf-dist/web2c
 export TEXMFCACHE=/var/lib/texmf
-# %{_bindir}/mtxrun --generate &> /dev/null || :
-# %{_bindir}/fmtutil-sys --all &> /dev/null || :
-# DEBUG, lets see what it does
-%{_bindir}/mtxrun --generate 2>&1 | tee -a /usr/share/texlive/kpathsea.log || :
-%{_bindir}/fmtutil-sys --all 2>&1 | tee -a /usr/share/texlive/kpathsea.log || :
+# %{_bindir}/mtxrun --generate 2>&1 | tee -a /usr/share/texlive/kpathsea.log || :
+# %{_bindir}/fmtutil-sys --all 2>&1 | tee -a /usr/share/texlive/kpathsea.log || :
+%{_bindir}/mtxrun --generate &> /dev/null || :
+%{_bindir}/fmtutil-sys --all &> /dev/null || :
 
 %transfiletriggerpostun -n %{shortname}-kpathsea -- %{_texdir}
-%{_bindir}/texhash 2> /dev/null || :
+/usr/share/texlive/texmf-dist/scripts/texlive/mktexlsr 2> /dev/null || :
 
 %transfiletriggerin -n %{shortname}-kpathsea -- %{_texdir}/texmf-dist/fonts/map/dvips/
 list=`grep "\.map" | sort -n | uniq`
@@ -9074,6 +9074,9 @@ done <<< "$list"
 %doc %{_texdir}/texmf-dist/doc/latex/yplan/
 
 %changelog
+* Wed May 20 2020 Tom Callaway <spot@fedoraproject.org> - 7:20200327-5
+- rebuild with bootstrap off and triggers with debugging off
+
 * Sun May 17 2020 Orion Poplawski <orion@nwra.com> - 7:20200327-4
 - Add bootstrap flag to disable circular dep on latex due to xindy
 - Fix --disable-xindy-rules configure parameter
