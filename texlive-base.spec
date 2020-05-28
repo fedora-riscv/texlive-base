@@ -20,7 +20,7 @@
 
 Name: %{shortname}-base
 Version: %{source_date}
-Release: 5%{?dist}
+Release: 6%{?dist}
 Epoch: 7
 Summary: TeX formatting system
 # The only files in the base package are directories, cache, and license texts
@@ -1341,6 +1341,15 @@ BuildArch: noarch
 A full featured, parameter driven macro package, which fully
 supports advanced interactive documents. See the ConTeXt garden
 for a wealth of support information.
+
+%package -n %{shortname}-context-doc
+Requires: texlive-context
+Provides: tex-context-doc = %{epoch}:%{source_date}-%{release}
+Summary: Documentation for context
+License: GPL+ or LPPL
+
+%description -n %{shortname}-context-doc
+Documentation for context.
 
 %package -n %{shortname}-convbkmk
 Provides: tex-convbkmk = %{epoch}:%{source_date}-%{release}
@@ -2670,6 +2679,7 @@ License: GPL+
 Summary: Convert "ghostscript fonts" to PK files
 Requires: texlive-base
 Requires: texlive-kpathsea
+Requires: tex(psfonts.map)
 
 %description -n %{shortname}-gsftopk
 Designed for use with xdvi and dvips this utility converts
@@ -7331,7 +7341,7 @@ done <<< "$list"
 # %%{_mandir}/man1/mtx-metatex.1*
 %{_mandir}/man1/mtx-modules.1*
 %{_mandir}/man1/mtx-package.1*
-# %%{_mandir}/man1/mtx-patterns.1*
+%{_mandir}/man1/mtx-patterns.1*
 %{_mandir}/man1/mtx-pdf.1*
 %{_mandir}/man1/mtx-plain.1*
 %{_mandir}/man1/mtx-profile.1*
@@ -7344,6 +7354,7 @@ done <<< "$list"
 %{_mandir}/man1/mtx-unicode.1*
 %{_mandir}/man1/mtx-unzip.1*
 %{_mandir}/man1/mtx-update.1*
+%{_mandir}/man1/mtx-vscode.1*
 %{_mandir}/man1/mtx-watch.1*
 %{_mandir}/man1/mtx-youless.1*
 %{_mandir}/man1/mtxrun.1*
@@ -7373,6 +7384,8 @@ done <<< "$list"
 %{_texdir}/texmf-dist/tex/generic/context/
 %{_texdir}/texmf-dist/tex/latex/context/
 %{fmtutil_cnf_d}/context
+
+%files -n %{shortname}-context-doc
 %doc %{_texdir}/texmf-dist/doc/context/
 
 %files -n %{shortname}-convbkmk
@@ -7466,8 +7479,8 @@ done <<< "$list"
 %{_mandir}/man1/rubibtex.1*
 %{_mandir}/man1/rumakeindex.1*
 %{_texdir}/texmf-dist/tex/latex/cyrillic/
-%{_texdir}/texmf-dist/scripts/texlive/rubibtex.sh
-%{_texdir}/texmf-dist/scripts/texlive/rumakeindex.sh
+%{_texdir}/texmf-dist/scripts/texlive-extra/rubibtex.sh
+%{_texdir}/texmf-dist/scripts/texlive-extra/rumakeindex.sh
 %doc %{_texdir}/texmf-dist/doc/latex/cyrillic/
 
 %files -n %{shortname}-de-macro
@@ -9074,6 +9087,11 @@ done <<< "$list"
 %doc %{_texdir}/texmf-dist/doc/latex/yplan/
 
 %changelog
+* Wed May 27 2020 Tom Callaway <spot@fedoraproject.org> - 7:20200327-6
+- split off context-doc (bz1839593)
+- add Requires: tex(psfonts.map) to gsftopk (bz1840379)
+- update component sources to match main tree tarball (not doing this before was an epic fail on my part)
+
 * Wed May 20 2020 Tom Callaway <spot@fedoraproject.org> - 7:20200327-5
 - rebuild with bootstrap off and triggers with debugging off
 
