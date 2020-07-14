@@ -1138,7 +1138,9 @@ Requires: texlive-kpathsea
 Requires(post,postun): coreutils
 Requires: texlive-metapost
 Requires: texlive-pdftex
+%if %{without bootstrap}
 Requires: texlive-xetex
+%endif
 Requires: texlive-luatex
 Requires: texlive-lm
 Requires: texlive-lm-math
