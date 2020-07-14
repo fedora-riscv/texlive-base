@@ -20,7 +20,7 @@
 
 Name: %{shortname}-base
 Version: %{source_date}
-Release: 7%{?dist}
+Release: 8%{?dist}
 Epoch: 7
 Summary: TeX formatting system
 # The only files in the base package are directories, cache, and license texts
@@ -9094,6 +9094,9 @@ done <<< "$list"
 %doc %{_texdir}/texmf-dist/doc/latex/yplan/
 
 %changelog
+* Tue Jul 14 2020 Tom Callaway <spot@fedoraproject.org> - 7:20200327-8
+- rebuild for poppler 0.90.0
+
 * Wed Jul 01 2020 Jeff Law <law@redhat.com> - 7:20200327-7
 - Disable LTO
 
