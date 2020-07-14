@@ -20,7 +20,7 @@
 
 Name: %{shortname}-base
 Version: %{source_date}
-Release: 8%{?dist}
+Release: 9%{?dist}
 Epoch: 7
 Summary: TeX formatting system
 # The only files in the base package are directories, cache, and license texts
@@ -444,6 +444,8 @@ Patch21: texlive-20190410-tlmgr-ignore-warning.patch
 Patch23: texlive-20200327-poppler-0.84.patch
 # bz#1798119, buffer overflow, CVE-2019-19601
 Patch28: texlive-base-20190410-CVE-2019-19601.patch
+# Fixes for poppler 0.90 (f33+)
+Patch29: texlive-20200327-poppler-0.90.patch
 
 # Can't do this because it causes everything else to be noarch
 # BuildArch: noarch
@@ -6537,6 +6539,9 @@ xz -dc %{SOURCE0} | tar x
 %patch23 -p1 -b .poppler-0.84
 %endif
 %patch28 -p1 -b .CVE-2019-19601
+%if 0%{?fedora} >= 33 || 0%{?rhel} >= 9
+%patch29 -p1 -b .poppler090
+%endif
 
 # Setup copies of the licenses
 for l in `unxz -c %{SOURCE3} | tar t`; do
@@ -9096,6 +9101,9 @@ done <<< "$list"
 %doc %{_texdir}/texmf-dist/doc/latex/yplan/
 
 %changelog
+* Tue Jul 14 2020 Tom Callaway <spot@fedoraproject.org> - 7:20200327-9
+- bootstrap again
+
 * Tue Jul 14 2020 Tom Callaway <spot@fedoraproject.org> - 7:20200327-8
 - rebuild for poppler 0.90.0
 - bootstrap on
