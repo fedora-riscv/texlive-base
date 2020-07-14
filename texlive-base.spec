@@ -1139,8 +1139,8 @@ Requires: texlive-base
 Requires: texlive-kpathsea
 Requires(post,postun): coreutils
 Requires: texlive-metapost
-Requires: texlive-pdftex
 %if %{without bootstrap}
+Requires: texlive-pdftex
 Requires: texlive-xetex
 %endif
 Requires: texlive-luatex
@@ -6540,7 +6540,7 @@ xz -dc %{SOURCE0} | tar x
 %endif
 %patch28 -p1 -b .CVE-2019-19601
 %if 0%{?fedora} >= 33 || 0%{?rhel} >= 9
-%patch29 -p1 -b .poppler090
+# %%patch29 -p1 -b .poppler090
 %endif
 
 # Setup copies of the licenses
