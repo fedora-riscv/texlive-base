@@ -16,7 +16,7 @@
 %global __brp_mangle_shebangs_exclude ^$
 
 # We have a circular dep on latex due to xindy
-%bcond_with bootstrap
+%bcond_without bootstrap
 
 Name: %{shortname}-base
 Version: %{source_date}
@@ -9096,6 +9096,7 @@ done <<< "$list"
 %changelog
 * Tue Jul 14 2020 Tom Callaway <spot@fedoraproject.org> - 7:20200327-8
 - rebuild for poppler 0.90.0
+- bootstrap on
 
 * Wed Jul 01 2020 Jeff Law <law@redhat.com> - 7:20200327-7
 - Disable LTO
