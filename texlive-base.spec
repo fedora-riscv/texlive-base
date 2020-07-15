@@ -20,7 +20,7 @@
 
 Name: %{shortname}-base
 Version: %{source_date}
-Release: 11%{?dist}
+Release: 10%{?dist}.1
 Epoch: 7
 Summary: TeX formatting system
 # The only files in the base package are directories, cache, and license texts
@@ -6540,7 +6540,7 @@ xz -dc %{SOURCE0} | tar x
 %endif
 %patch28 -p1 -b .CVE-2019-19601
 %if 0%{?fedora} >= 33 || 0%{?rhel} >= 9
-%patch29 -p1 -b .poppler090
+# %%patch29 -p1 -b .poppler090
 %endif
 
 # Setup copies of the licenses
@@ -9103,6 +9103,9 @@ done <<< "$list"
 %changelog
 * Tue Jul 14 2020 Tom Callaway <spot@fedoraproject.org> - 7:20200327-11
 - disable bootstrap
+
+* Tue Jul 14 2020 Tom Callaway <spot@fedoraproject.org> - 7:20200327-10.1
+- unbootstrapped build (TEMPORARY, when -11 comes out of the side tag, it will replace this)
 
 * Tue Jul 14 2020 Tom Callaway <spot@fedoraproject.org> - 7:20200327-10
 - bootstrap again again
