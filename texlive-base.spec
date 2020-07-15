@@ -20,7 +20,7 @@
 
 Name: %{shortname}-base
 Version: %{source_date}
-Release: 10%{?dist}.1
+Release: 11%{?dist}
 Epoch: 7
 Summary: TeX formatting system
 # The only files in the base package are directories, cache, and license texts
@@ -6540,7 +6540,7 @@ xz -dc %{SOURCE0} | tar x
 %endif
 %patch28 -p1 -b .CVE-2019-19601
 %if 0%{?fedora} >= 33 || 0%{?rhel} >= 9
-# %%patch29 -p1 -b .poppler090
+%patch29 -p1 -b .poppler090
 %endif
 
 # Setup copies of the licenses
