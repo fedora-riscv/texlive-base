@@ -20,7 +20,7 @@
 
 Name: %{shortname}-base
 Version: %{source_date}
-Release: 11%{?dist}
+Release: 12%{?dist}
 Epoch: 7
 Summary: TeX formatting system
 # The only files in the base package are directories, cache, and license texts
@@ -9101,6 +9101,10 @@ done <<< "$list"
 %doc %{_texdir}/texmf-dist/doc/latex/yplan/
 
 %changelog
+* Tue Jul 21 2020 Marek Kasik <mkasik@redhat.com> - 7:20200327-12
+- rebuild for poppler 0.90.0
+- bodhi needs latest build
+
 * Tue Jul 14 2020 Tom Callaway <spot@fedoraproject.org> - 7:20200327-11
 - disable bootstrap
 
