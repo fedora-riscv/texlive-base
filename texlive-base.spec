@@ -20,7 +20,7 @@
 
 Name: %{shortname}-base
 Version: %{source_date}
-Release: 12%{?dist}
+Release: 13%{?dist}
 Epoch: 7
 Summary: TeX formatting system
 # The only files in the base package are directories, cache, and license texts
@@ -6632,7 +6632,7 @@ sed -i 's|^hardcode_libdir_flag_spec=.*|hardcode_libdir_flag_spec=""|g' $i
 sed -i 's|^runpath_var=LD_RUN_PATH|runpath_var=DIE_RPATH_DIE|g' $i
 done
 
-make world %{?_smp_mflags} STRIPPROG=/bin/true STRIP=/bin/true
+%make_build world STRIPPROG=/bin/true STRIP=/bin/true
 
 %install
 # make directories
@@ -9101,6 +9101,10 @@ done <<< "$list"
 %doc %{_texdir}/texmf-dist/doc/latex/yplan/
 
 %changelog
+* Tue Jul 22 2020 Tom Stellard <tstellar@redhat.com> - 7:20200327-13
+- Use make macros
+- https://fedoraproject.org/wiki/Changes/UseMakeBuildInstallMacro
+
 * Tue Jul 21 2020 Marek Kasik <mkasik@redhat.com> - 7:20200327-12
 - rebuild for poppler 0.90.0
 - bodhi needs latest build
