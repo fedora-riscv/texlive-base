@@ -20,7 +20,7 @@
 
 Name: %{shortname}-base
 Version: %{source_date}
-Release: 14%{?dist}
+Release: 15%{?dist}
 Epoch: 7
 Summary: TeX formatting system
 # The only files in the base package are directories, cache, and license texts
@@ -2943,6 +2943,11 @@ Requires: texlive-luatex
 Requires: texlive-pdftex
 Requires: texlive-latexconfig
 Requires: texlive-latex-fonts
+# As a result of changes in textcomp, it requests TS1 fonts for some things
+# most notably, \textbullet. Since people probably want a working itemize
+# even on rather minimal installs, we add an explicit Requires on texlive-cm-super
+# here. (bz1867927)
+Requires: texlive-cm-super
 Requires(post,postun): coreutils
 Requires: tex(multicol.sty)
 Requires: tex(url.sty)
@@ -9101,6 +9106,9 @@ done <<< "$list"
 %doc %{_texdir}/texmf-dist/doc/latex/yplan/
 
 %changelog
+* Thu Aug 13 2020 Tom Callaway <spot@fedoraproject.org> - 7:20200327-15
+- make texlive-latex have an explicit Requires on texlive-cm-super (bz1867927)
+
 * Wed Jul 29 2020 Fedora Release Engineering <releng@fedoraproject.org> - 7:20200327-14
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_33_Mass_Rebuild
 
