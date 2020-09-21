@@ -2874,7 +2874,7 @@ Obsoletes: texlive-kpathsea-doc < 7:20170520
 Requires: coreutils, grep
 Requires: texlive-base
 # We absolutely need this to go in first, since the trigger needs it
-Requires(post): texlive-texlive-scripts
+Requires(post): texlive-texlive-scripts = %{epoch}:%{source_date}-%{release}
 Provides: tex(fmtutil.cnf) = %{epoch}:%{source_date}-%{release}
 Provides: tex(mktex.cnf) = %{epoch}:%{source_date}-%{release}
 Provides: tex(texmf.cnf) = %{epoch}:%{source_date}-%{release}
@@ -5645,7 +5645,7 @@ Obsoletes: texlive-texlive-scripts-bin < 7:20170520
 License: LPPL
 Summary: TeX Live infrastructure programs
 Requires: texlive-base
-Requires: texlive-kpathsea
+Requires: texlive-kpathsea = %{epoch}:%{source_date}-%{release}
 Requires: texlive-texlive.infra
 # perl
 BuildArch: noarch
@@ -9109,6 +9109,7 @@ done <<< "$list"
 * Mon Sep 21 2020 Tom Callaway <spot@fedoraproject.org> - 7:20200327-16
 - move "mtxrun --generate" call from -kpathsea transfiletriggerin to -context
 - drop Requires(post): texlive-context from -kpathsea
+- add an explicit versioning on the dependency of texlive-texlive-scripts in -kpathsea (and vice versa)
 
 * Thu Aug 13 2020 Tom Callaway <spot@fedoraproject.org> - 7:20200327-15
 - make texlive-latex have an explicit Requires on texlive-cm-super (bz1867927)
@@ -9116,7 +9117,7 @@ done <<< "$list"
 * Wed Jul 29 2020 Fedora Release Engineering <releng@fedoraproject.org> - 7:20200327-14
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_33_Mass_Rebuild
 
-* Tue Jul 22 2020 Tom Stellard <tstellar@redhat.com> - 7:20200327-13
+* Wed Jul 22 2020 Tom Stellard <tstellar@redhat.com> - 7:20200327-13
 - Use make macros
 - https://fedoraproject.org/wiki/Changes/UseMakeBuildInstallMacro
 
