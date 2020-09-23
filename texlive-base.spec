@@ -20,7 +20,7 @@
 
 Name: %{shortname}-base
 Version: %{source_date}
-Release: 16%{?dist}
+Release: 17%{?dist}
 Epoch: 7
 Summary: TeX formatting system
 # The only files in the base package are directories, cache, and license texts
@@ -446,6 +446,8 @@ Patch23: texlive-20200327-poppler-0.84.patch
 Patch28: texlive-base-20190410-CVE-2019-19601.patch
 # Fixes for poppler 0.90 (f33+)
 Patch29: texlive-20200327-poppler-0.90.patch
+# Fix pdflatex run out of memory
+Patch30: texlive-base-20200327-out-of-memory.patch
 
 # Can't do this because it causes everything else to be noarch
 # BuildArch: noarch
@@ -6546,6 +6548,7 @@ xz -dc %{SOURCE0} | tar x
 %if 0%{?fedora} >= 33 || 0%{?rhel} >= 9
 %patch29 -p1 -b .poppler090
 %endif
+%patch30 -p1 -b .out_of_memory
 
 # Setup copies of the licenses
 for l in `unxz -c %{SOURCE3} | tar t`; do
@@ -9106,6 +9109,9 @@ done <<< "$list"
 %doc %{_texdir}/texmf-dist/doc/latex/yplan/
 
 %changelog
+* Wed Sep 23 2020 Than Ngo <than@redhat.com> - 7:20200327-17
+- Fix pdflatex run out of memory
+
 * Mon Sep 21 2020 Tom Callaway <spot@fedoraproject.org> - 7:20200327-16
 - move "mtxrun --generate" call from -kpathsea transfiletriggerin to -context
 - drop Requires(post): texlive-context from -kpathsea
