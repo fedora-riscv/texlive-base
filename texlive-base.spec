@@ -20,7 +20,7 @@
 
 Name: %{shortname}-base
 Version: %{source_date}
-Release: 17%{?dist}
+Release: 18%{?dist}
 Epoch: 7
 Summary: TeX formatting system
 # The only files in the base package are directories, cache, and license texts
@@ -6561,13 +6561,6 @@ done
 %global mysources %{lua: for index,value in ipairs(sources) do if index >= 16 then print(value.." ") end end}
 
 %build
-# The embedded cairo library has a configure script which compiles code
-# and expects it to fail in a very specific way.  LTO changs the failure
-# mode and the cairo configure script does not know how to handle the change
-# Until the configure script is fixed this seems like the best thing to do
-# Disable LTO
-%define _lto_cflags %{nil}
-
 %if %{without bootstrap}
 cat /usr/share/texlive/kpathsea.log || :
 # DEBUG
@@ -9109,6 +9102,9 @@ done <<< "$list"
 %doc %{_texdir}/texmf-dist/doc/latex/yplan/
 
 %changelog
+* Sun Oct 11 2020 Jeff Law <law@redhat.com> - 7:20200327-18
+- Re-enable LTO
+
 * Wed Sep 23 2020 Than Ngo <than@redhat.com> - 7:20200327-17
 - Fix pdflatex run out of memory
 
