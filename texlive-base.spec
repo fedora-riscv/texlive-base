@@ -20,7 +20,7 @@
 
 Name: %{shortname}-base
 Version: %{source_date}
-Release: 18%{?dist}
+Release: 19%{?dist}
 Epoch: 7
 Summary: TeX formatting system
 # The only files in the base package are directories, cache, and license texts
@@ -5012,7 +5012,6 @@ Requires: texlive-etex
 Requires: texlive-hyphen-base
 Requires: texlive-hyph-utf8
 Requires: texlive-ipaex
-Requires: texlive-japanese
 Requires: texlive-japanese-otf
 Requires: texlive-knuth-lib
 Requires: texlive-kpathsea
@@ -6005,12 +6004,17 @@ License: BSD
 Summary: Binaries for uptex
 Requires: texlive-base
 Requires: texlive-convbkmk
+Requires: texlive-etex
+Requires: texlive-hyphen-base
 Requires: texlive-hyph-utf8
 Requires: texlive-ipaex
-Requires: texlive-japanese
 Requires: texlive-japanese-otf
+Requires: texlive-knuth-lib
 Requires: texlive-kpathsea
-Requires: texlive-ptex
+Requires: texlive-plain
+Requires: texlive-ptex-base
+Requires: texlive-uptex-base
+Requires: texlive-uptex-fonts
 
 %description -n %{shortname}-uptex
 upTeX is an extension of pTeX, using UTF-8 input and producing UTF-8 
@@ -9102,6 +9106,9 @@ done <<< "$list"
 %doc %{_texdir}/texmf-dist/doc/latex/yplan/
 
 %changelog
+* Thu Oct 29 2020 Tom Callaway <spot@fedoraproject.org> - 7:20200327-19
+- fix dependencies of texlive-ptex and texlive-uptex
+
 * Sun Oct 11 2020 Jeff Law <law@redhat.com> - 7:20200327-18
 - Re-enable LTO
 
