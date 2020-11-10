@@ -20,7 +20,7 @@
 
 Name: %{shortname}-base
 Version: %{source_date}
-Release: 16%{?dist}
+Release: 17%{?dist}
 Epoch: 7
 Summary: TeX formatting system
 # The only files in the base package are directories, cache, and license texts
@@ -5647,6 +5647,8 @@ Summary: TeX Live infrastructure programs
 Requires: texlive-base
 Requires: texlive-kpathsea = %{epoch}:%{source_date}-%{release}
 Requires: texlive-texlive.infra
+Provides: texlive-tetex = %{epoch}:%{source_date}-%{release}
+Obsoletes: texlive-tetex < 7:20200327
 # perl
 BuildArch: noarch
 
@@ -7398,9 +7400,11 @@ done <<< "$list"
 %{_texdir}/texmf-dist/fonts/tfm/hoekwater/context/
 %{_texdir}/texmf-dist/fonts/type1/hoekwater/context/
 %{_texdir}/texmf-dist/metapost/context/
+%exclude %{_texdir}/texmf-dist/scripts/context/perl/mptopdf.pl
 %{_texdir}/texmf-dist/scripts/context/
 %{_texdir}/texmf-dist/tex/context/
 %{_texdir}/texmf-dist/tex/generic/context/
+%exclude %{_texdir}/texmf-dist/tex/generic/context/mptopdf
 %{_texdir}/texmf-dist/tex/latex/context/
 %{fmtutil_cnf_d}/context
 
@@ -8140,6 +8144,7 @@ done <<< "$list"
 %{_bindir}/mkindex
 %{_mandir}/man1/makeindex.1*
 %{_mandir}/man1/mkindex.1*
+%exclude %{_texdir}/texmf-dist/makeindex/latex/
 %{_texdir}/texmf-dist/makeindex/
 %{_texdir}/texmf-dist/tex/plain/makeindex/
 %doc %{_texdir}/texmf-dist/doc/support/makeindex/
@@ -8182,6 +8187,7 @@ done <<< "$list"
 %{_texdir}/texmf-dist/fonts/map/dvips/metapost/
 %{_texdir}/texmf-dist/fonts/tfm/metapost/
 %{_texdir}/texmf-dist/fonts/type1/metapost/
+%exclude %{_texdir}/texmf-dist/metapost/context/
 %{_texdir}/texmf-dist/metapost/
 %{_texdir}/texmf-dist/tex/generic/metapost/
 %doc %{_texdir}/texmf-dist/doc/metapost/
@@ -9106,6 +9112,10 @@ done <<< "$list"
 %doc %{_texdir}/texmf-dist/doc/latex/yplan/
 
 %changelog
+* Tue Nov 10 2020 Tom Callaway <spot@fedoraproject.org> - 7:20200327-17
+- fix issues with file ownership duplication
+- fix issue with obsoleting texlive-tetex
+
 * Mon Sep 21 2020 Tom Callaway <spot@fedoraproject.org> - 7:20200327-16
 - move "mtxrun --generate" call from -kpathsea transfiletriggerin to -context
 - drop Requires(post): texlive-context from -kpathsea
