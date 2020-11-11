@@ -6567,6 +6567,8 @@ done
 %global mysources %{lua: for index,value in ipairs(sources) do if index >= 16 then print(value.." ") end end}
 
 %build
+%define _lto_cflags %{nil}
+
 %if %{without bootstrap}
 cat /usr/share/texlive/kpathsea.log || :
 # DEBUG
@@ -9115,6 +9117,7 @@ done <<< "$list"
 * Tue Nov 10 2020 Tom Callaway <spot@fedoraproject.org> - 7:20200327-20
 - fix issues with file ownership duplication
 - fix issue with obsoleting texlive-tetex
+- turn LTO back off, as it was assuming code needed libcrypto for some unknown reason
 
 * Thu Oct 29 2020 Tom Callaway <spot@fedoraproject.org> - 7:20200327-19
 - fix dependencies of texlive-ptex and texlive-uptex
