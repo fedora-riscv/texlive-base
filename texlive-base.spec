@@ -20,7 +20,7 @@
 
 Name: %{shortname}-base
 Version: %{source_date}
-Release: 17%{?dist}
+Release: 18%{?dist}
 Epoch: 7
 Summary: TeX formatting system
 # The only files in the base package are directories, cache, and license texts
@@ -5664,6 +5664,9 @@ Summary: TeX Live scripts
 Requires: texlive-base
 Requires: texlive-kpathsea
 Requires: texlive-texlive.infra
+Obsoletes: texlive-texconfig < 7:20200327
+Obsoletes: texlive-pstools < 7:20200327
+Obsoletes: texlive-pdftools < 7:20200327
 # perl and shell
 BuildArch: noarch
 
@@ -9112,6 +9115,9 @@ done <<< "$list"
 %doc %{_texdir}/texmf-dist/doc/latex/yplan/
 
 %changelog
+* Thu Nov 12 2020 Tom Callaway <spot@fedoraproject.org> - 7:20200327-18
+- obsolete texlive-texconfig, texlive-pdftools, texlive-pstools (in texlive-texlive-scripts-extra)
+
 * Tue Nov 10 2020 Tom Callaway <spot@fedoraproject.org> - 7:20200327-17
 - fix issues with file ownership duplication
 - fix issue with obsoleting texlive-tetex
