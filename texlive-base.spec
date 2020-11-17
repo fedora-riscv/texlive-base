@@ -20,8 +20,8 @@
 
 Name: %{shortname}-base
 Version: %{source_date}
-Release: 21%{?dist}
-Epoch: 7
+Release: 22%{?dist}
+Epoch: 9
 Summary: TeX formatting system
 # The only files in the base package are directories, cache, and license texts
 # So we'll just list the license texts. This is also a bit of a lie, since most of these license texts do not apply to themselves.
@@ -417,6 +417,8 @@ Source384: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/xmltex.ta
 Source385: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/xpdfopen.doc.tar.xz
 Source386: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/yplan.doc.tar.xz
 Source387: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/yplan.tar.xz
+Source388: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/optex.tar.xz
+Source389: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/optex.doc.tar.xz
 Patch1: tl-kpfix.patch
 Patch2: tl-format.patch
 Patch5: texlive-2016-kpathsea-texlive-path.patch
@@ -4443,6 +4445,24 @@ Requires: texlive-kpathsea
 %description -n %{shortname}-omegaware
 Omegaware package.
 
+%package -n %{shortname}-optex
+License: Public Domain
+Summary: LuaTeX format based on Plain TeX and OPmac
+Requires: texlive-base
+Requires: texlive-kpathsea
+Requires: texlive-amsfonts
+Requires: texlive-cm
+Requires: texlive-ec
+Requires: texlive-hyphen-base
+Requires: texlive-lm
+Requires: texlive-luatex
+Requires: texlive-rsfs
+
+%description -n %{shortname}-optex
+OpTeX is a LuaTeX format based on Plain TeX macros with power
+from OPmac (fonts selection system, colors, external graphics,
+references, hyperlinks, ...) with unicode fonts.
+
 %package -n %{shortname}-patgen
 Provides: tex-patgen = %{epoch}:%{source_date}-%{release}
 Provides: texlive-patgen-bin = %{epoch}:%{source_date}-%{release}
@@ -8104,7 +8124,6 @@ done <<< "$list"
 %{_bindir}/dvilualatex-dev
 %{_bindir}/luacsplain
 %{_bindir}/luatex
-%{_bindir}/optex
 %{_bindir}/texlua
 %{_bindir}/texluac
 %{_mandir}/man1/dvilualatex-dev.1*
@@ -8116,7 +8135,6 @@ done <<< "$list"
 %{_texdir}/texmf-dist/tex/generic/config/luatexiniconfig.tex
 %{_texdir}/texmf-dist/web2c/texmfcnf.lua
 %{fmtutil_cnf_d}/luatex
-%{fmtutil_cnf_d}/optex
 %doc %{_texdir}/texmf-dist/doc/luatex/base/
 
 %files -n %{shortname}-lwarp
@@ -8349,6 +8367,13 @@ done <<< "$list"
 %{_mandir}/man1/outocp.1*
 %{_mandir}/man1/ovf2ovp.1*
 %{_mandir}/man1/ovp2ovf.1*
+
+%files -n %{shortname}-optex
+%{_bindir}/optex
+%{fmtutil_cnf_d}/optex
+%{_mandir}/man1/optex.1*
+%{_texdir}/texmf-dist/tex/luatex/optex/
+%doc %{_texdir}/texmf-dist/doc/luatex/optex/
 
 %files -n %{shortname}-patgen
 %license knuth.txt
@@ -9117,6 +9142,10 @@ done <<< "$list"
 %doc %{_texdir}/texmf-dist/doc/latex/yplan/
 
 %changelog
+* Mon Nov 16 2020 Tom Callaway <spot@fedoraproject.org> - 9:20200327-22
+- make proper texlive-optex subpackage by moving it here
+- bump epoch to 9 so this texlive-optex package replaces the one that used to live in texlive
+
 * Thu Nov 12 2020 Tom Callaway <spot@fedoraproject.org> - 7:20200327-21
 - obsolete texlive-texconfig, texlive-pdftools, texlive-pstools (in texlive-texlive-scripts-extra)
 
