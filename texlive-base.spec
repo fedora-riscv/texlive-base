@@ -20,7 +20,7 @@
 
 Name: %{shortname}-base
 Version: %{source_date}
-Release: 18%{?dist}
+Release: 19%{?dist}
 Epoch: 7
 Summary: TeX formatting system
 # The only files in the base package are directories, cache, and license texts
@@ -9115,6 +9115,9 @@ done <<< "$list"
 %doc %{_texdir}/texmf-dist/doc/latex/yplan/
 
 %changelog
+* Thu Dec 17 2020 Tom Callaway <spot@fedoraproject.org> - 7:20200327-19
+- rebuild for newer clisp
+
 * Thu Nov 12 2020 Tom Callaway <spot@fedoraproject.org> - 7:20200327-18
 - obsolete texlive-texconfig, texlive-pdftools, texlive-pstools (in texlive-texlive-scripts-extra)
 
