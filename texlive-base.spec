@@ -20,7 +20,7 @@
 
 Name: %{shortname}-base
 Version: %{source_date}
-Release: 22%{?dist}
+Release: 23%{?dist}
 Epoch: 9
 Summary: TeX formatting system
 # The only files in the base package are directories, cache, and license texts
@@ -450,6 +450,8 @@ Patch28: texlive-base-20190410-CVE-2019-19601.patch
 Patch29: texlive-20200327-poppler-0.90.patch
 # Fix pdflatex run out of memory
 Patch30: texlive-base-20200327-out-of-memory.patch
+# Update bundled copy of dviasm to later version that supports python3
+Patch31: texlive-20200327-dviasm-py3.patch
 
 # Can't do this because it causes everything else to be noarch
 # BuildArch: noarch
@@ -6578,6 +6580,7 @@ xz -dc %{SOURCE0} | tar x
 %patch29 -p1 -b .poppler090
 %endif
 %patch30 -p1 -b .out_of_memory
+%patch31 -p1 -b .py3fix
 
 # Setup copies of the licenses
 for l in `unxz -c %{SOURCE3} | tar t`; do
@@ -6948,6 +6951,10 @@ pushd %{buildroot}
 find -type f -exec sed -i '1s|^#!/usr/bin/python$|#!%{__python3}|' {} +
 find -type f -exec sed -i '1s|^#!/usr/bin/env python$|#!%{__python3}|' {} +
 sed -i '1s|^#!/usr/bin/python |#!%{__python3} |' ./%{_texdir}/texmf-dist/scripts/de-macro/de-macro
+
+# Get rid of the python2 variant bits from pythontex (we need them to generate the py3 bits, but not in the package)
+rm -rf ./%{_texdir}/texmf-dist/scripts/pythontex/pythontex2.py
+rm -rf ./%{_texdir}/texmf-dist/scripts/pythontex/depythontex2.py
 popd
 
 # One dir to own
@@ -7576,6 +7583,7 @@ done <<< "$list"
 %files -n %{shortname}-dviasm
 %license gpl3.txt
 %{_bindir}/dviasm
+%{_mandir}/man1/dviasm.1*
 %{_texdir}/texmf-dist/scripts/dviasm/
 %doc %{_texdir}/texmf-dist/doc/latex/dviasm/
 
@@ -9142,6 +9150,10 @@ done <<< "$list"
 %doc %{_texdir}/texmf-dist/doc/latex/yplan/
 
 %changelog
+* Wed Dec 30 2020 Tom Callaway <spot@fedoraproject.org> - 9:20200327-23
+- update pygmentex (supports python3)
+- update dviasm (supports python3)
+
 * Mon Nov 16 2020 Tom Callaway <spot@fedoraproject.org> - 9:20200327-22
 - make proper texlive-optex subpackage by moving it here
 - bump epoch to 9 so this texlive-optex package replaces the one that used to live in texlive
