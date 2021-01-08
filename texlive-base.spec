@@ -455,6 +455,7 @@ Patch31: texlive-20200327-dviasm-py3.patch
 
 # Can't do this because it causes everything else to be noarch
 # BuildArch: noarch
+BuildRequires: make
 BuildRequires: gcc gcc-c++
 BuildRequires: xz libXaw-devel libXi-devel ncurses-devel bison flex file perl(Digest::MD5) texinfo gcc-c++
 BuildRequires: gd-devel
