@@ -16,7 +16,7 @@
 %global __brp_mangle_shebangs_exclude ^$
 
 # We have a circular dep on latex due to xindy
-%bcond_without bootstrap
+%bcond_with bootstrap
 
 Name: %{shortname}-base
 Version: %{source_date}
@@ -9153,6 +9153,9 @@ done <<< "$list"
 %doc %{_texdir}/texmf-dist/doc/latex/yplan/
 
 %changelog
+* Fri Jan 15 2021 Tom Callaway <spot@fedoraproject.org> - 9:20200327-25
+- debootstrap
+
 * Fri Jan 15 2021 Tom Callaway <spot@fedoraproject.org> - 9:20200327-24
 - fix context shell binary to handle /home dirs that are symlinks (bz1913245)
 
