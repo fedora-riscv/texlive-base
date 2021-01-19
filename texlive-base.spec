@@ -20,7 +20,7 @@
 
 Name: %{shortname}-base
 Version: %{source_date}
-Release: 25%{?dist}
+Release: 25.1%{?dist}
 Epoch: 9
 Summary: TeX formatting system
 # The only files in the base package are directories, cache, and license texts
