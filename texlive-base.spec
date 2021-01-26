@@ -20,7 +20,7 @@
 
 Name: %{shortname}-base
 Version: %{source_date}
-Release: 19%{?dist}
+Release: 20%{?dist}
 Epoch: 7
 Summary: TeX formatting system
 # The only files in the base package are directories, cache, and license texts
@@ -1137,6 +1137,8 @@ License: GPL+ or LPPL
 Summary: The ConTeXt macro package
 Requires: texlive-base
 Requires: texlive-kpathsea
+# for /usr/bin/realpath
+Requires: coreutils
 Requires(post,postun): coreutils
 Requires: texlive-metapost
 %if %{without bootstrap}
@@ -6892,7 +6894,7 @@ cat > context << EOF
 #!/bin/sh
 export TEXMF=/usr/share/texlive/texmf-dist;
 export TEXMFCNF=/usr/share/texlive/texmf-dist/web2c;
-export TEXMFCACHE=\$HOME/.cache/texlive;
+export TEXMFCACHE=\$(realpath \$HOME/.cache/texlive);
 %{_bindir}/mtxrun --script context "\$@"
 EOF
 chmod 0755 context
@@ -9115,6 +9117,9 @@ done <<< "$list"
 %doc %{_texdir}/texmf-dist/doc/latex/yplan/
 
 %changelog
+* Tue Jan 26 2021 Tom Callaway <spot@fedoraproject.org> - 7:20200327-20
+- fix context shell binary to handle /home dirs that are symlinks (bz1913245)
+
 * Thu Dec 17 2020 Tom Callaway <spot@fedoraproject.org> - 7:20200327-19
 - rebuild for newer clisp
 
