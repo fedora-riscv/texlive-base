@@ -20,7 +20,7 @@
 
 Name: %{shortname}-base
 Version: %{source_date}
-Release: 25%{?dist}
+Release: 26%{?dist}
 Epoch: 9
 Summary: TeX formatting system
 # The only files in the base package are directories, cache, and license texts
@@ -410,8 +410,10 @@ Source377: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/xetex.doc
 Source378: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/xetex.tar.xz
 Source379: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/xindex.doc.tar.xz
 Source380: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/xindex.tar.xz
+%if ! 0%{?eln}
 Source381: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/xindy.doc.tar.xz
 Source382: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/xindy.tar.xz
+%endif
 Source383: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/xmltex.doc.tar.xz
 Source384: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/xmltex.tar.xz
 Source385: http://ctan.math.illinois.edu/systems/texlive/tlnet/archive/xpdfopen.doc.tar.xz
@@ -473,8 +475,10 @@ BuildRequires: gmp-devel mpfr-devel
 BuildRequires: python3-devel
 %if %{without bootstrap}
 # This is for xindy
+%if ! 0%{?eln}
 BuildRequires: clisp-devel
 BuildRequires: texlive-cyrillic, texlive-latex, texlive-metafont, texlive-cm-super, texlive-ec
+%endif
 %endif
 # This is temporary to fix build while missing kpathsea dep is active
 BuildRequires: texlive-texlive-scripts
@@ -6441,6 +6445,7 @@ BuildArch: noarch
 %description -n %{shortname}-xindex
 Unicode compatible index program for LaTeX.
 
+%if ! 0%{?eln}
 %package -n %{shortname}-xindy
 Provides: tex-xindy = %{epoch}:%{source_date}-%{release}
 %if %{without bootstrap}
@@ -6467,6 +6472,7 @@ Xindy can be used to process indexes for documents marked up
 using (La)TeX, Nroff family and SGML-based languages. Xindy is
 highly configurable, both in markup terms and in terms of the
 collating order of the text being processed.
+%endif
 
 %package -n %{shortname}-xmltex
 Provides: tex-xmltex = %{epoch}:%{source_date}-%{release}
@@ -6598,7 +6604,7 @@ done
 %build
 %define _lto_cflags %{nil}
 
-%if %{without bootstrap}
+%if %{without bootstrap} && ! 0%{?eln}
 cat /usr/share/texlive/kpathsea.log || :
 # DEBUG
 # Okay. Lets look at things.
@@ -6655,7 +6661,7 @@ cd work
 %ifarch %{power64} s390 s390x
 --disable-luajittex --disable-mfluajit --disable-luajithbtex --disable-mfluajit-nowin \
 %endif
-%if %{without bootstrap}
+%if %{without bootstrap} && ! 0%{?eln}
 --enable-xindy \
 %else
 --disable-xindy \
@@ -9116,6 +9122,7 @@ done <<< "$list"
 %{_texdir}/texmf-dist/tex/lualatex/xindex/
 %doc %{_texdir}/texmf-dist/doc/lualatex/xindex/
 
+%if ! 0%{?eln}
 %files -n %{shortname}-xindy
 %license gpl.txt
 %if %{without bootstrap}
@@ -9130,6 +9137,7 @@ done <<< "$list"
 %{_texdir}/texmf-dist/scripts/xindy/
 %{_texdir}/texmf-dist/xindy/
 %doc %{_texdir}/texmf-dist/doc/xindy/
+%endif
 
 %files -n %{shortname}-xmltex
 %license lppl1.txt
@@ -9153,6 +9161,9 @@ done <<< "$list"
 %doc %{_texdir}/texmf-dist/doc/latex/yplan/
 
 %changelog
+* Tue Jan 26 2021 Tomas Popela <tpopela@redhat.com> - 9:20200327-26
+- Don't build texlive-xindy on ELN because of its requirements (clisp)
+
 * Fri Jan 15 2021 Tom Callaway <spot@fedoraproject.org> - 9:20200327-25
 - debootstrap
 
