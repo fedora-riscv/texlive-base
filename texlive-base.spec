@@ -20,7 +20,7 @@
 
 Name: %{shortname}-base
 Version: %{source_date}
-Release: 20%{?dist}
+Release: 21%{?dist}
 Epoch: 7
 Summary: TeX formatting system
 # The only files in the base package are directories, cache, and license texts
@@ -6980,6 +6980,7 @@ fi
 :
 
 %transfiletriggerin -n %{shortname}-context -- %{_texdir}
+export TEXMFLOCAL=/usr/share/texlive/texmf-local
 %{_bindir}/mtxrun --generate &> /dev/null || :
 
 %transfiletriggerin -n %{shortname}-kpathsea -- %{_texdir}
@@ -9117,6 +9118,9 @@ done <<< "$list"
 %doc %{_texdir}/texmf-dist/doc/latex/yplan/
 
 %changelog
+* Tue Feb 2  2021 Tom Callaway <spot@fedoraproject.org> - 7:20200327-21
+- set TEXMFLOCAL during the context scriptlet to minimize the scope of where it looks during mtxrun --generate
+
 * Tue Jan 26 2021 Tom Callaway <spot@fedoraproject.org> - 7:20200327-20
 - fix context shell binary to handle /home dirs that are symlinks (bz1913245)
 
