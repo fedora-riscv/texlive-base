@@ -20,7 +20,7 @@
 
 Name: %{shortname}-base
 Version: %{source_date}
-Release: 28%{?dist}
+Release: 29%{?dist}
 Epoch: 9
 Summary: TeX formatting system
 # The only files in the base package are directories, cache, and license texts
@@ -454,6 +454,8 @@ Patch29: texlive-20200327-poppler-0.90.patch
 Patch30: texlive-base-20200327-out-of-memory.patch
 # Update bundled copy of dviasm to later version that supports python3
 Patch31: texlive-20200327-dviasm-py3.patch
+# Force bundled copy of pygmentex in texlive-base source tarball to latest (0.10) with python3 support
+Patch32: texlive-base-20200327-pygmentex-python3-0.10.patch
 
 # Can't do this because it causes everything else to be noarch
 # BuildArch: noarch
@@ -6590,6 +6592,7 @@ xz -dc %{SOURCE0} | tar x
 %endif
 %patch30 -p1 -b .out_of_memory
 %patch31 -p1 -b .py3fix
+%patch32 -p1 -b .pygmentex-python3
 
 # Setup copies of the licenses
 for l in `unxz -c %{SOURCE3} | tar t`; do
@@ -9162,6 +9165,9 @@ done <<< "$list"
 %doc %{_texdir}/texmf-dist/doc/latex/yplan/
 
 %changelog
+* Thu Mar 18 2021 Tom Callaway <spot@fedoraproject.org> - 7:20200327-29
+- force builtin copy of pygmentex to 0.10 (supports python3)
+
 * Tue Feb 2  2021 Tom Callaway <spot@fedoraproject.org> - 7:20200327-28
 - set TEXMFLOCAL during the context scriptlet to minimize the scope of where it looks during mtxrun --generate
 
