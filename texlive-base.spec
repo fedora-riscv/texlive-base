@@ -20,7 +20,7 @@
 
 Name: %{shortname}-base
 Version: %{source_date}
-Release: 29%{?dist}
+Release: 30%{?dist}
 Epoch: 9
 Summary: TeX formatting system
 # The only files in the base package are directories, cache, and license texts
@@ -9165,6 +9165,9 @@ done <<< "$list"
 %doc %{_texdir}/texmf-dist/doc/latex/yplan/
 
 %changelog
+* Mon May 24 2021 Tom Callaway <spot@fedoraproject.org> - 7:20200327-30
+- rebuild for newer clisp
+
 * Thu Mar 18 2021 Tom Callaway <spot@fedoraproject.org> - 7:20200327-29
 - force builtin copy of pygmentex to 0.10 (supports python3)
 
