@@ -1,5 +1,5 @@
 %global shortname texlive
-%global source_date 20200327
+%global source_date 20210325
 %global source_name texlive-%{source_date}-source
 %{!?_texdir: %global _texdir %{_datadir}/%{shortname}}
 %{!?_texmf_var: %global _texmf_var %{_var}/lib/texmf}
@@ -421,13 +421,29 @@ Source386: https://ctan.math.illinois.edu/systems/texlive/tlnet/archive/yplan.do
 Source387: https://ctan.math.illinois.edu/systems/texlive/tlnet/archive/yplan.tar.xz
 Source388: https://ctan.math.illinois.edu/systems/texlive/tlnet/archive/optex.tar.xz
 Source389: https://ctan.math.illinois.edu/systems/texlive/tlnet/archive/optex.doc.tar.xz
+# 2021
+Source390: https://ctan.math.illinois.edu/systems/texlive/tlnet/archive/albatross.tar.xz
+Source391: https://ctan.math.illinois.edu/systems/texlive/tlnet/archive/albatross.doc.tar.xz
+Source392: https://ctan.math.illinois.edu/systems/texlive/tlnet/archive/git-latexdiff.tar.xz
+Source393: https://ctan.math.illinois.edu/systems/texlive/tlnet/archive/git-latexdiff.doc.tar.xz
+Source394: https://ctan.math.illinois.edu/systems/texlive/tlnet/archive/hyperxmp.tar.xz
+Source395: https://ctan.math.illinois.edu/systems/texlive/tlnet/archive/hyperxmp.doc.tar.xz
+Source396: https://ctan.math.illinois.edu/systems/texlive/tlnet/archive/light-latex-make.tar.xz
+Source397: https://ctan.math.illinois.edu/systems/texlive/tlnet/archive/light-latex-make.doc.tar.xz
+Source398: https://ctan.math.illinois.edu/systems/texlive/tlnet/archive/spix.tar.xz
+Source399: https://ctan.math.illinois.edu/systems/texlive/tlnet/archive/spix.doc.tar.xz
+Source400: https://ctan.math.illinois.edu/systems/texlive/tlnet/archive/tikztosvg.tar.xz
+Source401: https://ctan.math.illinois.edu/systems/texlive/tlnet/archive/tikztosvg.doc.tar.xz
+Source402: https://ctan.math.illinois.edu/systems/texlive/tlnet/archive/xml2pmx.tar.xz
+Source403: https://ctan.math.illinois.edu/systems/texlive/tlnet/archive/xml2pmx.doc.tar.xz
+
 Patch1: tl-kpfix.patch
 Patch2: tl-format.patch
 Patch5: texlive-2016-kpathsea-texlive-path.patch
 # fixes from arch and upstream texlive
-Patch7: texlive-20200327-new-poppler.patch
+Patch7: texlive-20210325-new-poppler.patch
 # fix texmf.cnf so that it finds texinfo bits in Fedora
-Patch8: texlive-20200327-texinfo-path-fix.patch
+Patch8: texlive-20210325-texinfo-path-fix.patch
 # These tests only fail on 32 bit arches with gcc8
 Patch11: texlive-20200327-disable-more-failing-tests.patch
 # Another test which fails on 32 bit arches (in F30+)
@@ -437,25 +453,19 @@ Patch11: texlive-20200327-disable-more-failing-tests.patch
 Patch15: texlive-base-20180414-disable-omegafonts-check-test.patch
 # fix annocheck issue detected by rpmdiff
 Patch17: texlive-20180414-annocheck.patch
-Patch18: texlive-20190410-poppler-0.73.patch
-# Do not throw no file error in synctex
-Patch19: texlive-base-20180414-synctex-do-not-throw-no-file-error.patch
+Patch18: texlive-20210325-poppler-0.73.patch
 # Fix libgs detection in configure/configure.ac in dvisvgm
 Patch20: texlive-20190410-dvisvgm-fix-libgs-detection.patch
 # Since we need to include tlmgr.pl for texconfig
 # lets try to keep people from shooting themselves with it
 Patch21: texlive-20190410-tlmgr-ignore-warning.patch
-Patch23: texlive-20200327-poppler-0.84.patch
-# bz#1798119, buffer overflow, CVE-2019-19601
-Patch28: texlive-base-20190410-CVE-2019-19601.patch
+Patch23: texlive-20210325-poppler-0.84.patch
 # Fixes for poppler 0.90 (f33+)
 Patch29: texlive-20200327-poppler-0.90.patch
 # Fix pdflatex run out of memory
 Patch30: texlive-base-20200327-out-of-memory.patch
-# Update bundled copy of dviasm to later version that supports python3
-Patch31: texlive-20200327-dviasm-py3.patch
-# Force bundled copy of pygmentex in texlive-base source tarball to latest (0.10) with python3 support
-Patch32: texlive-base-20200327-pygmentex-python3-0.10.patch
+# Fix configure to properly detect poppler
+Patch31: texlive-base-20210325-configure-poppler-xpdf-fix.patch
 
 # Can't do this because it causes everything else to be noarch
 # BuildArch: noarch
@@ -606,6 +616,15 @@ Provides: tex(makesc8y.tex) = %{epoch}:%{source_date}-%{release}
 
 %description -n %{shortname}-afm2pl
 afm2pl package.
+
+%package -n %{shortname}-albatross
+Summary: Find fonts that contain a given glyph
+License: BSD
+Requires: texlive-base texlive-kpathsea
+
+%description -n %{shortname}-albatross
+This is a command line tool for finding fonts that contain a
+given (Unicode) glyph. It relies on Fontconfig.
 
 %package -n %{shortname}-aleph
 Provides: tex-aleph = %{epoch}:%{source_date}-%{release}
@@ -2567,6 +2586,17 @@ LaTeX must be running with \write 18 enabled). The ("external")
 lua script may be used from the command line; a bash version is
 provided.
 
+%package -n %{shortname}-git-latexdiff
+Summary: Call latexdiff on two Git revisions of a file
+License: BSD
+Requires: texlive-base texlive-kpathsea
+Requires: git, texlive-latexdiff
+
+%description -n %{shortname}-git-latexdiff
+git-latexdiff is a tool to graphically visualize differences
+between different versions of a LaTeX file. Technically, it is
+a wrapper around git and latexdiff.
+
 %package -n %{shortname}-glossaries
 Provides: tex-glossaries = %{epoch}:%{source_date}-%{release}
 Provides: texlive-glossaries-bin = %{epoch}:%{source_date}-%{release}
@@ -2707,6 +2737,41 @@ Adobe Type 1 fonts to PK bitmap format. It should not
 ordinarily be much used nowadays, since both its target
 applications are now capable of dealing with Type 1 fonts,
 direct.
+
+%package -n %{shortname}-hyperxmp
+Summary: Embed XMP metadata within a LaTeX document
+License: LPPL 1.3
+Requires: texlive-base texlive-kpathsea
+Requires: tex(atenddvi.sty)
+Requires: tex(kvoptions.sty)
+Requires: tex(pdfescape.sty)
+Requires: tex(stringenc.sty)
+Requires: tex(intcalc.sty)
+Requires: tex(ifxetex.sty)
+Provides: tex(hyperxmp.sty) = %{epoch}:%{source_date}-%{release}
+Provides: texlive-hyperxmp-doc = %{epoch}:%{source_date}-%{release}
+Provides: tex-hyperxmp-doc = %{epoch}:%{source_date}-%{release}
+
+%description -n %{shortname}-hyperxmp
+XMP (eXtensible Metadata Platform) is a mechanism proposed by
+Adobe for embedding document metadata within the document
+itself. The metadata is designed to be easy to extract, even by
+programs that are oblivious to the document's file format. Most
+of Adobe's applications store XMP metadata when saving files.
+Now, with the hyperxmp package, it is trivial for LaTeX
+document authors to store XMP metadata in their documents as
+well. The package integrates seamlessly with hyperref and
+requires virtually no modifications to documents that already
+exploit hyperref's mechanisms for specifying PDF metadata. The
+current version of hyperxmp can embed the following metadata as
+XMP: title, authors, primary author's title or position,
+metadata writer, subject/summary, keywords, copyright, license
+URL, document base URL, document identifier and instance
+identifier, language, source file name, PDF generating tool,
+PDF version, and contact telephone number/postal address/email
+address/URL. Hyperxmp currently embeds XMP only within PDF
+documents; it is compatible with pdfLaTeX, XeLaTeX,
+LaTeX+dvipdfm, and LaTeX+dvips+ps2pdf.
 
 %package -n %{shortname}-installfont
 Provides: tex-installfont = %{epoch}:%{source_date}-%{release}
@@ -3456,6 +3521,30 @@ to the source. The markup in the source text defines tags for
 blocks of source. These tags are processed by a shell script to
 make a steering file that is used by the package when LaTeX is
 being run.
+
+%package -n %{shortname}-light-latex-make
+Summary: llmk: A build tool for LaTeX documents
+License: MIT
+Requires: texlive-base texlive-kpathsea
+
+%description -n %{shortname}-light-latex-make
+This program is yet another build tool specific for LaTeX
+documents. Its aim is to provide a simple way to specify a
+workflow of processing LaTeX documents and encourage people to
+always explicitly show the right workflow for each document.
+The main features of the executable llmk are all about the
+above purpose. First, you can describe the workflows either in
+an external file llmk.toml or in a LaTeX document source in the
+form of magic comments. Further, multiple magic comment formats
+can be used. Second, it is fully cross-platform. The only
+requirement of the program is the texlua command; llmk provides
+a uniform way to describe the workflows available for nearly
+all TeX environments. Third, it behaves exactly the same in any
+environment. At this point, llmk intentionally does not provide
+any method for user configuration. Therefore one can guarantee
+that for a LaTeX document with an llmk setup, the process of
+typesetting the document will be reproduced in any TeX
+environment with the program.
 
 %package -n %{shortname}-lollipop
 Provides: tex-lollipop = %{epoch}:%{source_date}-%{release}
@@ -5266,6 +5355,20 @@ manipulating the files, from the old SeeTeX project. The
 utilities are provided as C source with Imakefiles, and an MS-
 DOS version of dvibook is also provided.
 
+%package -n %{shortname}-spix
+Summary: Yet another TeX compilation tool: simple, human readable, no option, no magic
+License: GPLv3+
+Requires: texlive-base texlive-kpathsea
+
+%description -n %{shortname}-spix
+SpiX offers a way to store information about the compilation
+process for a tex file inside the tex file itself. Just write
+the commands as comments in the tex files, and SpiX will
+extract and run those commands. Everything is stored in the tex
+file (so that you are not missing some piece of information
+that is located somewhere else), in a human-readable format (no
+need to know SpiX to understand it).
+
 %package -n %{shortname}-splitindex
 Provides: tex-splitindex = %{epoch}:%{source_date}-%{release}
 Provides: tex-splitindex-bin = %{epoch}:%{source_date}-%{release}
@@ -5933,6 +6036,15 @@ more than one change file to their source. The program may also
 be used to create a new version of a .web file that
 incorporates existing changes.
 
+%package -n %{shortname}-tikztosvg
+Summary: A utility for rendering TikZ diagrams to SVG
+License: GPLv3
+Requires: texlive-base texlive-kpathsea
+
+%description -n %{shortname}-tikztosvg
+This package provides a shell script that calls XeTeX and
+pdf2svg to convert TikZ environments to SVG files.
+
 %package -n %{shortname}-tpic2pdftex
 Provides: tex-tpic2pdftex = %{epoch}:%{source_date}-%{release}
 Provides: tex-tpic2pdftex-bin = %{epoch}:%{source_date}-%{release}
@@ -6477,6 +6589,16 @@ highly configurable, both in markup terms and in terms of the
 collating order of the text being processed.
 %endif
 
+%package -n %{shortname}-xml2pmx
+Summary: Convert MusicXML to PMX and MusiXTeX
+License: GPLv3+
+Requires: texlive-base texlive-kpathsea
+
+%description -n %{shortname}-xml2pmx
+This program translates MusicXML files to input suitable for
+PMX and MusiXTeX processing. This package supports Windows,
+MacOS and Linux systems.
+
 %package -n %{shortname}-xmltex
 Provides: tex-xmltex = %{epoch}:%{source_date}-%{release}
 Provides: tex-xmltex-bin = %{epoch}:%{source_date}-%{release}
@@ -6582,18 +6704,15 @@ xz -dc %{SOURCE0} | tar x
 %if 0%{?fedora} || 0%{?rhel} >= 8
 %patch18 -p1 -b .poppler-0.73
 %endif
-%patch19 -p1 -b .shh
 %patch20 -p1 -b .fix-libgs-detection
 %if 0%{?fedora} || 0%{?rhel} >= 8
 %patch23 -p1 -b .poppler-0.84
 %endif
-%patch28 -p1 -b .CVE-2019-19601
 %if 0%{?fedora} >= 33 || 0%{?rhel} >= 9
 %patch29 -p1 -b .poppler090
 %endif
 %patch30 -p1 -b .out_of_memory
-%patch31 -p1 -b .py3fix
-%patch32 -p1 -b .pygmentex-python3
+%patch31 -p1 -b .poppler-xpdf-fix
 
 # Setup copies of the licenses
 for l in `unxz -c %{SOURCE3} | tar t`; do
@@ -7155,10 +7274,18 @@ done <<< "$list"
 %{_texdir}/texmf-dist/fonts/lig/afm2pl/
 %{_texdir}/texmf-dist/tex/fontinst/afm2pl/
 
+%files -n %{shortname}-albatross
+%license bsd.txt
+%{_bindir}/albatross
+%{_mandir}/man1/albatross.*
+%doc %{_texdir}/texmf-dist/doc/support/albatross
+%{_texdir}/texmf-dist/scripts/albatross
+
 %files -n %{shortname}-aleph
 %license gpl.txt
 %{_bindir}/aleph
-%{_bindir}/lamed
+# symlink to aleph, not created in 2021
+# %%{_bindir}/lamed
 %{_mandir}/man1/aleph.1*
 %{_mandir}/man1/lamed.1*
 %{fmtutil_cnf_d}/aleph
@@ -7176,6 +7303,7 @@ done <<< "$list"
 %files -n %{shortname}-arara
 %license bsd.txt
 %{_bindir}/arara
+%{_mandir}/man1/arara.*
 %{_texdir}/texmf-dist/scripts/arara/
 %doc %{_texdir}/texmf-dist/doc/support/arara/
 
@@ -7815,6 +7943,12 @@ done <<< "$list"
 %{_texdir}/texmf-dist/tex/latex/getmap/
 %doc %{_texdir}/texmf-dist/doc/latex/getmap/
 
+%files -n %{shortname}-git-latexdiff
+%{_bindir}/git-latexdiff
+%{_mandir}/man1/git-latexdiff.*
+%doc %{_texdir}/texmf-dist/doc/support/git-latexdiff
+%{_texdir}/texmf-dist/scripts/git-latexdiff
+
 %files -n %{shortname}-glossaries
 %license lppl1.3.txt
 %{_bindir}/makeglossaries
@@ -7843,6 +7977,14 @@ done <<< "$list"
 %{_bindir}/gsftopk
 %{_mandir}/man1/gsftopk.1*
 %{_texdir}/texmf-dist/dvips/gsftopk/
+
+%files -n %{shortname}-hyperxmp
+%license lppl1.3c.txt
+%{_bindir}/hyperxmp-add-bytecount
+%{_mandir}/man1/hyperxmp*
+%doc %{_texdir}/texmf-dist/doc/latex/hyperxmp
+%{_texdir}/texmf-dist/scripts/hyperxmp
+%{_texdir}/texmf-dist/tex/latex/hyperxmp
 
 %files -n %{shortname}-installfont
 %license lppl1.txt
@@ -8067,6 +8209,12 @@ done <<< "$list"
 %{_libdir}/*.so
 %{_libdir}/pkgconfig/*.pc
 
+%files -n %{shortname}-light-latex-make
+%{_bindir}/llmk
+%{_mandir}/man1/llmk*
+%doc %{_texdir}/texmf-dist/doc/support/light-latex-make
+%{_texdir}/texmf-dist/scripts/light-latex-make
+
 %files -n %{shortname}-lilyglyphs
 %license lppl1.3.txt
 %{_bindir}/lily-glyph-commands
@@ -8075,8 +8223,8 @@ done <<< "$list"
 %{_datadir}/fonts/lilyglyphs
 %{_texdir}/texmf-dist/fonts/opentype/public/lilyglyphs/
 %{_texdir}/texmf-dist/scripts/lilyglyphs/
-%{_texdir}/texmf-dist/tex/lualatex/lilyglyphs/
-%doc %{_texdir}/texmf-dist/doc/lualatex/lilyglyphs/
+%{_texdir}/texmf-dist/tex/latex/lilyglyphs/
+%doc %{_texdir}/texmf-dist/doc/latex/lilyglyphs/
 
 %files -n %{shortname}-listbib
 %license gpl.txt
@@ -8394,8 +8542,8 @@ done <<< "$list"
 %{_bindir}/optex
 %{fmtutil_cnf_d}/optex
 %{_mandir}/man1/optex.1*
-%{_texdir}/texmf-dist/tex/luatex/optex/
-%doc %{_texdir}/texmf-dist/doc/luatex/optex/
+%{_texdir}/texmf-dist/tex/optex/
+%doc %{_texdir}/texmf-dist/doc/optex/
 
 %files -n %{shortname}-patgen
 %license knuth.txt
@@ -8472,6 +8620,7 @@ done <<< "$list"
 %license lppl1.3.txt
 %{_bindir}/pdfxup
 %{_mandir}/man1/pdfxup.1*
+%{_texdir}/texmf-dist/tex/latex/pdfxup/
 %{_texdir}/texmf-dist/scripts/pdfxup/
 %doc %{_texdir}/texmf-dist/doc/support/pdfxup/
 
@@ -8539,7 +8688,7 @@ done <<< "$list"
 %license gpl2.txt
 %{_bindir}/pst2pdf
 %{_texdir}/texmf-dist/scripts/pst2pdf/
-%doc %{_texdir}/texmf-dist/doc/latex/pst2pdf/
+%doc %{_texdir}/texmf-dist/doc/support/pst2pdf/
 
 %files -n %{shortname}-pst-pdf
 %license lppl1.txt
@@ -8628,6 +8777,7 @@ done <<< "$list"
 %{_texdir}/texmf-dist/fonts/map/dvipdfmx/ptex-fontmaps
 %{_texdir}/texmf-dist/fonts/misc/ptex-fontmaps/
 %{_texdir}/texmf-dist/scripts/ptex-fontmaps
+%{_texdir}/tlpkg/tlpostcode/ptex-fontmaps-tlpost.pl
 %doc %{_texdir}/texmf-dist/doc/fonts/ptex-fontmaps
 
 %files -n %{shortname}-ptex2pdf
@@ -8676,6 +8826,13 @@ done <<< "$list"
 %{_mandir}/man1/dviconcat.1*
 %{_mandir}/man1/dviselect.1*
 %{_mandir}/man1/dvitodvi.1*
+
+%files -n %{shortname}-spix
+%license gpl3.txt
+%{_bindir}/spix
+%{_mandir}/man1/spix*
+%doc %{_texdir}/texmf-dist/doc/support/spix
+%{_texdir}/texmf-dist/scripts/spix
 
 %files -n %{shortname}-splitindex
 %license lppl1.txt
@@ -8980,6 +9137,13 @@ done <<< "$list"
 %{_bindir}/tie
 %{_mandir}/man1/tie.1*
 
+%files -n %{shortname}-tikztosvg
+%license gpl3.txt
+%{_bindir}/tikztosvg
+%{_mandir}/man1/tikztosvg*
+%doc %{_texdir}/texmf-dist/doc/support/tikztosvg
+%{_texdir}/texmf-dist/scripts/tikztosvg
+
 %files -n %{shortname}-tpic2pdftex
 %license gpl.txt
 %{_bindir}/tpic2pdftex
@@ -9144,6 +9308,11 @@ done <<< "$list"
 %doc %{_texdir}/texmf-dist/doc/xindy/
 %endif
 
+%files -n %{shortname}-xml2pmx
+%license gpl3.txt
+%{_bindir}/xml2pmx
+%{_mandir}/man1/xml2pmx*
+
 %files -n %{shortname}-xmltex
 %license lppl1.txt
 %{_bindir}/pdfxmltex
@@ -9166,6 +9335,9 @@ done <<< "$list"
 %doc %{_texdir}/texmf-dist/doc/latex/yplan/
 
 %changelog
+* Thu May  6 2021 Tom Callaway <spot@fedoraproject.org> - 7:20210325-1
+- start work on 20210325
+
 * Thu Apr  1 2021 Tom Callaway <spot@fedoraproject.org> - 7:20200327-30
 - update source urls (except tug urls) to https
 
