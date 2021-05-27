@@ -20,7 +20,7 @@
 
 Name: %{shortname}-base
 Version: %{source_date}
-Release: 32%{?dist}
+Release: 33%{?dist}
 Epoch: 9
 Summary: TeX formatting system
 # The only files in the base package are directories, cache, and license texts
@@ -502,6 +502,8 @@ BuildRequires: texlive-cyrillic, texlive-latex, texlive-metafont, texlive-cm-sup
 BuildRequires: texlive-texlive-scripts
 # This is needed for a test
 BuildRequires: texlive-amsfonts
+# RPATH DIE DIE DIE
+BuildRequires: chrpath
 
 # Cleanup Provides/Obsoletes
 # texlive-cjk-gs-integrate (depackaged 2018-03-09)
@@ -7119,6 +7121,17 @@ mkdir -p %{buildroot}%{_sysconfdir}/texlive/psutils
 mv %{buildroot}%{_texdir}/texmf-dist/psutils/paper.cfg %{buildroot}%{_sysconfdir}/texlive/psutils/paper.cfg
 ln -s %{_sysconfdir}/texlive/psutils/paper.cfg %{buildroot}%{_texdir}/texmf-dist/psutils/paper.cfg
 
+# Some (most) of the binaries are ending up with RPATH despite our best efforts.
+for i in afm2pl afm2tfm aleph bibtex bibtex8 bibtexu chkdvifont chktex ctie ctangle ctwill ctwill-refsort ctwill-twinx cweave detex disdvi dt2dv dv2dt dvi2tty dvibook dviconcat dvicopy dvilj dvilj2p dvilj4 dvilj4l dvipng \
+         dvipos dvips dviselect dvispc dvisvgm dvitodvi dvitype eptex euptex gftodvi gftopk gftype gregorio gsftopk hbf2gf kpsewhich luahbtex luajithbtex luajittex luatex mag makeindex makejvf mendex mf mflua mfluajit mft mf-nowin mpost otftotfm msxlint \
+         odvicopy odvitype omfonts otangle otp2ocp outocp patgen pbibtex pdftex pdftosrc pktogf pdvitype pfb2pfa pk2bm pktype pltotf pmpost pooltype ppltotf ps2pk ptex ptftopl synctex t4ht tangle tex tex4ht tftopl tie tl-epsffit tl-psbook tl-psnup tl-psresize tl-psselect tl-pstops \
+         ttf2afm ttf2pk ttf2tfm ttfdump upbibtex updvitype upmendex upmpost uppltotf uptex uptftopl vftovp vptovf weave wofm2opl wopl2ofm wovf2ovp wovp2ovf xdvi-xaw xdvipdfmx xetex; do
+chrpath --delete %{buildroot}%{_bindir}/$i
+done
+
+# And remove the rpath from this library.
+chrpath --delete %{buildroot}%{_libdir}/libptexenc.so.*
+
 # SCRIPTLETS
 
 %pretrans -p <lua>
@@ -9344,6 +9357,9 @@ done <<< "$list"
 %doc %{_texdir}/texmf-dist/doc/latex/yplan/
 
 %changelog
+* Thu May 27 2021 Tom Callaway <spot@fedoraproject.org> - 9:20210325-33
+- scrape rpath off everything
+
 * Thu May 27 2021 Tom Callaway <spot@fedoraproject.org> - 9:20210325-32
 - 20210325
 
