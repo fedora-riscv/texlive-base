@@ -20,7 +20,7 @@
 
 Name: %{shortname}-base
 Version: %{source_date}
-Release: 31%{?dist}
+Release: 32%{?dist}
 Epoch: 9
 Summary: TeX formatting system
 # The only files in the base package are directories, cache, and license texts
@@ -9335,7 +9335,7 @@ done <<< "$list"
 %doc %{_texdir}/texmf-dist/doc/latex/yplan/
 
 %changelog
-* Thu May 27 2021 Tom Callaway <spot@fedoraproject.org> - 9:20210325-1
+* Thu May 27 2021 Tom Callaway <spot@fedoraproject.org> - 9:20210325-32
 - 20210325
 
 * Thu May 20 2021 Pete Walter <pwalter@fedoraproject.org> - 7:20200327-31
