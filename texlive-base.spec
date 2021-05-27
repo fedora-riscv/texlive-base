@@ -20,7 +20,7 @@
 
 Name: %{shortname}-base
 Version: %{source_date}
-Release: 30%{?dist}
+Release: 31%{?dist}
 Epoch: 9
 Summary: TeX formatting system
 # The only files in the base package are directories, cache, and license texts
@@ -9335,8 +9335,11 @@ done <<< "$list"
 %doc %{_texdir}/texmf-dist/doc/latex/yplan/
 
 %changelog
-* Thu May  6 2021 Tom Callaway <spot@fedoraproject.org> - 7:20210325-1
-- start work on 20210325
+* Thu May 27 2021 Tom Callaway <spot@fedoraproject.org> - 9:20210325-1
+- 20210325
+
+* Thu May 20 2021 Pete Walter <pwalter@fedoraproject.org> - 7:20200327-31
+- Rebuild for ICU 69
 
 * Thu Apr  1 2021 Tom Callaway <spot@fedoraproject.org> - 7:20200327-30
 - update source urls (except tug urls) to https
