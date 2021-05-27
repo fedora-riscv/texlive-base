@@ -495,6 +495,9 @@ BuildRequires: texlive-cyrillic, texlive-latex, texlive-metafont, texlive-cm-sup
 %endif
 # This is temporary to fix build while missing kpathsea dep is active
 BuildRequires: texlive-texlive-scripts
+# This is needed for a test
+BuildRequires: texlive-amsfonts
+
 # Cleanup Provides/Obsoletes
 # texlive-cjk-gs-integrate (depackaged 2018-03-09)
 Provides: texlive-cjk-gs-integrate = %{epoch}:%{source_date}-%{release}
