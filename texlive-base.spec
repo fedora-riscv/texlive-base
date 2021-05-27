@@ -504,6 +504,9 @@ BuildRequires: texlive-texlive-scripts
 BuildRequires: texlive-amsfonts
 # RPATH DIE DIE DIE
 BuildRequires: chrpath
+# Break an ugly dep loop
+BuildRequires: tex(expl3.sty)
+
 
 # Cleanup Provides/Obsoletes
 # texlive-cjk-gs-integrate (depackaged 2018-03-09)
@@ -3028,6 +3031,7 @@ Obsoletes: texlive-latex-doc < 7:20170520
 License: LPPL 1.3
 Summary: A TeX macro package that defines LaTeX
 Requires: texlive-base
+Requires: tex(expl3.sty)
 Requires: texlive-kpathsea
 Requires: texlive-luatex
 Requires: texlive-pdftex
