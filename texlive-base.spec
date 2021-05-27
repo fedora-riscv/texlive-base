@@ -467,6 +467,11 @@ Patch30: texlive-base-20200327-out-of-memory.patch
 # Fix configure to properly detect poppler
 Patch31: texlive-base-20210325-configure-poppler-xpdf-fix.patch
 
+# Apply upstream fixes that fix the bug that makes mendekx and upmendex fail on aarch64, ppc64, s390x
+# http://tug.org/svn/texlive?view=revision&revision=59151
+# http://tug.org/svn/texlive?view=revision&revision=59169
+Patch32: texlive-base-20210325-mendex-weird-arch-fixes.patch
+
 # Can't do this because it causes everything else to be noarch
 # BuildArch: noarch
 BuildRequires: make
@@ -6716,6 +6721,7 @@ xz -dc %{SOURCE0} | tar x
 %endif
 %patch30 -p1 -b .out_of_memory
 %patch31 -p1 -b .poppler-xpdf-fix
+%patch32 -p1 -b .archfix
 
 # Setup copies of the licenses
 for l in `unxz -c %{SOURCE3} | tar t`; do
