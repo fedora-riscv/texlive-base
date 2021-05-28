@@ -7131,11 +7131,17 @@ ln -s %{_sysconfdir}/texlive/psutils/paper.cfg %{buildroot}%{_texdir}/texmf-dist
 
 # Some (most) of the binaries are ending up with RPATH despite our best efforts.
 for i in afm2pl afm2tfm aleph bibtex bibtex8 bibtexu chkdvifont chktex ctie ctangle ctwill ctwill-refsort ctwill-twinx cweave detex disdvi dt2dv dv2dt dvi2tty dvibook dviconcat dvicopy dvilj dvilj2p dvilj4 dvilj4l dvipng \
-         dvipos dvips dviselect dvispc dvisvgm dvitodvi dvitype eptex euptex gftodvi gftopk gftype gregorio gsftopk hbf2gf kpsewhich luahbtex luajithbtex luajittex luatex mag makeindex makejvf mendex mf mflua mfluajit mft mf-nowin mpost otftotfm msxlint \
+         dvipos dvips dviselect dvispc dvisvgm dvitodvi dvitype eptex euptex gftodvi gftopk gftype gregorio gsftopk hbf2gf kpsewhich luahbtex luatex mag makeindex makejvf mendex mf mflua mft mf-nowin mpost otftotfm msxlint \
          odvicopy odvitype omfonts otangle otp2ocp outocp patgen pbibtex pdftex pdftosrc pktogf pdvitype pfb2pfa pk2bm pktype pltotf pmpost pooltype ppltotf ps2pk ptex ptftopl synctex t4ht tangle tex tex4ht tftopl tie tl-epsffit tl-psbook tl-psnup tl-psresize tl-psselect tl-pstops \
          ttf2afm ttf2pk ttf2tfm ttfdump upbibtex updvitype upmendex upmpost uppltotf uptex uptftopl vftovp vptovf weave wofm2opl wopl2ofm wovf2ovp wovp2ovf xdvi-xaw xdvipdfmx xetex; do
 chrpath --delete %{buildroot}%{_bindir}/$i
 done
+
+%ifnarch %{power64} s390 s390x
+chrpath --delete %{buildroot}%{_bindir}/luajithbtex
+chrpath --delete %{buildroot}%{_bindir}/luajittex
+chrpath --delete %{buildroot}%{_bindir}/mfluajit
+%endif
 
 # And remove the rpath from this library.
 chrpath --delete %{buildroot}%{_libdir}/libptexenc.so.*
@@ -9369,6 +9375,7 @@ done <<< "$list"
 - add texlive-gsftopk as a dependency on texlive-texlive-scripts for mktexpk
 - add texlive-psnfss as a dependency on texlive-latex
 - drop Requires: tex(psfonts.map), died with updmap-map
+- conditionalize removing rpath from binaries which aren't always built
 
 * Thu May 27 2021 Tom Callaway <spot@fedoraproject.org> - 9:20210325-33
 - scrape rpath off everything
