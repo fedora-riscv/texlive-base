@@ -20,7 +20,7 @@
 
 Name: %{shortname}-base
 Version: %{source_date}
-Release: 33%{?dist}
+Release: 34%{?dist}
 Epoch: 9
 Summary: TeX formatting system
 # The only files in the base package are directories, cache, and license texts
@@ -2742,7 +2742,8 @@ License: GPL+
 Summary: Convert "ghostscript fonts" to PK files
 Requires: texlive-base
 Requires: texlive-kpathsea
-Requires: tex(psfonts.map)
+# Does not exist in a package anymore
+# Requires: tex(psfonts.map)
 
 %description -n %{shortname}-gsftopk
 Designed for use with xdvi and dvips this utility converts
@@ -3042,6 +3043,8 @@ Requires: texlive-latex-fonts
 # even on rather minimal installs, we add an explicit Requires on texlive-cm-super
 # here. (bz1867927)
 Requires: texlive-cm-super
+# Another font dependency
+Requires: texlive-psnfss
 Requires(post,postun): coreutils
 Requires: tex(multicol.sty)
 Requires: tex(url.sty)
@@ -5797,6 +5800,7 @@ Summary: TeX Live infrastructure programs
 Requires: texlive-base
 Requires: texlive-kpathsea = %{epoch}:%{source_date}-%{release}
 Requires: texlive-texlive.infra
+Requires: texlive-gsftopk
 Provides: texlive-tetex = %{epoch}:%{source_date}-%{release}
 Obsoletes: texlive-tetex < 7:20200327
 # perl
@@ -9361,6 +9365,11 @@ done <<< "$list"
 %doc %{_texdir}/texmf-dist/doc/latex/yplan/
 
 %changelog
+* Fri May 28 2021 Tom Callaway <spot@fedoraproject.org> - 9:20210325-34
+- add texlive-gsftopk as a dependency on texlive-texlive-scripts for mktexpk
+- add texlive-psnfss as a dependency on texlive-latex
+- drop Requires: tex(psfonts.map), died with updmap-map
+
 * Thu May 27 2021 Tom Callaway <spot@fedoraproject.org> - 9:20210325-33
 - scrape rpath off everything
 
