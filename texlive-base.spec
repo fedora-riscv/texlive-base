@@ -20,7 +20,7 @@
 
 Name: %{shortname}-base
 Version: %{source_date}
-Release: 34%{?dist}
+Release: 35%{?dist}
 Epoch: 9
 Summary: TeX formatting system
 # The only files in the base package are directories, cache, and license texts
@@ -7205,7 +7205,10 @@ while read -r line; do
                 %{_bindir}/updmap-sys --nomkmap --enable Map=$shortfile >/dev/null 2>&1 || :
         fi
 done <<< "$list"
-%{_bindir}/updmap-sys --quiet --nomkmap >/dev/null || :
+# With the demise of updmap-map, we need to make system maps here.
+# %{_bindir}/updmap-sys --quiet --nomkmap >/dev/null || :
+yes | %{_bindir}/updmap-sys --quiet --syncwithtrees >/dev/null 2>&1 || :
+%{_bindir}/updmap-sys --quiet --force 2>&1 || :
 
 %transfiletriggerpostun -n %{shortname}-kpathsea -- %{_texdir}/texmf-dist/fonts/map/dvips/
 list=`grep "\.map" | sort -n | uniq`
@@ -7218,7 +7221,10 @@ while read -r line; do
                 %{_bindir}/updmap-sys --nomkmap --disable Map=$shortfile >/dev/null 2>&1 || :
         fi
 done <<< "$list"
-%{_bindir}/updmap-sys --quiet --nomkmap >/dev/null || :
+# With the demise of updmap-map, we need to make system maps here.
+# %{_bindir}/updmap-sys --quiet --nomkmap >/dev/null || :
+yes | %{_bindir}/updmap-sys --quiet --syncwithtrees >/dev/null 2>&1 || :
+%{_bindir}/updmap-sys --quiet --force 2>&1 || :
 
 %transfiletriggerin -n %{shortname}-kpathsea -P 2000000 -- %{_texdir}/fmtutil.cnf.d/
 %{_sbindir}/generate-fmtutilcnf %{_texdir}
@@ -9371,6 +9377,9 @@ done <<< "$list"
 %doc %{_texdir}/texmf-dist/doc/latex/yplan/
 
 %changelog
+* Fri May 28 2021 Tom Callaway <spot@fedoraproject.org> - 9:20210325-35
+- force system font maps to be sync'd with trees and regenerated in the triggers
+
 * Fri May 28 2021 Tom Callaway <spot@fedoraproject.org> - 9:20210325-34
 - add texlive-gsftopk as a dependency on texlive-texlive-scripts for mktexpk
 - add texlive-psnfss as a dependency on texlive-latex
