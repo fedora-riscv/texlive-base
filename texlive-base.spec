@@ -20,7 +20,7 @@
 
 Name: %{shortname}-base
 Version: %{source_date}
-Release: 35%{?dist}
+Release: 36%{?dist}
 Epoch: 9
 Summary: TeX formatting system
 # The only files in the base package are directories, cache, and license texts
@@ -471,6 +471,9 @@ Patch31: texlive-base-20210325-configure-poppler-xpdf-fix.patch
 # http://tug.org/svn/texlive?view=revision&revision=59151
 # http://tug.org/svn/texlive?view=revision&revision=59169
 Patch32: texlive-base-20210325-mendex-weird-arch-fixes.patch
+
+# Remove deprecated setpdfwrite ghostscript call
+Patch33: texlive-base-20210325-no-setpdfwrite.patch
 
 # Can't do this because it causes everything else to be noarch
 # BuildArch: noarch
@@ -6732,6 +6735,7 @@ xz -dc %{SOURCE0} | tar x
 %patch30 -p1 -b .out_of_memory
 %patch31 -p1 -b .poppler-xpdf-fix
 %patch32 -p1 -b .archfix
+%patch33 -p1 -b .no-setpdfwrite
 
 # Setup copies of the licenses
 for l in `unxz -c %{SOURCE3} | tar t`; do
@@ -9377,6 +9381,9 @@ yes | %{_bindir}/updmap-sys --quiet --syncwithtrees >/dev/null 2>&1 || :
 %doc %{_texdir}/texmf-dist/doc/latex/yplan/
 
 %changelog
+* Mon Jun 21 2021 Tom Callaway <spot@fedoraproject.org> - 9:20210325-36
+- remove deprecated .setpdfwrite ghostscript call
+
 * Fri May 28 2021 Tom Callaway <spot@fedoraproject.org> - 9:20210325-35
 - force system font maps to be sync'd with trees and regenerated in the triggers
 
