@@ -3788,7 +3788,6 @@ conversion software and word processors.
 
 %package -n %{shortname}-lyluatex
 Summary: Commands to include lilypond scores within a (Lua)LaTeX document
-Version: svn51252
 License: MIT
 Requires: texlive-base texlive-kpathsea
 Provides: tex(lyluatex.lua) = %{epoch}:%{source_date}-%{release}
@@ -9388,6 +9387,7 @@ yes | %{_bindir}/updmap-sys --quiet --syncwithtrees >/dev/null 2>&1 || :
 * Wed Jun 23 2021 Tom Callaway <spot@fedoraproject.org> - 9:20210325-37
 - fix fonts/map/dvips ownership
 - rename dvipdfm35.map to dvipdfm35.oldmap to prevent it from being included in pdftex.map
+- fix lyluatex versioning
 
 * Mon Jun 21 2021 Tom Callaway <spot@fedoraproject.org> - 9:20210325-36
 - remove deprecated .setpdfwrite ghostscript call
