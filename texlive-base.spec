@@ -20,7 +20,7 @@
 
 Name: %{shortname}-base
 Version: %{source_date}
-Release: 36%{?dist}
+Release: 37%{?dist}
 Epoch: 9
 Summary: TeX formatting system
 # The only files in the base package are directories, cache, and license texts
@@ -7150,6 +7150,10 @@ chrpath --delete %{buildroot}%{_bindir}/mfluajit
 # And remove the rpath from this library.
 chrpath --delete %{buildroot}%{_libdir}/libptexenc.so.*
 
+# This map file provided by texlive-scripts is not useful and confuses lots of things when it ends up in pdftex.map
+# Renaming it should prevent it from being included
+mv %{buildroot}%{_texdir}/texmf-dist/fonts/map/dvips/tetex/dvipdfm35.map %{buildroot}%{_texdir}/texmf-dist/fonts/map/dvips/tetex/dvipdfm35.oldmap
+
 # SCRIPTLETS
 
 %pretrans -p <lua>
@@ -7884,7 +7888,7 @@ yes | %{_bindir}/updmap-sys --quiet --syncwithtrees >/dev/null 2>&1 || :
 %{_texdir}/texmf-dist/dvips/config/qms.cfg
 %{_texdir}/texmf-dist/dvips/config/toshiba.cfg
 %{_texdir}/texmf-dist/fonts/enc/dvips/base/
-%{_texdir}/texmf-dist/fonts/map/dvips/
+%dir %{_texdir}/texmf-dist/fonts/map/dvips/
 %{_texdir}/texmf-dist/tex/generic/dvips/
 %doc %{_texdir}/texmf-dist/doc/dvips/
 
@@ -9381,6 +9385,10 @@ yes | %{_bindir}/updmap-sys --quiet --syncwithtrees >/dev/null 2>&1 || :
 %doc %{_texdir}/texmf-dist/doc/latex/yplan/
 
 %changelog
+* Wed Jun 23 2021 Tom Callaway <spot@fedoraproject.org> - 9:20210325-37
+- fix fonts/map/dvips ownership
+- rename dvipdfm35.map to dvipdfm35.oldmap to prevent it from being included in pdftex.map
+
 * Mon Jun 21 2021 Tom Callaway <spot@fedoraproject.org> - 9:20210325-36
 - remove deprecated .setpdfwrite ghostscript call
 
