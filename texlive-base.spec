@@ -16,7 +16,7 @@
 %global __brp_mangle_shebangs_exclude ^$
 
 # We have a circular dep on latex due to xindy
-%bcond_with bootstrap
+%bcond_without bootstrap
 
 Name: %{shortname}-base
 Version: %{source_date}
