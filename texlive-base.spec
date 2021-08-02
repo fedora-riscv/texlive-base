@@ -20,7 +20,7 @@
 
 Name: %{shortname}-base
 Version: %{source_date}
-Release: 38%{?dist}
+Release: 39%{?dist}
 Epoch: 9
 Summary: TeX formatting system
 # The only files in the base package are directories, cache, and license texts
@@ -9384,6 +9384,9 @@ yes | %{_bindir}/updmap-sys --quiet --syncwithtrees >/dev/null 2>&1 || :
 %doc %{_texdir}/texmf-dist/doc/latex/yplan/
 
 %changelog
+* Mon Aug  2 2021 Tom Callaway <spot@fedoraproject.org> - 9:20210325-39
+- rebuild for poppler
+
 * Fri Jul 23 2021 Fedora Release Engineering <releng@fedoraproject.org> - 9:20210325-38
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_35_Mass_Rebuild
 
