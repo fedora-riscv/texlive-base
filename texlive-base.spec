@@ -16,11 +16,11 @@
 %global __brp_mangle_shebangs_exclude ^$
 
 # We have a circular dep on latex due to xindy
-%bcond_without bootstrap
+%bcond_with bootstrap
 
 Name: %{shortname}-base
 Version: %{source_date}
-Release: 39%{?dist}
+Release: 40%{?dist}
 Epoch: 9
 Summary: TeX formatting system
 # The only files in the base package are directories, cache, and license texts
@@ -9384,6 +9384,9 @@ yes | %{_bindir}/updmap-sys --quiet --syncwithtrees >/dev/null 2>&1 || :
 %doc %{_texdir}/texmf-dist/doc/latex/yplan/
 
 %changelog
+* Mon Aug  2 2021 Tom Callaway <spot@fedoraproject.org> - 9:20210325-40
+- bootstrap off
+
 * Mon Aug  2 2021 Tom Callaway <spot@fedoraproject.org> - 9:20210325-39
 - rebuild for poppler
 
