@@ -20,7 +20,7 @@
 
 Name: %{shortname}-base
 Version: %{source_date}
-Release: 40%{?dist}
+Release: 41%{?dist}
 Epoch: 9
 Summary: TeX formatting system
 # The only files in the base package are directories, cache, and license texts
@@ -9384,6 +9384,9 @@ yes | %{_bindir}/updmap-sys --quiet --syncwithtrees >/dev/null 2>&1 || :
 %doc %{_texdir}/texmf-dist/doc/latex/yplan/
 
 %changelog
+* Mon Aug 16 2021 Stephen Gallagher <sgallagh@redhat.com> - 9:20210325-41
+- Rebuild for libpoppler soname bump
+
 * Mon Aug  2 2021 Tom Callaway <spot@fedoraproject.org> - 9:20210325-40
 - bootstrap off
 
