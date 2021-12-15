@@ -18,6 +18,8 @@
 # We have a circular dep on latex due to xindy
 %bcond_with bootstrap
 
+%define _lto_cflags %{nil}
+
 Name: %{shortname}-base
 Version: %{source_date}
 Release: 43%{?dist}
@@ -9394,9 +9396,6 @@ yes | %{_bindir}/updmap-sys --quiet --syncwithtrees >/dev/null 2>&1 || :
 %changelog
 * Wed Dec 15 2021 Tom Callaway <spot@fedoraproject.org> - 9:20210325-43
 - rework the font map trigger logic
-
-* Wed Sep 08 2021 Than Ngo <than@redhat.com> - 9:20210325-42
-- Re-enable LTO
 
 * Mon Aug 16 2021 Stephen Gallagher <sgallagh@redhat.com> - 9:20210325-41
 - Rebuild for libpoppler soname bump
