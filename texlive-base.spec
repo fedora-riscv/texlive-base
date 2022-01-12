@@ -22,7 +22,7 @@
 
 Name: %{shortname}-base
 Version: %{source_date}
-Release: 43%{?dist}
+Release: 44%{?dist}
 Epoch: 9
 Summary: TeX formatting system
 # The only files in the base package are directories, cache, and license texts
@@ -9394,6 +9394,9 @@ yes | %{_bindir}/updmap-sys --quiet --syncwithtrees >/dev/null 2>&1 || :
 %doc %{_texdir}/texmf-dist/doc/latex/yplan/
 
 %changelog
+* Tue Jan 11 2022 Tom Callaway <spot@fedoraproject.org> - 9:20210325-44
+- update arara to address log4j CVEs
+
 * Wed Dec 15 2021 Tom Callaway <spot@fedoraproject.org> - 9:20210325-43
 - rework the font map trigger logic
 
