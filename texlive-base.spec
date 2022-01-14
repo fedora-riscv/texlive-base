@@ -475,6 +475,9 @@ Patch32: texlive-base-20210325-mendex-weird-arch-fixes.patch
 # Remove deprecated setpdfwrite ghostscript call
 Patch33: texlive-base-20210325-no-setpdfwrite.patch
 
+# Poppler 22
+Patch34: texlive-base-20210325-poppler-22.01.0.patch
+
 # Can't do this because it causes everything else to be noarch
 # BuildArch: noarch
 BuildRequires: make
@@ -6735,6 +6738,7 @@ xz -dc %{SOURCE0} | tar x
 %patch31 -p1 -b .poppler-xpdf-fix
 %patch32 -p1 -b .archfix
 %patch33 -p1 -b .no-setpdfwrite
+%patch34 -p1 -b .poppler22
 
 # Setup copies of the licenses
 for l in `unxz -c %{SOURCE3} | tar t`; do
@@ -6788,7 +6792,7 @@ rm -f dummy.*
 %endif
 
 export CFLAGS="$RPM_OPT_FLAGS -fno-strict-aliasing -Werror=format-security"
-export CXXFLAGS="$RPM_OPT_FLAGS -std=c++11 -fno-strict-aliasing -Werror=format-security"
+export CXXFLAGS="$RPM_OPT_FLAGS -std=c++17 -fno-strict-aliasing -Werror=format-security"
 cd source
 PREF=`pwd`/inst
 mkdir -p work
