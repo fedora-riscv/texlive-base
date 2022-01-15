@@ -6792,7 +6792,7 @@ rm -f dummy.*
 %endif
 
 export CFLAGS="$RPM_OPT_FLAGS -fno-strict-aliasing -Werror=format-security"
-export CXXFLAGS="$RPM_OPT_FLAGS -std=c++17 -fno-strict-aliasing -Werror=format-security"
+export CXXFLAGS="$RPM_OPT_FLAGS -fno-strict-aliasing -Werror=format-security"
 cd source
 PREF=`pwd`/inst
 mkdir -p work
