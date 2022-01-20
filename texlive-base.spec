@@ -20,7 +20,7 @@
 
 Name: %{shortname}-base
 Version: %{source_date}
-Release: 46%{?dist}
+Release: 47%{?dist}
 Epoch: 9
 Summary: TeX formatting system
 # The only files in the base package are directories, cache, and license texts
@@ -477,6 +477,8 @@ Patch33: texlive-base-20210325-no-setpdfwrite.patch
 
 # Poppler 22
 Patch34: texlive-base-20210325-poppler-22.01.0.patch
+# Fix crash in handling Group
+Patch35: texlive-base-20210325-pdftoepdf-fix-crash.patch
 
 # Can't do this because it causes everything else to be noarch
 # BuildArch: noarch
@@ -6741,6 +6743,7 @@ xz -dc %{SOURCE0} | tar x
 
 %if 0%{?fedora} >= 36
 %patch34 -p1 -b .poppler22
+%patch35 -p1 -b .poppler-crash-fix
 %endif
 
 # Setup copies of the licenses
@@ -9404,6 +9407,9 @@ yes | %{_bindir}/updmap-sys --quiet --syncwithtrees >/dev/null 2>&1 || :
 %doc %{_texdir}/texmf-dist/doc/latex/yplan/
 
 %changelog
+* Thu Jan 20 2022 Tom Callaway <spot@fedoraproject.org> - 9:20210325-47
+- replace group handling code in pdftoepdf.cc with code that is simpler (and does not crash)
+
 * Sat Jan 15 2022 Tom Callaway <spot@fedoraproject.org> - 9:20210325-46
 - bootstrap off (conditionalize poppler changes)
 
