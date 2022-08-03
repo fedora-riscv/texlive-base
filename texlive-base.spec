@@ -20,7 +20,7 @@
 
 Name: %{shortname}-base
 Version: %{source_date}
-Release: 48%{?dist}
+Release: 49%{?dist}
 Epoch: 9
 Summary: TeX formatting system
 # The only files in the base package are directories, cache, and license texts
@@ -9407,6 +9407,9 @@ yes | %{_bindir}/updmap-sys --quiet --syncwithtrees >/dev/null 2>&1 || :
 %doc %{_texdir}/texmf-dist/doc/latex/yplan/
 
 %changelog
+* Wed Aug 03 2022 Mamoru TASAKA <mtasaka@fedoraproject.org> - 9:20210325-49
+- Rebuild for ICU 71.1
+
 * Sat Jul 23 2022 Fedora Release Engineering <releng@fedoraproject.org> - 9:20210325-48
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_37_Mass_Rebuild
 
