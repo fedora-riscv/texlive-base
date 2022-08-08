@@ -16,11 +16,11 @@
 %global __brp_mangle_shebangs_exclude ^$
 
 # We have a circular dep on latex due to xindy
-%bcond_with bootstrap
+%bcond_without bootstrap
 
 Name: %{shortname}-base
 Version: %{source_date}
-Release: 49%{?dist}
+Release: 50%{?dist}
 Epoch: 9
 Summary: TeX formatting system
 # The only files in the base package are directories, cache, and license texts
@@ -479,6 +479,8 @@ Patch33: texlive-base-20210325-no-setpdfwrite.patch
 Patch34: texlive-base-20210325-poppler-22.01.0.patch
 # Fix crash in handling Group
 Patch35: texlive-base-20210325-pdftoepdf-fix-crash.patch
+# Poppler 22.08.0
+Patch36: texlive-base-20210325-poppler-22.08.0.patch
 
 # Can't do this because it causes everything else to be noarch
 # BuildArch: noarch
@@ -6746,6 +6748,10 @@ xz -dc %{SOURCE0} | tar x
 %patch35 -p1 -b .poppler-crash-fix
 %endif
 
+%if 0%{?fedora} >= 37
+%patch36 -p1 -b .poppler-22.08.0
+%endif
+
 # Setup copies of the licenses
 for l in `unxz -c %{SOURCE3} | tar t`; do
 ln -s %{_texdir}/licenses/$l $l
@@ -9407,6 +9413,9 @@ yes | %{_bindir}/updmap-sys --quiet --syncwithtrees >/dev/null 2>&1 || :
 %doc %{_texdir}/texmf-dist/doc/latex/yplan/
 
 %changelog
+* Mon Aug 08 2022 Marek Kasik <mkasik@redhat.com> - 9:20210325-50
+- Rebuild for poppler 22.08.0 - bootstrap on
+
 * Wed Aug 03 2022 Mamoru TASAKA <mtasaka@fedoraproject.org> - 9:20210325-49
 - Rebuild for ICU 71.1
 
