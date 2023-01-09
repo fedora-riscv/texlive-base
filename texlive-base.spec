@@ -20,7 +20,7 @@
 
 Name: %{shortname}-base
 Version: %{source_date}
-Release: 56%{?dist}
+Release: 57%{?dist}
 Epoch: 10
 Summary: TeX formatting system
 # The only files in the base package are directories, cache, and license texts
@@ -10131,6 +10131,9 @@ yes | %{_bindir}/updmap-sys --quiet --syncwithtrees >/dev/null 2>&1 || :
 %doc %{_texdir}/texmf-dist/doc/latex/yplan/
 
 %changelog
+* Sun Jan  8 2023 Tom Callaway <spot@fedoraproject.org> - 10:20220321-57
+- rebuild against libpaper v2
+
 * Sat Jan  7 2023 Tom Callaway <spot@fedoraproject.org> - 10:20220321-56
 - add dependency on texlive-lua-uni-algos on texlive-luaotfload (bz2158837)
 
