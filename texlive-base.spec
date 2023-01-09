@@ -495,6 +495,10 @@ Patch35: texlive-base-20210325-pdftoepdf-fix-crash.patch
 # Poppler 22.08.0
 Patch36: texlive-base-20220321-poppler-22.08.0.patch
 
+# libpaper v2 changes
+# 1. one psutils test needs adjustment, see https://github.com/rrthomas/libpaper/issues/23
+Patch37: texlive-base-libpaperv2.patch
+
 # Can't do this because it causes everything else to be noarch
 # BuildArch: noarch
 BuildRequires: make
@@ -7408,6 +7412,10 @@ xz -dc %{SOURCE0} | tar x
 
 %if 0%{?fedora} >= 37 || 0%{?rhel} > 9
 %patch36 -p1 -b .poppler-22.08.0
+%endif
+
+%if 0%{?fedora} >= 38 || 0%{?rhel} > 10
+%patch37 -p1 -b .libpaper2
 %endif
 
 # Setup copies of the licenses
