@@ -1644,7 +1644,7 @@ diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/Makefile.in.301 t
  @CODE_COVERAGE_ENABLED_TRUE@lcov_dir = $(top_builddir)/lcov
 diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/AGLTable.hpp.301 texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/AGLTable.hpp
 --- texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/AGLTable.hpp.301	2022-01-21 12:25:16.000000000 -0500
-+++ texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/AGLTable.hpp	2023-01-17 15:53:51.699205253 -0500
++++ texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/AGLTable.hpp	2023-01-17 16:37:01.639082483 -0500
 @@ -2,7 +2,7 @@
  ** AGLTable.hpp                                                         **
  **                                                                      **
@@ -1654,6 +1654,14 @@ diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/AGLTable.hpp.
  **                                                                      **
  ** This program is free software; you can redistribute it and/or        **
  ** modify it under the terms of the GNU General Public License as       **
+@@ -26,6 +26,7 @@
+  * http://tug.ctan.org/macros/latex/contrib/pdfx/glyphtounicode-cmr.tex */
+ 
+ #include <array>
++#include <cstdint>
+ 
+ struct HashCodepointPair {
+ 	uint32_t hash;
 diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/BasicDVIReader.cpp.301 texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/BasicDVIReader.cpp
 --- texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/BasicDVIReader.cpp.301	2022-01-21 12:25:16.000000000 -0500
 +++ texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/BasicDVIReader.cpp	2023-01-17 15:53:51.699205253 -0500
@@ -2084,7 +2092,7 @@ diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/Bitmap.cpp.30
  ** modify it under the terms of the GNU General Public License as       **
 diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/Bitmap.hpp.301 texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/Bitmap.hpp
 --- texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/Bitmap.hpp.301	2022-01-21 12:25:16.000000000 -0500
-+++ texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/Bitmap.hpp	2023-01-17 15:53:51.700205265 -0500
++++ texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/Bitmap.hpp	2023-01-17 16:32:18.684782410 -0500
 @@ -2,7 +2,7 @@
  ** Bitmap.hpp                                                           **
  **                                                                      **
@@ -2094,6 +2102,14 @@ diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/Bitmap.hpp.30
  **                                                                      **
  ** This program is free software; you can redistribute it and/or        **
  ** modify it under the terms of the GNU General Public License as       **
+@@ -23,6 +23,7 @@
+ 
+ #include <ostream>
+ #include <vector>
++#include <cstdint>
+ 
+ 
+ class Bitmap {
 diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/BoundingBox.cpp.301 texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/BoundingBox.cpp
 --- texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/BoundingBox.cpp.301	2022-02-28 17:04:29.000000000 -0500
 +++ texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/BoundingBox.cpp	2023-01-17 15:53:51.700205265 -0500
@@ -2144,7 +2160,7 @@ diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/Calculator.hp
  ** modify it under the terms of the GNU General Public License as       **
 diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/Character.hpp.301 texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/Character.hpp
 --- texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/Character.hpp.301	2022-01-21 12:25:16.000000000 -0500
-+++ texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/Character.hpp	2023-01-17 15:53:51.700205265 -0500
++++ texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/Character.hpp	2023-01-17 16:37:44.642584029 -0500
 @@ -2,7 +2,7 @@
  ** Character.hpp                                                        **
  **                                                                      **
@@ -2154,6 +2170,14 @@ diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/Character.hpp
  **                                                                      **
  ** This program is free software; you can redistribute it and/or        **
  ** modify it under the terms of the GNU General Public License as       **
+@@ -21,6 +21,7 @@
+ #ifndef CHARACTER_HPP
+ #define CHARACTER_HPP
+ 
++#include <cstdint>
+ 
+ class Character {
+ 	public:
 diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/CharMapID.cpp.301 texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/CharMapID.cpp
 --- texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/CharMapID.cpp.301	2022-01-21 12:25:16.000000000 -0500
 +++ texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/CharMapID.cpp	2023-01-17 15:53:51.700205265 -0500
@@ -2264,7 +2288,7 @@ diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/CMap.cpp.301 
  	}
 diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/CMap.hpp.301 texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/CMap.hpp
 --- texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/CMap.hpp.301	2022-01-21 12:25:16.000000000 -0500
-+++ texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/CMap.hpp	2023-01-17 15:53:51.701205277 -0500
++++ texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/CMap.hpp	2023-01-17 16:38:02.135788051 -0500
 @@ -2,7 +2,7 @@
  ** CMap.hpp                                                             **
  **                                                                      **
@@ -2274,6 +2298,14 @@ diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/CMap.hpp.301 
  **                                                                      **
  ** This program is free software; you can redistribute it and/or        **
  ** modify it under the terms of the GNU General Public License as       **
+@@ -22,6 +22,7 @@
+ #define CMAP_HPP
+ 
+ #include <algorithm>
++#include <cstdint>
+ #include <ostream>
+ #include <vector>
+ #include "FontEncoding.hpp"
 diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/CMapManager.cpp.301 texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/CMapManager.cpp
 --- texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/CMapManager.cpp.301	2022-01-21 12:25:16.000000000 -0500
 +++ texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/CMapManager.cpp	2023-01-17 15:53:51.701205277 -0500
@@ -2300,7 +2332,7 @@ diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/CMapManager.h
  ** modify it under the terms of the GNU General Public License as       **
 diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/CMapReader.cpp.301 texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/CMapReader.cpp
 --- texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/CMapReader.cpp.301	2022-01-21 12:25:16.000000000 -0500
-+++ texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/CMapReader.cpp	2023-01-17 15:53:51.701205277 -0500
++++ texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/CMapReader.cpp	2023-01-17 16:38:29.444106546 -0500
 @@ -2,7 +2,7 @@
  ** CMapReader.cpp                                                       **
  **                                                                      **
@@ -2310,6 +2342,14 @@ diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/CMapReader.cp
  **                                                                      **
  ** This program is free software; you can redistribute it and/or        **
  ** modify it under the terms of the GNU General Public License as       **
+@@ -20,6 +20,7 @@
+ 
+ #include <algorithm>
+ #include <array>
++#include <cstdint>
+ #include <fstream>
+ #include <sstream>
+ #include "CMap.hpp"
 diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/CMapReader.hpp.301 texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/CMapReader.hpp
 --- texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/CMapReader.hpp.301	2022-01-21 12:25:16.000000000 -0500
 +++ texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/CMapReader.hpp	2023-01-17 15:53:51.701205277 -0500
@@ -2336,7 +2376,7 @@ diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/Color.cpp.301
  ** modify it under the terms of the GNU General Public License as       **
 diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/Color.hpp.301 texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/Color.hpp
 --- texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/Color.hpp.301	2022-01-21 12:25:16.000000000 -0500
-+++ texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/Color.hpp	2023-01-17 15:53:51.701205277 -0500
++++ texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/Color.hpp	2023-01-17 16:34:06.270037168 -0500
 @@ -2,7 +2,7 @@
  ** Color.hpp                                                            **
  **                                                                      **
@@ -2346,6 +2386,14 @@ diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/Color.hpp.301
  **                                                                      **
  ** This program is free software; you can redistribute it and/or        **
  ** modify it under the terms of the GNU General Public License as       **
+@@ -24,6 +24,7 @@
+ #include <string>
+ #include <valarray>
+ #include <vector>
++#include <cstdint>
+ #include "VectorIterator.hpp"
+ 
+ #ifdef TRANSPARENT
 diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/ColorSpecialHandler.cpp.301 texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/ColorSpecialHandler.cpp
 --- texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/ColorSpecialHandler.cpp.301	2022-01-21 12:25:16.000000000 -0500
 +++ texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/ColorSpecialHandler.cpp	2023-01-17 15:53:51.701205277 -0500
@@ -2480,7 +2528,7 @@ diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/DVIActions.hp
  ** modify it under the terms of the GNU General Public License as       **
 diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/DVIReader.cpp.301 texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/DVIReader.cpp
 --- texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/DVIReader.cpp.301	2022-01-21 12:25:16.000000000 -0500
-+++ texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/DVIReader.cpp	2023-01-17 15:53:51.702205288 -0500
++++ texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/DVIReader.cpp	2023-01-17 16:40:43.562667256 -0500
 @@ -2,7 +2,7 @@
  ** DVIReader.cpp                                                        **
  **                                                                      **
@@ -2579,7 +2627,7 @@ diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/DVIReader.cpp
  
 diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/DVIReader.hpp.301 texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/DVIReader.hpp
 --- texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/DVIReader.hpp.301	2022-01-21 12:25:16.000000000 -0500
-+++ texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/DVIReader.hpp	2023-01-17 15:53:51.702205288 -0500
++++ texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/DVIReader.hpp	2023-01-17 16:40:36.417584653 -0500
 @@ -2,7 +2,7 @@
  ** DVIReader.hpp                                                        **
  **                                                                      **
@@ -2589,6 +2637,14 @@ diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/DVIReader.hpp
  **                                                                      **
  ** This program is free software; you can redistribute it and/or        **
  ** modify it under the terms of the GNU General Public License as       **
+@@ -21,6 +21,7 @@
+ #ifndef DVIREADER_HPP
+ #define DVIREADER_HPP
+ 
++#include <cstdint>
+ #include <limits>
+ #include <map>
+ #include <stack>
 diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/dvisvgm.cpp.301 texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/dvisvgm.cpp
 --- texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/dvisvgm.cpp.301	2022-01-21 12:25:16.000000000 -0500
 +++ texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/dvisvgm.cpp	2023-01-17 15:53:51.702205288 -0500
@@ -3363,7 +3419,7 @@ diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/EncFile.cpp.3
  ** modify it under the terms of the GNU General Public License as       **
 diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/EncFile.hpp.301 texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/EncFile.hpp
 --- texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/EncFile.hpp.301	2022-01-21 12:25:16.000000000 -0500
-+++ texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/EncFile.hpp	2023-01-17 15:53:51.703205300 -0500
++++ texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/EncFile.hpp	2023-01-17 16:41:00.380861690 -0500
 @@ -2,7 +2,7 @@
  ** EncFile.hpp                                                          **
  **                                                                      **
@@ -3373,6 +3429,14 @@ diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/EncFile.hpp.3
  **                                                                      **
  ** This program is free software; you can redistribute it and/or        **
  ** modify it under the terms of the GNU General Public License as       **
+@@ -21,6 +21,7 @@
+ #ifndef ENCFILE_HPP
+ #define ENCFILE_HPP
+ 
++#include <cstdint>
+ #include <istream>
+ #include <map>
+ #include <string>
 diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/EPSFile.cpp.301 texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/EPSFile.cpp
 --- texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/EPSFile.cpp.301	2022-01-21 12:25:16.000000000 -0500
 +++ texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/EPSFile.cpp	2023-01-17 15:53:51.703205300 -0500
@@ -3387,7 +3451,7 @@ diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/EPSFile.cpp.3
  ** modify it under the terms of the GNU General Public License as       **
 diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/EPSFile.hpp.301 texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/EPSFile.hpp
 --- texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/EPSFile.hpp.301	2022-01-21 12:25:16.000000000 -0500
-+++ texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/EPSFile.hpp	2023-01-17 15:53:51.703205300 -0500
++++ texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/EPSFile.hpp	2023-01-17 16:41:12.689003984 -0500
 @@ -2,7 +2,7 @@
  ** EPSFile.hpp                                                          **
  **                                                                      **
@@ -3397,6 +3461,14 @@ diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/EPSFile.hpp.3
  **                                                                      **
  ** This program is free software; you can redistribute it and/or        **
  ** modify it under the terms of the GNU General Public License as       **
+@@ -21,6 +21,7 @@
+ #ifndef EPSFILE_HPP
+ #define EPSFILE_HPP
+ 
++#include <cstdint>
+ #include <fstream>
+ #include <istream>
+ #include <string>
 diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/EPSToSVG.hpp.301 texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/EPSToSVG.hpp
 --- texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/EPSToSVG.hpp.301	2022-01-21 12:25:16.000000000 -0500
 +++ texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/EPSToSVG.hpp	2023-01-17 15:53:51.703205300 -0500
@@ -3696,7 +3768,7 @@ diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/FileSystem.cp
  
 diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/FileSystem.hpp.301 texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/FileSystem.hpp
 --- texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/FileSystem.hpp.301	2022-01-21 12:25:16.000000000 -0500
-+++ texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/FileSystem.hpp	2023-01-17 15:53:51.704205311 -0500
++++ texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/FileSystem.hpp	2023-01-18 10:14:44.009823202 -0500
 @@ -2,7 +2,7 @@
  ** FileSystem.hpp                                                       **
  **                                                                      **
@@ -3706,7 +3778,15 @@ diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/FileSystem.hp
  **                                                                      **
  ** This program is free software; you can redistribute it and/or        **
  ** modify it under the terms of the GNU General Public License as       **
-@@ -28,7 +28,7 @@ class FileSystem {
+@@ -21,6 +21,7 @@
+ #ifndef FILESYSTEM_HPP
+ #define FILESYSTEM_HPP
+ 
++#include <cstdint>
+ #include <string>
+ #include <vector>
+ 
+@@ -28,7 +29,7 @@ class FileSystem {
  	class TemporaryDirectory {
  		friend class FileSystem;
  		public:
@@ -3715,7 +3795,7 @@ diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/FileSystem.hp
  			TemporaryDirectory (TemporaryDirectory &&tmpdir) =default;
  			~TemporaryDirectory ();
  			TemporaryDirectory& operator = (TemporaryDirectory &&tmpdir) =default;
-@@ -47,11 +47,12 @@ class FileSystem {
+@@ -47,11 +48,12 @@ class FileSystem {
  		static bool copy (const std::string &src, const std::string &dest, bool remove_src=false);
  		static uint64_t filesize (const std::string &fname);
  		static std::string ensureForwardSlashes (std::string path);
@@ -3755,7 +3835,7 @@ diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/FontCache.cpp
  ** modify it under the terms of the GNU General Public License as       **
 diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/FontCache.hpp.301 texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/FontCache.hpp
 --- texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/FontCache.hpp.301	2022-01-21 12:25:16.000000000 -0500
-+++ texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/FontCache.hpp	2023-01-17 15:53:51.704205311 -0500
++++ texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/FontCache.hpp	2023-01-17 16:41:25.575152960 -0500
 @@ -2,7 +2,7 @@
  ** FontCache.hpp                                                        **
  **                                                                      **
@@ -3765,6 +3845,14 @@ diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/FontCache.hpp
  **                                                                      **
  ** This program is free software; you can redistribute it and/or        **
  ** modify it under the terms of the GNU General Public License as       **
+@@ -21,6 +21,7 @@
+ #ifndef FONTCACHE_HPP
+ #define FONTCACHE_HPP
+ 
++#include <cstdint>
+ #include <map>
+ #include <string>
+ #include <vector>
 diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/Font.cpp.301 texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/Font.cpp
 --- texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/Font.cpp.301	2022-01-21 12:25:16.000000000 -0500
 +++ texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/Font.cpp	2023-01-17 15:53:51.704205311 -0500
@@ -3956,7 +4044,7 @@ diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/FontEncoding.
  ** modify it under the terms of the GNU General Public License as       **
 diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/FontEncoding.hpp.301 texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/FontEncoding.hpp
 --- texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/FontEncoding.hpp.301	2022-01-21 12:25:16.000000000 -0500
-+++ texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/FontEncoding.hpp	2023-01-17 15:53:51.704205311 -0500
++++ texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/FontEncoding.hpp	2023-01-17 16:41:57.041516740 -0500
 @@ -2,7 +2,7 @@
  ** FontEncoding.hpp                                                     **
  **                                                                      **
@@ -3966,9 +4054,17 @@ diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/FontEncoding.
  **                                                                      **
  ** This program is free software; you can redistribute it and/or        **
  ** modify it under the terms of the GNU General Public License as       **
+@@ -21,6 +21,7 @@
+ #ifndef FONTENCODING_HPP
+ #define FONTENCODING_HPP
+ 
++#include <cstdint>
+ #include <string>
+ #include "Character.hpp"
+ 
 diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/FontEngine.cpp.301 texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/FontEngine.cpp
 --- texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/FontEngine.cpp.301	2022-01-21 12:25:16.000000000 -0500
-+++ texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/FontEngine.cpp	2023-01-17 15:53:51.704205311 -0500
++++ texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/FontEngine.cpp	2023-01-17 16:42:19.770779511 -0500
 @@ -2,7 +2,7 @@
  ** FontEngine.cpp                                                       **
  **                                                                      **
@@ -3978,7 +4074,15 @@ diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/FontEngine.cp
  **                                                                      **
  ** This program is free software; you can redistribute it and/or        **
  ** modify it under the terms of the GNU General Public License as       **
-@@ -29,6 +29,7 @@
+@@ -19,6 +19,7 @@
+ *************************************************************************/
+ 
+ #include <cmath>
++#include <cstdint>
+ #include <sstream>
+ #include <ft2build.h>
+ #include FT_ADVANCES_H
+@@ -29,6 +30,7 @@
  #include "Font.hpp"
  #include "FontEngine.hpp"
  #include "FontStyle.hpp"
@@ -3986,7 +4090,7 @@ diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/FontEngine.cp
  #include "Message.hpp"
  #include "utility.hpp"
  
-@@ -88,7 +89,19 @@ string FontEngine::version () {
+@@ -88,7 +90,19 @@ string FontEngine::version () {
  bool FontEngine::setFont (const string &fname, int fontindex, const CharMapID &charMapID) {
  	if (_currentFace && FT_Done_Face(_currentFace))
  		Message::estream(true) << "failed to release font\n";
@@ -4007,7 +4111,7 @@ diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/FontEngine.cp
  		Message::estream(true) << "can't read font file " << fname << '\n';
  		return false;
  	}
-@@ -115,16 +128,24 @@ bool FontEngine::setFont (const Font &fo
+@@ -115,16 +129,24 @@ bool FontEngine::setFont (const Font &fo
  
  bool FontEngine::isCIDFont() const {
  	FT_Bool cid_keyed;
@@ -4038,7 +4142,7 @@ diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/FontEngine.cp
  		}
  	}
  	return false;
-@@ -149,22 +170,24 @@ void FontEngine::buildGidToCharCodeMap (
+@@ -149,22 +171,24 @@ void FontEngine::buildGidToCharCodeMap (
  /** Creates a charmap that maps from the custom character encoding to Unicode.
   *  @return pointer to charmap if it could be created, 0 otherwise */
  unique_ptr<const RangeMap> FontEngine::createCustomToUnicodeMap () {
@@ -4077,7 +4181,7 @@ diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/FontEngine.cp
  	return std::move(charmap);
  }
  
-@@ -179,6 +202,27 @@ const char* FontEngine::getStyleName ()
+@@ -179,6 +203,27 @@ const char* FontEngine::getStyleName ()
  }
  
  
@@ -4105,7 +4209,7 @@ diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/FontEngine.cp
  int FontEngine::getUnitsPerEM () const {
  	return _currentFace ? _currentFace->units_per_EM : 0;
  }
-@@ -200,16 +244,6 @@ int FontEngine::getDescender () const {
+@@ -200,16 +245,6 @@ int FontEngine::getDescender () const {
  }
  
  
@@ -4122,7 +4226,7 @@ diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/FontEngine.cp
  int FontEngine::getHAdvance () const {
  	if (_currentFace) {
  		auto table = static_cast<TT_OS2*>(FT_Get_Sfnt_Table(_currentFace, ft_sfnt_os2));
-@@ -219,21 +253,26 @@ int FontEngine::getHAdvance () const {
+@@ -219,21 +254,26 @@ int FontEngine::getHAdvance () const {
  }
  
  
@@ -4154,7 +4258,7 @@ diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/FontEngine.cp
  	}
  	return 0;
  }
-@@ -241,8 +280,8 @@ int FontEngine::getVAdvance (const Chara
+@@ -241,8 +281,8 @@ int FontEngine::getVAdvance (const Chara
  
  int FontEngine::getWidth (const Character &c) const {
  	if (_currentFace) {
@@ -4165,7 +4269,7 @@ diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/FontEngine.cp
  	}
  	return 0;
  }
-@@ -250,8 +289,8 @@ int FontEngine::getWidth (const Characte
+@@ -250,8 +290,8 @@ int FontEngine::getWidth (const Characte
  
  int FontEngine::getHeight (const Character &c) const {
  	if (_currentFace) {
@@ -4176,7 +4280,7 @@ diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/FontEngine.cp
  	}
  	return 0;
  }
-@@ -259,13 +298,18 @@ int FontEngine::getHeight (const Charact
+@@ -259,13 +299,18 @@ int FontEngine::getHeight (const Charact
  
  int FontEngine::getDepth (const Character &c) const {
  	if (_currentFace) {
@@ -4197,7 +4301,7 @@ diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/FontEngine.cp
  int FontEngine::charIndex (const Character &c) const {
  	if (!_currentFace || !_currentFace->charmap)
  		return c.type() == Character::NAME ? 0 : c.number();
-@@ -280,22 +324,6 @@ int FontEngine::charIndex (const Charact
+@@ -280,22 +325,6 @@ int FontEngine::charIndex (const Charact
  }
  
  
@@ -4220,7 +4324,7 @@ diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/FontEngine.cp
  /** Returns the number of glyphs present in the current font face. */
  int FontEngine::getNumGlyphs () const {
  	return _currentFace ? _currentFace->num_glyphs : 0;
-@@ -306,15 +334,15 @@ int FontEngine::getNumGlyphs () const {
+@@ -306,15 +335,15 @@ int FontEngine::getNumGlyphs () const {
   * @param[in] c char code
   * @return glyph name */
  string FontEngine::getGlyphName (const Character &c) const {
@@ -4241,7 +4345,7 @@ diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/FontEngine.cp
  }
  
  
-@@ -335,7 +363,7 @@ int FontEngine::getCharMapIDs (vector<Ch
+@@ -335,7 +364,7 @@ int FontEngine::getCharMapIDs (vector<Ch
  	if (_currentFace) {
  		for (int i=0; i < _currentFace->num_charmaps; i++) {
  			FT_CharMap charmap = _currentFace->charmaps[i];
@@ -4250,7 +4354,7 @@ diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/FontEngine.cp
  		}
  	}
  	return charmapIDs.size();
-@@ -344,14 +372,14 @@ int FontEngine::getCharMapIDs (vector<Ch
+@@ -344,14 +373,14 @@ int FontEngine::getCharMapIDs (vector<Ch
  
  CharMapID FontEngine::setUnicodeCharMap () {
  	if (_currentFace && FT_Select_Charmap(_currentFace, FT_ENCODING_UNICODE) == 0)
@@ -4267,7 +4371,7 @@ diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/FontEngine.cp
  	return CharMapID();
  }
  
-@@ -414,11 +442,13 @@ static bool trace_outline (FT_Face face,
+@@ -414,11 +443,13 @@ static bool trace_outline (FT_Face face,
  		}
  		FT_Outline outline = face->glyph->outline;
  		// apply style parameters if set
@@ -4335,7 +4439,7 @@ diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/FontEngine.hp
  		std::unique_ptr<const RangeMap> createCustomToUnicodeMap ();
 diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/Font.hpp.301 texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/Font.hpp
 --- texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/Font.hpp.301	2022-01-21 12:25:16.000000000 -0500
-+++ texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/Font.hpp	2023-01-17 15:53:51.704205311 -0500
++++ texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/Font.hpp	2023-01-17 16:41:46.689397060 -0500
 @@ -2,7 +2,7 @@
  ** Font.hpp                                                             **
  **                                                                      **
@@ -4345,7 +4449,15 @@ diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/Font.hpp.301 
  **                                                                      **
  ** This program is free software; you can redistribute it and/or        **
  ** modify it under the terms of the GNU General Public License as       **
-@@ -50,7 +50,7 @@ struct GlyphMetrics {
+@@ -21,6 +21,7 @@
+ #ifndef FONT_HPP
+ #define FONT_HPP
+ 
++#include <cstdint>
+ #include <memory>
+ #include <string>
+ #include <unordered_map>
+@@ -50,7 +51,7 @@ struct GlyphMetrics {
  	double wl, wr, h, d;
  };
  
@@ -4354,7 +4466,7 @@ diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/Font.hpp.301 
  
  /** Abstract base for all font classes. */
  class Font {
-@@ -124,7 +124,7 @@ class PhysicalFont : public virtual Font
+@@ -124,7 +125,7 @@ class PhysicalFont : public virtual Font
  		virtual bool getExactGlyphBox (int c, BoundingBox &bbox, GFGlyphTracer::Callback *cb) const;
  		virtual bool getExactGlyphBox (int c, GlyphMetrics &metrics, bool vertical, GFGlyphTracer::Callback *cb) const;
  		virtual bool isCIDFont () const;
@@ -4363,7 +4475,7 @@ diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/Font.hpp.301 
  		virtual std::string familyName () const;
  		virtual std::string styleName () const;
  		virtual double hAdvance (int c) const;
-@@ -139,6 +139,7 @@ class PhysicalFont : public virtual Font
+@@ -139,6 +140,7 @@ class PhysicalFont : public virtual Font
  		virtual CharMapID getCharMapID () const =0;
  		virtual void setCharMapID (const CharMapID &id) {}
  		virtual Character decodeChar (uint32_t c) const;
@@ -4371,7 +4483,7 @@ diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/Font.hpp.301 
  		const char* path () const override;
  		void visit (FontVisitor &visitor) override;
  		void visit (FontVisitor &visitor) const override;
-@@ -270,16 +271,20 @@ class NativeFont : public PhysicalFont {
+@@ -270,16 +272,20 @@ class NativeFont : public PhysicalFont {
  		std::unique_ptr<Font> clone (double ds, double sc) const override =0;
  		std::string name () const override;
  		Type type () const override;
@@ -4394,7 +4506,7 @@ diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/Font.hpp.301 
  		static std::string uniqueName (const std::string &path, const FontStyle &style);
  		void visit (FontVisitor &visitor) override;
  		void visit (FontVisitor &visitor) const override;
-@@ -305,12 +310,18 @@ class NativeFontProxy : public NativeFon
+@@ -305,12 +311,18 @@ class NativeFontProxy : public NativeFon
  			return std::unique_ptr<NativeFontProxy>(new NativeFontProxy(this , sc, *style(), color()));
  		}
  
@@ -4414,7 +4526,7 @@ diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/Font.hpp.301 
  
  	protected:
  		NativeFontProxy (const NativeFont *nfont, double ptsize, const FontStyle &style, Color color)
-@@ -326,6 +337,8 @@ class NativeFontImpl : public NativeFont
+@@ -326,6 +338,8 @@ class NativeFontImpl : public NativeFont
  		NativeFontImpl (std::string fname, int fontIndex, double ptsize, const FontStyle &style, Color color)
  			: NativeFont(ptsize, style, color), _path(std::move(fname)), _fontIndex(fontIndex) {}
  
@@ -4423,7 +4535,7 @@ diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/Font.hpp.301 
  		std::unique_ptr<NativeFont> clone (double ptsize, const FontStyle &style, Color color) const override {
  			return std::unique_ptr<NativeFontProxy>(new NativeFontProxy(this, ptsize, style, color));
  		}
-@@ -334,18 +347,20 @@ class NativeFontImpl : public NativeFont
+@@ -334,18 +348,20 @@ class NativeFontImpl : public NativeFont
  			return std::unique_ptr<NativeFontProxy>(new NativeFontProxy(this , sc, *style(), color()));
  		}
  
@@ -25028,7 +25140,7 @@ diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/GFGlyphTracer
  ** modify it under the terms of the GNU General Public License as       **
 diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/GFGlyphTracer.hpp.301 texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/GFGlyphTracer.hpp
 --- texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/GFGlyphTracer.hpp.301	2022-01-21 12:25:16.000000000 -0500
-+++ texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/GFGlyphTracer.hpp	2023-01-17 15:53:51.713205415 -0500
++++ texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/GFGlyphTracer.hpp	2023-01-18 10:00:04.504510266 -0500
 @@ -2,7 +2,7 @@
  ** GFGlyphTracer.hpp                                                    **
  **                                                                      **
@@ -25038,6 +25150,14 @@ diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/GFGlyphTracer
  **                                                                      **
  ** This program is free software; you can redistribute it and/or        **
  ** modify it under the terms of the GNU General Public License as       **
+@@ -21,6 +21,7 @@
+ #ifndef GFGLYPHTRACER_HPP
+ #define GFGLYPHTRACER_HPP
+ 
++#include <cstdint>
+ #include <fstream>
+ #include <string>
+ #include "GFTracer.hpp"
 diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/GFReader.cpp.301 texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/GFReader.cpp
 --- texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/GFReader.cpp.301	2022-01-21 12:25:16.000000000 -0500
 +++ texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/GFReader.cpp	2023-01-17 15:53:51.713205415 -0500
@@ -25052,7 +25172,7 @@ diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/GFReader.cpp.
  ** modify it under the terms of the GNU General Public License as       **
 diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/GFReader.hpp.301 texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/GFReader.hpp
 --- texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/GFReader.hpp.301	2022-01-21 12:25:16.000000000 -0500
-+++ texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/GFReader.hpp	2023-01-17 15:53:51.713205415 -0500
++++ texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/GFReader.hpp	2023-01-18 10:00:27.594782009 -0500
 @@ -2,7 +2,7 @@
  ** GFReader.hpp                                                         **
  **                                                                      **
@@ -25062,6 +25182,14 @@ diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/GFReader.hpp.
  **                                                                      **
  ** This program is free software; you can redistribute it and/or        **
  ** modify it under the terms of the GNU General Public License as       **
+@@ -21,6 +21,7 @@
+ #ifndef GFREADER_HPP
+ #define GFREADER_HPP
+ 
++#include <cstdint>
+ #include <istream>
+ #include <string>
+ #include <unordered_map>
 diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/GFTracer.cpp.301 texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/GFTracer.cpp
 --- texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/GFTracer.cpp.301	2022-01-21 12:25:16.000000000 -0500
 +++ texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/GFTracer.cpp	2023-01-17 15:53:51.713205415 -0500
@@ -25859,7 +25987,7 @@ diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/InputBuffer.c
  ** modify it under the terms of the GNU General Public License as       **
 diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/InputBuffer.hpp.301 texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/InputBuffer.hpp
 --- texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/InputBuffer.hpp.301	2022-01-21 12:25:16.000000000 -0500
-+++ texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/InputBuffer.hpp	2023-01-17 15:53:51.714205427 -0500
++++ texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/InputBuffer.hpp	2023-01-18 10:15:02.360038154 -0500
 @@ -2,7 +2,7 @@
  ** InputBuffer.hpp                                                      **
  **                                                                      **
@@ -25869,6 +25997,14 @@ diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/InputBuffer.h
  **                                                                      **
  ** This program is free software; you can redistribute it and/or        **
  ** modify it under the terms of the GNU General Public License as       **
+@@ -22,6 +22,7 @@
+ #define INPUTBUFFER_HPP
+ 
+ #include <algorithm>
++#include <cstdint>
+ #include <cstring>
+ #include <istream>
+ #include <string>
 diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/InputReader.cpp.301 texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/InputReader.cpp
 --- texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/InputReader.cpp.301	2022-01-21 12:25:16.000000000 -0500
 +++ texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/InputReader.cpp	2023-01-17 15:53:51.714205427 -0500
@@ -25907,7 +26043,7 @@ diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/JFM.cpp.301 t
  ** modify it under the terms of the GNU General Public License as       **
 diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/JFM.hpp.301 texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/JFM.hpp
 --- texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/JFM.hpp.301	2022-01-21 12:25:16.000000000 -0500
-+++ texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/JFM.hpp	2023-01-17 15:53:51.715205438 -0500
++++ texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/JFM.hpp	2023-01-18 10:00:58.171141845 -0500
 @@ -2,7 +2,7 @@
  ** JFM.hpp                                                              **
  **                                                                      **
@@ -25917,6 +26053,14 @@ diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/JFM.hpp.301 t
  **                                                                      **
  ** This program is free software; you can redistribute it and/or        **
  ** modify it under the terms of the GNU General Public License as       **
+@@ -21,6 +21,7 @@
+ #ifndef JFM_HPP
+ #define JFM_HPP
+ 
++#include <cstdint>
+ #include <istream>
+ #include "TFM.hpp"
+ 
 diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/Length.cpp.301 texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/Length.cpp
 --- texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/Length.cpp.301	2022-01-21 12:25:16.000000000 -0500
 +++ texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/Length.cpp	2023-01-17 15:53:51.715205438 -0500
@@ -29596,7 +29740,7 @@ diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/PDFToSVG.hpp.
  #endif
 diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/PreScanDVIReader.cpp.301 texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/PreScanDVIReader.cpp
 --- texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/PreScanDVIReader.cpp.301	2022-01-21 12:25:16.000000000 -0500
-+++ texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/PreScanDVIReader.cpp	2023-01-17 15:53:51.718205473 -0500
++++ texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/PreScanDVIReader.cpp	2023-01-18 10:01:21.118411893 -0500
 @@ -2,7 +2,7 @@
  ** PreScanDVIReader.cpp                                                 **
  **                                                                      **
@@ -29606,6 +29750,14 @@ diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/PreScanDVIRea
  **                                                                      **
  ** This program is free software; you can redistribute it and/or        **
  ** modify it under the terms of the GNU General Public License as       **
+@@ -18,6 +18,7 @@
+ ** along with this program; if not, see <http://www.gnu.org/licenses/>. **
+ *************************************************************************/
+ 
++#include <cstdint>
+ #include "DVIActions.hpp"
+ #include "PreScanDVIReader.hpp"
+ 
 diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/PreScanDVIReader.hpp.301 texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/PreScanDVIReader.hpp
 --- texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/PreScanDVIReader.hpp.301	2022-01-21 12:25:16.000000000 -0500
 +++ texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/PreScanDVIReader.hpp	2023-01-17 15:53:51.718205473 -0500
@@ -30064,7 +30216,7 @@ diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/PSInterpreter
  		static bool imageDeviceKnown (std::string deviceStr);
 diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/PSPattern.cpp.301 texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/PSPattern.cpp
 --- texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/PSPattern.cpp.301	2022-02-23 17:20:08.000000000 -0500
-+++ texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/PSPattern.cpp	2023-01-17 15:53:51.719205485 -0500
++++ texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/PSPattern.cpp	2023-01-18 10:01:35.946586393 -0500
 @@ -2,7 +2,7 @@
  ** PSPattern.cpp                                                        **
  **                                                                      **
@@ -30074,6 +30226,14 @@ diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/PSPattern.cpp
  **                                                                      **
  ** This program is free software; you can redistribute it and/or        **
  ** modify it under the terms of the GNU General Public License as       **
+@@ -19,6 +19,7 @@
+ *************************************************************************/
+ 
+ #include <array>
++#include <cstdint>
+ #include <sstream>
+ #include <vector>
+ #include "BoundingBox.hpp"
 diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/PSPattern.hpp.301 texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/PSPattern.hpp
 --- texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/PSPattern.hpp.301	2022-01-21 12:25:16.000000000 -0500
 +++ texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/PSPattern.hpp	2023-01-17 15:53:51.719205485 -0500
@@ -30454,7 +30614,7 @@ diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/RangeMap.cpp.
  ** modify it under the terms of the GNU General Public License as       **
 diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/RangeMap.hpp.301 texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/RangeMap.hpp
 --- texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/RangeMap.hpp.301	2022-01-21 12:25:16.000000000 -0500
-+++ texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/RangeMap.hpp	2023-01-17 15:53:51.720205496 -0500
++++ texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/RangeMap.hpp	2023-01-18 10:02:14.115035578 -0500
 @@ -2,7 +2,7 @@
  ** RangeMap.hpp                                                         **
  **                                                                      **
@@ -30464,7 +30624,15 @@ diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/RangeMap.hpp.
  **                                                                      **
  ** This program is free software; you can redistribute it and/or        **
  ** modify it under the terms of the GNU General Public License as       **
-@@ -111,7 +111,7 @@ class RangeMap {
+@@ -22,6 +22,7 @@
+ #define RANGEMAP_HPP
+ 
+ #include <algorithm>
++#include <cstdint>
+ #include <ostream>
+ #include <vector>
+ 
+@@ -111,7 +112,7 @@ class RangeMap {
  	};
  
  	public:
@@ -30616,7 +30784,7 @@ diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/StreamReader.
  ** modify it under the terms of the GNU General Public License as       **
 diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/StreamReader.hpp.301 texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/StreamReader.hpp
 --- texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/StreamReader.hpp.301	2022-01-21 12:25:16.000000000 -0500
-+++ texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/StreamReader.hpp	2023-01-17 15:53:51.720205496 -0500
++++ texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/StreamReader.hpp	2023-01-17 16:33:29.676610382 -0500
 @@ -2,7 +2,7 @@
  ** StreamReader.hpp                                                     **
  **                                                                      **
@@ -30626,6 +30794,14 @@ diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/StreamReader.
  **                                                                      **
  ** This program is free software; you can redistribute it and/or        **
  ** modify it under the terms of the GNU General Public License as       **
+@@ -24,6 +24,7 @@
+ #include <istream>
+ #include <string>
+ #include <vector>
++#include <cstdint>
+ #include "MessageException.hpp"
+ 
+ class HashFunction;
 diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/StreamWriter.cpp.301 texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/StreamWriter.cpp
 --- texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/StreamWriter.cpp.301	2022-01-21 12:25:16.000000000 -0500
 +++ texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/StreamWriter.cpp	2023-01-17 15:53:51.720205496 -0500
@@ -31309,7 +31485,7 @@ diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/TFM.hpp.301 t
  ** modify it under the terms of the GNU General Public License as       **
 diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/ToUnicodeMap.cpp.301 texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/ToUnicodeMap.cpp
 --- texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/ToUnicodeMap.cpp.301	2022-01-21 12:25:16.000000000 -0500
-+++ texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/ToUnicodeMap.cpp	2023-01-17 15:53:51.722205519 -0500
++++ texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/ToUnicodeMap.cpp	2023-01-17 16:36:41.778850855 -0500
 @@ -2,7 +2,7 @@
  ** ToUnicodeMap.cpp                                                     **
  **                                                                      **
@@ -31319,6 +31495,21 @@ diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/ToUnicodeMap.
  **                                                                      **
  ** This program is free software; you can redistribute it and/or        **
  ** modify it under the terms of the GNU General Public License as       **
+@@ -19,6 +19,7 @@
+ *************************************************************************/
+ 
+ #include <limits>
++#include <cstdint>
+ #include "ToUnicodeMap.hpp"
+ #include "Unicode.hpp"
+ 
+@@ -103,4 +104,4 @@ bool ToUnicodeMap::fillRange (uint32_t m
+ 		}
+ 	}
+ 	return true;
+-}
+\ No newline at end of file
++}
 diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/ToUnicodeMap.hpp.301 texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/ToUnicodeMap.hpp
 --- texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/ToUnicodeMap.hpp.301	2022-01-21 12:25:16.000000000 -0500
 +++ texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/ToUnicodeMap.hpp	2023-01-17 15:53:51.723205531 -0500
@@ -35384,7 +35575,7 @@ diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/Unicode.cpp.3
  		for (const char **p=suffixes; *p; p++)
 diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/Unicode.hpp.301 texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/Unicode.hpp
 --- texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/Unicode.hpp.301	2022-01-21 12:25:16.000000000 -0500
-+++ texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/Unicode.hpp	2023-01-17 15:53:51.725205554 -0500
++++ texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/Unicode.hpp	2023-01-17 16:36:01.001375270 -0500
 @@ -2,7 +2,7 @@
  ** Unicode.hpp                                                          **
  **                                                                      **
@@ -35394,7 +35585,12 @@ diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/Unicode.hpp.3
  **                                                                      **
  ** This program is free software; you can redistribute it and/or        **
  ** modify it under the terms of the GNU General Public License as       **
-@@ -25,11 +25,13 @@
+@@ -21,15 +21,18 @@
+ #ifndef UNICODE_HPP
+ #define UNICODE_HPP
+ 
++#include <cstdint>
+ #include <string>
  
  struct Unicode {
  	static bool isValidCodepoint (uint32_t code);
@@ -35590,7 +35786,7 @@ diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/utility.cpp.3
 \ No newline at end of file
 diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/utility.hpp.301 texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/utility.hpp
 --- texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/utility.hpp.301	2022-01-21 12:25:16.000000000 -0500
-+++ texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/utility.hpp	2023-01-17 15:53:51.725205554 -0500
++++ texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/utility.hpp	2023-01-17 16:35:45.949199718 -0500
 @@ -2,7 +2,7 @@
  ** utility.hpp                                                          **
  **                                                                      **
@@ -35600,7 +35796,7 @@ diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/utility.hpp.3
  **                                                                      **
  ** This program is free software; you can redistribute it and/or        **
  ** modify it under the terms of the GNU General Public License as       **
-@@ -21,7 +21,12 @@
+@@ -21,7 +21,13 @@
  #ifndef UTILITY_HPP
  #define UTILITY_HPP
  
@@ -35608,12 +35804,13 @@ diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/utility.hpp.3
 +#include <config.h>
 +#endif
 +
++#include <cstdint>
  #include <iomanip>
 +#include <functional>
  #include <memory>
  #include <sstream>
  #include <string>
-@@ -40,6 +45,7 @@ inline double rad2deg (double rad) {retu
+@@ -40,6 +46,7 @@ inline double rad2deg (double rad) {retu
  double normalize_angle (double angle, double mod);
  double normalize_0_2pi (double rad);
  std::vector<double> svd (const double (&m)[2][2]);
@@ -35621,7 +35818,7 @@ diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/utility.hpp.3
  
  /** Signum function (returns x/abs(x) if x != 0, and 0 otherwise). */
  template <typename T>
-@@ -61,6 +67,8 @@ std::string normalize_space (std::string
+@@ -61,6 +68,8 @@ std::string normalize_space (std::string
  std::string tolower (const std::string &str);
  std::string replace (std::string str, const std::string &find, const std::string &repl);
  std::string to_string (double val);
@@ -35630,7 +35827,7 @@ diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/utility.hpp.3
  std::vector<std::string> split (const std::string &str, const std::string &sep);
  int ilog10 (int n);
  
-@@ -136,18 +144,82 @@ inline void base64_copy (std::istream &i
+@@ -136,18 +145,82 @@ inline void base64_copy (std::istream &i
   *  Constructs an object of class T on the heap and returns a unique_ptr<T> to it.
   *  @param[in] args arguments forwarded to an constructor of T */
  template<typename T, typename... Args>
@@ -35718,7 +35915,7 @@ diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/utility.hpp.3
  	template <typename U>
  	struct by {
  		using type = typename std::conditional<
-@@ -155,8 +227,19 @@ struct set_const_of {
+@@ -155,8 +228,19 @@ struct set_const_of {
  			typename std::add_const<T>::type,
  			typename std::remove_const<T>::type
  		>::type;
@@ -35765,7 +35962,7 @@ diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/VectorStream.
  ** modify it under the terms of the GNU General Public License as       **
 diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/VFActions.hpp.301 texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/VFActions.hpp
 --- texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/VFActions.hpp.301	2022-01-21 12:25:16.000000000 -0500
-+++ texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/VFActions.hpp	2023-01-17 15:53:51.726205565 -0500
++++ texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/VFActions.hpp	2023-01-17 16:35:30.432018742 -0500
 @@ -2,7 +2,7 @@
  ** VFActions.hpp                                                        **
  **                                                                      **
@@ -35775,9 +35972,17 @@ diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/VFActions.hpp
  **                                                                      **
  ** This program is free software; you can redistribute it and/or        **
  ** modify it under the terms of the GNU General Public License as       **
+@@ -21,6 +21,7 @@
+ #ifndef VFACTIONS_HPP
+ #define VFACTIONS_HPP
+ 
++#include <cstdint>
+ #include <string>
+ #include <vector>
+ 
 diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/VFReader.cpp.301 texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/VFReader.cpp
 --- texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/VFReader.cpp.301	2022-01-21 12:25:16.000000000 -0500
-+++ texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/VFReader.cpp	2023-01-17 15:53:51.726205565 -0500
++++ texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/VFReader.cpp	2023-01-17 16:35:15.819848321 -0500
 @@ -2,7 +2,7 @@
  ** VFReader.cpp                                                         **
  **                                                                      **
@@ -35787,6 +35992,14 @@ diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/VFReader.cpp.
  **                                                                      **
  ** This program is free software; you can redistribute it and/or        **
  ** modify it under the terms of the GNU General Public License as       **
+@@ -18,6 +18,7 @@
+ ** along with this program; if not, see <http://www.gnu.org/licenses/>. **
+ *************************************************************************/
+ 
++#include <cstdint>
+ #include <sstream>
+ #include "FixWord.hpp"
+ #include "Font.hpp"
 diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/VFReader.hpp.301 texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/VFReader.hpp
 --- texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/VFReader.hpp.301	2022-01-21 12:25:16.000000000 -0500
 +++ texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/VFReader.hpp	2023-01-17 15:53:51.726205565 -0500
@@ -36302,7 +36515,7 @@ diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/XMLParser.hpp
 +#endif
 diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/XMLString.cpp.301 texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/XMLString.cpp
 --- texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/XMLString.cpp.301	2022-01-21 12:25:16.000000000 -0500
-+++ texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/XMLString.cpp	2023-01-17 15:53:51.726205565 -0500
++++ texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/XMLString.cpp	2023-01-17 16:34:54.737602441 -0500
 @@ -2,7 +2,7 @@
  ** XMLString.cpp                                                        **
  **                                                                      **
@@ -36312,7 +36525,15 @@ diff -up texlive-base-20220321/source/texk/dvisvgm/dvisvgm-src/src/XMLString.cpp
  **                                                                      **
  ** This program is free software; you can redistribute it and/or        **
  ** modify it under the terms of the GNU General Public License as       **
-@@ -91,7 +91,7 @@ XMLString::XMLString (double x) {
+@@ -19,6 +19,7 @@
+ *************************************************************************/
+ 
+ #include <cmath>
++#include <cstdint>
+ #include <cstdlib>
+ #include "Unicode.hpp"
+ #include "utility.hpp"
+@@ -91,7 +92,7 @@ XMLString::XMLString (double x) {
  	if (std::abs(x) < 1e-6)
  		x = 0;
  	assign(util::to_string(x));
