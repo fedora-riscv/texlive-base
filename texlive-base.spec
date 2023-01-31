@@ -7453,6 +7453,9 @@ done
 # Also, this macro has to be here, not at the top, or it will not evaluate properly. :P
 %global mysources %{lua: for index,value in ipairs(sources) do if index >= 16 then print(value.." ") end end}
 
+# Drop source/libs/xpdf dir, we use system ver (if at all)
+rm -rf source/libs/xpdf
+
 %build
 
 %if %{without bootstrap} && ! 0%{?eln}
