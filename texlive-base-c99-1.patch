@@ -1,4 +1,4 @@
-Backuport of upstream r64940: stdlib.h to placate clang16
+Backuport of upstream r64941: stdlib.h to placate clang16
 
 2022-11-05  Sam James  <sam@gentoo.org>
 
