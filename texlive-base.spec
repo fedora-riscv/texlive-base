@@ -16,7 +16,7 @@
 %global __brp_mangle_shebangs_exclude ^$
 
 # We have a circular dep on latex due to xindy
-%bcond_with bootstrap
+%bcond_without bootstrap
 
 Name: %{shortname}-base
 Version: %{source_date}
@@ -9413,6 +9413,9 @@ yes | %{_bindir}/updmap-sys --quiet --syncwithtrees >/dev/null 2>&1 || :
 %doc %{_texdir}/texmf-dist/doc/latex/yplan/
 
 %changelog
+* Wed Feb 22 2023 Liu Yang <Yang.Liu.sn@gmail.com> - 9:202110325-52.rv64~bootstrap
+- Bootstrap again on riscv64 due to poppler upgrade.
+
 * Wed Feb 22 2023 Liu Yang <Yang.Liu.sn@gmail.com> - 9:202110325-52.rv64
 - luajit is not supported on riscv64 at present, disable it.
 
