@@ -8277,6 +8277,12 @@ done
 
 %patch -P44 -p1 -b .pdf-header-order-fix
 
+# Disable broken tests
+# updmap-cmdline-test.pl is not useful and it will fail because it finds the system perl bits instead of the local copy
+sed -i 's|TESTS = tests/updmap-cmdline-test.pl||g' source/texk/texlive/Makefile.in
+sed -i 's|TESTS = tests/updmap-cmdline-test.pl||g' source/texk/texlive/Makefile.am
+
+
 # Value here is "16" not "15" because we have a source0 at index 1.
 # Source15 at index 16 is our first "normal" noarch source file.
 # Also, this macro has to be here, not at the top, or it will not evaluate properly. :P
