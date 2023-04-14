@@ -23,7 +23,7 @@
 
 Name: %{shortname}-base
 Version: %{source_date}
-Release: 70%{?dist}
+Release: 71%{?dist}
 Epoch: 10
 Summary: TeX formatting system
 # The only files in the base package are directories, cache, and license texts
@@ -2766,6 +2766,10 @@ License: GPL-2.0-or-later
 Summary: Tools to simplify using fonts (especially TT/OTF ones)
 Requires: texlive-base
 Requires: texlive-kpathsea
+# for otfinfo
+Requires: texlive-lcdftypetools
+# For vptovf
+Requires: texlive-fontware
 Provides: tex(fontools_ly1.enc) = %{epoch}:%{source_date}-%{release}
 Provides: tex(fontools_ot1.enc) = %{epoch}:%{source_date}-%{release}
 Provides: tex(fontools_t1.enc) = %{epoch}:%{source_date}-%{release}
@@ -10201,8 +10205,11 @@ yes | %{_bindir}/updmap-sys --quiet --syncwithtrees >/dev/null 2>&1 || :
 %doc %{_texdir}/texmf-dist/doc/latex/yplan/
 
 %changelog
+* Fri Apr 14 2023 Tom Callaway <spot@fedoraproject.org> - 10:20220321-71
+- fix Requires for texlive-fontools (bz 2185284)
+
 * Fri Apr 14 2023 Tom Callaway <spot@fedoraproject.org> - 10:20220321-70
-- fix issue with latex.ltx
+- fix issue with latex.ltx (bz2178523)
 
 * Mon Mar  6 2023 Tom Callaway <spot@fedoraproject.org> - 10:20220321-69
 - fix texlive-pdfcrop to have an explicit Requires: texlive-pdftex (bz2175666)
