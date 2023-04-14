@@ -1,6 +1,6 @@
-diff -up tex/latex/base/latex.ltx.fix tex/latex/base/latex.ltx
---- tex/latex/base/latex.ltx.fix	2023-04-14 09:48:57.815126401 -0400
-+++ tex/latex/base/latex.ltx	2023-04-14 09:49:56.376902836 -0400
+diff -up ./tex/latex/base/latex.ltx.fix ./tex/latex/base/latex.ltx
+--- ./tex/latex/base/latex.ltx.fix	2023-04-14 09:48:57.815126401 -0400
++++ ./tex/latex/base/latex.ltx	2023-04-14 09:49:56.376902836 -0400
 @@ -15798,6 +15798,8 @@ Type  H <return>  for immediate help.}%
  \@maxdepth = \maxdepth
  \newdimen\paperheight
