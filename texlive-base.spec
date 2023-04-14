@@ -23,7 +23,7 @@
 
 Name: %{shortname}-base
 Version: %{source_date}
-Release: 69%{?dist}
+Release: 70%{?dist}
 Epoch: 10
 Summary: TeX formatting system
 # The only files in the base package are directories, cache, and license texts
@@ -513,6 +513,9 @@ Patch43: texlive-base-c99-4.patch
 
 # Fix issue where off_t could be set incorrectly on i686 due to order of header load
 Patch44: texlive-base-20220321-pdf-header-order-fix.patch
+
+# Fix issue with latex.ltx (fixed in 2023)
+Patch45: texlive-2022-fix-latex-ltx.patch
 
 # Can't do this because it causes everything else to be noarch
 # BuildArch: noarch
@@ -7667,6 +7670,9 @@ pushd %{buildroot}%{_texdir}/texmf-dist
 
 # neuter tlmgr a bit
 patch -p1 < %{_sourcedir}/texlive-20190410-tlmgr-ignore-warning.patch
+
+# fix an issue in latex.ltx
+patch -p1 < %{_sourcedir}/texlive-2022-fix-latex-ltx.patch
 popd
 
 # config files in /etc symlinked
@@ -10195,6 +10201,9 @@ yes | %{_bindir}/updmap-sys --quiet --syncwithtrees >/dev/null 2>&1 || :
 %doc %{_texdir}/texmf-dist/doc/latex/yplan/
 
 %changelog
+* Fri Apr 14 2023 Tom Callaway <spot@fedoraproject.org> - 10:20220321-70
+- fix issue with latex.ltx
+
 * Mon Mar  6 2023 Tom Callaway <spot@fedoraproject.org> - 10:20220321-69
 - fix texlive-pdfcrop to have an explicit Requires: texlive-pdftex (bz2175666)
 
